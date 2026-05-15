@@ -262,11 +262,11 @@
           <span>1%</span><span>30%</span>
         </div>
         <!-- Benchmark hints -->
-        <div class="flex gap-2 mt-2.5 flex-wrap">
-          <button onclick="setRate(7)"  class="text-[10px] px-2 py-1 bg-ink-50 hover:bg-ink-100 border border-ink-200 rounded-md font-mono text-ink-500 transition-colors">FD ~7%</button>
-          <button onclick="setRate(10)" class="text-[10px] px-2 py-1 bg-ink-50 hover:bg-ink-100 border border-ink-200 rounded-md font-mono text-ink-500 transition-colors">Debt ~10%</button>
-          <button onclick="setRate(12)" class="text-[10px] px-2 py-1 bg-leaf-50 hover:bg-leaf-100 border border-leaf-200 rounded-md font-mono text-leaf-700 transition-colors">Nifty50 ~12%</button>
-          <button onclick="setRate(15)" class="text-[10px] px-2 py-1 bg-ink-50 hover:bg-ink-100 border border-ink-200 rounded-md font-mono text-ink-500 transition-colors">MidCap ~15%</button>
+        <div class="flex gap-2 mt-2.5 flex-wrap" id="benchmarkBtns">
+          <button onclick="setRate(7,  this)" data-rate="7"  class="benchmark-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">FD ~7%</button>
+          <button onclick="setRate(10, this)" data-rate="10" class="benchmark-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">Debt ~10%</button>
+          <button onclick="setRate(12, this)" data-rate="12" class="benchmark-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">Nifty50 ~12%</button>
+          <button onclick="setRate(15, this)" data-rate="15" class="benchmark-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">MidCap ~15%</button>
         </div>
       </div>
 
@@ -436,16 +436,27 @@
         <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-leaf-400 inline-block"></span><span class="text-ink-500">Returns</span></div>
       </div>
     </div>
-    <!-- Chart area -->
-    <div class="relative" style="height: 200px;">
-      <div id="chartBars" class="flex items-end justify-between gap-1 h-full w-full"></div>
-      <!-- Y axis labels -->
-      <div id="yLabels" class="absolute left-0 top-0 h-full flex flex-col justify-between pointer-events-none" style="transform: translateX(-100%); padding-right:6px; min-width:44px; text-align:right;">
-        <span class="text-[9px] font-mono text-ink-300"></span>
-        <span class="text-[9px] font-mono text-ink-300"></span>
-        <span class="text-[9px] font-mono text-ink-300"></span>
-        <span class="text-[9px] font-mono text-ink-300"></span>
-        <span class="text-[9px] font-mono text-ink-300">0</span>
+    <!-- Chart area with Y-axis -->
+    <div class="flex gap-2">
+      <!-- Y-axis labels -->
+      <div id="yLabels" class="flex flex-col justify-between text-right flex-shrink-0 pb-5" style="width: 52px;">
+        <span class="text-[9px] font-mono text-ink-300 leading-none"></span>
+        <span class="text-[9px] font-mono text-ink-300 leading-none"></span>
+        <span class="text-[9px] font-mono text-ink-300 leading-none"></span>
+        <span class="text-[9px] font-mono text-ink-300 leading-none"></span>
+        <span class="text-[9px] font-mono text-ink-300 leading-none">0</span>
+      </div>
+      <!-- Bars -->
+      <div class="flex-1 relative" style="height: 200px;">
+        <!-- Grid lines -->
+        <div class="absolute inset-0 flex flex-col justify-between pointer-events-none pb-5">
+          <div class="border-t border-ink-100/70 w-full"></div>
+          <div class="border-t border-ink-100/70 w-full"></div>
+          <div class="border-t border-ink-100/70 w-full"></div>
+          <div class="border-t border-ink-100/70 w-full"></div>
+          <div class="border-t border-ink-200 w-full"></div>
+        </div>
+        <div id="chartBars" class="absolute inset-0 flex items-end justify-between gap-0.5 pb-5"></div>
       </div>
     </div>
   </div>
@@ -591,7 +602,7 @@
       </div>
     </div>
     <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
-      <p>© 2025 BharatCalc. Made with ♥ in India.</p>
+      <p>© 2026 BharatCalc. Made with ♥ in India.</p>
       <div class="flex gap-5">
         <a href="/about"       class="hover:text-ink-300 transition-colors">About</a>
         <a href="/privacy"     class="hover:text-ink-300 transition-colors">Privacy</a>
@@ -758,13 +769,13 @@ function renderBarChart(rows) {
     const invH = Math.max((r.invested / maxCorpus) * 100, 1);
     const retH = Math.max((r.returns  / maxCorpus) * 100, 0);
     return `
-      <div class="bar-group relative flex flex-col items-center flex-1 h-full justify-end cursor-pointer" style="min-width:12px;">
+      <div class="bar-group relative flex flex-col items-center flex-1 h-full justify-end cursor-pointer" style="min-width:10px;">
         <div class="bar-tip">${r.year}yr · ${fmtCompact(r.corpus)}</div>
-        <div class="w-full flex flex-col justify-end" style="height:100%">
+        <div class="w-full flex flex-col justify-end" style="height: calc(100% - 20px);">
           <div style="height:${retH}%; min-height:${r.returns > 0 ? 2 : 0}px" class="bar-returns w-full"></div>
           <div style="height:${invH}%" class="bar-invested w-full"></div>
         </div>
-        <div class="text-[9px] font-mono text-ink-300 mt-1 text-center leading-tight">${r.year}</div>
+        <div class="text-[9px] font-mono text-ink-300 mt-1 text-center leading-tight" style="height:16px;">${r.year}</div>
       </div>`;
   }).join('');
 
@@ -812,10 +823,19 @@ function applyPreset(monthly, rate, years) {
   calculate();
 }
 
-function setRate(r) {
+function setRate(r, btn) {
   document.getElementById('returnRate').value      = r;
   document.getElementById('returnRateInput').value = r;
   updateTrack('returnRate');
+  // Highlight active benchmark button
+  document.querySelectorAll('.benchmark-btn').forEach(b => {
+    b.classList.remove('bg-leaf-50', 'border-leaf-200', 'text-leaf-700');
+    b.classList.add('bg-ink-50', 'border-ink-200', 'text-ink-500');
+  });
+  if (btn) {
+    btn.classList.remove('bg-ink-50', 'border-ink-200', 'text-ink-500');
+    btn.classList.add('bg-leaf-50', 'border-leaf-200', 'text-leaf-700');
+  }
   calculate();
 }
 
@@ -837,6 +857,14 @@ function init() {
     const i = document.getElementById(id + 'Input');
     if (s && i) i.value = s.value;
     updateTrack(id);
+  });
+  // Highlight the default rate button (12% = Nifty50)
+  const defaultRate = parseFloat(document.getElementById('returnRate').value);
+  document.querySelectorAll('.benchmark-btn').forEach(b => {
+    if (parseFloat(b.dataset.rate) === defaultRate) {
+      b.classList.remove('bg-ink-50', 'border-ink-200', 'text-ink-500');
+      b.classList.add('bg-leaf-50', 'border-leaf-200', 'text-leaf-700');
+    }
   });
   calculate();
 }
