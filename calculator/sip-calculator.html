@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- ═══════════════════════════════════════
-       SEO & META
-  ═══════════════════════════════════════ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SIP Calculator India – Mutual Fund Returns Calculator | BharatCalc</title>
-  <meta name="description" content="Free SIP calculator to estimate your mutual fund returns. Calculate invested amount, estimated returns and total corpus with a year-by-year growth table. No login required." />
-  <meta name="keywords" content="SIP calculator, mutual fund SIP calculator, SIP returns calculator, systematic investment plan calculator India, monthly SIP calculator, SIP maturity calculator" />
+  <meta name="description" content="Free SIP Calculator India — calculate mutual fund SIP returns, total corpus, invested amount and estimated gains instantly. Step-up SIP, year-by-year growth table. No login. Updated for current FY." />
+  <meta name="keywords" content="SIP calculator India, SIP calculator, mutual fund SIP calculator, SIP returns calculator, systematic investment plan calculator India, monthly SIP calculator, SIP maturity calculator, SIP interest calculator, SIP calculator 2025, best SIP calculator India, SIP calculator with step up, how much SIP for 1 crore, SIP calculator online free, SIP investment calculator, mutual fund calculator India" />
   <meta name="author" content="BharatCalc" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://bharatcalc.online/calculator/sip-calculator.html" />
 
-  <!-- Open Graph -->
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://bharatcalc.online/calculator/sip-calculator.html" />
   <meta property="og:title"       content="SIP Calculator – Mutual Fund Returns | BharatCalc" />
-  <meta property="og:description" content="Calculate your SIP returns instantly. See total invested, estimated gains and final corpus with a full year-by-year breakdown." />
+  <meta property="og:description" content="Calculate your SIP returns instantly. See total invested, estimated gains and final corpus with a full year-by-year breakdown. Free, no login." />
   <meta property="og:image"       content="https://bharatcalc.online/og/sip-calculator.png" />
-
-  <!-- Twitter -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="SIP Calculator | BharatCalc" />
-  <meta name="twitter:description" content="Estimate mutual fund SIP returns. Free, instant, no login." />
+  <meta name="twitter:description" content="Estimate mutual fund SIP returns. Free, instant, no login — by BharatCalc." />
 
-  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -48,12 +40,38 @@
   }
   </script>
 
-  <!-- Fonts -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is SIP return calculated?",
+        "acceptedAnswer": { "@type": "Answer", "text": "SIP return is calculated using the future value of a recurring investment formula: M = P × {[(1 + r)ⁿ − 1] / r} × (1 + r), where M is the maturity amount, P is the monthly SIP amount, r is the monthly rate (annual rate ÷ 12 ÷ 100), and n is the number of months." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much SIP is needed to get 1 crore?",
+        "acceptedAnswer": { "@type": "Answer", "text": "To accumulate ₹1 crore in 15 years at 12% p.a. return, you need a monthly SIP of approximately ₹19,820. In 20 years at 12%, you need only about ₹10,110/month. The longer the tenure, the lower the monthly SIP required — thanks to compounding." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is SIP better than FD?",
+        "acceptedAnswer": { "@type": "Answer", "text": "SIP in equity mutual funds has historically delivered 10–15% p.a. returns over long periods, significantly more than FD rates of 6.5–7.5%. However, SIP returns are market-linked and not guaranteed, while FD returns are fixed and safe. For long-term wealth creation (7+ years), SIP is generally preferred; for short-term safety, FD is better." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a step-up SIP?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A step-up SIP (also called top-up SIP) increases your monthly SIP amount by a fixed percentage every year — typically 10%. This aligns with annual salary hikes and dramatically accelerates corpus growth compared to a regular SIP at the same starting amount." }
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -78,85 +96,61 @@
     *, *::before, *::after { box-sizing: border-box; }
     body { font-family: 'Satoshi', system-ui, sans-serif; }
     .font-display { font-family: 'Clash Display', system-ui, sans-serif; }
-
-    /* Nav underline */
     .nav-link { position: relative; }
     .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #16a34a; transform: scaleX(0); transition: transform 0.2s; border-radius: 1px; }
     .nav-link:hover::after { transform: scaleX(1); }
-
-    /* Range slider */
     input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 5px; border-radius: 99px; outline: none; cursor: pointer; }
     input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #16a34a; border: 3px solid #fff; box-shadow: 0 0 0 1px #16a34a, 0 2px 6px rgba(22,163,74,0.3); cursor: pointer; transition: box-shadow 0.15s; }
     input[type=range]::-webkit-slider-thumb:hover { box-shadow: 0 0 0 1px #16a34a, 0 2px 12px rgba(22,163,74,0.45); }
     input[type=range]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #16a34a; border: 3px solid #fff; box-shadow: 0 0 0 1px #16a34a; cursor: pointer; }
-
-    /* Val input */
     .val-input { font-family: 'JetBrains Mono', monospace; }
     .val-input:focus { outline: none; }
-
-    /* Chart bars */
     .bar-invested { background: #16a34a; border-radius: 4px 4px 0 0; transition: height 0.4s cubic-bezier(.4,0,.2,1); }
     .bar-returns  { background: #4ade80; border-radius: 4px 4px 0 0; transition: height 0.4s cubic-bezier(.4,0,.2,1); }
-
-    /* Table */
     .growth-table { border-collapse: collapse; width: 100%; }
     .growth-table th { position: sticky; top: 0; background: #f5f7fa; z-index: 1; }
     .growth-table tbody tr:hover td { background: #f0fdf4; }
     .table-wrap { max-height: 360px; overflow-y: auto; }
-
-    /* Scrollbar */
     ::-webkit-scrollbar { width: 5px; height: 5px; }
     ::-webkit-scrollbar-track { background: #f1f5f9; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
-
-    /* Donut */
     .donut-ring { transition: stroke-dasharray 0.5s cubic-bezier(.4,0,.2,1); }
-
-    /* Preset tab */
     .preset-tab { transition: all 0.15s; }
     .preset-tab.active { background: #0d1117; color: #fff; border-color: #0d1117; }
-
-    /* Breadcrumb */
     .breadcrumb a { transition: color 0.15s; }
-
-    /* Tooltip */
     .bar-group:hover .bar-tip { display: block; }
     .bar-tip { display: none; position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); background: #0d1117; color: #fff; font-size: 10px; font-family: 'JetBrains Mono', monospace; white-space: nowrap; padding: 4px 8px; border-radius: 6px; pointer-events: none; z-index: 10; }
     .bar-tip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 4px solid transparent; border-top-color: #0d1117; }
+    .faq-item details summary { cursor: pointer; list-style: none; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
   </style>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
     gtag('config', 'G-9TD6B9GQ89');
   </script>
 </head>
 
 <body class="bg-ink-50 text-ink-900 antialiased">
 
-<!-- ═══════════════════════════════════════
-     NAV
-═══════════════════════════════════════ -->
+<!-- NAV -->
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-14">
-
       <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
         <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center">
-          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/>
-          </svg>
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
         </div>
         <div class="leading-none">
           <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
           <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
         </div>
       </a>
-
       <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
         <a href="/finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
         <a href="/tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
@@ -164,12 +158,10 @@
         <a href="/math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
         <a href="/tools"   class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
       </nav>
-
       <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" aria-expanded="false" id="menuBtn">
         <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
-
     <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
       <a href="/finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>💰</span> Finance</a>
       <a href="/tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>📄</span> Tax</a>
@@ -179,27 +171,25 @@
   </div>
 </header>
 
-<!-- ═══════════════════════════════════════
-     PAGE HERO
-═══════════════════════════════════════ -->
+<!-- PAGE HERO -->
 <section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
     <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
-      <a href="/" class="hover:text-ink-200">Home</a>
+      <a href="../index.html" class="hover:text-ink-200">Home</a>
       <span>/</span>
       <a href="/finance" class="hover:text-ink-200">Finance</a>
       <span>/</span>
       <span class="text-ink-300">SIP Calculator</span>
     </nav>
-
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
       <div>
-        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">
-          SIP Calculator
-        </h1>
+        <div class="inline-flex items-center gap-2 bg-leaf-600/15 text-leaf-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-leaf-600/20">
+          <span class="w-1.5 h-1.5 bg-leaf-400 rounded-full inline-block animate-pulse"></span>
+          Updated for <span id="heroFY" class="ml-0.5"></span>
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">SIP Calculator</h1>
         <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
-          Estimate your mutual fund SIP returns. Adjust monthly investment, expected return rate and tenure to see your corpus grow — with a full year-by-year breakdown.
+          Estimate your mutual fund SIP returns. Adjust monthly investment, expected return rate and tenure to see your corpus grow — with a full year-by-year breakdown and bar chart.
         </p>
       </div>
       <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0">
@@ -210,13 +200,10 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     MAIN CALCULATOR
-═══════════════════════════════════════ -->
 <main>
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-  <!-- Mode tabs: Regular SIP vs Step-up SIP -->
+  <!-- Mode tabs -->
   <div class="flex gap-2 mb-6 flex-wrap" role="group" aria-label="SIP mode">
     <button class="preset-tab active px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600" onclick="setSipMode('regular', this)">📅 Regular SIP</button>
     <button class="preset-tab px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:border-leaf-400 transition-all" onclick="setSipMode('stepup', this)">⬆️ Step-up SIP</button>
@@ -224,9 +211,8 @@
 
   <div class="grid lg:grid-cols-2 gap-6">
 
-    <!-- ── LEFT: Inputs ── -->
+    <!-- LEFT: Inputs -->
     <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
-
       <h2 class="font-display font-semibold text-ink-900 text-lg mb-7">Investment Details</h2>
 
       <!-- Monthly Investment -->
@@ -235,33 +221,24 @@
           <label for="monthly" class="text-sm font-semibold text-ink-700">Monthly Investment</label>
           <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
             <span class="text-sm text-ink-400 font-mono">₹</span>
-            <input id="monthlyInput" type="number" class="val-input w-24 text-sm font-semibold text-ink-900 bg-transparent text-right"
-              min="500" max="500000" step="500" oninput="syncFromInput('monthly', this.value)" />
+            <input id="monthlyInput" type="number" class="val-input w-24 text-sm font-semibold text-ink-900 bg-transparent text-right" min="500" max="500000" step="500" oninput="syncFromInput('monthly', this.value)" />
           </div>
         </div>
-        <input type="range" id="monthly" min="500" max="500000" step="500" value="10000"
-          oninput="syncFromSlider('monthly')" class="w-full" aria-label="Monthly investment slider" />
-        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono">
-          <span>₹500</span><span>₹5L</span>
-        </div>
+        <input type="range" id="monthly" min="500" max="500000" step="500" value="10000" oninput="syncFromSlider('monthly')" class="w-full" aria-label="Monthly investment slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹500</span><span>₹5L</span></div>
       </div>
 
-      <!-- Expected Return Rate -->
+      <!-- Expected Return -->
       <div class="mb-7">
         <div class="flex items-center justify-between mb-3">
           <label for="returnRate" class="text-sm font-semibold text-ink-700">Expected Return (p.a.)</label>
           <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
-            <input id="returnRateInput" type="number" class="val-input w-16 text-sm font-semibold text-ink-900 bg-transparent text-right"
-              min="1" max="30" step="0.5" oninput="syncFromInput('returnRate', this.value)" />
+            <input id="returnRateInput" type="number" class="val-input w-16 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1" max="30" step="0.5" oninput="syncFromInput('returnRate', this.value)" />
             <span class="text-sm text-ink-400 font-mono">%</span>
           </div>
         </div>
-        <input type="range" id="returnRate" min="1" max="30" step="0.5" value="12"
-          oninput="syncFromSlider('returnRate')" class="w-full" aria-label="Expected return rate slider" />
-        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono">
-          <span>1%</span><span>30%</span>
-        </div>
-        <!-- Benchmark hints -->
+        <input type="range" id="returnRate" min="1" max="30" step="0.5" value="12" oninput="syncFromSlider('returnRate')" class="w-full" aria-label="Expected return rate slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>1%</span><span>30%</span></div>
         <div class="flex gap-2 mt-2.5 flex-wrap" id="benchmarkBtns">
           <button onclick="setRate(7,  this)" data-rate="7"  class="benchmark-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">FD ~7%</button>
           <button onclick="setRate(10, this)" data-rate="10" class="benchmark-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">Debt ~10%</button>
@@ -275,36 +252,28 @@
         <div class="flex items-center justify-between mb-3">
           <label for="tenure" class="text-sm font-semibold text-ink-700">Investment Period</label>
           <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
-            <input id="tenureInput" type="number" class="val-input w-12 text-sm font-semibold text-ink-900 bg-transparent text-right"
-              min="1" max="40" step="1" oninput="syncFromInput('tenure', this.value)" />
+            <input id="tenureInput" type="number" class="val-input w-12 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1" max="40" step="1" oninput="syncFromInput('tenure', this.value)" />
             <span class="text-sm text-ink-400 font-mono">yr</span>
           </div>
         </div>
-        <input type="range" id="tenure" min="1" max="40" step="1" value="15"
-          oninput="syncFromSlider('tenure')" class="w-full" aria-label="Investment period slider" />
-        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono">
-          <span>1 yr</span><span>40 yr</span>
-        </div>
+        <input type="range" id="tenure" min="1" max="40" step="1" value="15" oninput="syncFromSlider('tenure')" class="w-full" aria-label="Investment period slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>1 yr</span><span>40 yr</span></div>
       </div>
 
-      <!-- Step-up field (hidden by default) -->
+      <!-- Step-up field -->
       <div id="stepupRow" class="mb-7 hidden">
         <div class="flex items-center justify-between mb-3">
           <label for="stepup" class="text-sm font-semibold text-ink-700">Annual Step-up</label>
           <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
-            <input id="stepupInput" type="number" class="val-input w-14 text-sm font-semibold text-ink-900 bg-transparent text-right"
-              min="1" max="50" step="1" oninput="syncFromInput('stepup', this.value)" />
+            <input id="stepupInput" type="number" class="val-input w-14 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1" max="50" step="1" oninput="syncFromInput('stepup', this.value)" />
             <span class="text-sm text-ink-400 font-mono">%</span>
           </div>
         </div>
-        <input type="range" id="stepup" min="1" max="50" step="1" value="10"
-          oninput="syncFromSlider('stepup')" class="w-full" aria-label="Annual step-up slider" />
-        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono">
-          <span>1%</span><span>50%</span>
-        </div>
+        <input type="range" id="stepup" min="1" max="50" step="1" value="10" oninput="syncFromSlider('stepup')" class="w-full" aria-label="Annual step-up slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>1%</span><span>50%</span></div>
       </div>
 
-      <!-- Quick goal presets -->
+      <!-- Goal presets -->
       <div>
         <p class="text-xs text-ink-400 font-semibold uppercase tracking-wider mb-3">Goal presets</p>
         <div class="grid grid-cols-2 gap-2">
@@ -328,68 +297,37 @@
       </div>
     </div>
 
-    <!-- ── RIGHT: Results ── -->
+    <!-- RIGHT: Results -->
     <div class="flex flex-col gap-5">
-
-      <!-- Result card -->
       <div class="bg-ink-900 rounded-2xl p-6 sm:p-8">
         <p class="text-ink-400 text-xs font-semibold uppercase tracking-wider mb-2">Total Corpus</p>
         <div class="font-display text-4xl sm:text-5xl font-bold text-white tracking-tight mb-1" id="corpusResult">₹0</div>
         <p class="text-ink-400 text-xs">after <span id="tenureLabel">15</span> years of investing</p>
-
         <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-ink-700">
-          <div>
-            <p class="text-ink-500 text-xs mb-1">Invested</p>
-            <p class="font-mono font-semibold text-white text-sm" id="totalInvested">₹0</p>
-          </div>
-          <div>
-            <p class="text-ink-500 text-xs mb-1">Est. Returns</p>
-            <p class="font-mono font-semibold text-leaf-400 text-sm" id="totalReturns">₹0</p>
-          </div>
-          <div>
-            <p class="text-ink-500 text-xs mb-1">Return %</p>
-            <p class="font-mono font-semibold text-white text-sm" id="returnMultiple">0×</p>
-          </div>
+          <div><p class="text-ink-500 text-xs mb-1">Invested</p><p class="font-mono font-semibold text-white text-sm" id="totalInvested">₹0</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Est. Returns</p><p class="font-mono font-semibold text-leaf-400 text-sm" id="totalReturns">₹0</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Return %</p><p class="font-mono font-semibold text-white text-sm" id="returnMultiple">0×</p></div>
         </div>
-
-        <!-- Absolute return badge -->
         <div class="mt-4 flex items-center gap-2">
           <span class="text-xs text-ink-400">Wealth gained:</span>
           <span class="font-mono text-xs font-bold text-leaf-400 bg-leaf-600/15 border border-leaf-600/20 px-2 py-0.5 rounded-full" id="wealthGained">₹0</span>
         </div>
       </div>
 
-      <!-- Donut + breakdown -->
       <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
         <h2 class="font-display font-semibold text-ink-900 text-base mb-5">Investment Breakdown</h2>
         <div class="flex items-center justify-between gap-6">
-
-          <!-- Donut -->
           <div class="relative flex-shrink-0">
             <svg width="140" height="140" viewBox="0 0 140 140" aria-label="Investment breakdown donut chart">
               <circle cx="70" cy="70" r="54" fill="none" stroke="#e8ecf2" stroke-width="18"/>
-              <circle id="arcInvested" cx="70" cy="70" r="54" fill="none"
-                stroke="#16a34a" stroke-width="18"
-                stroke-dasharray="339.29 0"
-                stroke-dashoffset="0"
-                stroke-linecap="butt"
-                transform="rotate(-90 70 70)"
-                class="donut-ring"/>
-              <circle id="arcReturns" cx="70" cy="70" r="54" fill="none"
-                stroke="#4ade80" stroke-width="18"
-                stroke-dasharray="0 339.29"
-                stroke-dashoffset="0"
-                stroke-linecap="butt"
-                transform="rotate(-90 70 70)"
-                class="donut-ring"/>
+              <circle id="arcInvested" cx="70" cy="70" r="54" fill="none" stroke="#16a34a" stroke-width="18" stroke-dasharray="339.29 0" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
+              <circle id="arcReturns" cx="70" cy="70" r="54" fill="none" stroke="#4ade80" stroke-width="18" stroke-dasharray="0 339.29" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
             </svg>
             <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
               <span class="font-mono text-xs text-ink-400">corpus</span>
               <span class="font-display font-bold text-ink-900 text-sm leading-tight" id="donutCentre">₹0</span>
             </div>
           </div>
-
-          <!-- Legend + bars -->
           <div class="flex-1">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-3 h-3 rounded-sm bg-leaf-600 flex-shrink-0"></div>
@@ -420,11 +358,10 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- ── Bar Chart: Year-by-year growth ── -->
+  <!-- Bar Chart -->
   <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8 mt-6">
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
       <div>
@@ -436,9 +373,7 @@
         <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-leaf-400 inline-block"></span><span class="text-ink-500">Returns</span></div>
       </div>
     </div>
-    <!-- Chart area with Y-axis -->
     <div class="flex gap-2">
-      <!-- Y-axis labels -->
       <div id="yLabels" class="flex flex-col justify-between text-right flex-shrink-0 pb-5" style="width: 52px;">
         <span class="text-[9px] font-mono text-ink-300 leading-none"></span>
         <span class="text-[9px] font-mono text-ink-300 leading-none"></span>
@@ -446,9 +381,7 @@
         <span class="text-[9px] font-mono text-ink-300 leading-none"></span>
         <span class="text-[9px] font-mono text-ink-300 leading-none">0</span>
       </div>
-      <!-- Bars -->
       <div class="flex-1 relative" style="height: 200px;">
-        <!-- Grid lines -->
         <div class="absolute inset-0 flex flex-col justify-between pointer-events-none pb-5">
           <div class="border-t border-ink-100/70 w-full"></div>
           <div class="border-t border-ink-100/70 w-full"></div>
@@ -461,14 +394,12 @@
     </div>
   </div>
 
-  <!-- ── Ad placeholder ── -->
+  <!-- Ad placeholder -->
   <div class="my-6">
-    <div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400" aria-hidden="true">
-      Google AdSense — Responsive Ad Unit
-    </div>
+    <div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400" aria-hidden="true">Google AdSense — Responsive Ad Unit</div>
   </div>
 
-  <!-- ── Year-by-year table ── -->
+  <!-- Year-by-year table -->
   <div class="bg-white border border-ink-100 rounded-2xl overflow-hidden">
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-6 border-b border-ink-100">
       <div>
@@ -480,11 +411,11 @@
       <table class="growth-table" aria-label="Year-by-year SIP growth">
         <thead>
           <tr>
-            <th class="text-left   text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Year</th>
-            <th class="text-right  text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Monthly SIP</th>
-            <th class="text-right  text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Invested</th>
-            <th class="text-right  text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Returns</th>
-            <th class="text-right  text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Corpus</th>
+            <th class="text-left  text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Year</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Monthly SIP</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Invested</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Returns</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Corpus</th>
           </tr>
         </thead>
         <tbody id="growthBody"></tbody>
@@ -494,33 +425,184 @@
 
 </section>
 
-<!-- ═══════════════════════════════════════
-     SEO CONTENT
-═══════════════════════════════════════ -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-  <div class="grid md:grid-cols-2 gap-6">
+<!-- SEO CONTENT -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
 
     <div class="bg-white border border-ink-100 rounded-2xl p-6">
       <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">How is SIP Return Calculated?</h2>
-      <p class="text-sm text-ink-500 leading-relaxed mb-4">
-        SIP returns use the future value of a recurring investment formula, compounded monthly:
-      </p>
-      <div class="bg-ink-50 rounded-xl p-4 font-mono text-sm text-ink-700 mb-4">
-        M = P × {[(1 + r)ⁿ − 1] / r} × (1 + r)
-      </div>
-      <p class="text-xs text-ink-400 leading-relaxed">
-        Where <strong class="text-ink-600">M</strong> is the maturity amount, <strong class="text-ink-600">P</strong> is the monthly SIP amount, <strong class="text-ink-600">r</strong> is the monthly rate of return (annual rate ÷ 12 ÷ 100), and <strong class="text-ink-600">n</strong> is the total number of months. Returns shown are estimates — actual mutual fund returns vary.
-      </p>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">SIP returns use the future value of a recurring investment formula, compounded monthly:</p>
+      <div class="bg-ink-50 rounded-xl p-4 font-mono text-sm text-ink-700 mb-4">M = P × {[(1 + r)ⁿ − 1] / r} × (1 + r)</div>
+      <p class="text-xs text-ink-400 leading-relaxed">Where <strong class="text-ink-600">M</strong> is the maturity amount, <strong class="text-ink-600">P</strong> is the monthly SIP, <strong class="text-ink-600">r</strong> is the monthly rate (annual rate ÷ 12 ÷ 100), and <strong class="text-ink-600">n</strong> is total months. Returns shown are estimates — actual mutual fund returns vary.</p>
     </div>
 
     <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">SIP Example Calculations</h2>
+      <div class="space-y-3">
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹5,000/mo · 12% · 10 yrs</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">₹11.62L</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Invested ₹6L · Returns ₹5.62L</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹10,000/mo · 12% · 15 yrs</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">₹50.46L</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Invested ₹18L · Returns ₹32.46L</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹20,000/mo · 12% · 20 yrs</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">₹1.98Cr</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Invested ₹48L · Returns ₹1.50Cr</div>
+        </div>
+        <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-leaf-700">To reach ₹1 Crore in 15 yrs @ 12%</span>
+          </div>
+          <div class="font-mono text-sm font-bold text-leaf-700">SIP needed: ~₹19,820/month</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
       <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Why Start a SIP Early?</h2>
       <ul class="space-y-3 text-sm text-ink-500">
-        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Power of compounding</strong> — the longer your investment stays, the faster your returns compound on top of each other.</span></li>
-        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Rupee cost averaging</strong> — investing a fixed amount monthly means you automatically buy more units when prices fall.</span></li>
-        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Discipline without effort</strong> — auto-debit SIPs remove the temptation to time the market or skip investing.</span></li>
-        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Start small, grow big</strong> — even ₹500/month at 12% for 20 years grows to over ₹4.9 lakh.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Power of compounding</strong> — the longer your investment stays, the faster your returns compound on top of each other. Starting 5 years earlier can nearly double your corpus.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Rupee cost averaging</strong> — investing a fixed amount monthly means you automatically buy more units when prices fall, lowering your average cost.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Discipline without effort</strong> — auto-debit SIPs remove the temptation to time the market or skip investing during volatile months.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Start small, grow big</strong> — ₹500/month at 12% for 20 years grows to over ₹4.9 lakh. Small amounts compounded over time create substantial wealth.</span></li>
       </ul>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">SIP vs Lumpsum — Which is Better?</h2>
+      <div class="space-y-3">
+        <div class="flex items-start gap-3 p-3 bg-leaf-50 border border-leaf-100 rounded-xl">
+          <span class="text-leaf-600 text-lg mt-0.5">📅</span>
+          <div>
+            <p class="text-xs font-semibold text-leaf-800 mb-1">SIP is better when…</p>
+            <p class="text-xs text-ink-500">You have regular monthly income, want to average out market volatility, are investing for the first time, or don't have a large lump sum ready.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-ink-50 border border-ink-100 rounded-xl">
+          <span class="text-ink-600 text-lg mt-0.5">💰</span>
+          <div>
+            <p class="text-xs font-semibold text-ink-800 mb-1">Lumpsum is better when…</p>
+            <p class="text-xs text-ink-500">You have a large surplus (bonus, inheritance), markets are clearly undervalued, and you can stay invested for 5+ years without touching the money.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about SIP investments and our calculator</p>
+  <div class="grid md:grid-cols-2 gap-3">
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How much SIP do I need to get ₹1 crore?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          At 12% p.a. return: to reach ₹1 crore in <strong class="text-ink-700">10 years</strong> → ₹43,470/month; in <strong class="text-ink-700">15 years</strong> → ₹19,820/month; in <strong class="text-ink-700">20 years</strong> → ₹10,110/month. The longer you invest, the less you need to put in each month — compounding does the heavy lifting.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Is SIP better than FD for wealth creation?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          For long-term wealth creation (7+ years), equity mutual fund SIPs have historically delivered <strong class="text-ink-700">10–15% p.a.</strong>, far exceeding FD rates of 6.5–7.5%. However, SIP returns are market-linked and not guaranteed. FDs are safer for short-term goals. Use SIP for long-term wealth, FD for capital protection.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is a Step-up SIP and should I use it?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          A step-up SIP increases your monthly investment by a fixed percentage every year (typically 10%). It aligns with your annual salary hikes and <strong class="text-ink-700">dramatically accelerates corpus growth</strong>. For example, ₹10,000/month SIP at 12% for 15 years gives ₹50.46L, but with 10% annual step-up, the corpus grows to ₹1.01 crore — nearly double! Highly recommended for salaried professionals.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What return rate should I use in the SIP calculator?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Use these benchmarks as a guide: <strong class="text-ink-700">7%</strong> for debt funds / liquid funds; <strong class="text-ink-700">10–11%</strong> for balanced/hybrid funds; <strong class="text-ink-700">12%</strong> for large-cap equity (Nifty 50 historical average); <strong class="text-ink-700">13–15%</strong> for mid-cap or flexi-cap funds; <strong class="text-ink-700">15–18%</strong> for small-cap (high risk). For planning purposes, using 10–12% is conservative and reasonable.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Can I pause or stop a SIP anytime?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Yes. Unlike PPF or insurance, SIPs have <strong class="text-ink-700">no lock-in</strong> (except ELSS which has 3 years). You can pause, stop, or reduce your SIP anytime by notifying your AMC or through your MF platform. Your existing units continue to earn returns even after you stop the SIP. Missing a few months' SIP due to financial stress is perfectly fine — just don't withdraw prematurely.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Are SIP returns taxable in India?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Yes. For equity mutual funds: gains held for <strong class="text-ink-700">more than 1 year</strong> are Long Term Capital Gains (LTCG), taxed at 12.5% above ₹1.25L per year. Gains held for <strong class="text-ink-700">less than 1 year</strong> are STCG, taxed at 20%. For debt funds, gains are added to your income and taxed at your slab rate. ELSS funds held for 3+ years also attract 12.5% LTCG above ₹1.25L.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is the minimum SIP amount in India?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Most AMCs allow SIPs starting at <strong class="text-ink-700">₹100/month</strong> on platforms like Zerodha Coin, Groww, and Paytm Money. Some funds have a minimum of ₹500/month. There is no maximum limit on SIP investments. Starting with even ₹500/month is better than waiting — you can increase the amount later as your income grows.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How accurate is the BharatCalc SIP calculator?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          BharatCalc uses the standard future-value SIP formula with monthly compounding — the same method used by AMFI, NSE, and most financial planning tools. Results are <strong class="text-ink-700">accurate estimates</strong> at a fixed assumed return rate. Actual mutual fund returns vary based on market conditions, fund manager performance, and economic cycles. Always use the calculator for planning, not as a guaranteed outcome.
+        </div>
+      </details>
     </div>
 
   </div>
@@ -535,7 +617,7 @@
       <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">EMI Calculator</div>
       <div class="text-xs text-ink-400 mt-0.5">Home, car & personal loans</div>
     </a>
-    <a href="/ppf-calculator"   class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+    <a href="ppf-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
       <div class="text-xl mb-2">💰</div>
       <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">PPF Calculator</div>
       <div class="text-xs text-ink-400 mt-0.5">Public Provident Fund</div>
@@ -555,9 +637,7 @@
 
 </main>
 
-<!-- ═══════════════════════════════════════
-     FOOTER
-═══════════════════════════════════════ -->
+<!-- FOOTER -->
 <footer class="bg-ink-900 text-ink-300" role="contentinfo">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
     <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
@@ -575,11 +655,11 @@
         <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
         <ul class="space-y-2.5 text-sm">
           <li><a href="sip-calculator.html"  class="hover:text-leaf-400 transition-colors font-semibold text-leaf-400">SIP Calculator</a></li>
-          <li><a href="emi-calculator.html"   class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
-          <li><a href="/ppf-calculator"     class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
-          <li><a href="/fd-calculator"      class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
-          <li><a href="/epf-calculator"     class="hover:text-leaf-400 transition-colors">EPF Calculator</a></li>
-          <li><a href="/lumpsum-calculator" class="hover:text-leaf-400 transition-colors">Lumpsum Calculator</a></li>
+          <li><a href="emi-calculator.html"  class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
+          <li><a href="ppf-calculator.html" class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
+          <li><a href="fd-calculator.html"       class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
+          <li><a href="epf-calculator.html"      class="hover:text-leaf-400 transition-colors">EPF Calculator</a></li>
+          <li><a href="lumpsum-calculator.html"  class="hover:text-leaf-400 transition-colors">Lumpsum Calculator</a></li>
         </ul>
       </div>
       <div>
@@ -602,28 +682,21 @@
       </div>
     </div>
     <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
-      <p>© 2026 BharatCalc. Made with ♥ in India.</p>
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
       <div class="flex gap-5">
-        <a href="/about"       class="hover:text-ink-300 transition-colors">About</a>
-        <a href="/privacy"     class="hover:text-ink-300 transition-colors">Privacy</a>
-        <a href="/terms"       class="hover:text-ink-300 transition-colors">Terms</a>
-        <a href="/contact"     class="hover:text-ink-300 transition-colors">Contact</a>
+        <a href="/about"   class="hover:text-ink-300 transition-colors">About</a>
+        <a href="/privacy" class="hover:text-ink-300 transition-colors">Privacy</a>
+        <a href="/terms"   class="hover:text-ink-300 transition-colors">Terms</a>
+        <a href="/contact" class="hover:text-ink-300 transition-colors">Contact</a>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- ═══════════════════════════════════════
-     JAVASCRIPT
-═══════════════════════════════════════ -->
 <script>
-// ─── State ──────────────────────────────────────────────────────
 let sipMode = 'regular';
 
-// ─── Formatting helpers ─────────────────────────────────────────
-function fmtINR(n) {
-  return '₹' + Math.round(n).toLocaleString('en-IN');
-}
+function fmtINR(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
 function fmtCompact(n) {
   if (n >= 10000000) return '₹' + (n / 10000000).toFixed(2) + 'Cr';
   if (n >= 100000)   return '₹' + (n / 100000).toFixed(2) + 'L';
@@ -632,21 +705,18 @@ function fmtCompact(n) {
 }
 function fmtPct(n) { return n.toFixed(1) + '%'; }
 
-// ─── Slider track fill ─────────────────────────────────────────
 function updateTrack(id) {
   const el  = document.getElementById(id);
   const pct = ((parseFloat(el.value) - parseFloat(el.min)) / (parseFloat(el.max) - parseFloat(el.min))) * 100;
   el.style.background = `linear-gradient(to right, #16a34a ${pct}%, #e8ecf2 ${pct}%)`;
 }
 
-// ─── Sync slider → input ────────────────────────────────────────
 function syncFromSlider(id) {
   document.getElementById(id + 'Input').value = document.getElementById(id).value;
   updateTrack(id);
   calculate();
 }
 
-// ─── Sync input → slider ────────────────────────────────────────
 function syncFromInput(id, val) {
   const slider  = document.getElementById(id);
   const clamped = Math.min(Math.max(parseFloat(val) || parseFloat(slider.min), parseFloat(slider.min)), parseFloat(slider.max));
@@ -655,71 +725,30 @@ function syncFromInput(id, val) {
   calculate();
 }
 
-// ─── SIP calculation ────────────────────────────────────────────
-function calcSIP(monthly, annualRate, months) {
-  if (annualRate === 0) return monthly * months;
-  const r = annualRate / 12 / 100;
-  return monthly * ((Math.pow(1 + r, months) - 1) / r) * (1 + r);
-}
-
-// Step-up SIP: increment monthly by stepupPct each year
-function calcStepupSIP(monthly, annualRate, years, stepupPct) {
-  const r = annualRate / 12 / 100;
-  let corpus = 0;
-  let m = monthly;
-  for (let y = 0; y < years; y++) {
-    for (let mo = 0; mo < 12; mo++) {
-      corpus = (corpus + m) * (1 + r);
-    }
-    m = m * (1 + stepupPct / 100);
-  }
-  return corpus;
-}
-
-// ─── Build year-by-year data ────────────────────────────────────
 function buildYearData(monthly, annualRate, years, stepupPct) {
   const r = annualRate / 12 / 100;
   const rows = [];
-  let corpus    = 0;
-  let totalInvested = 0;
-  let m = monthly;
-
+  let corpus = 0, totalInvested = 0, m = monthly;
   for (let y = 1; y <= years; y++) {
     const sipThisYear = m;
-    for (let mo = 0; mo < 12; mo++) {
-      corpus = (corpus + m) * (1 + r);
-      totalInvested += m;
-    }
+    for (let mo = 0; mo < 12; mo++) { corpus = (corpus + m) * (1 + r); totalInvested += m; }
     if (sipMode === 'stepup') m = m * (1 + stepupPct / 100);
-    rows.push({
-      year: y,
-      monthlySip: sipThisYear,
-      invested: totalInvested,
-      corpus: corpus,
-      returns: corpus - totalInvested,
-    });
+    rows.push({ year: y, monthlySip: sipThisYear, invested: totalInvested, corpus, returns: corpus - totalInvested });
   }
   return rows;
 }
 
-// ─── Main calculate ─────────────────────────────────────────────
 function calculate() {
-  const monthly    = parseFloat(document.getElementById('monthly').value);
-  const rate       = parseFloat(document.getElementById('returnRate').value);
-  const years      = parseInt(document.getElementById('tenure').value);
-  const stepupPct  = parseFloat(document.getElementById('stepup')?.value || 10);
-  const months     = years * 12;
+  const monthly   = parseFloat(document.getElementById('monthly').value);
+  const rate      = parseFloat(document.getElementById('returnRate').value);
+  const years     = parseInt(document.getElementById('tenure').value);
+  const stepupPct = parseFloat(document.getElementById('stepup')?.value || 10);
+  const rows      = buildYearData(monthly, rate, years, stepupPct);
+  const last      = rows[rows.length - 1];
+  const corpus = last.corpus, invested = last.invested, returns = last.returns;
+  const investedPct = (invested / corpus) * 100, returnsPct = (returns / corpus) * 100;
+  const multiple = corpus / invested;
 
-  const rows         = buildYearData(monthly, rate, years, stepupPct);
-  const last         = rows[rows.length - 1];
-  const corpus       = last.corpus;
-  const invested     = last.invested;
-  const returns      = last.returns;
-  const investedPct  = (invested / corpus) * 100;
-  const returnsPct   = (returns  / corpus) * 100;
-  const multiple     = corpus / invested;
-
-  // ── Result card ──
   document.getElementById('corpusResult').textContent  = fmtCompact(corpus);
   document.getElementById('tenureLabel').textContent   = years;
   document.getElementById('totalInvested').textContent = fmtCompact(invested);
@@ -727,16 +756,13 @@ function calculate() {
   document.getElementById('returnMultiple').textContent = multiple.toFixed(2) + '×';
   document.getElementById('wealthGained').textContent  = fmtCompact(returns);
 
-  // ── Donut ──
   const C = 2 * Math.PI * 54;
-  const invDash = (investedPct / 100) * C;
-  const retDash = (returnsPct  / 100) * C;
+  const invDash = (investedPct / 100) * C, retDash = (returnsPct / 100) * C;
   document.getElementById('arcInvested').setAttribute('stroke-dasharray', `${invDash} ${C - invDash}`);
   document.getElementById('arcReturns').setAttribute('stroke-dasharray',  `${retDash} ${C - retDash}`);
   document.getElementById('arcReturns').setAttribute('stroke-dashoffset', `-${invDash}`);
   document.getElementById('donutCentre').textContent = fmtCompact(corpus);
 
-  // ── Legend ──
   document.getElementById('legendInvested').textContent    = fmtCompact(invested);
   document.getElementById('legendReturns').textContent     = fmtCompact(returns);
   document.getElementById('legendInvestedPct').textContent = fmtPct(investedPct);
@@ -746,48 +772,33 @@ function calculate() {
   document.getElementById('barLabelI').textContent = 'Invested ' + fmtPct(investedPct);
   document.getElementById('barLabelR').textContent = 'Returns '  + fmtPct(returnsPct);
 
-  // ── Bar chart ──
   renderBarChart(rows);
-
-  // ── Table ──
   renderTable(rows);
 }
 
-// ─── Bar chart ──────────────────────────────────────────────────
 function renderBarChart(rows) {
   const maxCorpus = Math.max(...rows.map(r => r.corpus));
   const container = document.getElementById('chartBars');
-
-  // Show every year if ≤20, else every 2nd or 5th
   let step = 1;
-  if (rows.length > 30) step = 5;
-  else if (rows.length > 20) step = 2;
-
+  if (rows.length > 30) step = 5; else if (rows.length > 20) step = 2;
   const visible = rows.filter((_, i) => (i + 1) % step === 0 || i === rows.length - 1);
-
   container.innerHTML = visible.map(r => {
     const invH = Math.max((r.invested / maxCorpus) * 100, 1);
     const retH = Math.max((r.returns  / maxCorpus) * 100, 0);
-    return `
-      <div class="bar-group relative flex flex-col items-center flex-1 h-full justify-end cursor-pointer" style="min-width:10px;">
-        <div class="bar-tip">${r.year}yr · ${fmtCompact(r.corpus)}</div>
-        <div class="w-full flex flex-col justify-end" style="height: calc(100% - 20px);">
-          <div style="height:${retH}%; min-height:${r.returns > 0 ? 2 : 0}px" class="bar-returns w-full"></div>
-          <div style="height:${invH}%" class="bar-invested w-full"></div>
-        </div>
-        <div class="text-[9px] font-mono text-ink-300 mt-1 text-center leading-tight" style="height:16px;">${r.year}</div>
-      </div>`;
+    return `<div class="bar-group relative flex flex-col items-center flex-1 h-full justify-end cursor-pointer" style="min-width:10px;">
+      <div class="bar-tip">${r.year}yr · ${fmtCompact(r.corpus)}</div>
+      <div class="w-full flex flex-col justify-end" style="height: calc(100% - 20px);">
+        <div style="height:${retH}%; min-height:${r.returns > 0 ? 2 : 0}px" class="bar-returns w-full"></div>
+        <div style="height:${invH}%" class="bar-invested w-full"></div>
+      </div>
+      <div class="text-[9px] font-mono text-ink-300 mt-1 text-center leading-tight" style="height:16px;">${r.year}</div>
+    </div>`;
   }).join('');
-
-  // Y-axis labels
   const labels = document.getElementById('yLabels').children;
   const steps  = [1, 0.75, 0.5, 0.25, 0];
-  for (let i = 0; i < labels.length; i++) {
-    labels[i].textContent = steps[i] > 0 ? fmtCompact(maxCorpus * steps[i]) : '0';
-  }
+  for (let i = 0; i < labels.length; i++) labels[i].textContent = steps[i] > 0 ? fmtCompact(maxCorpus * steps[i]) : '0';
 }
 
-// ─── Table ──────────────────────────────────────────────────────
 function renderTable(rows) {
   document.getElementById('growthBody').innerHTML = rows.map((r, i) => `
     <tr class="${i % 2 === 0 ? 'bg-white' : 'bg-ink-50/40'}">
@@ -796,17 +807,14 @@ function renderTable(rows) {
       <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono text-ink-700">${fmtINR(r.invested)}</td>
       <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono text-leaf-700">${fmtINR(Math.max(r.returns, 0))}</td>
       <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono font-semibold text-ink-900">${fmtINR(r.corpus)}</td>
-    </tr>
-  `).join('');
+    </tr>`).join('');
 }
 
-// ─── Mode, presets, helpers ─────────────────────────────────────
 function setSipMode(mode, btn) {
   sipMode = mode;
   document.querySelectorAll('.preset-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
-  const row = document.getElementById('stepupRow');
-  mode === 'stepup' ? row.classList.remove('hidden') : row.classList.add('hidden');
+  mode === 'stepup' ? document.getElementById('stepupRow').classList.remove('hidden') : document.getElementById('stepupRow').classList.add('hidden');
   calculate();
 }
 
@@ -817,9 +825,7 @@ function applyPreset(monthly, rate, years) {
   document.getElementById('returnRateInput').value = rate;
   document.getElementById('tenure').value        = years;
   document.getElementById('tenureInput').value   = years;
-  updateTrack('monthly');
-  updateTrack('returnRate');
-  updateTrack('tenure');
+  updateTrack('monthly'); updateTrack('returnRate'); updateTrack('tenure');
   calculate();
 }
 
@@ -827,38 +833,36 @@ function setRate(r, btn) {
   document.getElementById('returnRate').value      = r;
   document.getElementById('returnRateInput').value = r;
   updateTrack('returnRate');
-  // Highlight active benchmark button
   document.querySelectorAll('.benchmark-btn').forEach(b => {
     b.classList.remove('bg-leaf-50', 'border-leaf-200', 'text-leaf-700');
     b.classList.add('bg-ink-50', 'border-ink-200', 'text-ink-500');
   });
-  if (btn) {
-    btn.classList.remove('bg-ink-50', 'border-ink-200', 'text-ink-500');
-    btn.classList.add('bg-leaf-50', 'border-leaf-200', 'text-leaf-700');
-  }
+  if (btn) { btn.classList.remove('bg-ink-50', 'border-ink-200', 'text-ink-500'); btn.classList.add('bg-leaf-50', 'border-leaf-200', 'text-leaf-700'); }
   calculate();
 }
 
 function toggleMobileMenu() {
-  const m    = document.getElementById('mobileMenu');
-  const btn  = document.getElementById('menuBtn');
-  const icon = document.getElementById('menuIcon');
+  const m = document.getElementById('mobileMenu'), btn = document.getElementById('menuBtn'), icon = document.getElementById('menuIcon');
   const open = m.classList.toggle('hidden');
   btn.setAttribute('aria-expanded', String(!open));
-  icon.innerHTML = open
-    ? '<path d="M4 6h16M4 12h16M4 18h16"/>'
-    : '<path d="M6 18L18 6M6 6l12 12"/>';
+  icon.innerHTML = open ? '<path d="M4 6h16M4 12h16M4 18h16"/>' : '<path d="M6 18L18 6M6 6l12 12"/>';
 }
 
-// ─── Init ────────────────────────────────────────────────────────
+function setupDates() {
+  const now = new Date(), year = now.getFullYear(), month = now.getMonth() + 1;
+  const fyStart = month >= 4 ? year : year - 1;
+  const fyEnd   = fyStart + 1;
+  document.getElementById('heroFY').textContent  = `FY ${fyStart}–${String(fyEnd).slice(-2)}`;
+  document.getElementById('footerYear').textContent = year;
+}
+
 function init() {
+  setupDates();
   ['monthly', 'returnRate', 'tenure', 'stepup'].forEach(id => {
-    const s = document.getElementById(id);
-    const i = document.getElementById(id + 'Input');
+    const s = document.getElementById(id), i = document.getElementById(id + 'Input');
     if (s && i) i.value = s.value;
     updateTrack(id);
   });
-  // Highlight the default rate button (12% = Nifty50)
   const defaultRate = parseFloat(document.getElementById('returnRate').value);
   document.querySelectorAll('.benchmark-btn').forEach(b => {
     if (parseFloat(b.dataset.rate) === defaultRate) {
@@ -871,6 +875,5 @@ function init() {
 
 init();
 </script>
-
 </body>
 </html>
