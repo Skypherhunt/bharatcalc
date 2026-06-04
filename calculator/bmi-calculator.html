@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMI Calculator India – Body Mass Index for Male & Female | BharatCalc</title>
+  <meta name="description" content="Free BMI Calculator India — calculate Body Mass Index, healthy weight range, BMR and TDEE for male and female instantly. Supports metric (kg/cm) and imperial (lbs/ft). No login required." />
+  <meta name="keywords" content="BMI calculator India, body mass index calculator, BMI calculator male female, BMI calculator kg cm, healthy weight calculator India, BMI chart India, BMR calculator India, TDEE calculator India, ideal body weight" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/bmi-calculator.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://bharatcalc.online/calculator/bmi-calculator.html" />
+  <meta property="og:title"       content="BMI Calculator – Body Mass Index for Male & Female | BharatCalc" />
+  <meta property="og:description" content="Calculate BMI, healthy weight range, BMR and TDEE instantly. Metric and imperial. Free, no login." />
+  <meta property="og:image"       content="https://bharatcalc.online/og/bmi-calculator.png" />
+  <meta property="og:locale"      content="en_IN" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="BMI Calculator | BharatCalc" />
+  <meta name="twitter:description" content="Calculate your BMI and healthy weight range instantly. Free — by BharatCalc." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "BMI Calculator",
+    "url": "https://bharatcalc.online/calculator/bmi-calculator.html",
+    "description": "Calculate Body Mass Index (BMI), healthy weight range, BMR and TDEE for male and female.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",           "item": "https://bharatcalc.online/" },
+        { "@type": "ListItem", "position": 2, "name": "Health",         "item": "https://bharatcalc.online/index.html?cat=health" },
+        { "@type": "ListItem", "position": 3, "name": "BMI Calculator", "item": "https://bharatcalc.online/calculator/bmi-calculator.html" }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How is BMI calculated?", "acceptedAnswer": { "@type": "Answer", "text": "BMI = weight(kg) ÷ height(m)². Example: 70 kg at 1.70 m → BMI = 70 ÷ 2.89 = 24.2 (Normal). For imperial: BMI = 703 × weight(lbs) ÷ height(inches)². BMI is the same formula for both male and female." } },
+      { "@type": "Question", "name": "What is a healthy BMI for Indians?", "acceptedAnswer": { "@type": "Answer", "text": "For Asian populations including Indians, a BMI of 18.5–22.9 is considered normal. 23–24.9 is overweight, and 25+ is obese — these thresholds are lower than WHO's standard 25 because Asians carry higher body fat at the same BMI." } },
+      { "@type": "Question", "name": "What is the difference between BMI for male and female?", "acceptedAnswer": { "@type": "Answer", "text": "BMI itself is calculated the same way for both genders. However, BMR (Basal Metabolic Rate) differs — men generally have higher BMR due to more muscle mass. Using the Mifflin-St Jeor formula: Male BMR = 10W + 6.25H - 5A + 5; Female BMR = 10W + 6.25H - 5A - 161." } },
+      { "@type": "Question", "name": "What is BMR and TDEE?", "acceptedAnswer": { "@type": "Answer", "text": "BMR (Basal Metabolic Rate) is calories burned at complete rest. TDEE (Total Daily Energy Expenditure) is BMR multiplied by an activity factor. Sedentary: BMR × 1.2; Lightly active: BMR × 1.375; Moderately active: BMR × 1.55; Very active: BMR × 1.725; Extra active: BMR × 1.9." } },
+      { "@type": "Question", "name": "What are the limitations of BMI?", "acceptedAnswer": { "@type": "Answer", "text": "BMI doesn't distinguish muscle from fat — athletes may show 'overweight' BMI despite low body fat. It also doesn't account for fat distribution (belly fat is more dangerous than leg fat). Use it as a screening tool, not a definitive health assessment." } }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Clash Display', 'sans-serif'],
+            sans:    ['Satoshi', 'sans-serif'],
+            mono:    ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
+            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
+            rose:    { 50: '#fff1f2', 100: '#ffe4e6', 400: '#fb7185', 500: '#f43f5e', 600: '#e11d48', 700: '#be123c' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Satoshi', system-ui, sans-serif; }
+    .font-display { font-family: 'Clash Display', system-ui, sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #16a34a; transform: scaleX(0); transition: transform 0.2s; border-radius: 1px; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 5px; border-radius: 99px; outline: none; cursor: pointer; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #16a34a; border: 3px solid #fff; box-shadow: 0 0 0 1px #16a34a, 0 2px 6px rgba(22,163,74,0.3); cursor: pointer; transition: box-shadow 0.15s; }
+    input[type=range]::-webkit-slider-thumb:hover { box-shadow: 0 0 0 1px #16a34a, 0 2px 12px rgba(22,163,74,0.45); }
+    input[type=range]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #16a34a; border: 3px solid #fff; box-shadow: 0 0 0 1px #16a34a; cursor: pointer; }
+    .val-input { font-family: 'JetBrains Mono', monospace; }
+    .val-input:focus { outline: none; }
+    .unit-btn { transition: all 0.15s; }
+    .unit-btn.active { background: #0d1117; color: #fff; border-color: #0d1117; }
+    .gender-btn { transition: all 0.15s; }
+    .gender-btn.active { background: #0d1117; color: #fff; border-color: #0d1117; }
+    .activity-btn { transition: all 0.15s; }
+    .activity-btn.active { background: #16a34a; color: #fff; border-color: #16a34a; }
+    .bmi-marker { transition: left 0.4s cubic-bezier(.4,0,.2,1); }
+    .result-card { transition: background-color 0.3s ease; }
+    .breadcrumb a { transition: color 0.15s; }
+    .faq-item details summary { cursor: pointer; list-style: none; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9TD6B9GQ89');</script>
+</head>
+
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+        </div>
+        <div class="leading-none">
+          <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
+          <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+        <a href="../index.html?cat=tools"   class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+      </nav>
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>💰</span> Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>📄</span> Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>❤️</span> Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>➗</span> Math</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a>
+      <span>/</span>
+      <a href="../index.html?cat=health" class="hover:text-ink-200">Health</a>
+      <span>/</span>
+      <span class="text-ink-300">BMI Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-rose-500/15 text-rose-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-rose-500/20">
+          <span class="w-1.5 h-1.5 bg-rose-400 rounded-full inline-block animate-pulse"></span>
+          Health Calculator · WHO & Asian BMI Standards
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">BMI Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
+          Calculate your Body Mass Index, healthy weight range, BMR and daily calorie needs. Works accurately for both male and female. Supports metric and imperial units.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0">
+        <span class="w-1.5 h-1.5 bg-rose-400 rounded-full inline-block"></span>
+        Results update live
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-2 mt-5">
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Male & Female BMR (Mifflin-St Jeor)</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Asian / WHO BMI ranges</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">TDEE by activity level</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Metric + Imperial</div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- LEFT: Inputs -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-7">Your Details</h2>
+
+      <!-- Unit toggle -->
+      <div class="mb-7">
+        <label class="text-sm font-semibold text-ink-700 block mb-3">Unit System</label>
+        <div class="flex gap-2 p-1 bg-ink-50 rounded-xl" role="group" aria-label="Unit system">
+          <button id="btnMetric"   onclick="setUnit('metric')"   class="unit-btn active flex-1 py-2.5 text-sm font-semibold rounded-lg border border-transparent transition-all">Metric (kg/cm)</button>
+          <button id="btnImperial" onclick="setUnit('imperial')" class="unit-btn flex-1 py-2.5 text-sm font-semibold rounded-lg border border-transparent text-ink-500 transition-all">Imperial (lb/ft)</button>
+        </div>
+      </div>
+
+      <!-- Gender -->
+      <div class="mb-7">
+        <label class="text-sm font-semibold text-ink-700 block mb-3">Gender <span class="text-xs text-ink-400 font-normal">(affects BMR calculation)</span></label>
+        <div class="grid grid-cols-2 gap-3" role="group" aria-label="Gender">
+          <button id="btnMale"   onclick="setGender('male')"   class="gender-btn active py-3 text-sm font-semibold border border-ink-200 rounded-xl transition-all flex items-center justify-center gap-2">
+            <span>👨</span> Male
+          </button>
+          <button id="btnFemale" onclick="setGender('female')" class="gender-btn py-3 text-sm font-semibold border border-ink-200 rounded-xl text-ink-500 transition-all flex items-center justify-center gap-2">
+            <span>👩</span> Female
+          </button>
+        </div>
+        <p class="text-xs text-ink-400 mt-2">BMI formula is identical for both genders. Gender affects only the BMR/TDEE calculation.</p>
+      </div>
+
+      <!-- Age -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="age" class="text-sm font-semibold text-ink-700">Age</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <input id="ageInput" type="number" class="val-input w-14 text-sm font-semibold text-ink-900 bg-transparent text-right" min="5" max="100" oninput="syncFromInput('age', this.value)" />
+            <span class="text-sm text-ink-400 font-mono">yrs</span>
+          </div>
+        </div>
+        <input type="range" id="age" min="5" max="80" value="30" oninput="syncFromSlider('age')" class="w-full" aria-label="Age slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>5 yrs</span><span>80 yrs</span></div>
+      </div>
+
+      <!-- Weight -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="weight" class="text-sm font-semibold text-ink-700">Weight</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <input id="weightInput" type="number" class="val-input w-16 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="syncFromInput('weight', this.value)" />
+            <span class="text-sm text-ink-400 font-mono" id="weightUnit">kg</span>
+          </div>
+        </div>
+        <input type="range" id="weight" min="30" max="200" value="70" oninput="syncFromSlider('weight')" class="w-full" aria-label="Weight slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono" id="weightRange"><span>30 kg</span><span>200 kg</span></div>
+      </div>
+
+      <!-- Height (metric) -->
+      <div id="heightMetric" class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="heightCm" class="text-sm font-semibold text-ink-700">Height</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <input id="heightCmInput" type="number" class="val-input w-16 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="syncFromInput('heightCm', this.value)" />
+            <span class="text-sm text-ink-400 font-mono">cm</span>
+          </div>
+        </div>
+        <input type="range" id="heightCm" min="100" max="220" value="170" oninput="syncFromSlider('heightCm')" class="w-full" aria-label="Height slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>100 cm</span><span>220 cm</span></div>
+      </div>
+
+      <!-- Height (imperial) -->
+      <div id="heightImperial" class="hidden mb-7">
+        <label class="text-sm font-semibold text-ink-700 block mb-3">Height</label>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-2">
+            <input id="heightFt" type="number" value="5" min="1" max="8" class="val-input w-14 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="calc()" />
+            <span class="text-sm text-ink-400 font-mono">ft</span>
+          </div>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-2">
+            <input id="heightIn" type="number" value="7" min="0" max="11" class="val-input w-14 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="calc()" />
+            <span class="text-sm text-ink-400 font-mono">in</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity level for TDEE -->
+      <div>
+        <label class="text-sm font-semibold text-ink-700 block mb-3">Activity Level <span class="text-xs text-ink-400 font-normal">(for TDEE)</span></label>
+        <div class="space-y-2">
+          <button onclick="setActivity(1.2,   this)" data-factor="1.2"   class="activity-btn active w-full text-left px-3 py-2 rounded-xl border border-ink-200 text-xs transition-all">
+            <span class="font-semibold text-ink-700">Sedentary</span> — little or no exercise (desk job)
+          </button>
+          <button onclick="setActivity(1.375, this)" data-factor="1.375" class="activity-btn w-full text-left px-3 py-2 rounded-xl border border-ink-200 text-xs transition-all">
+            <span class="font-semibold text-ink-700">Lightly Active</span> — light exercise 1–3 days/week
+          </button>
+          <button onclick="setActivity(1.55,  this)" data-factor="1.55"  class="activity-btn w-full text-left px-3 py-2 rounded-xl border border-ink-200 text-xs transition-all">
+            <span class="font-semibold text-ink-700">Moderately Active</span> — moderate exercise 3–5 days/week
+          </button>
+          <button onclick="setActivity(1.725, this)" data-factor="1.725" class="activity-btn w-full text-left px-3 py-2 rounded-xl border border-ink-200 text-xs transition-all">
+            <span class="font-semibold text-ink-700">Very Active</span> — hard exercise 6–7 days/week
+          </button>
+          <button onclick="setActivity(1.9,   this)" data-factor="1.9"   class="activity-btn w-full text-left px-3 py-2 rounded-xl border border-ink-200 text-xs transition-all">
+            <span class="font-semibold text-ink-700">Extra Active</span> — physical job + hard training daily
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div class="flex flex-col gap-5">
+
+      <!-- BMI result card -->
+      <div id="bmiResultCard" class="result-card bg-leaf-600 rounded-2xl p-6 sm:p-8">
+        <p class="text-xs text-leaf-200 font-medium uppercase tracking-wider mb-2">Your BMI</p>
+        <div class="font-display text-6xl font-bold text-white mb-1" id="bmiValue">24.2</div>
+        <p class="text-xl font-semibold text-white mb-1" id="bmiCategory">Normal Weight</p>
+        <p class="text-sm text-white/70" id="bmiDesc">Your weight is in a healthy range. Keep it up!</p>
+        <div class="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-white/20">
+          <div><p class="text-white/60 text-xs mb-1">Healthy Weight Range</p><p class="font-mono font-semibold text-white text-sm" id="healthyRange">53.5–72.0 kg</p></div>
+          <div><p class="text-white/60 text-xs mb-1">Weight to Adjust</p><p class="font-mono font-semibold text-white text-sm" id="weightDiff">–</p></div>
+          <div><p class="text-white/60 text-xs mb-1">BMR (<span id="genderLabel">Male</span>)</p><p class="font-mono font-semibold text-white text-sm" id="bmr">1,680 kcal</p></div>
+          <div><p class="text-white/60 text-xs mb-1">TDEE</p><p class="font-mono font-semibold text-white text-sm" id="tdee">2,016 kcal</p></div>
+        </div>
+      </div>
+
+      <!-- BMI Gauge -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-6">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-4">BMI Scale</h2>
+        <div class="flex justify-between text-[10px] text-ink-400 mb-1.5 font-mono">
+          <span>Underweight</span><span>Normal</span><span>Overweight</span><span>Obese</span>
+        </div>
+        <div class="relative h-4 rounded-full overflow-visible mb-1">
+          <!-- coloured segments -->
+          <div class="absolute inset-0 flex rounded-full overflow-hidden">
+            <div class="bg-blue-400"    style="width:18.5%"></div>
+            <div class="bg-leaf-500"    style="width:25%"></div>
+            <div class="bg-yellow-400"  style="width:18.5%"></div>
+            <div class="bg-saffron-500" style="width:18.5%"></div>
+            <div class="bg-red-500 flex-1"></div>
+          </div>
+          <!-- marker -->
+          <div id="bmiMarker" class="bmi-marker absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-[3px] border-ink-900 rounded-full shadow-lg z-10" style="left:44%"></div>
+        </div>
+        <div class="flex justify-between text-[10px] text-ink-400 mt-1 font-mono">
+          <span>16</span><span>18.5</span><span>25</span><span>30</span><span>35</span><span>40+</span>
+        </div>
+        <!-- Asian threshold note -->
+        <div class="mt-3 flex items-center gap-2 text-xs text-rose-600 bg-rose-50 border border-rose-100 rounded-xl px-3 py-2">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <span>For <strong>Indians / South Asians</strong>: Overweight threshold is BMI ≥ 23 (not 25)</span>
+        </div>
+      </div>
+
+      <!-- BMR gender comparison -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-6">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-4">BMR Comparison — Male vs Female</h2>
+        <p class="text-xs text-ink-400 mb-4">At your current height, weight and age (Mifflin-St Jeor formula)</p>
+        <div class="space-y-3">
+          <div>
+            <div class="flex justify-between text-xs mb-1.5">
+              <span class="font-semibold text-ink-700 flex items-center gap-1.5">👨 Male BMR</span>
+              <span class="font-mono font-semibold text-ink-800" id="maleBmr">1,680 kcal/day</span>
+            </div>
+            <div class="h-2.5 bg-ink-100 rounded-full overflow-hidden">
+              <div id="barMaleBmr" class="h-full bg-blue-500 rounded-full transition-all duration-500" style="width:80%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs mb-1.5">
+              <span class="font-semibold text-ink-700 flex items-center gap-1.5">👩 Female BMR</span>
+              <span class="font-mono font-semibold text-ink-800" id="femaleBmr">1,514 kcal/day</span>
+            </div>
+            <div class="h-2.5 bg-ink-100 rounded-full overflow-hidden">
+              <div id="barFemaleBmr" class="h-full bg-rose-400 rounded-full transition-all duration-500" style="width:72%"></div>
+            </div>
+          </div>
+        </div>
+        <p class="text-[10px] text-ink-400 mt-3 font-mono">Male BMR = 10W + 6.25H − 5A + 5 &nbsp;|&nbsp; Female BMR = 10W + 6.25H − 5A − 161</p>
+        <div class="mt-3 bg-ink-50 rounded-xl p-3">
+          <p class="text-xs font-semibold text-ink-700 mb-1">Selected gender: <span id="selectedGenderLabel" class="text-leaf-700">👨 Male</span></p>
+          <p class="text-xs text-ink-500">TDEE = BMR × Activity Factor. Your selected activity gives <span class="font-semibold text-ink-700" id="tdeeDetail">2,016 kcal/day</span> — the calories to maintain your current weight.</p>
+        </div>
+      </div>
+
+      <!-- BMI Category table -->
+      <div class="bg-white border border-ink-100 rounded-2xl overflow-hidden">
+        <div class="px-5 py-3 border-b border-ink-100 bg-ink-50">
+          <h3 class="text-sm font-semibold text-ink-800">BMI Classification</h3>
+        </div>
+        <table class="w-full text-xs">
+          <thead><tr class="bg-ink-50/50"><th class="px-4 py-2.5 text-left text-ink-400 font-semibold">Category</th><th class="px-4 py-2.5 text-right text-ink-400 font-semibold">WHO</th><th class="px-4 py-2.5 text-right text-ink-400 font-semibold">Asian/Indian</th></tr></thead>
+          <tbody id="bmiTable" class="divide-y divide-ink-50">
+            <tr><td class="px-4 py-2.5 text-blue-600 font-medium">Underweight</td>          <td class="px-4 py-2.5 text-right font-mono">&lt; 18.5</td><td class="px-4 py-2.5 text-right font-mono">&lt; 18.5</td></tr>
+            <tr id="normalRow"><td class="px-4 py-2.5 text-leaf-600 font-semibold">Normal Weight</td>   <td class="px-4 py-2.5 text-right font-mono">18.5–24.9</td><td class="px-4 py-2.5 text-right font-mono">18.5–22.9</td></tr>
+            <tr><td class="px-4 py-2.5 text-yellow-600 font-medium">Overweight</td>          <td class="px-4 py-2.5 text-right font-mono">25–29.9</td><td class="px-4 py-2.5 text-right font-mono">23–27.4</td></tr>
+            <tr><td class="px-4 py-2.5 text-saffron-600 font-medium">Obese Class I</td>      <td class="px-4 py-2.5 text-right font-mono">30–34.9</td><td class="px-4 py-2.5 text-right font-mono">27.5–32.4</td></tr>
+            <tr><td class="px-4 py-2.5 text-red-600 font-medium">Obese Class II</td>         <td class="px-4 py-2.5 text-right font-mono">35–39.9</td><td class="px-4 py-2.5 text-right font-mono">32.5–37.4</td></tr>
+            <tr><td class="px-4 py-2.5 text-red-800 font-medium">Obese Class III</td>        <td class="px-4 py-2.5 text-right font-mono">≥ 40</td><td class="px-4 py-2.5 text-right font-mono">≥ 37.5</td></tr>
+          </tbody>
+        </table>
+        <div id="currentBmiRow" class="px-4 py-2.5 bg-leaf-50 text-xs text-leaf-700 border-t border-leaf-100 font-semibold">
+          Your BMI: 24.2 — Normal Weight (WHO) | Normal Weight (Asian)
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Ad placeholder -->
+  <div class="my-6">
+    <div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400" aria-hidden="true">Google AdSense — Responsive Ad Unit</div>
+  </div>
+
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">What is BMI?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        BMI (Body Mass Index) is a simple measurement that uses your height and weight to work out if your weight is in a healthy range. It was developed by Belgian statistician Adolphe Quetelet in the 19th century and is used worldwide as a quick screening tool for weight-related health issues.
+      </p>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">The formula is the same for both male and female:</p>
+      <div class="bg-ink-50 rounded-xl p-4 font-mono text-sm text-ink-700 mb-3">
+        BMI = Weight (kg) ÷ Height² (m²)
+      </div>
+      <p class="text-xs text-ink-400 leading-relaxed">For imperial: BMI = 703 × Weight (lbs) ÷ Height² (inches²)</p>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">BMR Formula — Male vs Female</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">
+        BMR (Basal Metabolic Rate) is calculated differently for male and female using the <strong class="text-ink-700">Mifflin-St Jeor equation</strong> (the most accurate modern formula):
+      </p>
+      <div class="space-y-2.5">
+        <div class="bg-blue-50 border border-blue-100 rounded-xl p-3">
+          <p class="text-xs font-semibold text-blue-700 mb-1.5">👨 Male BMR</p>
+          <p class="font-mono text-xs text-ink-600">= 10 × W(kg) + 6.25 × H(cm) − 5 × Age + 5</p>
+          <p class="text-[10px] text-ink-400 mt-1 font-mono">Example: 70kg, 170cm, 30yr → 1,680 kcal/day</p>
+        </div>
+        <div class="bg-rose-50 border border-rose-100 rounded-xl p-3">
+          <p class="text-xs font-semibold text-rose-700 mb-1.5">👩 Female BMR</p>
+          <p class="font-mono text-xs text-ink-600">= 10 × W(kg) + 6.25 × H(cm) − 5 × Age − 161</p>
+          <p class="text-[10px] text-ink-400 mt-1 font-mono">Example: 70kg, 170cm, 30yr → 1,514 kcal/day</p>
+        </div>
+      </div>
+      <p class="text-xs text-ink-400 mt-3">Male BMR is higher because men generally have more muscle mass and less body fat than women of the same weight. The difference is <strong class="text-ink-600">166 kcal/day</strong> at identical stats.</p>
+    </div>
+
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">BMI Example Calculations</h2>
+      <div class="space-y-3">
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">Male · 70kg · 175cm · 30yrs</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">BMI 22.9</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Normal · BMR 1,714 kcal · TDEE ~2,057 kcal (sedentary)</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">Female · 55kg · 160cm · 28yrs</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">BMI 21.5</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Normal · BMR 1,304 kcal · TDEE ~1,565 kcal (sedentary)</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">Male · 90kg · 170cm · 40yrs</span>
+            <span class="font-mono text-xs font-bold text-saffron-600">BMI 31.1</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Obese I · BMR 1,880 kcal · TDEE ~2,256 kcal (sedentary)</div>
+        </div>
+        <div class="bg-rose-50 border border-rose-100 rounded-xl p-3">
+          <p class="text-xs font-semibold text-rose-700 mb-1">📌 Asian BMI note</p>
+          <p class="text-xs text-ink-500">For Indians, a BMI of 23+ is already considered overweight. The same 70kg/170cm male (BMI 24.2) is <strong class="text-ink-700">normal by WHO but borderline overweight by Asian standards</strong>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">TDEE Activity Multipliers</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">TDEE = BMR × Activity Factor. This is your daily calorie target to maintain current weight.</p>
+      <div class="space-y-2">
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">Sedentary</span>
+            <p class="text-[10px] text-ink-400">Desk job, little to no exercise</p>
+          </div>
+          <span class="font-mono text-sm font-semibold text-ink-800">BMR × 1.2</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">Lightly Active</span>
+            <p class="text-[10px] text-ink-400">Light exercise 1–3 days/week</p>
+          </div>
+          <span class="font-mono text-sm font-semibold text-ink-800">BMR × 1.375</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">Moderately Active</span>
+            <p class="text-[10px] text-ink-400">Moderate exercise 3–5 days/week</p>
+          </div>
+          <span class="font-mono text-sm font-semibold text-leaf-700">BMR × 1.55</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">Very Active</span>
+            <p class="text-[10px] text-ink-400">Hard exercise 6–7 days/week</p>
+          </div>
+          <span class="font-mono text-sm font-semibold text-ink-800">BMR × 1.725</span>
+        </div>
+        <div class="flex items-center justify-between py-2">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">Extra Active</span>
+            <p class="text-[10px] text-ink-400">Physical job + hard training daily</p>
+          </div>
+          <span class="font-mono text-sm font-semibold text-saffron-600">BMR × 1.9</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Limitations of BMI</h2>
+      <ul class="space-y-3 text-sm text-ink-500">
+        <li class="flex items-start gap-2.5"><span class="text-rose-500 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Doesn't distinguish muscle from fat</strong> — a bodybuilder and an obese person can have the same BMI. Athletes often show "overweight" despite very low body fat percentage.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-rose-500 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Ignores fat distribution</strong> — belly fat (visceral fat) is far more dangerous than fat in legs or arms. Two people with the same BMI can have very different health risks.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-rose-500 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Not ideal for elderly</strong> — older people tend to lose muscle mass, so BMI may appear normal while actual body fat is high.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-rose-500 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Race and ethnicity</strong> — South Asians have higher disease risk at lower BMI values than Caucasians. Asian-specific thresholds (23 for overweight) are more appropriate for Indians.</span></li>
+      </ul>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Healthy BMI Tips for Indians</h2>
+      <ul class="space-y-3 text-sm text-ink-500">
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Target BMI 18.5–22.9</strong> — for South Asians, staying in the lower end of the normal range (18.5–22.9) is associated with better metabolic outcomes than the WHO upper limit of 24.9.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Waist circumference matters</strong> — for Indians, a waist &gt; 90 cm (men) or &gt; 80 cm (women) is a risk factor for metabolic syndrome, even at normal BMI.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Calorie awareness</strong> — know your TDEE. To lose 0.5 kg/week, eat ~500 kcal/day less than your TDEE. To gain, eat ~300–500 kcal more.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Use BMI alongside other checks</strong> — blood sugar, blood pressure, waist measurement, and lipid profile give a more complete health picture than BMI alone.</span></li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about BMI, BMR and healthy weight</p>
+  <div class="grid md:grid-cols-2 gap-3">
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How is BMI calculated?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          <strong class="text-ink-700">BMI = weight(kg) ÷ height(m)²</strong>. The formula is identical for male and female. Example: 70 kg at 1.70 m → BMI = 70 ÷ (1.70²) = 70 ÷ 2.89 = <strong class="text-ink-700">24.2</strong> (Normal). For imperial: BMI = 703 × lbs ÷ inches².
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Is BMI different for male and female?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          The <strong class="text-ink-700">BMI formula is the same</strong> for male and female — same height and weight gives the same BMI. However, <strong class="text-ink-700">BMR is different</strong>: males have higher BMR due to more muscle mass. Male BMR = 10W + 6.25H − 5A + 5; Female BMR = 10W + 6.25H − 5A − 161. A 70kg/170cm/30yr male has BMR 1,680 kcal; female has 1,514 kcal.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is a healthy BMI for Indians?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          For Indians and South Asians, healthy BMI is <strong class="text-ink-700">18.5–22.9</strong>. Overweight starts at <strong class="text-ink-700">23</strong> (vs WHO's 25). This is because Asians tend to carry higher body fat percentage and visceral fat at the same BMI as Caucasians, increasing metabolic risk earlier. The Indian Council of Medical Research (ICMR) endorses these lower thresholds.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is BMR and why does gender matter?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          BMR (Basal Metabolic Rate) is calories burned at complete rest to maintain vital functions like breathing, circulation, and cell repair. Gender matters because <strong class="text-ink-700">men have more muscle mass</strong> (which burns more calories than fat), resulting in a higher BMR. At identical stats, a male's BMR is approximately <strong class="text-ink-700">166 kcal/day higher</strong> than a female's.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is TDEE and how do I use it?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          TDEE (Total Daily Energy Expenditure) = BMR × Activity Factor. It's the calories you need daily to maintain your current weight. To <strong class="text-ink-700">lose weight</strong>: eat 300–500 kcal below TDEE. To <strong class="text-ink-700">gain weight</strong>: eat 300–500 kcal above TDEE. To <strong class="text-ink-700">maintain</strong>: eat at TDEE.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What are the limitations of BMI?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          BMI doesn't distinguish muscle from fat — athletes can show "overweight" despite low body fat. It ignores fat distribution (belly fat is more dangerous). Not ideal for elderly (muscle loss), children, or pregnant women. For Indians, even a "normal" BMI of 23–24.9 may carry metabolic risk. Use BMI as a <strong class="text-ink-700">screening tool</strong>, not a diagnosis.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is the ideal weight for my height?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Ideal weight is typically calculated as the weight that gives a BMI of 18.5–22.9 for Indians. For a 170 cm person: ideal weight = 18.5 × 1.70² to 22.9 × 1.70² = <strong class="text-ink-700">53.4 kg to 66.1 kg</strong>. The "Healthy Weight Range" in this calculator shows this for your exact height. The formula applies equally to both genders.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How many calories should I eat to lose weight?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          1 kg of fat ≈ 7,700 kcal. To lose <strong class="text-ink-700">0.5 kg/week</strong>, create a deficit of ~550 kcal/day (TDEE − 550). For <strong class="text-ink-700">1 kg/week</strong>, deficit = ~1,100 kcal/day. Never go below 1,200 kcal/day (women) or 1,500 kcal/day (men) without medical supervision. Calculate your TDEE above, then subtract your desired deficit.
+        </div>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- Related Calculators -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="age-calculator.html" class="bg-white border border-ink-100 hover:border-rose-200 hover:bg-rose-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">🎂</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-rose-700 transition-colors">Age Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Exact age in years/months</div>
+    </a>
+    <a href="sip-calculator.html" class="bg-white border border-ink-100 hover:border-rose-200 hover:bg-rose-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">📈</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-rose-700 transition-colors">SIP Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Mutual fund SIP returns</div>
+    </a>
+    <a href="emi-calculator.html" class="bg-white border border-ink-100 hover:border-rose-200 hover:bg-rose-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">🏦</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-rose-700 transition-colors">EMI Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Home, car & personal loans</div>
+    </a>
+    <a href="income-tax-calculator.html" class="bg-white border border-ink-100 hover:border-rose-200 hover:bg-rose-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">📄</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-rose-700 transition-colors">Income Tax</div>
+      <div class="text-xs text-ink-400 mt-0.5">New vs old regime FY 2025-26</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+          </div>
+          <div class="font-display font-semibold text-white">BharatCalc</div>
+        </div>
+        <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
+        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700">⚠️ BMI and BMR are screening tools only. Consult a doctor or dietitian for personalised health advice.</div>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="sip-calculator.html"  class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
+          <li><a href="emi-calculator.html"  class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
+          <li><a href="ppf-calculator.html"  class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
+          <li><a href="fd-calculator.html"   class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
+          <li><a href="cagr-calculator.html" class="hover:text-leaf-400 transition-colors">CAGR Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax & Legal</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="income-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
+          <li><a href="gst-calculator.html"        class="hover:text-leaf-400 transition-colors">GST Calculator</a></li>
+          <li><a href="hra-calculator.html"        class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li>
+          <li><a href="tds-calculator.html"        class="hover:text-leaf-400 transition-colors">TDS Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Health & Math</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="bmi-calculator.html"               class="hover:text-leaf-400 transition-colors font-semibold text-leaf-400">BMI Calculator</a></li>
+          <li><a href="age-calculator.html"               class="hover:text-leaf-400 transition-colors">Age Calculator</a></li>
+          <li><a href="percentage-calculator.html"        class="hover:text-leaf-400 transition-colors">Percentage</a></li>
+          <li><a href="compound-interest-calculator.html" class="hover:text-leaf-400 transition-colors">Compound Interest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
+      <div class="flex gap-5">
+        <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
+        <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
+        <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
+        <a href="../contact.html" class="hover:text-ink-300 transition-colors">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+let unitSystem     = 'metric';
+let gender         = 'male';
+let activityFactor = 1.2;
+
+// ── BMI category config ─────────────────────────────────────────
+const categories = [
+  { max: 18.5, label: 'Underweight',    desc: 'You may need to gain weight. Consult a doctor.',         cardBg: 'bg-blue-600'    },
+  { max: 25,   label: 'Normal Weight',  desc: 'Your weight is in a healthy range. Keep it up!',          cardBg: 'bg-leaf-600'    },
+  { max: 30,   label: 'Overweight',     desc: 'Slightly above the healthy range. Consider losing some weight.', cardBg: 'bg-yellow-600' },
+  { max: 35,   label: 'Obese Class I',  desc: 'Obesity raises health risks. Consult a doctor.',          cardBg: 'bg-saffron-600' },
+  { max: 40,   label: 'Obese Class II', desc: 'High BMI — medical guidance strongly recommended.',       cardBg: 'bg-red-600'     },
+  { max: 999,  label: 'Obese Class III',desc: 'Morbid obesity — please seek medical attention.',         cardBg: 'bg-red-800'     },
+];
+
+// Asian BMI categories for the status bar label
+function getAsianCategory(bmi) {
+  if (bmi < 18.5)  return 'Underweight (Asian)';
+  if (bmi < 23)    return 'Normal Weight (Asian)';
+  if (bmi < 27.5)  return 'Overweight (Asian)';
+  if (bmi < 32.5)  return 'Obese I (Asian)';
+  if (bmi < 37.5)  return 'Obese II (Asian)';
+  return 'Obese III (Asian)';
+}
+
+// ── Track fill ──────────────────────────────────────────────────
+function updateTrack(id) {
+  const el  = document.getElementById(id);
+  const pct = ((parseFloat(el.value) - parseFloat(el.min)) / (parseFloat(el.max) - parseFloat(el.min))) * 100;
+  el.style.background = `linear-gradient(to right, #16a34a ${pct}%, #e8ecf2 ${pct}%)`;
+}
+
+function syncFromSlider(id) {
+  const inputId = id + 'Input';
+  if (document.getElementById(inputId)) {
+    document.getElementById(inputId).value = document.getElementById(id).value;
+  }
+  updateTrack(id);
+  calc();
+}
+
+function syncFromInput(id, val) {
+  const slider  = document.getElementById(id);
+  if (!slider) { calc(); return; }
+  const clamped = Math.min(Math.max(parseFloat(val) || parseFloat(slider.min), parseFloat(slider.min)), parseFloat(slider.max));
+  slider.value  = clamped;
+  updateTrack(id);
+  calc();
+}
+
+// ── Unit system ──────────────────────────────────────────────────
+function setUnit(u) {
+  unitSystem = u;
+  document.getElementById('btnMetric').classList.toggle('active',   u === 'metric');
+  document.getElementById('btnImperial').classList.toggle('active', u === 'imperial');
+  document.getElementById('btnMetric').classList.toggle('text-ink-500',   u !== 'metric');
+  document.getElementById('btnImperial').classList.toggle('text-ink-500', u !== 'imperial');
+  document.getElementById('heightMetric').classList.toggle('hidden',   u !== 'metric');
+  document.getElementById('heightImperial').classList.toggle('hidden', u !== 'imperial');
+
+  if (u === 'metric') {
+    document.getElementById('weightUnit').textContent = 'kg';
+    document.getElementById('weightRange').innerHTML  = '<span>30 kg</span><span>200 kg</span>';
+    const w = document.getElementById('weight');
+    w.min = 30; w.max = 200; w.value = 70;
+    document.getElementById('weightInput').value = 70;
+    updateTrack('weight');
+  } else {
+    document.getElementById('weightUnit').textContent = 'lbs';
+    document.getElementById('weightRange').innerHTML  = '<span>66 lbs</span><span>440 lbs</span>';
+    const w = document.getElementById('weight');
+    w.min = 66; w.max = 440; w.value = 154;
+    document.getElementById('weightInput').value = 154;
+    updateTrack('weight');
+  }
+  calc();
+}
+
+// ── Gender ───────────────────────────────────────────────────────
+function setGender(g) {
+  gender = g;
+  document.getElementById('btnMale').classList.toggle('active',   g === 'male');
+  document.getElementById('btnFemale').classList.toggle('active', g === 'female');
+  document.getElementById('btnMale').classList.toggle('text-ink-500',   g !== 'male');
+  document.getElementById('btnFemale').classList.toggle('text-ink-500', g !== 'female');
+  calc();
+}
+
+// ── Activity level ───────────────────────────────────────────────
+function setActivity(factor, btn) {
+  activityFactor = factor;
+  document.querySelectorAll('.activity-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  calc();
+}
+
+// ── Main calculation ─────────────────────────────────────────────
+function calc() {
+  const age = parseFloat(document.getElementById('age').value) || 25;
+  if (document.getElementById('ageInput')) document.getElementById('ageInput').value = age;
+
+  let weightKg, heightM, heightCm;
+
+  if (unitSystem === 'metric') {
+    weightKg = parseFloat(document.getElementById('weight').value)   || 70;
+    heightCm = parseFloat(document.getElementById('heightCm').value) || 170;
+    heightM  = heightCm / 100;
+  } else {
+    const lbs = parseFloat(document.getElementById('weight').value)   || 154;
+    const ft  = parseFloat(document.getElementById('heightFt').value) || 5;
+    const ins = parseFloat(document.getElementById('heightIn').value) || 7;
+    weightKg  = lbs * 0.453592;
+    heightM   = (ft * 12 + ins) * 0.0254;
+    heightCm  = heightM * 100;
+  }
+
+  if (weightKg <= 0 || heightM <= 0) return;
+
+  // ── BMI ────────────────────────────────────────────────────────
+  const bmi = weightKg / (heightM * heightM);
+  const cat = categories.find(c => bmi < c.max) || categories[categories.length - 1];
+
+  document.getElementById('bmiValue').textContent    = bmi.toFixed(1);
+  document.getElementById('bmiCategory').textContent = cat.label;
+  document.getElementById('bmiDesc').textContent     = cat.desc;
+  document.getElementById('bmiResultCard').className = `result-card ${cat.cardBg} rounded-2xl p-6 sm:p-8`;
+
+  // ── BMI gauge marker (maps BMI 16–40 to 0–100%) ───────────────
+  const markerPct = Math.min(100, Math.max(0, (bmi - 16) / (40 - 16) * 100));
+  document.getElementById('bmiMarker').style.left = `calc(${markerPct}% - 10px)`;
+
+  // ── Healthy weight range (WHO: 18.5–24.9) ─────────────────────
+  const minWho = 18.5 * heightM * heightM;
+  const maxWho = 24.9 * heightM * heightM;
+  // Asian range (18.5–22.9)
+  const maxAsian = 22.9 * heightM * heightM;
+
+  if (unitSystem === 'metric') {
+    document.getElementById('healthyRange').textContent = `${minWho.toFixed(1)}–${maxWho.toFixed(1)} kg`;
+  } else {
+    document.getElementById('healthyRange').textContent =
+      `${(minWho / 0.453592).toFixed(0)}–${(maxWho / 0.453592).toFixed(0)} lbs`;
+  }
+
+  // ── Weight diff to ideal midpoint ─────────────────────────────
+  const midW = (minWho + maxWho) / 2;
+  const diff = weightKg - midW;
+  if (Math.abs(diff) < 0.5) {
+    document.getElementById('weightDiff').textContent = 'At ideal weight ✓';
+  } else if (diff > 0) {
+    const d = unitSystem === 'metric'
+      ? diff.toFixed(1) + ' kg'
+      : (diff / 0.453592).toFixed(0) + ' lbs';
+    document.getElementById('weightDiff').textContent = `Lose ${d}`;
+  } else {
+    const d = unitSystem === 'metric'
+      ? Math.abs(diff).toFixed(1) + ' kg'
+      : (Math.abs(diff) / 0.453592).toFixed(0) + ' lbs';
+    document.getElementById('weightDiff').textContent = `Gain ${d}`;
+  }
+
+  // ── BMR (Mifflin-St Jeor) — GENDER SPECIFIC ───────────────────
+  // Male:   BMR = 10W + 6.25H - 5A + 5
+  // Female: BMR = 10W + 6.25H - 5A - 161
+  const bmrMale   = 10 * weightKg + 6.25 * heightCm - 5 * age + 5;
+  const bmrFemale = 10 * weightKg + 6.25 * heightCm - 5 * age - 161;
+  const activeBmr = gender === 'male' ? bmrMale : bmrFemale;
+  const tdee      = activeBmr * activityFactor;
+
+  document.getElementById('bmr').textContent    = Math.round(activeBmr).toLocaleString('en-IN') + ' kcal';
+  document.getElementById('tdee').textContent   = Math.round(tdee).toLocaleString('en-IN') + ' kcal';
+  document.getElementById('genderLabel').textContent = gender === 'male' ? 'Male' : 'Female';
+
+  // ── BMR comparison bars ────────────────────────────────────────
+  const maxBmr = Math.max(bmrMale, 2500);
+  document.getElementById('maleBmr').textContent    = Math.round(bmrMale).toLocaleString('en-IN') + ' kcal/day';
+  document.getElementById('femaleBmr').textContent  = Math.round(bmrFemale).toLocaleString('en-IN') + ' kcal/day';
+  document.getElementById('barMaleBmr').style.width   = Math.min((bmrMale   / maxBmr) * 100, 100) + '%';
+  document.getElementById('barFemaleBmr').style.width = Math.min((bmrFemale / maxBmr) * 100, 100) + '%';
+
+  // ── Gender label and TDEE detail ──────────────────────────────
+  const activityNames = { 1.2: 'Sedentary', 1.375: 'Lightly Active', 1.55: 'Moderately Active', 1.725: 'Very Active', 1.9: 'Extra Active' };
+  document.getElementById('selectedGenderLabel').textContent = gender === 'male' ? '👨 Male' : '👩 Female';
+  document.getElementById('tdeeDetail').textContent =
+    Math.round(tdee).toLocaleString('en-IN') + ' kcal/day';
+
+  // ── Current BMI row at bottom of table ────────────────────────
+  const whoLabel   = cat.label;
+  const asianLabel = getAsianCategory(bmi);
+  document.getElementById('currentBmiRow').textContent =
+    `Your BMI: ${bmi.toFixed(1)} — ${whoLabel} (WHO) | ${asianLabel}`;
+  document.getElementById('currentBmiRow').className =
+    `px-4 py-2.5 text-xs border-t font-semibold ${
+      bmi < 18.5 ? 'bg-blue-50 text-blue-700 border-blue-100' :
+      bmi < 23   ? 'bg-leaf-50 text-leaf-700 border-leaf-100' :
+      bmi < 25   ? 'bg-yellow-50 text-yellow-700 border-yellow-100' :
+      bmi < 30   ? 'bg-saffron-50 text-saffron-700 border-saffron-100' :
+                   'bg-red-50 text-red-700 border-red-100'
+    }`;
+}
+
+// ── Mobile menu ──────────────────────────────────────────────────
+function toggleMobileMenu() {
+  const m = document.getElementById('mobileMenu'), btn = document.getElementById('menuBtn'), icon = document.getElementById('menuIcon');
+  const open = m.classList.toggle('hidden');
+  btn.setAttribute('aria-expanded', String(!open));
+  icon.innerHTML = open ? '<path d="M4 6h16M4 12h16M4 18h16"/>' : '<path d="M6 18L18 6M6 6l12 12"/>';
+}
+
+// ── Init ─────────────────────────────────────────────────────────
+function init() {
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+  // Set initial input values from slider defaults
+  document.getElementById('ageInput').value      = document.getElementById('age').value;
+  document.getElementById('weightInput').value   = document.getElementById('weight').value;
+  document.getElementById('heightCmInput').value = document.getElementById('heightCm').value;
+
+  // Update all slider tracks
+  updateTrack('age');
+  updateTrack('weight');
+  updateTrack('heightCm');
+  calc();
+}
+
+init();
+</script>
+</body>
+</html>

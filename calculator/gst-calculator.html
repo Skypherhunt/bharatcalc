@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GST Calculator India – Add or Remove GST Instantly | BharatCalc</title>
+  <meta name="description" content="Free GST Calculator India — add GST to a base price or remove GST from an inclusive amount instantly. Supports all GST rates: 5%, 12%, 18%, 28%. Get CGST, SGST and IGST breakdown. No login required." />
+  <meta name="keywords" content="GST calculator India, GST calculator, add GST calculator, remove GST calculator, GST inclusive exclusive calculator, CGST SGST calculator, GST rate calculator, 18% GST calculator, 28% GST calculator, GST amount calculator" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/gst-calculator.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://bharatcalc.online/calculator/gst-calculator.html" />
+  <meta property="og:title"       content="GST Calculator – Add or Remove GST | BharatCalc" />
+  <meta property="og:description" content="Add or remove GST from any amount instantly. All GST rates supported. Free, no login — by BharatCalc." />
+  <meta property="og:image"       content="https://bharatcalc.online/og/gst-calculator.png" />
+  <meta property="og:locale"      content="en_IN" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="GST Calculator | BharatCalc" />
+  <meta name="twitter:description" content="Add or remove GST instantly. Free — by BharatCalc." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "GST Calculator",
+    "url": "https://bharatcalc.online/calculator/gst-calculator.html",
+    "description": "Add or remove GST from any price at any GST rate — 5%, 12%, 18%, or 28%.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",           "item": "https://bharatcalc.online/" },
+        { "@type": "ListItem", "position": 2, "name": "Tax",            "item": "https://bharatcalc.online/index.html?cat=tax" },
+        { "@type": "ListItem", "position": 3, "name": "GST Calculator", "item": "https://bharatcalc.online/calculator/gst-calculator.html" }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I add GST to a price?", "acceptedAnswer": { "@type": "Answer", "text": "To add GST: GST Amount = Price × (GST Rate ÷ 100). Total Price = Price + GST Amount. Example: ₹1,000 + 18% GST → GST = ₹180, Total = ₹1,180." } },
+      { "@type": "Question", "name": "How do I remove GST from a GST-inclusive price?", "acceptedAnswer": { "@type": "Answer", "text": "To remove GST from an inclusive price: Original Price = Inclusive Price ÷ (1 + GST Rate ÷ 100). GST Amount = Inclusive Price − Original Price. Example: ₹1,180 ÷ 1.18 = ₹1,000 base, GST = ₹180." } },
+      { "@type": "Question", "name": "What are the GST rates in India?", "acceptedAnswer": { "@type": "Answer", "text": "India has four main GST rates: 5% (essential goods, basic food items), 12% (processed foods, business-class tickets), 18% (most services, electronics, restaurants), and 28% (luxury goods, automobiles, tobacco). Some items like fresh food and medical services are exempt (0%)." } },
+      { "@type": "Question", "name": "What is CGST, SGST and IGST?", "acceptedAnswer": { "@type": "Answer", "text": "For intra-state transactions, GST splits equally into CGST (Central GST) and SGST (State GST) — each being half the total GST rate. For inter-state transactions, IGST (Integrated GST) is charged at the full rate. Example: 18% GST within a state = 9% CGST + 9% SGST." } },
+      { "@type": "Question", "name": "Who needs to register for GST in India?", "acceptedAnswer": { "@type": "Answer", "text": "Businesses with annual turnover exceeding ₹40 lakh (₹20 lakh for special category states) must register for GST. For service providers the threshold is ₹20 lakh. E-commerce sellers must register regardless of turnover." } },
+      { "@type": "Question", "name": "What is the GST on restaurants in India?", "acceptedAnswer": { "@type": "Answer", "text": "Restaurants without AC charge 5% GST (no ITC). AC restaurants charge 5% GST. Hotel restaurants where room tariff exceeds ₹7,500/night charge 18% GST. Standalone restaurants without hotel charge 5% GST." } }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Clash Display', 'sans-serif'],
+            sans:    ['Satoshi', 'sans-serif'],
+            mono:    ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
+            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Satoshi', system-ui, sans-serif; }
+    .font-display { font-family: 'Clash Display', system-ui, sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #16a34a; transform: scaleX(0); transition: transform 0.2s; border-radius: 1px; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .mode-btn { transition: all 0.15s; }
+    .mode-btn.active { background: #16a34a; color: #fff; border-color: #16a34a; }
+    .rate-btn { transition: all 0.15s; }
+    .rate-btn.active { background: #16a34a; color: #fff; border-color: #16a34a; }
+    .val-input:focus { outline: none; }
+    .val-input { font-family: 'JetBrains Mono', monospace; }
+    .donut-ring { transition: stroke-dasharray 0.4s cubic-bezier(.4,0,.2,1); }
+    .breadcrumb a { transition: color 0.15s; }
+    .faq-item details summary { cursor: pointer; list-style: none; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    .rate-card { transition: all 0.15s; cursor: pointer; }
+    .rate-card:hover { border-color: #16a34a; background: #f0fdf4; }
+    .rate-card.selected { border-color: #16a34a; background: #f0fdf4; box-shadow: 0 0 0 3px rgba(22,163,74,0.12); }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9TD6B9GQ89');</script>
+</head>
+
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+        </div>
+        <div class="leading-none">
+          <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
+          <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+        <a href="../index.html?cat=tools"   class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+      </nav>
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>💰</span> Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>📄</span> Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>❤️</span> Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>➗</span> Math</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a>
+      <span>/</span>
+      <a href="../index.html?cat=tax" class="hover:text-ink-200">Tax</a>
+      <span>/</span>
+      <span class="text-ink-300">GST Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-saffron-600/15 text-saffron-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-saffron-600/20">
+          <span class="w-1.5 h-1.5 bg-saffron-400 rounded-full inline-block animate-pulse"></span>
+          Tax Calculator · All GST Rates
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">GST Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
+          Add GST to a base price or remove GST from an inclusive amount. Supports all GST rates — 0%, 5%, 12%, 18%, 28% — with CGST, SGST and IGST breakdown.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0">
+        <span class="w-1.5 h-1.5 bg-saffron-400 rounded-full inline-block"></span>
+        Results update live
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-2 mt-5">
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">➕ Add GST</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">➖ Remove GST</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">CGST + SGST split</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Custom rate supported</div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- INPUT PANEL -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-7">GST Details</h2>
+
+      <!-- Mode toggle -->
+      <div class="mb-7">
+        <label class="text-sm font-semibold text-ink-700 block mb-3">What do you want to do?</label>
+        <div class="flex gap-2 p-1 bg-ink-50 rounded-xl" role="group" aria-label="GST mode">
+          <button id="btnAdd"    onclick="setMode('add')"    class="mode-btn active flex-1 py-2.5 text-sm font-semibold rounded-lg border border-transparent transition-all">➕ Add GST</button>
+          <button id="btnRemove" onclick="setMode('remove')" class="mode-btn flex-1 py-2.5 text-sm font-semibold rounded-lg border border-transparent text-ink-500 transition-all">➖ Remove GST</button>
+        </div>
+      </div>
+
+      <!-- Amount input -->
+      <div class="mb-7">
+        <label class="text-sm font-semibold text-ink-700 block mb-3" id="amountLabel">Base Price (excl. GST)</label>
+        <div class="relative">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-ink-400 font-bold text-lg font-mono">₹</span>
+          <input id="amount" type="number" value="1000" min="0" step="1"
+            class="val-input w-full pl-10 pr-4 py-4 text-2xl font-mono font-bold text-ink-900 bg-leaf-50 border-2 border-leaf-200 rounded-xl focus:border-leaf-500 transition-colors"
+            oninput="calc()" />
+        </div>
+        <!-- Quick amounts -->
+        <div class="flex flex-wrap gap-2 mt-3">
+          <button onclick="setAmount(500)"    class="amt-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">₹500</button>
+          <button onclick="setAmount(1000)"   class="amt-btn text-[10px] px-2 py-1 bg-leaf-50 border border-leaf-200 rounded-md font-mono text-leaf-700 transition-colors">₹1,000</button>
+          <button onclick="setAmount(5000)"   class="amt-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">₹5,000</button>
+          <button onclick="setAmount(10000)"  class="amt-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">₹10,000</button>
+          <button onclick="setAmount(100000)" class="amt-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">₹1L</button>
+        </div>
+      </div>
+
+      <!-- GST Rate -->
+      <div class="mb-7">
+        <label class="text-sm font-semibold text-ink-700 block mb-3">GST Rate</label>
+        <div class="grid grid-cols-5 gap-2 mb-3">
+          <button onclick="setRate(0)"  id="r0"  class="rate-btn py-3 text-sm font-bold border border-ink-200 rounded-xl hover:border-leaf-400 text-ink-600 transition-all">0%</button>
+          <button onclick="setRate(5)"  id="r5"  class="rate-btn py-3 text-sm font-bold border border-ink-200 rounded-xl hover:border-leaf-400 text-ink-600 transition-all">5%</button>
+          <button onclick="setRate(12)" id="r12" class="rate-btn py-3 text-sm font-bold border border-ink-200 rounded-xl hover:border-leaf-400 text-ink-600 transition-all">12%</button>
+          <button onclick="setRate(18)" id="r18" class="rate-btn active py-3 text-sm font-bold border rounded-xl transition-all">18%</button>
+          <button onclick="setRate(28)" id="r28" class="rate-btn py-3 text-sm font-bold border border-ink-200 rounded-xl hover:border-leaf-400 text-ink-600 transition-all">28%</button>
+        </div>
+        <!-- Custom rate -->
+        <div class="flex items-center gap-3">
+          <span class="text-xs text-ink-500 font-medium">Custom rate:</span>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <input id="customRate" type="number" min="0" max="100" step="0.1" placeholder="e.g. 3"
+              class="val-input w-20 text-sm font-mono text-ink-900 bg-transparent text-right" oninput="setCustomRate(this.value)" />
+            <span class="text-xs text-ink-400">%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rate info box -->
+      <div class="bg-saffron-50 border border-saffron-100 rounded-xl p-4">
+        <p class="text-xs font-semibold text-saffron-700 mb-1.5" id="rateInfoTitle">18% GST — Most Services & Electronics</p>
+        <p class="text-xs text-ink-500 leading-relaxed" id="rateInfoText">Most services, electronics, restaurants, AC hotels, telecom, insurance, financial services, IT services.</p>
+      </div>
+    </div>
+
+    <!-- RESULTS PANEL -->
+    <div class="flex flex-col gap-5">
+
+      <!-- Main result -->
+      <div class="bg-ink-900 rounded-2xl p-6 sm:p-8">
+        <p class="text-xs text-ink-400 font-semibold uppercase tracking-wider mb-2" id="resultTitle">Total (incl. GST)</p>
+        <div class="font-display text-4xl sm:text-5xl font-bold text-leaf-400 tracking-tight mb-1" id="mainResult">₹1,180.00</div>
+        <p class="text-sm text-ink-400" id="resultSub">₹1,000.00 + 18% GST</p>
+        <div class="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-ink-700">
+          <div>
+            <p class="text-ink-500 text-xs mb-1" id="r1Label">Base Price</p>
+            <p class="font-mono font-semibold text-white text-base" id="r1Val">₹1,000.00</p>
+          </div>
+          <div>
+            <p class="text-ink-500 text-xs mb-1">GST Amount</p>
+            <p class="font-mono font-semibold text-saffron-400 text-base" id="gstAmount">₹180.00</p>
+          </div>
+          <div>
+            <p class="text-ink-500 text-xs mb-1">CGST (½ rate)</p>
+            <p class="font-mono font-semibold text-white text-base" id="cgst">₹90.00</p>
+          </div>
+          <div>
+            <p class="text-ink-500 text-xs mb-1">SGST (½ rate)</p>
+            <p class="font-mono font-semibold text-white text-base" id="sgst">₹90.00</p>
+          </div>
+        </div>
+        <div class="mt-4 flex items-center gap-2">
+          <span class="text-xs text-ink-400">IGST (inter-state):</span>
+          <span class="font-mono text-xs font-bold text-leaf-400 bg-leaf-600/15 border border-leaf-600/20 px-2 py-0.5 rounded-full" id="igst">₹180.00</span>
+        </div>
+      </div>
+
+      <!-- Donut breakdown -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-5">Price Breakdown</h2>
+        <div class="flex items-center justify-between gap-6">
+          <div class="relative flex-shrink-0">
+            <svg width="140" height="140" viewBox="0 0 140 140" aria-label="GST price breakdown donut chart">
+              <circle cx="70" cy="70" r="54" fill="none" stroke="#e8ecf2" stroke-width="18"/>
+              <circle id="arcBase" cx="70" cy="70" r="54" fill="none" stroke="#16a34a" stroke-width="18"
+                stroke-dasharray="339.29 0" stroke-dashoffset="0" stroke-linecap="butt"
+                transform="rotate(-90 70 70)" class="donut-ring"/>
+              <circle id="arcGst" cx="70" cy="70" r="54" fill="none" stroke="#f97316" stroke-width="18"
+                stroke-dasharray="0 339.29" stroke-dashoffset="0" stroke-linecap="butt"
+                transform="rotate(-90 70 70)" class="donut-ring"/>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+              <span class="font-mono text-xs text-ink-400" id="donutLabel">total</span>
+              <span class="font-display font-bold text-ink-900 text-sm leading-tight" id="donutCentre">₹1,180</span>
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-3 h-3 rounded-sm bg-leaf-600 flex-shrink-0"></div>
+              <div>
+                <p class="text-xs text-ink-500 font-medium" id="legendBaseLabel">Base Price</p>
+                <p class="font-mono font-semibold text-ink-900 text-sm" id="legendBase">₹1,000.00</p>
+                <p class="font-mono text-xs text-ink-400" id="legendBasePct">84.7%</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-sm bg-saffron-500 flex-shrink-0"></div>
+              <div>
+                <p class="text-xs text-ink-500 font-medium">GST Amount</p>
+                <p class="font-mono font-semibold text-ink-900 text-sm" id="legendGst">₹180.00</p>
+                <p class="font-mono text-xs text-ink-400" id="legendGstPct">15.3%</p>
+              </div>
+            </div>
+            <div class="mt-5 space-y-1.5">
+              <div class="h-2 w-full bg-ink-100 rounded-full overflow-hidden flex">
+                <div id="barBase" class="h-full bg-leaf-600 rounded-l-full transition-all duration-500" style="width:84.7%"></div>
+                <div id="barGst"  class="h-full bg-saffron-500 rounded-r-full transition-all duration-500" style="width:15.3%"></div>
+              </div>
+              <div class="flex justify-between text-xs text-ink-400 font-mono">
+                <span id="barLabelBase">Base 84.7%</span>
+                <span id="barLabelGst">GST 15.3%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- All-rates comparison table -->
+  <div class="bg-white border border-ink-100 rounded-2xl overflow-hidden mt-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-6 border-b border-ink-100">
+      <div>
+        <h2 class="font-display font-semibold text-ink-900 text-lg">GST at All Rates</h2>
+        <p class="text-xs text-ink-400 mt-0.5">See how your entered amount changes across every GST slab</p>
+      </div>
+      <div class="text-xs text-ink-400 font-mono">For amount: <span class="font-semibold text-ink-700" id="compAmtLabel">₹1,000</span></div>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-ink-50">
+            <th class="text-left text-xs font-semibold text-ink-500 px-5 py-3 border-b border-ink-100">GST Rate</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-5 py-3 border-b border-ink-100">GST Amount</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-5 py-3 border-b border-ink-100">CGST</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-5 py-3 border-b border-ink-100">SGST</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-5 py-3 border-b border-ink-100">Total (incl. GST)</th>
+          </tr>
+        </thead>
+        <tbody id="compTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Ad placeholder -->
+  <div class="my-6">
+    <div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400" aria-hidden="true">Google AdSense — Responsive Ad Unit</div>
+  </div>
+
+  <!-- GST Rate reference cards -->
+  <div class="bg-white border border-ink-100 rounded-2xl overflow-hidden mb-6">
+    <div class="px-6 py-4 border-b border-ink-100">
+      <h2 class="font-display font-semibold text-ink-900 text-lg">GST Rate Quick Reference</h2>
+      <p class="text-xs text-ink-400 mt-0.5">What falls under each GST slab in India</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-ink-100">
+      <div class="p-5 rate-card border-2 border-transparent rounded-xl" onclick="setRate(5)" id="card5">
+        <div class="text-2xl font-display font-bold text-leaf-600 mb-2">5%</div>
+        <p class="text-xs font-semibold text-ink-700 mb-1.5">Essential Goods</p>
+        <p class="text-xs text-ink-500 leading-relaxed">Packed food, economy flights & rail, life-saving drugs, small restaurants, sugar, tea, coffee, edible oil</p>
+      </div>
+      <div class="p-5 rate-card border-2 border-transparent rounded-xl" onclick="setRate(12)" id="card12">
+        <div class="text-2xl font-display font-bold text-blue-600 mb-2">12%</div>
+        <p class="text-xs font-semibold text-ink-700 mb-1.5">Standard Goods</p>
+        <p class="text-xs text-ink-500 leading-relaxed">Processed foods, butter, cheese, mobile phones, business class tickets, agarbatti, umbrella, medicines</p>
+      </div>
+      <div class="p-5 rate-card border-2 border-transparent rounded-xl selected" onclick="setRate(18)" id="card18">
+        <div class="text-2xl font-display font-bold text-saffron-600 mb-2">18%</div>
+        <p class="text-xs font-semibold text-ink-700 mb-1.5">Most Services</p>
+        <p class="text-xs text-ink-500 leading-relaxed">Electronics, restaurants, AC hotels, telecom, insurance, IT services, financial services, most goods</p>
+      </div>
+      <div class="p-5 rate-card border-2 border-transparent rounded-xl" onclick="setRate(28)" id="card28">
+        <div class="text-2xl font-display font-bold text-red-600 mb-2">28%</div>
+        <p class="text-xs font-semibold text-ink-700 mb-1.5">Luxury Goods</p>
+        <p class="text-xs text-ink-500 leading-relaxed">Luxury cars, tobacco, aerated drinks, casinos, online gaming, pan masala, high-end consumer durables</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">What is GST?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        GST (Goods and Services Tax) is a comprehensive indirect tax levied on the supply of goods and services across India. It replaced a complex system of multiple central and state taxes including VAT, service tax, excise duty, and CST with a single, unified tax structure.
+      </p>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        Introduced on <strong class="text-ink-700">1st July 2017</strong>, GST follows the principle of "one nation, one tax." It is a destination-based tax, meaning the tax goes to the state where the goods/services are consumed, not where they are produced.
+      </p>
+      <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+        <p class="text-xs font-semibold text-leaf-700 mb-1">📌 GST is an indirect tax</p>
+        <p class="text-xs text-ink-500">Unlike income tax (direct tax), GST is collected by the seller from the buyer and then deposited with the government. The end consumer ultimately bears the tax burden.</p>
+      </div>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">GST Formula — How It Works</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">Two common calculations in GST:</p>
+
+      <div class="space-y-3">
+        <div class="bg-ink-50 rounded-xl p-4">
+          <p class="text-xs font-semibold text-ink-700 mb-2">➕ Adding GST (exclusive price)</p>
+          <p class="font-mono text-xs text-ink-600 mb-1">GST Amount = Base Price × (Rate ÷ 100)</p>
+          <p class="font-mono text-xs text-ink-600">Total = Base Price + GST Amount</p>
+          <div class="mt-2 pt-2 border-t border-ink-200 text-[10px] text-ink-400 font-mono">
+            Example: ₹1,000 + 18% → GST ₹180 → Total ₹1,180
+          </div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-4">
+          <p class="text-xs font-semibold text-ink-700 mb-2">➖ Removing GST (inclusive price)</p>
+          <p class="font-mono text-xs text-ink-600 mb-1">Base Price = Inclusive Price ÷ (1 + Rate ÷ 100)</p>
+          <p class="font-mono text-xs text-ink-600">GST Amount = Inclusive Price − Base Price</p>
+          <div class="mt-2 pt-2 border-t border-ink-200 text-[10px] text-ink-400 font-mono">
+            Example: ₹1,180 ÷ 1.18 → Base ₹1,000 → GST ₹180
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">CGST, SGST and IGST Explained</h2>
+      <div class="space-y-3">
+        <div class="flex items-start gap-3 p-3 bg-leaf-50 border border-leaf-100 rounded-xl">
+          <span class="text-lg mt-0.5">🏛️</span>
+          <div>
+            <p class="text-xs font-semibold text-leaf-800 mb-1">CGST — Central GST</p>
+            <p class="text-xs text-ink-500">Collected by the Central Government for intra-state (within the same state) transactions. Always equals half the total GST rate. 18% GST → 9% CGST.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-blue-50 border border-blue-100 rounded-xl">
+          <span class="text-lg mt-0.5">🏢</span>
+          <div>
+            <p class="text-xs font-semibold text-blue-800 mb-1">SGST — State GST</p>
+            <p class="text-xs text-ink-500">Collected by the State Government for intra-state transactions. Always equals half the total GST rate, same as CGST. Both appear on your GST invoice.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-saffron-50 border border-saffron-100 rounded-xl">
+          <span class="text-lg mt-0.5">🔄</span>
+          <div>
+            <p class="text-xs font-semibold text-saffron-800 mb-1">IGST — Integrated GST</p>
+            <p class="text-xs text-ink-500">Charged for inter-state (different states) transactions at the full GST rate. Collected by the Centre and later divided between Centre and the destination state.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">GST Example Calculations</h2>
+      <div class="space-y-3">
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">Restaurant bill ₹500 + 5% GST</span>
+            <span class="font-mono text-xs font-bold text-saffron-600">Total ₹525</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">GST ₹25 · CGST ₹12.50 · SGST ₹12.50</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">Mobile phone ₹15,000 + 18% GST</span>
+            <span class="font-mono text-xs font-bold text-saffron-600">Total ₹17,700</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">GST ₹2,700 · CGST ₹1,350 · SGST ₹1,350</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">Car ₹10L + 28% GST</span>
+            <span class="font-mono text-xs font-bold text-saffron-600">Total ₹12,80,000</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">GST ₹2,80,000 · CGST ₹1,40,000 · SGST ₹1,40,000</div>
+        </div>
+        <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-leaf-700">Invoice shows ₹1,18,000 incl. 18%</span>
+          </div>
+          <div class="font-mono text-sm font-bold text-leaf-700">Base: ₹1,00,000 · GST: ₹18,000</div>
+          <div class="text-[10px] text-ink-400 font-mono mt-0.5">₹1,18,000 ÷ 1.18 = ₹1,00,000 base</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Who Needs to Register for GST?</h2>
+      <ul class="space-y-3 text-sm text-ink-500">
+        <li class="flex items-start gap-2.5"><span class="text-saffron-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Businesses with ₹40L+ turnover</strong> — goods suppliers must register if annual turnover exceeds ₹40 lakh (₹20L for special category states like Himachal, Uttarakhand, J&K).</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-saffron-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Service providers with ₹20L+ turnover</strong> — lower threshold applies to service providers irrespective of state.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-saffron-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">E-commerce sellers</strong> — mandatory registration regardless of turnover. Platforms like Flipkart, Amazon sellers must register.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-saffron-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Inter-state suppliers</strong> — any business supplying goods or services to another state must register, regardless of turnover.</span></li>
+      </ul>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">GST on Common Items</h2>
+      <div class="space-y-2">
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600">Fresh fruits, vegetables, milk</span>
+          <span class="font-mono text-sm font-semibold text-leaf-700">0% (Exempt)</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600">Restaurant food (non-AC)</span>
+          <span class="font-mono text-sm font-semibold text-leaf-700">5%</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600">Mobile phones, medicines</span>
+          <span class="font-mono text-sm font-semibold text-blue-600">12%</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600">Electronics, AC restaurants, insurance</span>
+          <span class="font-mono text-sm font-semibold text-saffron-600">18%</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600">Cars, tobacco, aerated drinks</span>
+          <span class="font-mono text-sm font-semibold text-red-600">28%</span>
+        </div>
+        <div class="flex items-center justify-between py-2">
+          <span class="text-sm text-ink-600">Healthcare, education services</span>
+          <span class="font-mono text-sm font-semibold text-leaf-700">0% (Exempt)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about GST calculations in India</p>
+  <div class="grid md:grid-cols-2 gap-3">
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How do I add GST to a price?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          GST Amount = Base Price × (Rate ÷ 100). Total = Base Price + GST Amount.<br>
+          Example: ₹1,000 + 18% GST → GST = <strong class="text-ink-700">₹180</strong>, Total = <strong class="text-ink-700">₹1,180</strong>.<br>
+          Use the "Add GST" mode in this calculator for instant results.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How do I remove GST from a GST-inclusive price?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Base Price = Inclusive Price ÷ (1 + Rate ÷ 100). GST = Inclusive − Base.<br>
+          Example: ₹1,180 ÷ 1.18 = <strong class="text-ink-700">₹1,000 base</strong>, GST = <strong class="text-ink-700">₹180</strong>.<br>
+          Switch to "Remove GST" mode above and enter the MRP or invoice total.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What are the GST rates in India?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          India has four main GST rates: <strong class="text-ink-700">5%</strong> (essential goods like packed food, economy travel), <strong class="text-ink-700">12%</strong> (processed foods, mobiles), <strong class="text-ink-700">18%</strong> (most services, electronics, restaurants), and <strong class="text-ink-700">28%</strong> (luxury goods, tobacco, cars). Some items like fresh food, medical services, and education are exempt at 0%.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is the difference between CGST, SGST and IGST?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          For <strong class="text-ink-700">intra-state</strong> (same state) transactions, GST is split equally: CGST (Central) + SGST (State), each at half the rate. Example: 18% GST = 9% CGST + 9% SGST.<br>
+          For <strong class="text-ink-700">inter-state</strong> (different states) transactions, IGST (Integrated) is charged at the full rate and collected by the Centre, which later shares it with the destination state.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Who needs to register for GST in India?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Mandatory registration is required if: annual turnover exceeds <strong class="text-ink-700">₹40 lakh</strong> for goods (₹20L for special states), or <strong class="text-ink-700">₹20 lakh</strong> for services. E-commerce sellers must register regardless of turnover. Any business making inter-state supplies must also register irrespective of turnover.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is the GST on restaurants in India?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          <strong class="text-ink-700">5% GST</strong> applies to most standalone restaurants (both AC and non-AC), without ITC benefit. <strong class="text-ink-700">18% GST</strong> applies to restaurants inside hotels where room tariff exceeds ₹7,500/night. Outdoor catering services also attract 18% GST. Home delivery apps charge 5% GST (no ITC) on restaurant orders.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is Input Tax Credit (ITC) in GST?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          ITC allows registered businesses to claim a credit for the GST already paid on business inputs (raw materials, services). This prevents the cascading effect of "tax on tax." For example, a manufacturer who pays 18% GST on raw materials can offset that against the GST collected from customers, paying only the difference to the government.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is the GST on freelancing / services exported?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Export of services is treated as <strong class="text-ink-700">zero-rated supply</strong> under GST — meaning 0% GST applies. Freelancers earning from foreign clients (in foreign currency) do not charge GST on those invoices. However, if turnover exceeds ₹20 lakh, GST registration may still be required, though no GST is charged on exports.
+        </div>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- Related Calculators -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="income-tax-calculator.html" class="bg-white border border-ink-100 hover:border-saffron-200 hover:bg-saffron-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">📄</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-saffron-700 transition-colors">Income Tax</div>
+      <div class="text-xs text-ink-400 mt-0.5">New vs old regime FY 2025-26</div>
+    </a>
+    <a href="emi-calculator.html" class="bg-white border border-ink-100 hover:border-saffron-200 hover:bg-saffron-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">🏦</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-saffron-700 transition-colors">EMI Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Home, car & personal loans</div>
+    </a>
+    <a href="ppf-calculator.html" class="bg-white border border-ink-100 hover:border-saffron-200 hover:bg-saffron-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">💰</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-saffron-700 transition-colors">PPF Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Tax-free 80C investment</div>
+    </a>
+    <a href="cagr-calculator.html" class="bg-white border border-ink-100 hover:border-saffron-200 hover:bg-saffron-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">📊</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-saffron-700 transition-colors">CAGR Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Compound annual growth rate</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+          </div>
+          <div class="font-display font-semibold text-white">BharatCalc</div>
+        </div>
+        <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
+        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700">⚠️ GST rates shown are for reference. Always verify with the official GST portal (gst.gov.in) or a tax professional for compliance.</div>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="sip-calculator.html"  class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
+          <li><a href="emi-calculator.html"  class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
+          <li><a href="ppf-calculator.html"  class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
+          <li><a href="cagr-calculator.html" class="hover:text-leaf-400 transition-colors">CAGR Calculator</a></li>
+          <li><a href="fd-calculator.html"   class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax & Legal</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="income-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
+          <li><a href="gst-calculator.html"        class="hover:text-leaf-400 transition-colors font-semibold text-leaf-400">GST Calculator</a></li>
+          <li><a href="hra-calculator.html"        class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li>
+          <li><a href="tds-calculator.html"        class="hover:text-leaf-400 transition-colors">TDS Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Health & Math</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="bmi-calculator.html"               class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li>
+          <li><a href="age-calculator.html"               class="hover:text-leaf-400 transition-colors">Age Calculator</a></li>
+          <li><a href="percentage-calculator.html"        class="hover:text-leaf-400 transition-colors">Percentage</a></li>
+          <li><a href="compound-interest-calculator.html" class="hover:text-leaf-400 transition-colors">Compound Interest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
+      <div class="flex gap-5">
+        <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
+        <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
+        <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
+        <a href="../contact.html" class="hover:text-ink-300 transition-colors">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+let gstMode = 'add';
+let gstRate = 18;
+
+const rateInfo = {
+  0:  { title: '0% GST — Exempt Items',           text: 'Fresh fruits, vegetables, milk, eggs, fish, meat, salt, stamps, judicial documents, printed books, medical services.' },
+  5:  { title: '5% GST — Essential Goods',        text: 'Packed food items, economy class air/rail tickets, life-saving drugs, small restaurants, sugar, tea, coffee.' },
+  12: { title: '12% GST — Standard Goods',        text: 'Processed foods, butter, cheese, mobile phones (basic), business class tickets, agarbatti, umbrella, medicines.' },
+  18: { title: '18% GST — Most Services & Electronics', text: 'Most services, electronics, restaurants, AC hotels, telecom, insurance, financial services, IT services.' },
+  28: { title: '28% GST — Luxury & Demerit Goods', text: 'Luxury cars, tobacco, aerated drinks, casinos, online gaming, pan masala, high-end consumer durables.' },
+};
+
+// ── Formatting ───────────────────────────────────────────────────
+function fmt(n) {
+  return '₹' + n.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+function fmtCompact(n) {
+  if (n >= 10000000) return '₹' + (n / 10000000).toFixed(2) + 'Cr';
+  if (n >= 100000)   return '₹' + (n / 100000).toFixed(2) + 'L';
+  if (n >= 1000)     return '₹' + (n / 1000).toFixed(1) + 'K';
+  return '₹' + Math.round(n).toLocaleString('en-IN');
+}
+function fmtPct(n) { return n.toFixed(1) + '%'; }
+
+// ── Mode switch ──────────────────────────────────────────────────
+function setMode(m) {
+  gstMode = m;
+  document.getElementById('btnAdd').classList.toggle('active', m === 'add');
+  document.getElementById('btnRemove').classList.toggle('active', m === 'remove');
+  document.getElementById('btnAdd').classList.toggle('text-ink-500', m !== 'add');
+  document.getElementById('btnRemove').classList.toggle('text-ink-500', m !== 'remove');
+  document.getElementById('amountLabel').textContent = m === 'add' ? 'Base Price (excl. GST)' : 'Inclusive Price (incl. GST)';
+  document.getElementById('amount').placeholder = m === 'add' ? 'Enter base price' : 'Enter GST-inclusive price';
+  calc();
+}
+
+// ── Rate switch ──────────────────────────────────────────────────
+function setRate(r) {
+  gstRate = r;
+  // Rate buttons
+  [0, 5, 12, 18, 28].forEach(v => {
+    const el = document.getElementById('r' + v);
+    if (el) {
+      el.classList.toggle('active', v === r);
+      el.classList.toggle('text-ink-600', v !== r);
+    }
+  });
+  document.getElementById('customRate').value = '';
+  // Rate info
+  const info = rateInfo[r] || { title: `${r}% GST — Custom Rate`, text: 'Custom GST rate entered.' };
+  document.getElementById('rateInfoTitle').textContent = info.title;
+  document.getElementById('rateInfoText').textContent  = info.text;
+  // Rate reference cards
+  ['card5','card12','card18','card28'].forEach(id => document.getElementById(id)?.classList.remove('selected'));
+  const cardMap = { 5: 'card5', 12: 'card12', 18: 'card18', 28: 'card28' };
+  if (cardMap[r]) document.getElementById(cardMap[r]).classList.add('selected');
+  calc();
+}
+
+function setCustomRate(v) {
+  const r = parseFloat(v);
+  if (!isNaN(r) && r >= 0) {
+    gstRate = r;
+    [0, 5, 12, 18, 28].forEach(v => {
+      const el = document.getElementById('r' + v);
+      if (el) { el.classList.remove('active'); el.classList.add('text-ink-600'); }
+    });
+    ['card5','card12','card18','card28'].forEach(id => document.getElementById(id)?.classList.remove('selected'));
+    document.getElementById('rateInfoTitle').textContent = `${r}% GST — Custom Rate`;
+    document.getElementById('rateInfoText').textContent  = 'Custom GST rate entered manually.';
+    calc();
+  }
+}
+
+function setAmount(v) {
+  document.getElementById('amount').value = v;
+  // Highlight active preset
+  document.querySelectorAll('.amt-btn').forEach(b => {
+    b.classList.remove('bg-leaf-50', 'border-leaf-200', 'text-leaf-700');
+    b.classList.add('bg-ink-50', 'border-ink-200', 'text-ink-500');
+  });
+  calc();
+}
+
+// ── Main calculation ─────────────────────────────────────────────
+function calc() {
+  const amount = parseFloat(document.getElementById('amount').value) || 0;
+  const rate   = gstRate;
+  let base, gstAmt, total;
+
+  if (gstMode === 'add') {
+    base   = amount;
+    gstAmt = base * rate / 100;
+    total  = base + gstAmt;
+    document.getElementById('resultTitle').textContent  = 'Total (incl. GST)';
+    document.getElementById('mainResult').textContent   = fmt(total);
+    document.getElementById('resultSub').textContent    = `${fmt(base)} + ${rate}% GST`;
+    document.getElementById('r1Label').textContent      = 'Base Price';
+    document.getElementById('r1Val').textContent        = fmt(base);
+    document.getElementById('legendBaseLabel').textContent = 'Base Price';
+    document.getElementById('donutLabel').textContent   = 'total';
+    document.getElementById('donutCentre').textContent  = fmtCompact(total);
+  } else {
+    total  = amount;
+    base   = total / (1 + rate / 100);
+    gstAmt = total - base;
+    document.getElementById('resultTitle').textContent  = 'Base Price (excl. GST)';
+    document.getElementById('mainResult').textContent   = fmt(base);
+    document.getElementById('resultSub').textContent    = `${fmt(total)} − ${rate}% GST`;
+    document.getElementById('r1Label').textContent      = 'Inclusive Price';
+    document.getElementById('r1Val').textContent        = fmt(total);
+    document.getElementById('legendBaseLabel').textContent = 'Inclusive Price';
+    document.getElementById('donutLabel').textContent   = 'base';
+    document.getElementById('donutCentre').textContent  = fmtCompact(base);
+  }
+
+  document.getElementById('gstAmount').textContent = fmt(gstAmt);
+  document.getElementById('cgst').textContent      = fmt(gstAmt / 2);
+  document.getElementById('sgst').textContent      = fmt(gstAmt / 2);
+  document.getElementById('igst').textContent      = fmt(gstAmt);
+
+  // Donut
+  const refTotal  = gstMode === 'add' ? total : total;
+  const basePct   = refTotal > 0 ? (base   / refTotal) * 100 : 100;
+  const gstPct    = refTotal > 0 ? (gstAmt / refTotal) * 100 : 0;
+  const C         = 2 * Math.PI * 54;
+  const baseDash  = (basePct / 100) * C;
+  const gstDash   = (gstPct  / 100) * C;
+
+  document.getElementById('arcBase').setAttribute('stroke-dasharray', `${baseDash} ${C - baseDash}`);
+  document.getElementById('arcGst').setAttribute('stroke-dasharray',  `${gstDash} ${C - gstDash}`);
+  document.getElementById('arcGst').setAttribute('stroke-dashoffset', `-${baseDash}`);
+
+  document.getElementById('legendBase').textContent    = gstMode === 'add' ? fmt(base) : fmt(total);
+  document.getElementById('legendGst').textContent     = fmt(gstAmt);
+  document.getElementById('legendBasePct').textContent = fmtPct(basePct);
+  document.getElementById('legendGstPct').textContent  = fmtPct(gstPct);
+  document.getElementById('barBase').style.width       = basePct + '%';
+  document.getElementById('barGst').style.width        = gstPct  + '%';
+  document.getElementById('barLabelBase').textContent  = (gstMode === 'add' ? 'Base ' : 'Total ') + fmtPct(basePct);
+  document.getElementById('barLabelGst').textContent   = 'GST ' + fmtPct(gstPct);
+
+  // Comparison table
+  const baseAmt = gstMode === 'add' ? amount : (amount / (1 + rate / 100));
+  renderCompTable(baseAmt);
+  document.getElementById('compAmtLabel').textContent = fmt(baseAmt);
+}
+
+// ── All-rates comparison table ───────────────────────────────────
+function renderCompTable(baseAmt) {
+  const rates = [0, 5, 12, 18, 28];
+  document.getElementById('compTable').innerHTML = rates.map((r, i) => {
+    const gst   = baseAmt * r / 100;
+    const total = baseAmt + gst;
+    const isActive = r === gstRate;
+    return `<tr class="${isActive ? 'bg-leaf-50' : (i % 2 === 0 ? 'bg-white' : 'bg-ink-50/40')}">
+      <td class="px-5 py-3 text-sm font-semibold ${isActive ? 'text-leaf-700' : 'text-ink-700'} font-mono">${r}%${isActive ? ' ✓' : ''}</td>
+      <td class="px-5 py-3 text-sm text-right font-mono text-saffron-600 font-semibold">${fmt(gst)}</td>
+      <td class="px-5 py-3 text-sm text-right font-mono text-ink-500">${fmt(gst / 2)}</td>
+      <td class="px-5 py-3 text-sm text-right font-mono text-ink-500">${fmt(gst / 2)}</td>
+      <td class="px-5 py-3 text-sm text-right font-mono font-bold ${isActive ? 'text-leaf-700' : 'text-ink-900'}">${fmt(total)}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ── Mobile menu ──────────────────────────────────────────────────
+function toggleMobileMenu() {
+  const m = document.getElementById('mobileMenu'), btn = document.getElementById('menuBtn'), icon = document.getElementById('menuIcon');
+  const open = m.classList.toggle('hidden');
+  btn.setAttribute('aria-expanded', String(!open));
+  icon.innerHTML = open ? '<path d="M4 6h16M4 12h16M4 18h16"/>' : '<path d="M6 18L18 6M6 6l12 12"/>';
+}
+
+// ── Init ─────────────────────────────────────────────────────────
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+calc();
+</script>
+</body>
+</html>

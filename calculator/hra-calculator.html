@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HRA Calculator India – House Rent Allowance Exemption | BharatCalc</title>
+  <meta name="description" content="Free HRA Calculator India — calculate your House Rent Allowance exemption under Section 10(13A) instantly. Find how much HRA is tax-free for metro and non-metro cities. FY 2025-26." />
+  <meta name="keywords" content="HRA calculator India, house rent allowance calculator, HRA exemption calculator, HRA tax exemption, Section 10(13A), HRA calculation formula, HRA calculator metro non-metro, HRA calculator 2025" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/hra-calculator.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://bharatcalc.online/calculator/hra-calculator.html" />
+  <meta property="og:title"       content="HRA Calculator – House Rent Allowance Exemption | BharatCalc" />
+  <meta property="og:description" content="Calculate your HRA tax exemption instantly. Metro and non-metro supported. Free, no login." />
+  <meta property="og:image"       content="https://bharatcalc.online/og/hra-calculator.png" />
+  <meta property="og:locale"      content="en_IN" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="HRA Calculator | BharatCalc" />
+  <meta name="twitter:description" content="Calculate HRA tax exemption instantly. Free — by BharatCalc." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "HRA Calculator",
+    "url": "https://bharatcalc.online/calculator/hra-calculator.html",
+    "description": "Calculate House Rent Allowance tax exemption under Section 10(13A).",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",           "item": "https://bharatcalc.online/" },
+        { "@type": "ListItem", "position": 2, "name": "Tax",            "item": "https://bharatcalc.online/index.html?cat=tax" },
+        { "@type": "ListItem", "position": 3, "name": "HRA Calculator", "item": "https://bharatcalc.online/calculator/hra-calculator.html" }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How is HRA exemption calculated?", "acceptedAnswer": { "@type": "Answer", "text": "HRA exemption = minimum of: (1) Actual HRA received, (2) 50% of basic salary for metro cities or 40% for non-metro, (3) Actual rent paid minus 10% of basic salary. The lowest of these three amounts is your tax-free HRA." } },
+      { "@type": "Question", "name": "Which cities are considered metro for HRA?", "acceptedAnswer": { "@type": "Answer", "text": "Only four cities are classified as metro for HRA calculation: Delhi, Mumbai, Chennai, and Kolkata. Residents in these cities get 50% of basic salary as the HRA limit. All other cities, including Bengaluru, Hyderabad, Pune, and Ahmedabad, are non-metro at 40%." } },
+      { "@type": "Question", "name": "Can I claim HRA in the new tax regime?", "acceptedAnswer": { "@type": "Answer", "text": "No. HRA exemption under Section 10(13A) is not available in the new tax regime. It is only available in the old tax regime. If you want to claim HRA exemption, you must opt for the old regime by filing Form 10-IEA." } },
+      { "@type": "Question", "name": "Is HRA fully tax-free?", "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. Only the calculated HRA exemption amount (minimum of the three conditions) is tax-free. The remaining HRA is added to your taxable salary. You also need to actually pay rent to claim HRA — the exemption is not available if you live in your own house." } }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Clash Display', 'sans-serif'],
+            sans:    ['Satoshi', 'sans-serif'],
+            mono:    ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
+            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Satoshi', system-ui, sans-serif; }
+    .font-display { font-family: 'Clash Display', system-ui, sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #16a34a; transform: scaleX(0); transition: transform 0.2s; border-radius: 1px; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 5px; border-radius: 99px; outline: none; cursor: pointer; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #ea580c; border: 3px solid #fff; box-shadow: 0 0 0 1px #ea580c, 0 2px 6px rgba(234,88,12,0.3); cursor: pointer; transition: box-shadow 0.15s; }
+    input[type=range]::-webkit-slider-thumb:hover { box-shadow: 0 0 0 1px #ea580c, 0 2px 12px rgba(234,88,12,0.45); }
+    input[type=range]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #ea580c; border: 3px solid #fff; cursor: pointer; }
+    .val-input { font-family: 'JetBrains Mono', monospace; }
+    .val-input:focus { outline: none; }
+    .city-btn { transition: all 0.15s; }
+    .city-btn.active { background: #0d1117; color: #fff; border-color: #0d1117; }
+    .freq-btn { transition: all 0.15s; }
+    .freq-btn.active { background: #ea580c; color: #fff; border-color: #ea580c; }
+    .donut-ring { transition: stroke-dasharray 0.5s cubic-bezier(.4,0,.2,1); }
+    .breadcrumb a { transition: color 0.15s; }
+    .faq-item details summary { cursor: pointer; list-style: none; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    .min-highlight { background: #fff7ed; border-left: 3px solid #ea580c; }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9TD6B9GQ89');</script>
+</head>
+
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+        </div>
+        <div class="leading-none">
+          <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
+          <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+        <a href="../index.html?cat=tools"   class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+      </nav>
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>💰</span> Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>📄</span> Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>❤️</span> Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>➗</span> Math</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a>
+      <span>/</span>
+      <a href="../index.html?cat=tax" class="hover:text-ink-200">Tax</a>
+      <span>/</span>
+      <span class="text-ink-300">HRA Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-saffron-600/15 text-saffron-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-saffron-600/20">
+          <span class="w-1.5 h-1.5 bg-saffron-400 rounded-full inline-block animate-pulse"></span>
+          FY 2025–26 · Section 10(13A)
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">HRA Exemption Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
+          Calculate your House Rent Allowance tax exemption under Section 10(13A). Find the exact tax-free HRA amount for metro and non-metro cities.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0">
+        <span class="w-1.5 h-1.5 bg-saffron-400 rounded-full inline-block"></span>
+        Results update live
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-2 mt-5">
+      <div class="bg-saffron-600/10 border border-saffron-600/20 px-3 py-1.5 rounded-full text-xs font-semibold text-saffron-400">Old regime only</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Metro: 50% · Non-metro: 40%</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Minimum of 3 conditions</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Monthly & annual view</div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <!-- Frequency toggle -->
+  <div class="flex gap-2 mb-6 flex-wrap" role="group" aria-label="Input frequency">
+    <button onclick="setFreq('monthly', this)" class="freq-btn active px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600">📅 Monthly</button>
+    <button onclick="setFreq('annual',  this)" class="freq-btn px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:border-saffron-400 transition-all">📆 Annual</button>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- LEFT: Inputs -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-7">Salary & Rent Details</h2>
+
+      <!-- Basic Salary -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="basic" class="text-sm font-semibold text-ink-700">Basic Salary <span class="text-ink-400 font-normal" id="freqLabel">(per month)</span></label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="basicInput" type="number" class="val-input w-28 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="syncFromInput('basic', this.value)" />
+          </div>
+        </div>
+        <input type="range" id="basic" min="10000" max="500000" step="1000" value="50000" oninput="syncFromSlider('basic')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono" id="basicRange"><span>₹10K</span><span>₹5L</span></div>
+      </div>
+
+      <!-- HRA Received -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="hraReceived" class="text-sm font-semibold text-ink-700">HRA Received <span class="text-ink-400 font-normal" id="freqLabel2">(per month)</span></label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="hraReceivedInput" type="number" class="val-input w-28 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="syncFromInput('hraReceived', this.value)" />
+          </div>
+        </div>
+        <input type="range" id="hraReceived" min="0" max="300000" step="500" value="20000" oninput="syncFromSlider('hraReceived')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono" id="hraRange"><span>₹0</span><span>₹3L</span></div>
+        <p class="text-xs text-ink-400 mt-2">HRA component shown on your salary slip / CTC breakup.</p>
+      </div>
+
+      <!-- Rent Paid -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="rentPaid" class="text-sm font-semibold text-ink-700">Actual Rent Paid <span class="text-ink-400 font-normal" id="freqLabel3">(per month)</span></label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="rentPaidInput" type="number" class="val-input w-28 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="syncFromInput('rentPaid', this.value)" />
+          </div>
+        </div>
+        <input type="range" id="rentPaid" min="0" max="300000" step="500" value="18000" oninput="syncFromSlider('rentPaid')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono" id="rentRange"><span>₹0</span><span>₹3L</span></div>
+        <p class="text-xs text-ink-400 mt-2">Actual rent you pay your landlord. Must have rent receipts / agreement.</p>
+      </div>
+
+      <!-- City type -->
+      <div class="mb-7">
+        <label class="text-sm font-semibold text-ink-700 block mb-3">City Type</label>
+        <div class="grid grid-cols-2 gap-3" role="group" aria-label="City type">
+          <button id="btnMetro"    onclick="setCity('metro',    this)" class="city-btn active py-3 text-sm font-semibold border border-ink-200 rounded-xl transition-all flex flex-col items-center gap-1">
+            <span>🏙️</span>
+            <span>Metro City</span>
+            <span class="text-xs text-ink-400 font-normal">50% of basic</span>
+          </button>
+          <button id="btnNonMetro" onclick="setCity('nonmetro', this)" class="city-btn py-3 text-sm font-semibold border border-ink-200 rounded-xl text-ink-500 transition-all flex flex-col items-center gap-1">
+            <span>🏘️</span>
+            <span>Non-Metro City</span>
+            <span class="text-xs text-ink-400 font-normal">40% of basic</span>
+          </button>
+        </div>
+        <div class="mt-2.5 bg-ink-50 rounded-xl p-3 text-xs text-ink-500">
+          <strong class="text-ink-700">Metro cities (50%):</strong> Delhi, Mumbai, Chennai, Kolkata<br/>
+          <strong class="text-ink-700">Non-metro (40%):</strong> Bengaluru, Hyderabad, Pune, Ahmedabad + all other cities
+        </div>
+      </div>
+
+      <!-- Quick presets -->
+      <div>
+        <p class="text-xs text-ink-400 font-semibold uppercase tracking-wider mb-3">Common profiles</p>
+        <div class="grid grid-cols-2 gap-2">
+          <button onclick="applyPreset(50000, 20000, 18000, 'metro')" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-saffron-50 border border-ink-100 hover:border-saffron-200 rounded-xl transition-colors">
+            <div class="text-xs font-semibold text-ink-700">Mumbai Mid-level</div>
+            <div class="text-xs text-ink-400 font-mono">₹50K basic · ₹18K rent</div>
+          </button>
+          <button onclick="applyPreset(80000, 32000, 30000, 'metro')" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-saffron-50 border border-ink-100 hover:border-saffron-200 rounded-xl transition-colors">
+            <div class="text-xs font-semibold text-ink-700">Delhi Senior</div>
+            <div class="text-xs text-ink-400 font-mono">₹80K basic · ₹30K rent</div>
+          </button>
+          <button onclick="applyPreset(40000, 14000, 12000, 'nonmetro')" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-saffron-50 border border-ink-100 hover:border-saffron-200 rounded-xl transition-colors">
+            <div class="text-xs font-semibold text-ink-700">Pune Entry-level</div>
+            <div class="text-xs text-ink-400 font-mono">₹40K basic · ₹12K rent</div>
+          </button>
+          <button onclick="applyPreset(100000, 40000, 45000, 'nonmetro')" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-saffron-50 border border-ink-100 hover:border-saffron-200 rounded-xl transition-colors">
+            <div class="text-xs font-semibold text-ink-700">Bengaluru Senior</div>
+            <div class="text-xs text-ink-400 font-mono">₹1L basic · ₹45K rent</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div class="flex flex-col gap-5">
+
+      <!-- Main result card -->
+      <div class="bg-ink-900 rounded-2xl p-6 sm:p-8">
+        <p class="text-saffron-400 text-xs font-semibold uppercase tracking-wider mb-2">HRA Exemption (Tax-Free)</p>
+        <div class="font-display text-4xl sm:text-5xl font-bold text-white tracking-tight mb-1" id="mainResult">₹18,000</div>
+        <p class="text-ink-400 text-xs" id="mainSub">per month · ₹2,16,000 per year</p>
+        <div class="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-ink-700">
+          <div><p class="text-ink-500 text-xs mb-1">HRA Received</p><p class="font-mono font-semibold text-white text-base" id="r1">₹20,000</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Taxable HRA</p><p class="font-mono font-semibold text-saffron-400 text-base" id="r2">₹2,000</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">% of HRA Exempt</p><p class="font-mono font-semibold text-white text-base" id="r3">90.0%</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Annual Tax Saving</p><p class="font-mono font-semibold text-leaf-400 text-base" id="r4">₹0</p></div>
+        </div>
+      </div>
+
+      <!-- 3-condition breakdown -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-6">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-4">HRA Exemption — 3 Conditions</h2>
+        <p class="text-xs text-ink-400 mb-4">Exemption = <strong class="text-saffron-600">minimum</strong> of the three values below (highlighted row is the limiting factor)</p>
+        <div class="space-y-2" id="conditionCards">
+
+          <div id="cond1" class="flex items-center justify-between rounded-xl px-4 py-3 border border-ink-100">
+            <div>
+              <p class="text-xs font-semibold text-ink-700">① Actual HRA Received</p>
+              <p class="text-[10px] text-ink-400 mt-0.5">From salary slip</p>
+            </div>
+            <p class="font-mono font-bold text-ink-900 text-sm" id="c1val">₹20,000</p>
+          </div>
+
+          <div id="cond2" class="flex items-center justify-between rounded-xl px-4 py-3 border border-ink-100">
+            <div>
+              <p class="text-xs font-semibold text-ink-700" id="c2label">② 50% of Basic (Metro)</p>
+              <p class="text-[10px] text-ink-400 mt-0.5">50% × basic salary</p>
+            </div>
+            <p class="font-mono font-bold text-ink-900 text-sm" id="c2val">₹25,000</p>
+          </div>
+
+          <div id="cond3" class="flex items-center justify-between rounded-xl px-4 py-3 border border-ink-100">
+            <div>
+              <p class="text-xs font-semibold text-ink-700">③ Rent Paid − 10% of Basic</p>
+              <p class="text-[10px] text-ink-400 mt-0.5">Actual rent − 10% × basic</p>
+            </div>
+            <p class="font-mono font-bold text-ink-900 text-sm" id="c3val">₹13,000</p>
+          </div>
+
+          <div class="flex items-center justify-between bg-saffron-50 border border-saffron-200 rounded-xl px-4 py-3 mt-3">
+            <div>
+              <p class="text-xs font-semibold text-saffron-700">✓ HRA Exemption (Minimum)</p>
+              <p class="text-[10px] text-ink-400 mt-0.5" id="minCondLabel">Condition ③ is the limiting factor</p>
+            </div>
+            <p class="font-mono font-bold text-saffron-700 text-base" id="exemptMin">₹13,000</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Donut chart -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-6">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-5">HRA Breakdown</h2>
+        <div class="flex items-center justify-between gap-6">
+          <div class="relative flex-shrink-0">
+            <svg width="140" height="140" viewBox="0 0 140 140" aria-label="HRA exemption breakdown donut chart">
+              <circle cx="70" cy="70" r="54" fill="none" stroke="#e8ecf2" stroke-width="18"/>
+              <circle id="arcExempt"  cx="70" cy="70" r="54" fill="none" stroke="#16a34a" stroke-width="18" stroke-dasharray="339.29 0" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
+              <circle id="arcTaxable" cx="70" cy="70" r="54" fill="none" stroke="#f97316" stroke-width="18" stroke-dasharray="0 339.29" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+              <span class="font-mono text-xs text-ink-400">HRA</span>
+              <span class="font-display font-bold text-ink-900 text-sm leading-tight" id="donutCentre">₹20K</span>
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-3 h-3 rounded-sm bg-leaf-600 flex-shrink-0"></div>
+              <div>
+                <p class="text-xs text-ink-500 font-medium">Tax-Free HRA</p>
+                <p class="font-mono font-semibold text-ink-900 text-sm" id="legendExempt">₹18,000</p>
+                <p class="font-mono text-xs text-ink-400" id="legendExemptPct">90%</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-sm bg-saffron-500 flex-shrink-0"></div>
+              <div>
+                <p class="text-xs text-ink-500 font-medium">Taxable HRA</p>
+                <p class="font-mono font-semibold text-ink-900 text-sm" id="legendTaxable">₹2,000</p>
+                <p class="font-mono text-xs text-ink-400" id="legendTaxablePct">10%</p>
+              </div>
+            </div>
+            <div class="mt-5 space-y-1.5">
+              <div class="h-2 w-full bg-ink-100 rounded-full overflow-hidden flex">
+                <div id="barExempt"  class="h-full bg-leaf-600 rounded-l-full transition-all duration-500" style="width:90%"></div>
+                <div id="barTaxable" class="h-full bg-saffron-500 rounded-r-full transition-all duration-500" style="width:10%"></div>
+              </div>
+              <div class="flex justify-between text-xs text-ink-400 font-mono">
+                <span id="barLabelE">Tax-free 90%</span>
+                <span id="barLabelT">Taxable 10%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Ad placeholder -->
+  <div class="my-6">
+    <div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400" aria-hidden="true">Google AdSense — Responsive Ad Unit</div>
+  </div>
+
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">What is HRA Exemption?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        HRA (House Rent Allowance) is a component of your salary provided by employers to help cover rental expenses. Under <strong class="text-ink-700">Section 10(13A)</strong> of the Income Tax Act, a portion of the HRA received is exempt from income tax — reducing your overall tax liability.
+      </p>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">
+        The tax-free portion is the <strong class="text-ink-700">minimum of three calculated values</strong>. This ensures only genuine rent payments are exempt and prevents over-claiming.
+      </p>
+      <div class="bg-saffron-50 border border-saffron-100 rounded-xl p-3">
+        <p class="text-xs font-semibold text-saffron-700 mb-1">⚠️ Old regime only</p>
+        <p class="text-xs text-ink-500">HRA exemption is only available under the old tax regime. Under the new regime (default from FY 2023-24), HRA exemption cannot be claimed.</p>
+      </div>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">HRA Exemption Formula</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">The HRA exemption is the <strong class="text-ink-700">lowest</strong> of these three:</p>
+      <div class="space-y-2.5">
+        <div class="bg-ink-50 rounded-xl p-3">
+          <p class="text-xs font-semibold text-ink-700 mb-1">① Actual HRA Received</p>
+          <p class="font-mono text-xs text-ink-600">= HRA component from salary slip</p>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <p class="text-xs font-semibold text-ink-700 mb-1">② % of Basic Salary</p>
+          <p class="font-mono text-xs text-ink-600">= 50% × Basic (Metro cities)</p>
+          <p class="font-mono text-xs text-ink-600">= 40% × Basic (Non-metro cities)</p>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <p class="text-xs font-semibold text-ink-700 mb-1">③ Rent Paid Minus 10% of Basic</p>
+          <p class="font-mono text-xs text-ink-600">= Actual Rent Paid − 10% × Basic</p>
+        </div>
+      </div>
+      <div class="mt-3 bg-saffron-50 border border-saffron-100 rounded-xl p-3">
+        <p class="font-mono text-xs font-bold text-saffron-700">Exemption = MIN(①, ②, ③)</p>
+        <p class="text-xs text-ink-500 mt-1">Remaining HRA (received − exempt) is added to taxable income.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">HRA Example Calculations</h2>
+      <div class="space-y-3">
+        <div class="bg-ink-50 rounded-xl p-3">
+          <p class="text-xs font-semibold text-ink-700 mb-2">Mumbai employee: Basic ₹50K, HRA ₹20K, Rent ₹18K</p>
+          <div class="space-y-1 text-[10px] font-mono text-ink-500">
+            <div>① HRA received = ₹20,000</div>
+            <div>② 50% of basic = ₹25,000</div>
+            <div>③ Rent − 10% basic = ₹18,000 − ₹5,000 = <strong class="text-saffron-600">₹13,000</strong></div>
+          </div>
+          <div class="mt-2 pt-2 border-t border-ink-200 flex justify-between text-xs">
+            <span class="font-semibold text-leaf-700">Exempt = ₹13,000/mo</span>
+            <span class="text-saffron-600">Taxable = ₹7,000/mo</span>
+          </div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <p class="text-xs font-semibold text-ink-700 mb-2">Bengaluru employee: Basic ₹80K, HRA ₹32K, Rent ₹30K</p>
+          <div class="space-y-1 text-[10px] font-mono text-ink-500">
+            <div>① HRA received = ₹32,000</div>
+            <div>② 40% of basic = <strong class="text-saffron-600">₹32,000</strong></div>
+            <div>③ Rent − 10% basic = ₹30,000 − ₹8,000 = ₹22,000</div>
+          </div>
+          <div class="mt-2 pt-2 border-t border-ink-200 flex justify-between text-xs">
+            <span class="font-semibold text-leaf-700">Exempt = ₹22,000/mo</span>
+            <span class="text-saffron-600">Taxable = ₹10,000/mo</span>
+          </div>
+        </div>
+        <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+          <p class="text-xs font-semibold text-leaf-700 mb-1">💡 Tip: Pay more rent = higher exemption</p>
+          <p class="text-xs text-ink-500">Increasing rent paid (up to a reasonable limit) raises Condition ③, potentially increasing your exemption — as long as you have genuine rent receipts.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">HRA Rules & Important Points</h2>
+      <ul class="space-y-3 text-sm text-ink-500">
+        <li class="flex items-start gap-2.5"><span class="text-saffron-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Must actually pay rent</strong> — HRA exemption cannot be claimed if you live in your own house. You must be paying rent to a landlord.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-saffron-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Rent receipts required</strong> — if annual rent exceeds ₹1 lakh, you must provide the landlord's PAN to your employer. Rent receipts are mandatory proof.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-saffron-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Renting from parents allowed</strong> — you can pay rent to parents and claim HRA, provided the rent is genuinely paid and declared in the parent's income tax return.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-saffron-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Home loan + HRA</strong> — you can claim both home loan deductions (Section 24b, 80C) and HRA exemption if your rented house and owned house are in different cities.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-saffron-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Self-employed individuals</strong> — can claim rent deduction under Section 80GG instead of Section 10(13A), capped at ₹5,000/month or 25% of total income.</span></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about HRA exemption in India</p>
+  <div class="grid md:grid-cols-2 gap-3">
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How is HRA exemption calculated?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          HRA exemption = <strong class="text-ink-700">minimum</strong> of: ① Actual HRA received, ② 50% of basic salary (metro) or 40% (non-metro), ③ Actual rent paid − 10% of basic salary. Example: Basic ₹50K, HRA ₹20K, Rent ₹18K in Mumbai → ① ₹20K, ② ₹25K, ③ ₹13K → <strong class="text-ink-700">Exempt = ₹13,000</strong>.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Which cities are metro for HRA calculation?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Only <strong class="text-ink-700">four cities</strong> are classified as metro for HRA: <strong class="text-ink-700">Delhi, Mumbai, Chennai, and Kolkata</strong>. Residents here get 50% of basic as the HRA limit. All other cities — including Bengaluru, Hyderabad, Pune, Ahmedabad — are non-metro and get 40% of basic.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Can I claim HRA in the new tax regime?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          <strong class="text-ink-700">No</strong>. HRA exemption under Section 10(13A) is not available in the new tax regime. It is only claimable in the old tax regime. To opt for old regime, file Form 10-IEA before the ITR due date. If you have significant HRA, the old regime may save more tax overall.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Can I pay rent to my parents and claim HRA?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          <strong class="text-ink-700">Yes</strong>, it is legally allowed. You must: (1) have a genuine rent agreement with your parents, (2) actually transfer rent via bank (not cash), (3) your parents must declare it as rental income in their ITR. If parents are in a lower tax bracket, this can result in family-level tax savings.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What documents do I need for HRA exemption?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Required: <strong class="text-ink-700">Rent receipts</strong> (monthly, with landlord's signature and revenue stamp), <strong class="text-ink-700">rent agreement</strong>. If annual rent exceeds <strong class="text-ink-700">₹1 lakh</strong>, you must also provide the landlord's <strong class="text-ink-700">PAN card</strong> to your employer. Keep all documents handy — the IT department may ask for them during scrutiny.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Can I claim both HRA and home loan benefits?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          <strong class="text-ink-700">Yes</strong>, if you own a house in one city but live in a rented house in another city (for work). For example, owning a house in Chennai but working in Mumbai — you can claim HRA for Mumbai rent AND home loan deductions (Section 24b interest + Section 80C principal) for Chennai. This is completely legal.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is Section 80GG for self-employed?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Section 80GG is for individuals who don't receive HRA (self-employed, freelancers, or salaried without HRA component). Deduction = minimum of ① ₹5,000/month, ② 25% of adjusted gross total income, ③ actual rent − 10% of income. Conditions: you must not own a house in the city where you work.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How accurate is this HRA calculator?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          This calculator uses the exact Section 10(13A) formula as per the Income Tax Act. Results are <strong class="text-ink-700">mathematically accurate</strong> for the inputs provided. However, actual exemption may vary based on DA (Dearness Allowance) components, part-year employment, or special employer policies. Consult a CA for a complete tax assessment.
+        </div>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- Related Calculators -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="income-tax-calculator.html" class="bg-white border border-ink-100 hover:border-saffron-200 hover:bg-saffron-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">📄</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-saffron-700 transition-colors">Income Tax</div>
+      <div class="text-xs text-ink-400 mt-0.5">New vs old regime FY 2025-26</div>
+    </a>
+    <a href="gst-calculator.html" class="bg-white border border-ink-100 hover:border-saffron-200 hover:bg-saffron-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">🧾</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-saffron-700 transition-colors">GST Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Add or remove GST</div>
+    </a>
+    <a href="emi-calculator.html" class="bg-white border border-ink-100 hover:border-saffron-200 hover:bg-saffron-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">🏦</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-saffron-700 transition-colors">EMI Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Home loan + 24(b) deduction</div>
+    </a>
+    <a href="ppf-calculator.html" class="bg-white border border-ink-100 hover:border-saffron-200 hover:bg-saffron-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">💰</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-saffron-700 transition-colors">PPF Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Tax-free 80C investment</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+          </div>
+          <div class="font-display font-semibold text-white">BharatCalc</div>
+        </div>
+        <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
+        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700">⚠️ HRA results are estimates. For exact exemption, consult a CA or use the official Income Tax portal at incometax.gov.in.</div>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="sip-calculator.html"  class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
+          <li><a href="emi-calculator.html"  class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
+          <li><a href="ppf-calculator.html"  class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
+          <li><a href="fd-calculator.html"   class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
+          <li><a href="cagr-calculator.html" class="hover:text-leaf-400 transition-colors">CAGR Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax & Legal</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="income-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
+          <li><a href="gst-calculator.html"        class="hover:text-leaf-400 transition-colors">GST Calculator</a></li>
+          <li><a href="hra-calculator.html"        class="hover:text-leaf-400 transition-colors font-semibold text-leaf-400">HRA Exemption</a></li>
+          <li><a href="tds-calculator.html"        class="hover:text-leaf-400 transition-colors">TDS Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Health & Math</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="bmi-calculator.html"               class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li>
+          <li><a href="age-calculator.html"               class="hover:text-leaf-400 transition-colors">Age Calculator</a></li>
+          <li><a href="percentage-calculator.html"        class="hover:text-leaf-400 transition-colors">Percentage</a></li>
+          <li><a href="compound-interest-calculator.html" class="hover:text-leaf-400 transition-colors">Compound Interest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
+      <div class="flex gap-5">
+        <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
+        <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
+        <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
+        <a href="../contact.html" class="hover:text-ink-300 transition-colors">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+let cityType = 'metro';   // 'metro' | 'nonmetro'
+let freq     = 'monthly'; // 'monthly' | 'annual'
+
+// ── Formatting ───────────────────────────────────────────────────
+function fmtINR(n)  { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+function fmtCompact(n) {
+  if (n >= 10000000) return '₹' + (n / 10000000).toFixed(2) + 'Cr';
+  if (n >= 100000)   return '₹' + (n / 100000).toFixed(2) + 'L';
+  if (n >= 1000)     return '₹' + (n / 1000).toFixed(1) + 'K';
+  return fmtINR(n);
+}
+function fmtPct(n) { return n.toFixed(1) + '%'; }
+
+// ── Track fill (saffron) ────────────────────────────────────────
+function updateTrack(id) {
+  const el  = document.getElementById(id);
+  const pct = ((parseFloat(el.value) - parseFloat(el.min)) / (parseFloat(el.max) - parseFloat(el.min))) * 100;
+  el.style.background = `linear-gradient(to right, #ea580c ${pct}%, #e8ecf2 ${pct}%)`;
+}
+
+function syncFromSlider(id) {
+  document.getElementById(id + 'Input').value = document.getElementById(id).value;
+  updateTrack(id);
+  calc();
+}
+
+function syncFromInput(id, val) {
+  const slider  = document.getElementById(id);
+  const clamped = Math.min(Math.max(parseFloat(val) || 0, parseFloat(slider.min)), parseFloat(slider.max));
+  slider.value  = clamped;
+  updateTrack(id);
+  calc();
+}
+
+// ── Frequency toggle ────────────────────────────────────────────
+function setFreq(f, btn) {
+  freq = f;
+  document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const isAnnual = f === 'annual';
+  const label = isAnnual ? '(per year)' : '(per month)';
+  ['freqLabel','freqLabel2','freqLabel3'].forEach(id => {
+    document.getElementById(id).textContent = label;
+  });
+
+  // Rescale sliders
+  if (isAnnual) {
+    rescaleSlider('basic',       120000, 6000000, 600000);
+    rescaleSlider('hraReceived', 0,      3600000, 240000);
+    rescaleSlider('rentPaid',    0,      3600000, 216000);
+    document.getElementById('basicRange').innerHTML    = '<span>₹1.2L</span><span>₹60L</span>';
+    document.getElementById('hraRange').innerHTML      = '<span>₹0</span><span>₹36L</span>';
+    document.getElementById('rentRange').innerHTML     = '<span>₹0</span><span>₹36L</span>';
+  } else {
+    rescaleSlider('basic',       10000, 500000, 50000);
+    rescaleSlider('hraReceived', 0,     300000, 20000);
+    rescaleSlider('rentPaid',    0,     300000, 18000);
+    document.getElementById('basicRange').innerHTML    = '<span>₹10K</span><span>₹5L</span>';
+    document.getElementById('hraRange').innerHTML      = '<span>₹0</span><span>₹3L</span>';
+    document.getElementById('rentRange').innerHTML     = '<span>₹0</span><span>₹3L</span>';
+  }
+  calc();
+}
+
+function rescaleSlider(id, min, max, val) {
+  const s = document.getElementById(id);
+  s.min = min; s.max = max; s.value = val;
+  document.getElementById(id + 'Input').value = val;
+  updateTrack(id);
+}
+
+// ── City type ────────────────────────────────────────────────────
+function setCity(c, btn) {
+  cityType = c;
+  document.getElementById('btnMetro').classList.toggle('active',    c === 'metro');
+  document.getElementById('btnNonMetro').classList.toggle('active', c === 'nonmetro');
+  document.getElementById('btnMetro').classList.toggle('text-ink-500',    c !== 'metro');
+  document.getElementById('btnNonMetro').classList.toggle('text-ink-500', c !== 'nonmetro');
+  calc();
+}
+
+// ── Apply preset ────────────────────────────────────────────────
+function applyPreset(basic, hra, rent, city) {
+  // Always reset to monthly mode first
+  if (freq !== 'monthly') setFreq('monthly', document.querySelector('.freq-btn'));
+  document.getElementById('basic').value          = basic;
+  document.getElementById('basicInput').value     = basic;
+  document.getElementById('hraReceived').value    = hra;
+  document.getElementById('hraReceivedInput').value = hra;
+  document.getElementById('rentPaid').value       = rent;
+  document.getElementById('rentPaidInput').value  = rent;
+  updateTrack('basic'); updateTrack('hraReceived'); updateTrack('rentPaid');
+  setCity(city, document.getElementById(city === 'metro' ? 'btnMetro' : 'btnNonMetro'));
+}
+
+// ── Main calculation ─────────────────────────────────────────────
+function calc() {
+  // Read inputs (already in the correct frequency unit from sliders)
+  let basic       = parseFloat(document.getElementById('basicInput').value)       || 0;
+  let hraReceived = parseFloat(document.getElementById('hraReceivedInput').value) || 0;
+  let rentPaid    = parseFloat(document.getElementById('rentPaidInput').value)    || 0;
+
+  // Normalise to monthly for calculation
+  const divisor = freq === 'annual' ? 12 : 1;
+  const basicMo = basic       / divisor;
+  const hraMo   = hraReceived / divisor;
+  const rentMo  = rentPaid    / divisor;
+
+  if (basicMo <= 0) return;
+
+  // ── Three conditions (monthly) ──────────────────────────────
+  const pct      = cityType === 'metro' ? 0.50 : 0.40;
+  const cond1    = hraMo;                            // ① Actual HRA
+  const cond2    = basicMo * pct;                    // ② % of basic
+  const cond3    = Math.max(0, rentMo - 0.10 * basicMo); // ③ Rent − 10% basic
+  const exemptMo = Math.min(cond1, cond2, cond3);
+  const taxableMo = hraMo - exemptMo;
+
+  // Annual values
+  const exemptAnnual  = exemptMo  * 12;
+  const taxableAnnual = taxableMo * 12;
+  const hraAnnual     = hraMo     * 12;
+
+  // Estimated annual tax saving (assume 30% slab)
+  const taxSaving = exemptAnnual * 0.30 * 1.04; // with 4% cess
+
+  // ── Update result card ──────────────────────────────────────
+  document.getElementById('mainResult').textContent = fmtINR(exemptMo);
+  document.getElementById('mainSub').textContent    = `per month · ${fmtINR(exemptAnnual)} per year`;
+  document.getElementById('r1').textContent  = fmtINR(hraMo);
+  document.getElementById('r2').textContent  = fmtINR(taxableMo);
+  document.getElementById('r3').textContent  = hraMo > 0 ? fmtPct((exemptMo / hraMo) * 100) : '0%';
+  document.getElementById('r4').textContent  = '≈ ' + fmtINR(taxSaving) + ' (30% slab)';
+
+  // ── 3 condition cards ───────────────────────────────────────
+  const minVal   = exemptMo;
+  const minCond  = cond1 <= cond2 && cond1 <= cond3 ? 1 : cond2 <= cond3 ? 2 : 3;
+
+  document.getElementById('c1val').textContent   = fmtINR(cond1);
+  document.getElementById('c2val').textContent   = fmtINR(cond2);
+  document.getElementById('c3val').textContent   = fmtINR(cond3);
+  document.getElementById('c2label').textContent = `② ${(pct * 100).toFixed(0)}% of Basic (${cityType === 'metro' ? 'Metro' : 'Non-metro'})`;
+  document.getElementById('exemptMin').textContent = fmtINR(minVal);
+  document.getElementById('minCondLabel').textContent = `Condition ① is limiting` .replace('①', ['①','②','③'][minCond - 1]);
+
+  // Highlight the minimum condition
+  ['cond1','cond2','cond3'].forEach((id, i) => {
+    const isMin = (i + 1) === minCond;
+    document.getElementById(id).className = isMin
+      ? 'flex items-center justify-between rounded-xl px-4 py-3 border-2 border-saffron-400 bg-saffron-50'
+      : 'flex items-center justify-between rounded-xl px-4 py-3 border border-ink-100';
+  });
+
+  // ── Donut ───────────────────────────────────────────────────
+  const exemptPct  = hraMo > 0 ? (exemptMo  / hraMo) * 100 : 100;
+  const taxablePct = hraMo > 0 ? (taxableMo / hraMo) * 100 : 0;
+  const C          = 2 * Math.PI * 54;
+  const eDash      = (exemptPct  / 100) * C;
+  const tDash      = (taxablePct / 100) * C;
+
+  document.getElementById('arcExempt').setAttribute('stroke-dasharray',  `${eDash} ${C - eDash}`);
+  document.getElementById('arcTaxable').setAttribute('stroke-dasharray', `${tDash} ${C - tDash}`);
+  document.getElementById('arcTaxable').setAttribute('stroke-dashoffset',`-${eDash}`);
+  document.getElementById('donutCentre').textContent = fmtCompact(hraMo);
+
+  document.getElementById('legendExempt').textContent   = fmtINR(exemptMo);
+  document.getElementById('legendTaxable').textContent  = fmtINR(taxableMo);
+  document.getElementById('legendExemptPct').textContent  = fmtPct(exemptPct);
+  document.getElementById('legendTaxablePct').textContent = fmtPct(taxablePct);
+  document.getElementById('barExempt').style.width  = exemptPct  + '%';
+  document.getElementById('barTaxable').style.width = taxablePct + '%';
+  document.getElementById('barLabelE').textContent  = 'Tax-free ' + fmtPct(exemptPct);
+  document.getElementById('barLabelT').textContent  = 'Taxable ' + fmtPct(taxablePct);
+}
+
+// ── Mobile menu ──────────────────────────────────────────────────
+function toggleMobileMenu() {
+  const m = document.getElementById('mobileMenu'), btn = document.getElementById('menuBtn'), icon = document.getElementById('menuIcon');
+  const open = m.classList.toggle('hidden');
+  btn.setAttribute('aria-expanded', String(!open));
+  icon.innerHTML = open ? '<path d="M4 6h16M4 12h16M4 18h16"/>' : '<path d="M6 18L18 6M6 6l12 12"/>';
+}
+
+// ── Init ─────────────────────────────────────────────────────────
+function init() {
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+  ['basic', 'hraReceived', 'rentPaid'].forEach(id => {
+    document.getElementById(id + 'Input').value = document.getElementById(id).value;
+    updateTrack(id);
+  });
+  calc();
+}
+
+init();
+</script>
+</body>
+</html>

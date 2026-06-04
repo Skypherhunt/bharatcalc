@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FD Calculator India – Fixed Deposit Maturity Calculator | BharatCalc</title>
+  <meta name="description" content="Free FD Calculator India — calculate fixed deposit maturity amount, interest earned and effective yield instantly. Supports monthly, quarterly, half-yearly and yearly compounding. Updated for current FD rates 2025-26." />
+  <meta name="keywords" content="FD calculator India, fixed deposit calculator, FD maturity calculator, FD interest calculator, SBI FD calculator, HDFC FD calculator, fixed deposit returns calculator, FD calculator 2025, senior citizen FD calculator" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/fd-calculator.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://bharatcalc.online/calculator/fd-calculator.html" />
+  <meta property="og:title"       content="FD Calculator – Fixed Deposit Maturity | BharatCalc" />
+  <meta property="og:description" content="Calculate FD maturity amount and interest earned instantly. All compounding frequencies. Free, no login." />
+  <meta property="og:image"       content="https://bharatcalc.online/og/fd-calculator.png" />
+  <meta property="og:locale"      content="en_IN" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="FD Calculator | BharatCalc" />
+  <meta name="twitter:description" content="Calculate fixed deposit maturity amount instantly. Free — by BharatCalc." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "FD Calculator",
+    "url": "https://bharatcalc.online/calculator/fd-calculator.html",
+    "description": "Calculate fixed deposit maturity amount, interest earned and effective yield for all compounding frequencies.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",          "item": "https://bharatcalc.online/" },
+        { "@type": "ListItem", "position": 2, "name": "Finance",       "item": "https://bharatcalc.online/index.html?cat=finance" },
+        { "@type": "ListItem", "position": 3, "name": "FD Calculator", "item": "https://bharatcalc.online/calculator/fd-calculator.html" }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How is FD interest calculated?", "acceptedAnswer": { "@type": "Answer", "text": "FD interest uses the compound interest formula: A = P × (1 + r/n)^(n×t), where P is principal, r is annual rate (decimal), n is compounding frequency per year, and t is tenure in years. Example: ₹1 lakh at 7% quarterly for 2 years = ₹1,14,888 maturity, ₹14,888 interest." } },
+      { "@type": "Question", "name": "What is the current FD interest rate in India?", "acceptedAnswer": { "@type": "Answer", "text": "As of FY 2025-26, FD rates range from 6.5% to 7.5% p.a. for 1–3 year tenures. SBI offers 6.5–7.0%, HDFC Bank 7.0–7.25%, ICICI Bank 7.0–7.25%, Post Office Time Deposit 7.5% (5 yrs). Senior citizens get 0.25–0.50% extra." } },
+      { "@type": "Question", "name": "Is FD interest taxable in India?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. FD interest is fully taxable as 'Income from Other Sources' at your income tax slab rate. TDS at 10% is deducted if annual interest exceeds ₹40,000 (₹50,000 for senior citizens). Submit Form 15G/15H to avoid TDS if your income is below the taxable limit." } },
+      { "@type": "Question", "name": "What is the difference between cumulative and non-cumulative FD?", "acceptedAnswer": { "@type": "Answer", "text": "In cumulative FD, interest is compounded and paid at maturity — better for wealth creation. In non-cumulative FD, interest is paid out periodically (monthly/quarterly) — better for regular income needs like retirees." } },
+      { "@type": "Question", "name": "FD vs PPF — which is better?", "acceptedAnswer": { "@type": "Answer", "text": "PPF is better for tax-efficiency (EEE status — all three stages tax-free) and long-term wealth creation with 7.1% guaranteed returns. FD is better for flexibility (custom tenure, premature closure). For short to medium term goals, FD; for long-term tax-saving wealth, PPF wins." } }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Clash Display', 'sans-serif'],
+            sans:    ['Satoshi', 'sans-serif'],
+            mono:    ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
+            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Satoshi', system-ui, sans-serif; }
+    .font-display { font-family: 'Clash Display', system-ui, sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #16a34a; transform: scaleX(0); transition: transform 0.2s; border-radius: 1px; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 5px; border-radius: 99px; outline: none; cursor: pointer; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #16a34a; border: 3px solid #fff; box-shadow: 0 0 0 1px #16a34a, 0 2px 6px rgba(22,163,74,0.3); cursor: pointer; transition: box-shadow 0.15s; }
+    input[type=range]::-webkit-slider-thumb:hover { box-shadow: 0 0 0 1px #16a34a, 0 2px 12px rgba(22,163,74,0.45); }
+    input[type=range]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #16a34a; border: 3px solid #fff; box-shadow: 0 0 0 1px #16a34a; cursor: pointer; }
+    .val-input { font-family: 'JetBrains Mono', monospace; }
+    .val-input:focus { outline: none; }
+    .comp-btn { transition: all 0.15s; }
+    .comp-btn.active { background: #0d1117; color: #fff; border-color: #0d1117; }
+    .rate-btn { transition: all 0.15s; }
+    .rate-btn.active { background: #f0fdf4; border-color: #16a34a; color: #15803d; }
+    .donut-ring { transition: stroke-dasharray 0.5s cubic-bezier(.4,0,.2,1); }
+    .bar-principal { background: #16a34a; border-radius: 4px 4px 0 0; transition: height 0.4s cubic-bezier(.4,0,.2,1); }
+    .bar-interest  { background: #4ade80; border-radius: 4px 4px 0 0; transition: height 0.4s cubic-bezier(.4,0,.2,1); }
+    .bar-group:hover .bar-tip { display: block; }
+    .bar-tip { display: none; position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); background: #0d1117; color: #fff; font-size: 10px; font-family: 'JetBrains Mono', monospace; white-space: nowrap; padding: 4px 8px; border-radius: 6px; pointer-events: none; z-index: 10; }
+    .bar-tip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 4px solid transparent; border-top-color: #0d1117; }
+    .growth-table { border-collapse: collapse; width: 100%; }
+    .growth-table th { position: sticky; top: 0; background: #f5f7fa; z-index: 1; }
+    .growth-table tbody tr:hover td { background: #f0fdf4; }
+    .table-wrap { max-height: 340px; overflow-y: auto; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    .breadcrumb a { transition: color 0.15s; }
+    .faq-item details summary { cursor: pointer; list-style: none; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9TD6B9GQ89');</script>
+</head>
+
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+        </div>
+        <div class="leading-none">
+          <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
+          <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+        <a href="../index.html?cat=tools"   class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+      </nav>
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>💰</span> Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>📄</span> Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>❤️</span> Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>➗</span> Math</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a>
+      <span>/</span>
+      <a href="../index.html?cat=finance" class="hover:text-ink-200">Finance</a>
+      <span>/</span>
+      <span class="text-ink-300">FD Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-leaf-600/15 text-leaf-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-leaf-600/20">
+          <span class="w-1.5 h-1.5 bg-leaf-400 rounded-full inline-block animate-pulse"></span>
+          Updated for FY <span id="heroFY" class="ml-0.5"></span>
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">FD Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
+          Calculate your fixed deposit maturity amount, total interest earned and effective annual yield. Supports monthly, quarterly, half-yearly and yearly compounding.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0">
+        <span class="w-1.5 h-1.5 bg-leaf-400 rounded-full inline-block"></span>
+        Results update live
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-2 mt-5">
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">All compounding frequencies</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Senior citizen rates</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Year-by-year breakdown</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">TDS note included</div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <!-- Mode tabs: Regular vs Senior Citizen -->
+  <div class="flex gap-2 mb-6 flex-wrap" role="group" aria-label="Investor type">
+    <button class="mode-tab active px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 transition-all" onclick="setInvestorType('regular', this)" id="tabRegular">👤 Regular</button>
+    <button class="mode-tab px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:border-leaf-400 transition-all" onclick="setInvestorType('senior', this)" id="tabSenior">🧓 Senior Citizen (+0.5%)</button>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- LEFT: Inputs -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-7">FD Details</h2>
+
+      <!-- Principal -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="principal" class="text-sm font-semibold text-ink-700">Principal Amount</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="principalInput" type="number" class="val-input w-28 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1000" max="100000000" step="1000" oninput="syncFromInput('principal', this.value)" />
+          </div>
+        </div>
+        <input type="range" id="principal" min="10000" max="10000000" step="10000" value="100000" oninput="syncFromSlider('principal')" class="w-full" aria-label="Principal amount slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹10K</span><span>₹1Cr</span></div>
+      </div>
+
+      <!-- Interest Rate -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="rate" class="text-sm font-semibold text-ink-700">Interest Rate (p.a.)</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <input id="rateInput" type="number" class="val-input w-16 text-sm font-semibold text-ink-900 bg-transparent text-right" min="0.5" max="15" step="0.1" oninput="syncFromInput('rate', this.value)" />
+            <span class="text-sm text-ink-400 font-mono">%</span>
+          </div>
+        </div>
+        <input type="range" id="rate" min="1" max="15" step="0.1" value="7" oninput="syncFromSlider('rate')" class="w-full" aria-label="Interest rate slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>1%</span><span>15%</span></div>
+        <div class="flex flex-wrap gap-2 mt-2.5">
+          <button onclick="setRate(6.5,  this)" data-rate="6.5"  class="rate-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">SBI 6.5%</button>
+          <button onclick="setRate(7.0,  this)" data-rate="7.0"  class="rate-btn text-[10px] px-2 py-1 bg-leaf-50 border border-leaf-200 rounded-md font-mono text-leaf-700 transition-colors">HDFC 7%</button>
+          <button onclick="setRate(7.1,  this)" data-rate="7.1"  class="rate-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">ICICI 7.1%</button>
+          <button onclick="setRate(7.5,  this)" data-rate="7.5"  class="rate-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">P.O. 7.5%</button>
+        </div>
+      </div>
+
+      <!-- Tenure -->
+      <div class="mb-7">
+        <label class="text-sm font-semibold text-ink-700 block mb-3">Tenure</label>
+        <div class="grid grid-cols-2 gap-3 mb-2.5">
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-2">
+            <input id="tenureYears" type="number" value="2" min="0" max="10" class="val-input w-14 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="calc()" />
+            <span class="text-sm text-ink-400 font-mono">yrs</span>
+          </div>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-2">
+            <input id="tenureMonths" type="number" value="0" min="0" max="11" class="val-input w-14 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="calc()" />
+            <span class="text-sm text-ink-400 font-mono">mo</span>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button onclick="setTenure(1,0,this)"  data-tenure="1-0"  class="tenure-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">1 yr</button>
+          <button onclick="setTenure(2,0,this)"  data-tenure="2-0"  class="tenure-btn text-[10px] px-2 py-1 bg-leaf-50 border border-leaf-200 rounded-md font-mono text-leaf-700 transition-colors">2 yrs</button>
+          <button onclick="setTenure(3,0,this)"  data-tenure="3-0"  class="tenure-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">3 yrs</button>
+          <button onclick="setTenure(5,0,this)"  data-tenure="5-0"  class="tenure-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">5 yrs</button>
+          <button onclick="setTenure(0,6,this)"  data-tenure="0-6"  class="tenure-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">6 mo</button>
+        </div>
+      </div>
+
+      <!-- Compounding Frequency -->
+      <div class="mb-7">
+        <label class="text-sm font-semibold text-ink-700 block mb-3">Compounding Frequency</label>
+        <div class="grid grid-cols-4 gap-2">
+          <button onclick="setComp(12)" id="cM" class="comp-btn py-2.5 text-xs font-semibold border border-ink-200 rounded-lg transition-all text-ink-600">Monthly</button>
+          <button onclick="setComp(4)"  id="cQ" class="comp-btn active py-2.5 text-xs font-semibold border rounded-lg transition-all">Quarterly</button>
+          <button onclick="setComp(2)"  id="cH" class="comp-btn py-2.5 text-xs font-semibold border border-ink-200 rounded-lg transition-all text-ink-600">Half-yr</button>
+          <button onclick="setComp(1)"  id="cY" class="comp-btn py-2.5 text-xs font-semibold border border-ink-200 rounded-lg transition-all text-ink-600">Yearly</button>
+        </div>
+      </div>
+
+      <!-- Goal presets -->
+      <div>
+        <p class="text-xs text-ink-400 font-semibold uppercase tracking-wider mb-3">Goal presets</p>
+        <div class="grid grid-cols-2 gap-2">
+          <button onclick="applyPreset(100000, 7.0, 1, 0)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors">
+            <div class="text-xs font-semibold text-ink-700">Short Term</div>
+            <div class="text-xs text-ink-400 font-mono">₹1L · 7% · 1yr</div>
+          </button>
+          <button onclick="applyPreset(500000, 7.1, 3, 0)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors">
+            <div class="text-xs font-semibold text-ink-700">Medium Term</div>
+            <div class="text-xs text-ink-400 font-mono">₹5L · 7.1% · 3yrs</div>
+          </button>
+          <button onclick="applyPreset(1000000, 7.5, 5, 0)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors">
+            <div class="text-xs font-semibold text-ink-700">Post Office 5yr</div>
+            <div class="text-xs text-ink-400 font-mono">₹10L · 7.5% · 5yrs</div>
+          </button>
+          <button onclick="applyPreset(5000000, 7.5, 5, 0)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors">
+            <div class="text-xs font-semibold text-ink-700">Retirement Corpus</div>
+            <div class="text-xs text-ink-400 font-mono">₹50L · 7.5% · 5yrs</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div class="flex flex-col gap-5">
+
+      <!-- Main result -->
+      <div class="bg-ink-900 rounded-2xl p-6 sm:p-8">
+        <p class="text-ink-400 text-xs font-semibold uppercase tracking-wider mb-2">Maturity Amount</p>
+        <div class="font-display text-4xl sm:text-5xl font-bold text-white tracking-tight mb-1" id="maturity">₹1,14,888</div>
+        <p class="text-ink-400 text-xs" id="maturitySub">after 2 years at 7% p.a.</p>
+        <div class="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-ink-700">
+          <div><p class="text-ink-500 text-xs mb-1">Principal</p><p class="font-mono font-semibold text-white text-base" id="rPrincipal">₹1,00,000</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Interest Earned</p><p class="font-mono font-semibold text-leaf-400 text-base" id="rInterest">₹14,888</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Effective Yield (p.a.)</p><p class="font-mono font-semibold text-white text-base" id="rYield">7.19%</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Wealth Multiplier</p><p class="font-mono font-semibold text-leaf-400 text-base" id="rMultiple">1.15×</p></div>
+        </div>
+        <!-- TDS note -->
+        <div class="mt-5 bg-saffron-600/10 border border-saffron-600/20 rounded-xl p-3" id="tdsNote">
+          <div class="flex items-center gap-2 mb-1">
+            <svg width="12" height="12" fill="#f97316" viewBox="0 0 24 24"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+            <span class="text-xs font-semibold text-saffron-400">TDS Note</span>
+          </div>
+          <div class="text-xs text-ink-400" id="tdsText">If annual interest > ₹40,000, bank will deduct TDS at 10%. Submit Form 15G if income is below taxable limit.</div>
+        </div>
+      </div>
+
+      <!-- Donut breakdown -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-5">Investment Breakdown</h2>
+        <div class="flex items-center justify-between gap-6">
+          <div class="relative flex-shrink-0">
+            <svg width="140" height="140" viewBox="0 0 140 140" aria-label="FD investment breakdown donut chart">
+              <circle cx="70" cy="70" r="54" fill="none" stroke="#e8ecf2" stroke-width="18"/>
+              <circle id="arcPrincipal" cx="70" cy="70" r="54" fill="none" stroke="#16a34a" stroke-width="18" stroke-dasharray="339.29 0" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
+              <circle id="arcInterest"  cx="70" cy="70" r="54" fill="none" stroke="#4ade80" stroke-width="18" stroke-dasharray="0 339.29" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+              <span class="font-mono text-xs text-ink-400">maturity</span>
+              <span class="font-display font-bold text-ink-900 text-sm leading-tight" id="donutCentre">₹1.15L</span>
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-3 h-3 rounded-sm bg-leaf-600 flex-shrink-0"></div>
+              <div>
+                <p class="text-xs text-ink-500 font-medium">Principal</p>
+                <p class="font-mono font-semibold text-ink-900 text-sm" id="legendPrincipal">₹1,00,000</p>
+                <p class="font-mono text-xs text-ink-400" id="legendPrincipalPct">87.0%</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-sm bg-leaf-400 flex-shrink-0"></div>
+              <div>
+                <p class="text-xs text-ink-500 font-medium">Interest Earned</p>
+                <p class="font-mono font-semibold text-ink-900 text-sm" id="legendInterest">₹14,888</p>
+                <p class="font-mono text-xs text-ink-400" id="legendInterestPct">13.0%</p>
+              </div>
+            </div>
+            <div class="mt-5 space-y-1.5">
+              <div class="h-2 w-full bg-ink-100 rounded-full overflow-hidden flex">
+                <div id="barPrincipal" class="h-full bg-leaf-600 rounded-l-full transition-all duration-500" style="width:87%"></div>
+                <div id="barInterest"  class="h-full bg-leaf-400 rounded-r-full transition-all duration-500" style="width:13%"></div>
+              </div>
+              <div class="flex justify-between text-xs text-ink-400 font-mono">
+                <span id="barLabelP">Principal 87%</span>
+                <span id="barLabelI">Interest 13%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bar Chart -->
+  <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8 mt-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+      <div>
+        <h2 class="font-display font-semibold text-ink-900 text-lg">Year-by-Year Growth</h2>
+        <p class="text-xs text-ink-400 mt-0.5">How your FD corpus grows over time</p>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-leaf-600 inline-block"></span><span class="text-ink-500">Principal</span></div>
+        <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-leaf-400 inline-block"></span><span class="text-ink-500">Interest</span></div>
+      </div>
+    </div>
+    <div class="flex gap-2">
+      <div id="yLabels" class="flex flex-col justify-between text-right flex-shrink-0 pb-5" style="width:56px;">
+        <span class="text-[9px] font-mono text-ink-300 leading-none"></span>
+        <span class="text-[9px] font-mono text-ink-300 leading-none"></span>
+        <span class="text-[9px] font-mono text-ink-300 leading-none"></span>
+        <span class="text-[9px] font-mono text-ink-300 leading-none"></span>
+        <span class="text-[9px] font-mono text-ink-300 leading-none">0</span>
+      </div>
+      <div class="flex-1 relative" style="height:200px;">
+        <div class="absolute inset-0 flex flex-col justify-between pointer-events-none pb-5">
+          <div class="border-t border-ink-100/70 w-full"></div>
+          <div class="border-t border-ink-100/70 w-full"></div>
+          <div class="border-t border-ink-100/70 w-full"></div>
+          <div class="border-t border-ink-100/70 w-full"></div>
+          <div class="border-t border-ink-200 w-full"></div>
+        </div>
+        <div id="chartBars" class="absolute inset-0 flex items-end justify-between gap-0.5 pb-5"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ad placeholder -->
+  <div class="my-6">
+    <div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400" aria-hidden="true">Google AdSense — Responsive Ad Unit</div>
+  </div>
+
+  <!-- Year-by-year table -->
+  <div class="bg-white border border-ink-100 rounded-2xl overflow-hidden">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-6 border-b border-ink-100">
+      <div>
+        <h2 class="font-display font-semibold text-ink-900 text-lg">Year-by-Year Schedule</h2>
+        <p class="text-xs text-ink-400 mt-0.5">Opening balance, interest credited and closing balance each year</p>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table class="growth-table" aria-label="FD year-by-year schedule">
+        <thead>
+          <tr>
+            <th class="text-left  text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Year</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Opening Balance</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Interest Earned</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Closing Balance</th>
+          </tr>
+        </thead>
+        <tbody id="fdTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">What is a Fixed Deposit?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        A Fixed Deposit (FD) is the most popular savings instrument in India. You deposit a lump sum amount with a bank or post office for a fixed tenure at a pre-agreed interest rate. The interest is compounded (usually quarterly) and the maturity amount is paid at the end of the tenure.
+      </p>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        FDs are considered one of the <strong class="text-ink-700">safest investments</strong> since they are covered by DICGC (Deposit Insurance and Credit Guarantee Corporation) insurance up to ₹5 lakh per bank per depositor.
+      </p>
+      <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+        <p class="text-xs font-semibold text-leaf-700 mb-1">📌 DICGC Insurance</p>
+        <p class="text-xs text-ink-500">Your FD is insured up to ₹5 lakh (principal + interest) per bank. For amounts exceeding this, consider spreading across multiple banks.</p>
+      </div>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">FD Formula — How Interest is Calculated</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">FD uses the compound interest formula:</p>
+      <div class="bg-ink-50 rounded-xl p-4 font-mono text-sm text-ink-700 mb-3">
+        A = P × (1 + r/n)^(n × t)
+      </div>
+      <p class="text-xs text-ink-400 leading-relaxed mb-3">
+        Where <strong class="text-ink-600">A</strong> = maturity amount, <strong class="text-ink-600">P</strong> = principal, <strong class="text-ink-600">r</strong> = annual rate (decimal), <strong class="text-ink-600">n</strong> = compounding frequency/year, <strong class="text-ink-600">t</strong> = tenure in years.
+      </p>
+      <div class="bg-ink-50 rounded-xl p-3 space-y-1.5">
+        <p class="text-xs font-semibold text-ink-700">Example: ₹1L at 7% quarterly for 2 years</p>
+        <p class="text-xs font-mono text-ink-600">A = 1,00,000 × (1 + 0.07/4)^(4×2)</p>
+        <p class="text-xs font-mono text-ink-600">A = 1,00,000 × (1.0175)^8 = <strong>₹1,14,888</strong></p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">FD Interest Rates in India (FY 2025-26)</h2>
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">🏦 SBI (1–3 years)</span>
+          <div class="text-right">
+            <span class="font-mono text-sm font-semibold text-ink-800">6.50–7.00%</span>
+            <span class="text-xs text-leaf-600 block">Sr: 7.00–7.50%</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">🏦 HDFC Bank (1–3 years)</span>
+          <div class="text-right">
+            <span class="font-mono text-sm font-semibold text-ink-800">7.00–7.25%</span>
+            <span class="text-xs text-leaf-600 block">Sr: 7.50–7.75%</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">🏦 ICICI Bank (1–3 years)</span>
+          <div class="text-right">
+            <span class="font-mono text-sm font-semibold text-ink-800">7.00–7.25%</span>
+            <span class="text-xs text-leaf-600 block">Sr: 7.50–7.75%</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">📮 Post Office TD (5 yr)</span>
+          <div class="text-right">
+            <span class="font-mono text-sm font-semibold text-leaf-700">7.50%</span>
+            <span class="text-xs text-leaf-600 block">Tax benefit u/s 80C</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5">
+          <span class="text-sm text-ink-600 font-medium">🏦 Small Finance Banks</span>
+          <div class="text-right">
+            <span class="font-mono text-sm font-semibold text-saffron-700">8.00–9.00%</span>
+            <span class="text-xs text-ink-400 block">Higher risk, check DICGC</span>
+          </div>
+        </div>
+      </div>
+      <p class="text-[10px] text-ink-300 mt-3 font-mono">* Approximate rates. Verify with your bank before booking.</p>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">FD Example Calculations</h2>
+      <div class="space-y-3">
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹1L · 7% · 1yr · Quarterly</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">₹1,07,186</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Interest ₹7,186 · Eff. yield 7.19%</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹5L · 7.25% · 3yrs · Quarterly</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">₹6,18,907</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Interest ₹1,18,907 · Gain 23.78%</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹10L · 7.5% · 5yrs · Quarterly</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">₹14,43,938</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Interest ₹4,43,938 · Gain 44.39%</div>
+        </div>
+        <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+          <div class="text-xs font-semibold text-leaf-700 mb-1">💡 Senior Citizen bonus</div>
+          <div class="text-xs text-ink-500">At 7.5% (+0.5% sr benefit), same ₹10L for 5 years = <strong class="text-ink-700">₹14,69,328</strong> — ₹25,390 extra vs regular rate.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Cumulative vs Non-Cumulative FD</h2>
+      <div class="space-y-3">
+        <div class="flex items-start gap-3 p-3 bg-leaf-50 border border-leaf-100 rounded-xl">
+          <span class="text-lg mt-0.5">📈</span>
+          <div>
+            <p class="text-xs font-semibold text-leaf-800 mb-1">Cumulative FD — Better for Wealth Creation</p>
+            <p class="text-xs text-ink-500">Interest is compounded and added to the principal. Paid only at maturity. Best for long-term goals — you earn interest on interest, maximising returns.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-ink-50 border border-ink-100 rounded-xl">
+          <span class="text-lg mt-0.5">💸</span>
+          <div>
+            <p class="text-xs font-semibold text-ink-800 mb-1">Non-Cumulative FD — Better for Regular Income</p>
+            <p class="text-xs text-ink-500">Interest is paid out monthly, quarterly, or half-yearly. Principal returned at maturity. Best for retirees or anyone needing a regular income stream.</p>
+          </div>
+        </div>
+        <div class="bg-saffron-50 border border-saffron-100 rounded-xl p-3">
+          <p class="text-xs font-semibold text-saffron-700 mb-1">⚠️ Tax on FD interest</p>
+          <p class="text-xs text-ink-500">FD interest is taxable at your slab rate. TDS at 10% is deducted if annual interest exceeds ₹40,000 (₹50,000 for seniors). File Form 15G/15H to avoid TDS.</p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">FD vs Other Safe Investments</h2>
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">FD (SBI, 2yr)</span>
+            <p class="text-[10px] text-ink-400">Fixed rate, flexible tenure</p>
+          </div>
+          <div class="text-right">
+            <div class="w-24 bg-ink-100 rounded-full h-1.5 mb-1"><div class="bg-leaf-500 h-1.5 rounded-full" style="width:60%"></div></div>
+            <span class="font-mono text-xs font-semibold text-ink-800">~7.0%</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">PPF</span>
+            <p class="text-[10px] text-ink-400">EEE tax status, 15yr lock-in</p>
+          </div>
+          <div class="text-right">
+            <div class="w-24 bg-ink-100 rounded-full h-1.5 mb-1"><div class="bg-leaf-600 h-1.5 rounded-full" style="width:63%"></div></div>
+            <span class="font-mono text-xs font-semibold text-leaf-700">7.1%*</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">Post Office TD (5yr)</span>
+            <p class="text-[10px] text-ink-400">Govt backed, 80C benefit</p>
+          </div>
+          <div class="text-right">
+            <div class="w-24 bg-ink-100 rounded-full h-1.5 mb-1"><div class="bg-leaf-600 h-1.5 rounded-full" style="width:67%"></div></div>
+            <span class="font-mono text-xs font-semibold text-leaf-700">7.5%</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">Debt Mutual Funds</span>
+            <p class="text-[10px] text-ink-400">Market linked, LTCG indexation</p>
+          </div>
+          <div class="text-right">
+            <div class="w-24 bg-ink-100 rounded-full h-1.5 mb-1"><div class="bg-saffron-400 h-1.5 rounded-full" style="width:75%"></div></div>
+            <span class="font-mono text-xs font-semibold text-saffron-700">7–9%*</span>
+          </div>
+        </div>
+      </div>
+      <p class="text-[10px] text-ink-300 mt-3 font-mono">* PPF rate is tax-free equivalent. Mutual fund returns vary. Past performance not guaranteed.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about fixed deposits in India</p>
+  <div class="grid md:grid-cols-2 gap-3">
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How is FD interest calculated?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          FD uses compound interest: <strong class="text-ink-700">A = P × (1 + r/n)^(n×t)</strong>, where P = principal, r = annual rate, n = compounding frequency, t = years. For ₹1L at 7% quarterly for 2 years: A = ₹1L × (1.0175)^8 = <strong class="text-ink-700">₹1,14,888</strong>.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is the current FD interest rate in India?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          As of FY 2025-26: <strong class="text-ink-700">SBI 6.5–7.0%</strong>, HDFC/ICICI 7.0–7.25%, Post Office TD 7.5% (5yr). Senior citizens earn 0.25–0.50% extra. Small finance banks offer up to 9%. Rates change based on RBI repo rate decisions.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Is FD interest taxable in India?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Yes. FD interest is taxable at your income tax slab rate as "Income from Other Sources." <strong class="text-ink-700">TDS at 10%</strong> is deducted if interest in a financial year exceeds ₹40,000 (₹50,000 for senior citizens). Submit <strong class="text-ink-700">Form 15G</strong> (below 60) or <strong class="text-ink-700">Form 15H</strong> (senior citizen) to avoid TDS deduction if your total income is below the taxable limit.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is the difference between cumulative and non-cumulative FD?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          <strong class="text-ink-700">Cumulative FD:</strong> Interest is compounded and reinvested, paid at maturity. Ideal for wealth creation. <strong class="text-ink-700">Non-cumulative FD:</strong> Interest is paid out periodically (monthly/quarterly/half-yearly). Ideal for retirees or those needing regular income. Cumulative FDs always yield higher maturity amounts due to compounding.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Can I break an FD before maturity?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Yes. Premature FD closure is allowed at most banks, but a <strong class="text-ink-700">penalty of 0.5–1%</strong> is levied on the interest rate. You get interest for the period actually completed, minus the penalty. Some tax-saving FDs (under Section 80C) have a mandatory 5-year lock-in and cannot be broken prematurely.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">FD vs PPF — which is better?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          <strong class="text-ink-700">PPF wins</strong> on tax-efficiency (EEE — investment, interest, maturity all tax-free) and long-term returns. <strong class="text-ink-700">FD wins</strong> on flexibility: any tenure from 7 days to 10 years, premature closure allowed, and no mandatory lock-in (except tax-saving FD). For goals under 5 years, FD. For long-term tax-saving wealth, PPF.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is DICGC insurance on FDs?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          DICGC (Deposit Insurance and Credit Guarantee Corporation, a subsidiary of RBI) insures your bank deposits up to <strong class="text-ink-700">₹5 lakh per depositor per bank</strong> (principal + interest combined). If a bank fails, you're guaranteed up to ₹5 lakh. To protect large FD amounts, spread them across multiple banks rather than keeping all in one.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Does compounding frequency matter for FDs?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Yes, but the difference is small for short tenures. For ₹1L at 7% for 5 years: monthly compounding gives <strong class="text-ink-700">₹1,41,763</strong>, quarterly ₹1,41,478, yearly ₹1,40,255. More frequent compounding = slightly higher returns. Most Indian bank FDs use quarterly compounding by default.
+        </div>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- Related Calculators -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="ppf-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">💰</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">PPF Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Tax-free long-term returns</div>
+    </a>
+    <a href="sip-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">📈</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">SIP Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Mutual fund SIP returns</div>
+    </a>
+    <a href="cagr-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">📊</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">CAGR Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Compound annual growth rate</div>
+    </a>
+    <a href="emi-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">🏦</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">EMI Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Home, car & personal loans</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+          </div>
+          <div class="font-display font-semibold text-white">BharatCalc</div>
+        </div>
+        <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
+        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700">⚠️ Results are estimates. FD interest is taxable at your slab rate. Consult your bank for exact rates before booking.</div>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="sip-calculator.html"     class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
+          <li><a href="emi-calculator.html"     class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
+          <li><a href="ppf-calculator.html"     class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
+          <li><a href="fd-calculator.html"      class="hover:text-leaf-400 transition-colors font-semibold text-leaf-400">FD Calculator</a></li>
+          <li><a href="cagr-calculator.html"    class="hover:text-leaf-400 transition-colors">CAGR Calculator</a></li>
+          <li><a href="lumpsum-calculator.html" class="hover:text-leaf-400 transition-colors">Lumpsum Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax & Legal</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="income-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
+          <li><a href="gst-calculator.html"        class="hover:text-leaf-400 transition-colors">GST Calculator</a></li>
+          <li><a href="hra-calculator.html"        class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li>
+          <li><a href="tds-calculator.html"        class="hover:text-leaf-400 transition-colors">TDS Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Health & Math</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="bmi-calculator.html"               class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li>
+          <li><a href="age-calculator.html"               class="hover:text-leaf-400 transition-colors">Age Calculator</a></li>
+          <li><a href="percentage-calculator.html"        class="hover:text-leaf-400 transition-colors">Percentage</a></li>
+          <li><a href="compound-interest-calculator.html" class="hover:text-leaf-400 transition-colors">Compound Interest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
+      <div class="flex gap-5">
+        <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
+        <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
+        <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
+        <a href="../contact.html" class="hover:text-ink-300 transition-colors">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .mode-tab { transition: all 0.15s; }
+  .mode-tab.active { background: #0d1117; color: #fff; border-color: #0d1117; }
+</style>
+
+<script>
+let compFreq    = 4;
+let seniorBonus = 0; // 0 for regular, 0.5 for senior
+
+// ── Formatting ───────────────────────────────────────────────────
+function fmtINR(n)  { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+function fmtCompact(n) {
+  if (n >= 10000000) return '₹' + (n / 10000000).toFixed(2) + 'Cr';
+  if (n >= 100000)   return '₹' + (n / 100000).toFixed(2) + 'L';
+  if (n >= 1000)     return '₹' + (n / 1000).toFixed(1) + 'K';
+  return fmtINR(n);
+}
+function fmtPct(n) { return n.toFixed(1) + '%'; }
+
+// ── Track fill ──────────────────────────────────────────────────
+function updateTrack(id) {
+  const el  = document.getElementById(id);
+  const pct = ((parseFloat(el.value) - parseFloat(el.min)) / (parseFloat(el.max) - parseFloat(el.min))) * 100;
+  el.style.background = `linear-gradient(to right, #16a34a ${pct}%, #e8ecf2 ${pct}%)`;
+}
+
+function syncFromSlider(id) {
+  document.getElementById(id + 'Input').value = document.getElementById(id).value;
+  updateTrack(id);
+  calc();
+}
+
+function syncFromInput(id, val) {
+  const slider  = document.getElementById(id);
+  const clamped = Math.min(Math.max(parseFloat(val) || parseFloat(slider.min), parseFloat(slider.min)), parseFloat(slider.max));
+  slider.value  = clamped;
+  updateTrack(id);
+  calc();
+}
+
+// ── Investor type ────────────────────────────────────────────────
+function setInvestorType(type, btn) {
+  seniorBonus = type === 'senior' ? 0.5 : 0;
+  document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  // Update TDS threshold note
+  document.getElementById('tdsText').textContent = type === 'senior'
+    ? 'Senior citizen benefit: +0.5% on all rates. TDS threshold: ₹50,000/year. Submit Form 15H to avoid TDS.'
+    : 'If annual interest > ₹40,000, bank will deduct TDS at 10%. Submit Form 15G if income is below taxable limit.';
+  calc();
+}
+
+// ── Rate preset ──────────────────────────────────────────────────
+function setRate(r, btn) {
+  document.getElementById('rate').value      = r + seniorBonus;
+  document.getElementById('rateInput').value = r + seniorBonus;
+  updateTrack('rate');
+  document.querySelectorAll('.rate-btn').forEach(b => {
+    b.classList.remove('active');
+    b.classList.add('bg-ink-50', 'border-ink-200', 'text-ink-500');
+    b.classList.remove('bg-leaf-50', 'border-leaf-200', 'text-leaf-700');
+  });
+  if (btn) {
+    btn.classList.add('active', 'bg-leaf-50', 'border-leaf-200', 'text-leaf-700');
+    btn.classList.remove('bg-ink-50', 'border-ink-200', 'text-ink-500');
+  }
+  calc();
+}
+
+// ── Tenure preset ────────────────────────────────────────────────
+function setTenure(y, m, btn) {
+  document.getElementById('tenureYears').value  = y;
+  document.getElementById('tenureMonths').value = m;
+  document.querySelectorAll('.tenure-btn').forEach(b => {
+    b.classList.remove('bg-leaf-50', 'border-leaf-200', 'text-leaf-700');
+    b.classList.add('bg-ink-50', 'border-ink-200', 'text-ink-500');
+  });
+  if (btn) {
+    btn.classList.add('bg-leaf-50', 'border-leaf-200', 'text-leaf-700');
+    btn.classList.remove('bg-ink-50', 'border-ink-200', 'text-ink-500');
+  }
+  calc();
+}
+
+// ── Compounding frequency ────────────────────────────────────────
+function setComp(n) {
+  compFreq = n;
+  ['cM','cQ','cH','cY'].forEach(id => {
+    document.getElementById(id).classList.remove('active');
+    document.getElementById(id).classList.add('text-ink-600');
+  });
+  const map = { 12: 'cM', 4: 'cQ', 2: 'cH', 1: 'cY' };
+  document.getElementById(map[n]).classList.add('active');
+  document.getElementById(map[n]).classList.remove('text-ink-600');
+  calc();
+}
+
+// ── Apply preset ─────────────────────────────────────────────────
+function applyPreset(p, r, y, m) {
+  document.getElementById('principal').value      = Math.min(p, 10000000);
+  document.getElementById('principalInput').value = p;
+  document.getElementById('rate').value           = r + seniorBonus;
+  document.getElementById('rateInput').value      = r + seniorBonus;
+  document.getElementById('tenureYears').value    = y;
+  document.getElementById('tenureMonths').value   = m;
+  updateTrack('principal'); updateTrack('rate');
+  calc();
+}
+
+// ── Main calc ────────────────────────────────────────────────────
+function calc() {
+  const P  = parseFloat(document.getElementById('principalInput').value) || 0;
+  const r  = (parseFloat(document.getElementById('rateInput').value) || 0) / 100;
+  const ty = parseInt(document.getElementById('tenureYears').value)  || 0;
+  const tm = parseInt(document.getElementById('tenureMonths').value) || 0;
+  const t  = ty + tm / 12;
+  if (P <= 0 || r <= 0 || t <= 0) return;
+
+  const n   = compFreq;
+  const A   = P * Math.pow(1 + r / n, n * t);
+  const int = A - P;
+  const effYield = (Math.pow(1 + r / n, n) - 1) * 100;
+  const tenureStr = (ty > 0 ? ty + ' yr' + (ty > 1 ? 's' : '') : '') + (tm > 0 ? (ty > 0 ? ' ' : '') + tm + ' mo' : '');
+
+  // Result card
+  document.getElementById('maturity').textContent    = fmtCompact(A);
+  document.getElementById('maturitySub').textContent = `after ${tenureStr.trim()} at ${(r * 100).toFixed(1)}% p.a.`;
+  document.getElementById('rPrincipal').textContent  = fmtCompact(P);
+  document.getElementById('rInterest').textContent   = fmtCompact(int);
+  document.getElementById('rYield').textContent      = effYield.toFixed(2) + '%';
+  document.getElementById('rMultiple').textContent   = (A / P).toFixed(2) + '×';
+
+  // Donut
+  const prinPct = (P / A) * 100;
+  const intPct  = (int / A) * 100;
+  const C       = 2 * Math.PI * 54;
+  const pDash   = (prinPct / 100) * C;
+  const iDash   = (intPct  / 100) * C;
+
+  document.getElementById('arcPrincipal').setAttribute('stroke-dasharray', `${pDash} ${C - pDash}`);
+  document.getElementById('arcInterest').setAttribute('stroke-dasharray',  `${iDash} ${C - iDash}`);
+  document.getElementById('arcInterest').setAttribute('stroke-dashoffset', `-${pDash}`);
+  document.getElementById('donutCentre').textContent = fmtCompact(A);
+
+  document.getElementById('legendPrincipal').textContent    = fmtCompact(P);
+  document.getElementById('legendInterest').textContent     = fmtCompact(int);
+  document.getElementById('legendPrincipalPct').textContent = fmtPct(prinPct);
+  document.getElementById('legendInterestPct').textContent  = fmtPct(intPct);
+  document.getElementById('barPrincipal').style.width       = prinPct + '%';
+  document.getElementById('barInterest').style.width        = intPct  + '%';
+  document.getElementById('barLabelP').textContent = 'Principal ' + fmtPct(prinPct);
+  document.getElementById('barLabelI').textContent = 'Interest ' + fmtPct(intPct);
+
+  // Bar chart + table
+  renderBarChart(P, r, n, t);
+  renderTable(P, r, n, t);
+}
+
+// ── Bar chart ────────────────────────────────────────────────────
+function renderBarChart(P, r, n, t) {
+  const maxYr     = Math.min(Math.ceil(t), 20);
+  const rows      = [];
+  for (let y = 1; y <= maxYr; y++) {
+    const val = P * Math.pow(1 + r / n, n * Math.min(y, t));
+    rows.push({ year: y, val, interest: val - P });
+  }
+  const maxVal    = Math.max(...rows.map(r => r.val));
+  const container = document.getElementById('chartBars');
+  let step = 1;
+  if (rows.length > 15) step = 2;
+
+  const visible = rows.filter((_, i) => (i + 1) % step === 0 || i === rows.length - 1);
+  container.innerHTML = visible.map(r => {
+    const prinH = Math.max((P      / maxVal) * 100, 1);
+    const intH  = Math.max((r.interest / maxVal) * 100, 0);
+    return `<div class="bar-group relative flex flex-col items-center flex-1 h-full justify-end cursor-pointer" style="min-width:10px;">
+      <div class="bar-tip">${r.year}yr · ${fmtCompact(r.val)}</div>
+      <div class="w-full flex flex-col justify-end" style="height: calc(100% - 20px);">
+        <div style="height:${intH}%; min-height:${r.interest > 0 ? 2 : 0}px" class="bar-interest w-full"></div>
+        <div style="height:${prinH}%" class="bar-principal w-full"></div>
+      </div>
+      <div class="text-[9px] font-mono text-ink-300 mt-1 text-center leading-tight" style="height:16px;">${r.year}</div>
+    </div>`;
+  }).join('');
+
+  const labels = document.getElementById('yLabels').children;
+  const steps  = [1, 0.75, 0.5, 0.25, 0];
+  for (let i = 0; i < labels.length; i++) {
+    labels[i].textContent = steps[i] > 0 ? fmtCompact(maxVal * steps[i]) : '0';
+  }
+}
+
+// ── Year-by-year table ───────────────────────────────────────────
+function renderTable(P, r, n, t) {
+  const maxYr = Math.min(Math.ceil(t), 20);
+  document.getElementById('fdTable').innerHTML = Array.from({ length: maxYr }, (_, i) => {
+    const y        = i + 1;
+    const openBal  = P * Math.pow(1 + r / n, n * (y - 1));
+    const closeBal = P * Math.pow(1 + r / n, n * Math.min(y, t));
+    const yInt     = closeBal - openBal;
+    return `<tr class="${i % 2 === 0 ? 'bg-white' : 'bg-ink-50/40'}">
+      <td class="px-4 sm:px-6 py-3 text-sm font-semibold text-ink-700 font-mono">Year ${y}</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono text-ink-500">${fmtINR(openBal)}</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono text-leaf-700">+${fmtINR(yInt)}</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono font-semibold text-ink-900">${fmtINR(closeBal)}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ── Mobile menu ──────────────────────────────────────────────────
+function toggleMobileMenu() {
+  const m = document.getElementById('mobileMenu'), btn = document.getElementById('menuBtn'), icon = document.getElementById('menuIcon');
+  const open = m.classList.toggle('hidden');
+  btn.setAttribute('aria-expanded', String(!open));
+  icon.innerHTML = open ? '<path d="M4 6h16M4 12h16M4 18h16"/>' : '<path d="M6 18L18 6M6 6l12 12"/>';
+}
+
+// ── Init ─────────────────────────────────────────────────────────
+function init() {
+  const now = new Date(), year = now.getFullYear(), month = now.getMonth() + 1;
+  const fyStart = month >= 4 ? year : year - 1;
+  document.getElementById('heroFY').textContent  = `${fyStart}–${String(fyStart + 1).slice(-2)}`;
+  document.getElementById('footerYear').textContent = year;
+
+  ['principal', 'rate'].forEach(id => {
+    const s = document.getElementById(id);
+    const i = document.getElementById(id + 'Input');
+    if (s && i) i.value = s.value;
+    updateTrack(id);
+  });
+
+  // Highlight default rate button (HDFC 7%)
+  document.querySelectorAll('.rate-btn').forEach(b => {
+    if (parseFloat(b.dataset.rate) === 7.0) {
+      b.classList.add('active', 'bg-leaf-50', 'border-leaf-200', 'text-leaf-700');
+      b.classList.remove('bg-ink-50', 'border-ink-200', 'text-ink-500');
+    }
+  });
+  // Highlight default tenure button (2 yrs)
+  document.querySelectorAll('.tenure-btn').forEach(b => {
+    if (b.dataset.tenure === '2-0') {
+      b.classList.add('bg-leaf-50', 'border-leaf-200', 'text-leaf-700');
+      b.classList.remove('bg-ink-50', 'border-ink-200', 'text-ink-500');
+    }
+  });
+  calc();
+}
+
+init();
+</script>
+</body>
+</html>

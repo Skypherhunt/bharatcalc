@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAGR Calculator India – Compound Annual Growth Rate | BharatCalc</title>
+  <meta name="description" content="Free CAGR Calculator India — calculate compound annual growth rate from any investment's initial and final value. Also find future value for a target CAGR. Instant results, no login. Updated for FY 2025-26." />
+  <meta name="keywords" content="CAGR calculator India, compound annual growth rate calculator, CAGR formula, investment return calculator, mutual fund CAGR, stock CAGR calculator, CAGR calculator online free, what is CAGR, CAGR vs absolute return" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/cagr-calculator.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://bharatcalc.online/calculator/cagr-calculator.html" />
+  <meta property="og:title"       content="CAGR Calculator – Compound Annual Growth Rate | BharatCalc" />
+  <meta property="og:description" content="Calculate CAGR from any investment's initial and final value. Free, instant, no login." />
+  <meta property="og:image"       content="https://bharatcalc.online/og/cagr-calculator.png" />
+  <meta property="og:locale"      content="en_IN" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="CAGR Calculator | BharatCalc" />
+  <meta name="twitter:description" content="Calculate compound annual growth rate instantly. Free — by BharatCalc." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CAGR Calculator",
+    "url": "https://bharatcalc.online/calculator/cagr-calculator.html",
+    "description": "Calculate compound annual growth rate for any investment.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",            "item": "https://bharatcalc.online/" },
+        { "@type": "ListItem", "position": 2, "name": "Finance",         "item": "https://bharatcalc.online/index.html?cat=finance" },
+        { "@type": "ListItem", "position": 3, "name": "CAGR Calculator", "item": "https://bharatcalc.online/calculator/cagr-calculator.html" }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is CAGR and how is it calculated?", "acceptedAnswer": { "@type": "Answer", "text": "CAGR (Compound Annual Growth Rate) is the rate at which an investment grows annually over a period assuming profits are reinvested. Formula: CAGR = (Final Value ÷ Initial Value)^(1÷Years) − 1. For example, ₹1 lakh growing to ₹2 lakh in 5 years gives a CAGR of 14.87%." } },
+      { "@type": "Question", "name": "What is a good CAGR for mutual funds in India?", "acceptedAnswer": { "@type": "Answer", "text": "A CAGR of 12–15% p.a. is generally considered good for equity mutual funds in India over 7+ years. Large-cap funds typically deliver 10–12%, mid-cap 13–16%, and small-cap 15–20% over long periods, though past returns don't guarantee future performance." } },
+      { "@type": "Question", "name": "What is the difference between CAGR and absolute return?", "acceptedAnswer": { "@type": "Answer", "text": "Absolute return is total percentage gain without time consideration — ₹1L → ₹2L is 100% absolute return regardless of duration. CAGR annualises that gain: the same growth in 5 years is 14.87% CAGR but only 7.18% CAGR over 10 years. CAGR is better for comparing investments of different durations." } },
+      { "@type": "Question", "name": "Is CAGR the same as XIRR?", "acceptedAnswer": { "@type": "Answer", "text": "No. CAGR works for a single lumpsum investment (one entry, one exit). XIRR handles multiple cash flows at different dates — like monthly SIP investments. For lumpsum investments, CAGR and XIRR give the same result. For SIPs, always use XIRR." } },
+      { "@type": "Question", "name": "What is the Rule of 72 and how does it relate to CAGR?", "acceptedAnswer": { "@type": "Answer", "text": "The Rule of 72 is a shortcut: divide 72 by the CAGR to estimate years needed to double your money. At 12% CAGR, your money doubles in 72÷12 = 6 years. At 6% CAGR it takes 12 years. It's an easy mental math trick to compare investment options." } },
+      { "@type": "Question", "name": "Can CAGR be negative?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, CAGR can be negative if the final value is less than the initial value — i.e., you lost money. For example, if ₹1 lakh fell to ₹80,000 in 3 years, the CAGR is (80000/100000)^(1/3) - 1 = -7.11%. Negative CAGR represents an annual rate of loss." } }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Clash Display', 'sans-serif'],
+            sans:    ['Satoshi', 'sans-serif'],
+            mono:    ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
+            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Satoshi', system-ui, sans-serif; }
+    .font-display { font-family: 'Clash Display', system-ui, sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #16a34a; transform: scaleX(0); transition: transform 0.2s; border-radius: 1px; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 5px; border-radius: 99px; outline: none; cursor: pointer; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #16a34a; border: 3px solid #fff; box-shadow: 0 0 0 1px #16a34a, 0 2px 6px rgba(22,163,74,0.3); cursor: pointer; transition: box-shadow 0.15s; }
+    input[type=range]::-webkit-slider-thumb:hover { box-shadow: 0 0 0 1px #16a34a, 0 2px 12px rgba(22,163,74,0.45); }
+    input[type=range]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #16a34a; border: 3px solid #fff; box-shadow: 0 0 0 1px #16a34a; cursor: pointer; }
+    .val-input { font-family: 'JetBrains Mono', monospace; }
+    .val-input:focus { outline: none; }
+    .donut-ring { transition: stroke-dasharray 0.5s cubic-bezier(.4,0,.2,1); }
+    .mode-tab { transition: all 0.15s; }
+    .mode-tab.active { background: #0d1117; color: #fff; border-color: #0d1117; }
+    .bar-initial { background: #16a34a; border-radius: 4px 4px 0 0; transition: height 0.4s cubic-bezier(.4,0,.2,1); }
+    .bar-gain    { background: #4ade80; border-radius: 4px 4px 0 0; transition: height 0.4s cubic-bezier(.4,0,.2,1); }
+    .bar-group:hover .bar-tip { display: block; }
+    .bar-tip { display: none; position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); background: #0d1117; color: #fff; font-size: 10px; font-family: 'JetBrains Mono', monospace; white-space: nowrap; padding: 4px 8px; border-radius: 6px; pointer-events: none; z-index: 10; }
+    .bar-tip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 4px solid transparent; border-top-color: #0d1117; }
+    .growth-table { border-collapse: collapse; width: 100%; }
+    .growth-table th { position: sticky; top: 0; background: #f5f7fa; z-index: 1; }
+    .growth-table tbody tr:hover td { background: #f0fdf4; }
+    .table-wrap { max-height: 360px; overflow-y: auto; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    .breadcrumb a { transition: color 0.15s; }
+    .faq-item details summary { cursor: pointer; list-style: none; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9TD6B9GQ89');</script>
+</head>
+
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+        </div>
+        <div class="leading-none">
+          <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
+          <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+        <a href="../index.html?cat=tools"   class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+      </nav>
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>💰</span> Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>📄</span> Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>❤️</span> Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>➗</span> Math</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a>
+      <span>/</span>
+      <a href="../index.html?cat=finance" class="hover:text-ink-200">Finance</a>
+      <span>/</span>
+      <span class="text-ink-300">CAGR Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-leaf-600/15 text-leaf-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-leaf-600/20">
+          <span class="w-1.5 h-1.5 bg-leaf-400 rounded-full inline-block animate-pulse"></span>
+          Updated for <span id="heroFY" class="ml-0.5"></span>
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">CAGR Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
+          Calculate the compound annual growth rate of any investment, or find the future value using a target CAGR. Instant results with a year-by-year growth chart.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0">
+        <span class="w-1.5 h-1.5 bg-leaf-400 rounded-full inline-block"></span>
+        Results update live
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <!-- Mode tabs -->
+  <div class="flex gap-2 mb-6 flex-wrap" role="group" aria-label="Calculator mode">
+    <button class="mode-tab active px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600" onclick="setMode('cagr', this)">📊 Find CAGR</button>
+    <button class="mode-tab px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:border-leaf-400 transition-all" onclick="setMode('fv', this)">🔮 Find Future Value</button>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- LEFT: Inputs -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-7">Investment Details</h2>
+
+      <!-- Find CAGR Inputs -->
+      <div id="cagrInputs">
+        <div class="mb-7">
+          <div class="flex items-center justify-between mb-3">
+            <label for="initVal" class="text-sm font-semibold text-ink-700">Initial Investment</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <span class="text-sm text-ink-400 font-mono">₹</span>
+              <input id="initValInput" type="number" class="val-input w-28 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1000" max="10000000" step="1000" oninput="syncFromInput('initVal', this.value)" />
+            </div>
+          </div>
+          <input type="range" id="initVal" min="10000" max="10000000" step="10000" value="100000" oninput="syncFromSlider('initVal')" class="w-full" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹10K</span><span>₹1Cr</span></div>
+        </div>
+
+        <div class="mb-7">
+          <div class="flex items-center justify-between mb-3">
+            <label for="finalVal" class="text-sm font-semibold text-ink-700">Final Value</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <span class="text-sm text-ink-400 font-mono">₹</span>
+              <input id="finalValInput" type="number" class="val-input w-28 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1000" max="100000000" step="1000" oninput="syncFromInput('finalVal', this.value)" />
+            </div>
+          </div>
+          <input type="range" id="finalVal" min="10000" max="10000000" step="10000" value="200000" oninput="syncFromSlider('finalVal')" class="w-full" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹10K</span><span>₹1Cr</span></div>
+        </div>
+
+        <div class="mb-7">
+          <div class="flex items-center justify-between mb-3">
+            <label for="years" class="text-sm font-semibold text-ink-700">Investment Period</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <input id="yearsInput" type="number" class="val-input w-14 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1" max="40" step="1" oninput="syncFromInput('years', this.value)" />
+              <span class="text-sm text-ink-400 font-mono">yr</span>
+            </div>
+          </div>
+          <input type="range" id="years" min="1" max="40" step="1" value="5" oninput="syncFromSlider('years')" class="w-full" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>1 yr</span><span>40 yr</span></div>
+        </div>
+
+        <!-- Quick presets -->
+        <div>
+          <p class="text-xs text-ink-400 font-semibold uppercase tracking-wider mb-3">Common scenarios</p>
+          <div class="grid grid-cols-2 gap-2">
+            <button onclick="applyPreset(100000, 200000, 5)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors">
+              <div class="text-xs font-semibold text-ink-700">Double in 5 Years</div>
+              <div class="text-xs text-ink-400 font-mono">₹1L → ₹2L · 5yr</div>
+            </button>
+            <button onclick="applyPreset(100000, 300000, 10)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors">
+              <div class="text-xs font-semibold text-ink-700">Triple in 10 Years</div>
+              <div class="text-xs text-ink-400 font-mono">₹1L → ₹3L · 10yr</div>
+            </button>
+            <button onclick="applyPreset(500000, 2000000, 15)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors">
+              <div class="text-xs font-semibold text-ink-700">4× in 15 Years</div>
+              <div class="text-xs text-ink-400 font-mono">₹5L → ₹20L · 15yr</div>
+            </button>
+            <button onclick="applyPreset(1000000, 10000000, 20)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors">
+              <div class="text-xs font-semibold text-ink-700">10× in 20 Years</div>
+              <div class="text-xs text-ink-400 font-mono">₹10L → ₹1Cr · 20yr</div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Find Future Value Inputs -->
+      <div id="fvInputs" class="hidden">
+        <div class="mb-7">
+          <div class="flex items-center justify-between mb-3">
+            <label for="fvInit" class="text-sm font-semibold text-ink-700">Initial Investment</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <span class="text-sm text-ink-400 font-mono">₹</span>
+              <input id="fvInitInput" type="number" class="val-input w-28 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1000" max="10000000" step="1000" oninput="syncFromInput('fvInit', this.value)" />
+            </div>
+          </div>
+          <input type="range" id="fvInit" min="10000" max="10000000" step="10000" value="100000" oninput="syncFromSlider('fvInit')" class="w-full" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹10K</span><span>₹1Cr</span></div>
+        </div>
+
+        <div class="mb-7">
+          <div class="flex items-center justify-between mb-3">
+            <label for="targetCagr" class="text-sm font-semibold text-ink-700">Target CAGR</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <input id="targetCagrInput" type="number" class="val-input w-16 text-sm font-semibold text-ink-900 bg-transparent text-right" min="0.1" max="50" step="0.1" oninput="syncFromInput('targetCagr', this.value)" />
+              <span class="text-sm text-ink-400 font-mono">%</span>
+            </div>
+          </div>
+          <input type="range" id="targetCagr" min="1" max="50" step="0.5" value="12" oninput="syncFromSlider('targetCagr')" class="w-full" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>1%</span><span>50%</span></div>
+          <div class="flex flex-wrap gap-2 mt-2.5">
+            <button onclick="setCagrRate(7,  this)" data-rate="7"  class="cagr-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">FD ~7%</button>
+            <button onclick="setCagrRate(10, this)" data-rate="10" class="cagr-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">Debt ~10%</button>
+            <button onclick="setCagrRate(12, this)" data-rate="12" class="cagr-btn text-[10px] px-2 py-1 bg-leaf-50 border border-leaf-200 rounded-md font-mono text-leaf-700 transition-colors">Nifty ~12%</button>
+            <button onclick="setCagrRate(15, this)" data-rate="15" class="cagr-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">MidCap ~15%</button>
+          </div>
+        </div>
+
+        <div class="mb-7">
+          <div class="flex items-center justify-between mb-3">
+            <label for="fvYears" class="text-sm font-semibold text-ink-700">Investment Period</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <input id="fvYearsInput" type="number" class="val-input w-14 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1" max="40" step="1" oninput="syncFromInput('fvYears', this.value)" />
+              <span class="text-sm text-ink-400 font-mono">yr</span>
+            </div>
+          </div>
+          <input type="range" id="fvYears" min="1" max="40" step="1" value="10" oninput="syncFromSlider('fvYears')" class="w-full" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>1 yr</span><span>40 yr</span></div>
+        </div>
+
+        <!-- Rule of 72 callout -->
+        <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+          <div class="text-xs font-semibold text-leaf-700 mb-1">💡 Rule of 72</div>
+          <div class="text-xs text-ink-500">Divide 72 by the CAGR to estimate years to double your money. At 12% CAGR: 72 ÷ 12 = <strong class="text-ink-700">6 years</strong> to double.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div class="flex flex-col gap-5">
+      <!-- Main result -->
+      <div class="bg-ink-900 rounded-2xl p-6 sm:p-8">
+        <p class="text-ink-400 text-xs font-semibold uppercase tracking-wider mb-2" id="resultLabel">CAGR</p>
+        <div class="font-display text-4xl sm:text-5xl font-bold text-leaf-400 tracking-tight mb-1" id="mainResult">14.87%</div>
+        <p class="text-ink-400 text-xs" id="resultSub">per annum, compounded</p>
+        <div class="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-ink-700">
+          <div><p class="text-ink-500 text-xs mb-1" id="r1Label">Initial Value</p><p class="font-mono font-semibold text-white text-base" id="r1Val">₹1,00,000</p></div>
+          <div><p class="text-ink-500 text-xs mb-1" id="r2Label">Final Value</p><p class="font-mono font-semibold text-leaf-400 text-base" id="r2Val">₹2,00,000</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Absolute Return</p><p class="font-mono font-semibold text-white text-base" id="absReturn">100.00%</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Total Gain</p><p class="font-mono font-semibold text-leaf-400 text-base" id="totalGain">₹1,00,000</p></div>
+        </div>
+      </div>
+
+      <!-- Donut chart breakdown -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-5">Growth Breakdown</h2>
+        <div class="flex items-center justify-between gap-6">
+          <div class="relative flex-shrink-0">
+            <svg width="140" height="140" viewBox="0 0 140 140" aria-label="Investment growth breakdown donut chart">
+              <circle cx="70" cy="70" r="54" fill="none" stroke="#e8ecf2" stroke-width="18"/>
+              <circle id="arcInitial" cx="70" cy="70" r="54" fill="none" stroke="#16a34a" stroke-width="18" stroke-dasharray="339.29 0" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
+              <circle id="arcGain"    cx="70" cy="70" r="54" fill="none" stroke="#4ade80" stroke-width="18" stroke-dasharray="0 339.29" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+              <span class="font-mono text-xs text-ink-400">final</span>
+              <span class="font-display font-bold text-ink-900 text-sm leading-tight" id="donutCentre">₹2L</span>
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-3 h-3 rounded-sm bg-leaf-600 flex-shrink-0"></div>
+              <div>
+                <p class="text-xs text-ink-500 font-medium">Initial Investment</p>
+                <p class="font-mono font-semibold text-ink-900 text-sm" id="legendInitial">₹1,00,000</p>
+                <p class="font-mono text-xs text-ink-400" id="legendInitialPct">50%</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-sm bg-leaf-400 flex-shrink-0"></div>
+              <div>
+                <p class="text-xs text-ink-500 font-medium">Total Gain</p>
+                <p class="font-mono font-semibold text-ink-900 text-sm" id="legendGain">₹1,00,000</p>
+                <p class="font-mono text-xs text-ink-400" id="legendGainPct">50%</p>
+              </div>
+            </div>
+            <div class="mt-5 space-y-1.5">
+              <div class="h-2 w-full bg-ink-100 rounded-full overflow-hidden flex">
+                <div id="barInitial" class="h-full bg-leaf-600 rounded-l-full transition-all duration-500" style="width:50%"></div>
+                <div id="barGain"    class="h-full bg-leaf-400 rounded-r-full transition-all duration-500" style="width:50%"></div>
+              </div>
+              <div class="flex justify-between text-xs text-ink-400 font-mono">
+                <span id="barLabelInit">Initial 50%</span>
+                <span id="barLabelGain">Gain 50%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bar Chart -->
+  <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8 mt-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+      <div>
+        <h2 class="font-display font-semibold text-ink-900 text-lg">Year-by-Year Growth</h2>
+        <p class="text-xs text-ink-400 mt-0.5">How your investment compounds over time</p>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-leaf-600 inline-block"></span><span class="text-ink-500">Initial</span></div>
+        <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-leaf-400 inline-block"></span><span class="text-ink-500">Gain</span></div>
+      </div>
+    </div>
+    <div class="flex gap-2">
+      <div id="yLabels" class="flex flex-col justify-between text-right flex-shrink-0 pb-5" style="width: 56px;">
+        <span class="text-[9px] font-mono text-ink-300 leading-none"></span>
+        <span class="text-[9px] font-mono text-ink-300 leading-none"></span>
+        <span class="text-[9px] font-mono text-ink-300 leading-none"></span>
+        <span class="text-[9px] font-mono text-ink-300 leading-none"></span>
+        <span class="text-[9px] font-mono text-ink-300 leading-none">0</span>
+      </div>
+      <div class="flex-1 relative" style="height: 200px;">
+        <div class="absolute inset-0 flex flex-col justify-between pointer-events-none pb-5">
+          <div class="border-t border-ink-100/70 w-full"></div>
+          <div class="border-t border-ink-100/70 w-full"></div>
+          <div class="border-t border-ink-100/70 w-full"></div>
+          <div class="border-t border-ink-100/70 w-full"></div>
+          <div class="border-t border-ink-200 w-full"></div>
+        </div>
+        <div id="chartBars" class="absolute inset-0 flex items-end justify-between gap-0.5 pb-5"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ad placeholder -->
+  <div class="my-6">
+    <div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400" aria-hidden="true">Google AdSense — Responsive Ad Unit</div>
+  </div>
+
+  <!-- Year-by-year table -->
+  <div class="bg-white border border-ink-100 rounded-2xl overflow-hidden">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-6 border-b border-ink-100">
+      <div>
+        <h2 class="font-display font-semibold text-ink-900 text-lg">Year-by-Year Schedule</h2>
+        <p class="text-xs text-ink-400 mt-0.5">Investment value at end of each year</p>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table class="growth-table" aria-label="Year-by-year CAGR growth">
+        <thead>
+          <tr>
+            <th class="text-left  text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Year</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Value</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Gain</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Absolute Return</th>
+          </tr>
+        </thead>
+        <tbody id="growthBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">What is CAGR?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        CAGR stands for <strong class="text-ink-700">Compound Annual Growth Rate</strong>. It measures the average annual growth rate of an investment over a specified period, assuming the investment grows at a constant rate and profits are reinvested.
+      </p>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        Unlike simple average returns, CAGR smooths out volatility and gives you a single, meaningful number to compare investments of different sizes and durations — making it the most widely used performance metric in finance.
+      </p>
+      <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+        <p class="text-xs font-semibold text-leaf-700 mb-1">📌 Where is CAGR used?</p>
+        <p class="text-xs text-ink-500">Mutual fund performance reports, stock analysis, business revenue growth, real estate appreciation, and comparing fixed deposits vs equity investments.</p>
+      </div>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">How is CAGR Calculated?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">The CAGR formula is straightforward:</p>
+      <div class="bg-ink-50 rounded-xl p-4 font-mono text-sm text-ink-700 mb-4">
+        CAGR = (Final Value ÷ Initial Value)^(1÷Years) − 1
+      </div>
+      <p class="text-xs text-ink-400 leading-relaxed mb-3">
+        Where <strong class="text-ink-600">Final Value</strong> is the investment value at end, <strong class="text-ink-600">Initial Value</strong> is the starting amount, and <strong class="text-ink-600">Years</strong> is the holding period.
+      </p>
+      <div class="bg-ink-50 rounded-xl p-3">
+        <p class="text-xs font-semibold text-ink-700 mb-1">To find Future Value given a CAGR:</p>
+        <p class="font-mono text-xs text-ink-600">FV = Initial × (1 + CAGR)^Years</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">CAGR Example Calculations</h2>
+      <div class="space-y-3">
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹1L → ₹2L in 5 years</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">14.87% CAGR</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Absolute return 100% · Gain ₹1,00,000</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹5L → ₹20L in 15 years</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">9.87% CAGR</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Absolute return 300% · Gain ₹15,00,000</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹10L → ₹1Cr in 20 years</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">12.20% CAGR</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Absolute return 900% · Gain ₹90,00,000</div>
+        </div>
+        <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+          <div class="text-xs font-semibold text-leaf-700 mb-1">💡 Rule of 72</div>
+          <div class="text-xs text-ink-500">At <strong class="text-ink-700">12% CAGR</strong>, money doubles in 72÷12 = <strong class="text-ink-700">6 years</strong>. At 6% CAGR, it takes 12 years.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">CAGR Benchmarks in India</h2>
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">🏛️ Fixed Deposit</span>
+          <div class="flex items-center gap-2">
+            <div class="w-20 bg-ink-100 rounded-full h-1.5"><div class="bg-ink-400 h-1.5 rounded-full" style="width:46%"></div></div>
+            <span class="font-mono text-sm font-semibold text-ink-600 w-14 text-right">6–7.5%</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">💰 PPF</span>
+          <div class="flex items-center gap-2">
+            <div class="w-20 bg-ink-100 rounded-full h-1.5"><div class="bg-blue-400 h-1.5 rounded-full" style="width:47%"></div></div>
+            <span class="font-mono text-sm font-semibold text-ink-600 w-14 text-right">7.1%</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">📈 Nifty 50 (15yr avg)</span>
+          <div class="flex items-center gap-2">
+            <div class="w-20 bg-ink-100 rounded-full h-1.5"><div class="bg-leaf-500 h-1.5 rounded-full" style="width:73%"></div></div>
+            <span class="font-mono text-sm font-semibold text-leaf-700 w-14 text-right">11–13%</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">📊 Mid-cap Funds</span>
+          <div class="flex items-center gap-2">
+            <div class="w-20 bg-ink-100 rounded-full h-1.5"><div class="bg-leaf-600 h-1.5 rounded-full" style="width:86%"></div></div>
+            <span class="font-mono text-sm font-semibold text-leaf-700 w-14 text-right">13–16%</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5">
+          <span class="text-sm text-ink-600 font-medium">🚀 Small-cap Funds</span>
+          <div class="flex items-center gap-2">
+            <div class="w-20 bg-ink-100 rounded-full h-1.5"><div class="bg-saffron-500 h-1.5 rounded-full" style="width:100%"></div></div>
+            <span class="font-mono text-sm font-semibold text-saffron-600 w-14 text-right">15–20%</span>
+          </div>
+        </div>
+      </div>
+      <p class="text-[10px] text-ink-300 mt-3 font-mono">* Historical averages. Past returns do not guarantee future performance.</p>
+    </div>
+
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Why CAGR is the Best Return Metric</h2>
+      <ul class="space-y-3 text-sm text-ink-500">
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Eliminates volatility noise</strong> — a stock might be up 50% one year and down 20% the next. CAGR smooths this to a single annualised rate you can act on.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Enables fair comparison</strong> — comparing a 3-year investment to a 10-year one using absolute returns is misleading. CAGR puts both on equal footing.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Used in AMFI fund reports</strong> — all Indian mutual fund fact sheets report returns as CAGR for periods longer than 1 year. Understanding CAGR helps you read these correctly.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Compounding intuition</strong> — CAGR helps you understand the power of compounding. A 12% CAGR doubles money in 6 years and grows it 10× in 20 years.</span></li>
+      </ul>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">CAGR vs Other Return Measures</h2>
+      <div class="space-y-3">
+        <div class="flex items-start gap-3 p-3 bg-leaf-50 border border-leaf-100 rounded-xl">
+          <span class="text-leaf-600 text-lg mt-0.5">📊</span>
+          <div>
+            <p class="text-xs font-semibold text-leaf-800 mb-1">CAGR — Best for lumpsum investments</p>
+            <p class="text-xs text-ink-500">One entry, one exit. Perfectly represents the annualised growth of a single investment over any period. Used for stocks, FDs, real estate.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-ink-50 border border-ink-100 rounded-xl">
+          <span class="text-ink-600 text-lg mt-0.5">📈</span>
+          <div>
+            <p class="text-xs font-semibold text-ink-800 mb-1">XIRR — Best for SIP / multiple cash flows</p>
+            <p class="text-xs text-ink-500">When you invest monthly (SIP), each instalment has a different holding period. XIRR accounts for this. For SIPs, always use XIRR, not CAGR.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-ink-50 border border-ink-100 rounded-xl">
+          <span class="text-ink-600 text-lg mt-0.5">💹</span>
+          <div>
+            <p class="text-xs font-semibold text-ink-800 mb-1">Absolute Return — Misleading without time context</p>
+            <p class="text-xs text-ink-500">100% return sounds impressive. But if it took 20 years, that's only 3.5% CAGR — worse than a savings account. Always combine with the time period.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about CAGR and investment returns</p>
+  <div class="grid md:grid-cols-2 gap-3">
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is CAGR and how is it calculated?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          CAGR = (Final Value ÷ Initial Value)^(1÷Years) − 1. It measures the smoothed annual growth rate over a period, assuming profits are reinvested. E.g., ₹1L → ₹2L in 5 years = <strong class="text-ink-700">14.87% CAGR</strong>. The formula accounts for the compounding effect unlike simple average returns.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is a good CAGR for mutual funds in India?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          12–15% CAGR is generally considered good for equity mutual funds over 7+ years. Large-cap funds typically deliver <strong class="text-ink-700">10–12%</strong>, mid-cap <strong class="text-ink-700">13–16%</strong>, and small-cap <strong class="text-ink-700">15–20%</strong> historically. Always compare a fund's CAGR against its benchmark index, not just in absolute terms.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is the difference between CAGR and absolute return?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Absolute return is total % gain without time context. CAGR annualises it: the same 100% gain in 5 years is <strong class="text-ink-700">14.87% CAGR</strong>, but in 10 years it's only <strong class="text-ink-700">7.18% CAGR</strong>. Always use CAGR when comparing investments of different durations — absolute returns can be very misleading.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Is CAGR the same as XIRR?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          No. CAGR is for a single lumpsum (one entry, one exit). XIRR handles multiple cash flows at different dates — like monthly SIP investments. For a lumpsum investment, both give the same result. For SIPs or any investment with multiple contributions, always use XIRR — CAGR will significantly understate or overstate returns.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is the Rule of 72 and how does it relate to CAGR?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          The Rule of 72 is a mental shortcut: divide 72 by the CAGR to estimate years needed to double your money. At <strong class="text-ink-700">12% CAGR → 6 years</strong>; at <strong class="text-ink-700">8% → 9 years</strong>; at <strong class="text-ink-700">6% → 12 years</strong>. It's accurate to within a few months and great for quick back-of-the-envelope comparisons between investment options.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Can CAGR be negative?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Yes. CAGR can be negative if the final value is less than the initial value. If ₹1 lakh fell to ₹80,000 in 3 years, CAGR = (80000÷100000)^(1÷3) − 1 = <strong class="text-ink-700">−7.11%</strong>. A negative CAGR represents the annualised rate of loss. This calculator will correctly display negative CAGR values.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How does CAGR differ from IRR (Internal Rate of Return)?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          CAGR is a simplified version: it assumes one lumpsum invested at the start and one lumpsum received at the end. IRR (and its variant XIRR) handles any number of irregular cash flows in and out at any dates. For real estate investments with rental income, or SIPs with redemptions, IRR/XIRR is more accurate. CAGR is for simple point-to-point measurement.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How accurate is the BharatCalc CAGR calculator?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          BharatCalc uses the standard CAGR formula — the same method used by SEBI, AMFI, and financial planning tools. Results are <strong class="text-ink-700">mathematically exact</strong> for the given inputs. The calculator also correctly handles negative CAGR (losses) and fractional year periods. For planning purposes, results are reliable; for actual investment decisions, consult a SEBI-registered advisor.
+        </div>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- Related Calculators -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="sip-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">📈</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">SIP Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Mutual fund SIP returns</div>
+    </a>
+    <a href="ppf-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">💰</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">PPF Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Public Provident Fund</div>
+    </a>
+    <a href="fd-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">🏛️</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">FD Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Fixed deposit maturity</div>
+    </a>
+    <a href="emi-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="text-xl mb-2">🏦</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">EMI Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Home, car & personal loans</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+          </div>
+          <div class="font-display font-semibold text-white">BharatCalc</div>
+        </div>
+        <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
+        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700">⚠️ Results are estimates for informational purposes only. Consult a SEBI-registered advisor before making investment decisions.</div>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="sip-calculator.html"     class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
+          <li><a href="emi-calculator.html"     class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
+          <li><a href="ppf-calculator.html"     class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
+          <li><a href="cagr-calculator.html"    class="hover:text-leaf-400 transition-colors font-semibold text-leaf-400">CAGR Calculator</a></li>
+          <li><a href="fd-calculator.html"      class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
+          <li><a href="lumpsum-calculator.html" class="hover:text-leaf-400 transition-colors">Lumpsum Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax & Legal</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="income-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
+          <li><a href="gst-calculator.html"        class="hover:text-leaf-400 transition-colors">GST Calculator</a></li>
+          <li><a href="hra-calculator.html"        class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li>
+          <li><a href="tds-calculator.html"        class="hover:text-leaf-400 transition-colors">TDS Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Health & Math</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="bmi-calculator.html"               class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li>
+          <li><a href="age-calculator.html"               class="hover:text-leaf-400 transition-colors">Age Calculator</a></li>
+          <li><a href="percentage-calculator.html"        class="hover:text-leaf-400 transition-colors">Percentage</a></li>
+          <li><a href="compound-interest-calculator.html" class="hover:text-leaf-400 transition-colors">Compound Interest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
+      <div class="flex gap-5">
+        <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
+        <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
+        <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
+        <a href="../contact.html" class="hover:text-ink-300 transition-colors">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+let calcMode = 'cagr';
+
+// ── Formatting ──────────────────────────────────────────────────
+function fmtINR(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+function fmtCompact(n) {
+  const abs = Math.abs(n);
+  const sign = n < 0 ? '−' : '';
+  if (abs >= 10000000) return sign + '₹' + (abs / 10000000).toFixed(2) + 'Cr';
+  if (abs >= 100000)   return sign + '₹' + (abs / 100000).toFixed(2) + 'L';
+  if (abs >= 1000)     return sign + '₹' + (abs / 1000).toFixed(1) + 'K';
+  return sign + '₹' + Math.round(abs).toLocaleString('en-IN');
+}
+function fmtPct(n) { return n.toFixed(1) + '%'; }
+
+// ── Track fill ──────────────────────────────────────────────────
+function updateTrack(id) {
+  const el  = document.getElementById(id);
+  const pct = ((parseFloat(el.value) - parseFloat(el.min)) / (parseFloat(el.max) - parseFloat(el.min))) * 100;
+  el.style.background = `linear-gradient(to right, #16a34a ${pct}%, #e8ecf2 ${pct}%)`;
+}
+
+// ── Sync helpers ────────────────────────────────────────────────
+function syncFromSlider(id) {
+  document.getElementById(id + 'Input').value = document.getElementById(id).value;
+  updateTrack(id);
+  calcMode === 'cagr' ? calcCAGR() : calcFV();
+}
+
+function syncFromInput(id, val) {
+  const slider  = document.getElementById(id);
+  const clamped = Math.min(Math.max(parseFloat(val) || parseFloat(slider.min), parseFloat(slider.min)), parseFloat(slider.max));
+  slider.value  = clamped;
+  updateTrack(id);
+  calcMode === 'cagr' ? calcCAGR() : calcFV();
+}
+
+// ── Mode switch ─────────────────────────────────────────────────
+function setMode(m, btn) {
+  calcMode = m;
+  document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('cagrInputs').classList.toggle('hidden', m !== 'cagr');
+  document.getElementById('fvInputs').classList.toggle('hidden',   m !== 'fv');
+  m === 'cagr' ? calcCAGR() : calcFV();
+}
+
+// ── CAGR calculation ────────────────────────────────────────────
+function calcCAGR() {
+  const iv   = parseFloat(document.getElementById('initVal').value)  || 0;
+  const fv   = parseFloat(document.getElementById('finalVal').value) || 0;
+  const yrs  = parseFloat(document.getElementById('years').value)    || 1;
+  if (iv <= 0 || fv <= 0 || yrs <= 0) return;
+
+  const cagr    = Math.pow(fv / iv, 1 / yrs) - 1;
+  const absRet  = (fv - iv) / iv;
+  const gain    = fv - iv;
+
+  updateResultCard('CAGR', (cagr * 100).toFixed(2) + '%', 'per annum, compounded',
+    'Initial Value', fmtCompact(iv), 'Final Value', fmtCompact(fv),
+    (absRet * 100).toFixed(2) + '%', fmtCompact(gain));
+  updateDonut(iv, fv, gain);
+  renderBarChart(iv, cagr, yrs);
+  renderTable(iv, cagr, yrs);
+}
+
+// ── Future Value calculation ────────────────────────────────────
+function calcFV() {
+  const iv   = parseFloat(document.getElementById('fvInit').value)     || 0;
+  const cagrPct = parseFloat(document.getElementById('targetCagr').value) || 0;
+  const yrs  = parseFloat(document.getElementById('fvYears').value)    || 1;
+  if (iv <= 0 || cagrPct <= 0 || yrs <= 0) return;
+
+  const rate = cagrPct / 100;
+  const fv   = iv * Math.pow(1 + rate, yrs);
+  const gain = fv - iv;
+  const absRet = (fv - iv) / iv;
+
+  updateResultCard('Future Value', fmtCompact(fv), `at ${cagrPct.toFixed(1)}% CAGR over ${yrs} years`,
+    'Initial Value', fmtCompact(iv), 'Total Gain', fmtCompact(gain),
+    (absRet * 100).toFixed(2) + '%', fmtCompact(gain));
+  updateDonut(iv, fv, gain);
+  renderBarChart(iv, rate, yrs);
+  renderTable(iv, rate, yrs);
+}
+
+// ── Result card update ──────────────────────────────────────────
+function updateResultCard(label, main, sub, r1l, r1v, r2l, r2v, absRet, gainVal) {
+  document.getElementById('resultLabel').textContent = label;
+  document.getElementById('mainResult').textContent  = main;
+  document.getElementById('resultSub').textContent   = sub;
+  document.getElementById('r1Label').textContent     = r1l;
+  document.getElementById('r1Val').textContent       = r1v;
+  document.getElementById('r2Label').textContent     = r2l;
+  document.getElementById('r2Val').textContent       = r2v;
+  document.getElementById('absReturn').textContent   = absRet;
+  document.getElementById('totalGain').textContent   = gainVal;
+}
+
+// ── Donut chart ─────────────────────────────────────────────────
+function updateDonut(iv, fv, gain) {
+  const fvAbs       = Math.abs(fv);
+  const initPct     = fvAbs > 0 ? (Math.abs(iv) / fvAbs) * 100 : 50;
+  const gainPct     = fvAbs > 0 ? (Math.abs(gain) / fvAbs) * 100 : 50;
+  const C           = 2 * Math.PI * 54;
+  const initDash    = (Math.min(initPct, 100) / 100) * C;
+  const gainDash    = (Math.min(gainPct, 100) / 100) * C;
+
+  document.getElementById('arcInitial').setAttribute('stroke-dasharray', `${initDash} ${C - initDash}`);
+  document.getElementById('arcGain').setAttribute('stroke-dasharray',    `${gainDash} ${C - gainDash}`);
+  document.getElementById('arcGain').setAttribute('stroke-dashoffset',   `-${initDash}`);
+  document.getElementById('donutCentre').textContent = fmtCompact(fv);
+
+  document.getElementById('legendInitial').textContent    = fmtCompact(iv);
+  document.getElementById('legendGain').textContent       = fmtCompact(gain);
+  document.getElementById('legendInitialPct').textContent = fmtPct(initPct);
+  document.getElementById('legendGainPct').textContent    = fmtPct(gainPct);
+  document.getElementById('barInitial').style.width       = Math.min(initPct, 100) + '%';
+  document.getElementById('barGain').style.width          = Math.min(gainPct, 100) + '%';
+  document.getElementById('barLabelInit').textContent     = 'Initial ' + fmtPct(initPct);
+  document.getElementById('barLabelGain').textContent     = 'Gain ' + fmtPct(gainPct);
+}
+
+// ── Bar chart ───────────────────────────────────────────────────
+function renderBarChart(iv, rate, yrs) {
+  const maxYr  = Math.min(Math.ceil(yrs), 40);
+  const rows   = [];
+  for (let y = 1; y <= maxYr; y++) {
+    rows.push({ year: y, val: iv * Math.pow(1 + rate, y), gain: iv * Math.pow(1 + rate, y) - iv });
+  }
+  const maxVal    = Math.max(...rows.map(r => r.val));
+  const container = document.getElementById('chartBars');
+  let step = 1;
+  if (rows.length > 30) step = 5;
+  else if (rows.length > 20) step = 2;
+  const visible = rows.filter((_, i) => (i + 1) % step === 0 || i === rows.length - 1);
+
+  container.innerHTML = visible.map(r => {
+    const initH = Math.max((iv / maxVal) * 100, 1);
+    const gainH = Math.max((r.gain / maxVal) * 100, 0);
+    return `<div class="bar-group relative flex flex-col items-center flex-1 h-full justify-end cursor-pointer" style="min-width:10px;">
+      <div class="bar-tip">${r.year}yr · ${fmtCompact(r.val)}</div>
+      <div class="w-full flex flex-col justify-end" style="height: calc(100% - 20px);">
+        <div style="height:${gainH}%; min-height:${r.gain > 0 ? 2 : 0}px" class="bar-gain w-full"></div>
+        <div style="height:${initH}%" class="bar-initial w-full"></div>
+      </div>
+      <div class="text-[9px] font-mono text-ink-300 mt-1 text-center leading-tight" style="height:16px;">${r.year}</div>
+    </div>`;
+  }).join('');
+
+  const labels = document.getElementById('yLabels').children;
+  const steps  = [1, 0.75, 0.5, 0.25, 0];
+  for (let i = 0; i < labels.length; i++) {
+    labels[i].textContent = steps[i] > 0 ? fmtCompact(maxVal * steps[i]) : '0';
+  }
+}
+
+// ── Growth table ────────────────────────────────────────────────
+function renderTable(iv, rate, yrs) {
+  const maxYr = Math.min(Math.ceil(yrs), 40);
+  const rows  = [];
+  for (let y = 1; y <= maxYr; y++) {
+    const val    = iv * Math.pow(1 + rate, y);
+    const gain   = val - iv;
+    const absRet = (gain / iv) * 100;
+    rows.push({ year: y, val, gain, absRet });
+  }
+  document.getElementById('growthBody').innerHTML = rows.map((r, i) => `
+    <tr class="${i % 2 === 0 ? 'bg-white' : 'bg-ink-50/40'}">
+      <td class="px-4 sm:px-6 py-3 text-sm font-semibold text-ink-700 font-mono">Year ${r.year}</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono font-semibold text-ink-900">${fmtINR(r.val)}</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono text-leaf-700">${fmtCompact(r.gain)}</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono text-ink-500">+${r.absRet.toFixed(1)}%</td>
+    </tr>`).join('');
+}
+
+// ── Preset helpers ──────────────────────────────────────────────
+function applyPreset(iv, fv, yrs) {
+  document.getElementById('initVal').value      = iv;
+  document.getElementById('initValInput').value  = iv;
+  document.getElementById('finalVal').value     = fv;
+  document.getElementById('finalValInput').value = fv;
+  document.getElementById('years').value        = yrs;
+  document.getElementById('yearsInput').value   = yrs;
+  updateTrack('initVal'); updateTrack('finalVal'); updateTrack('years');
+  calcCAGR();
+}
+
+function setCagrRate(r, btn) {
+  document.getElementById('targetCagr').value      = r;
+  document.getElementById('targetCagrInput').value = r;
+  updateTrack('targetCagr');
+  document.querySelectorAll('.cagr-btn').forEach(b => {
+    b.classList.remove('bg-leaf-50', 'border-leaf-200', 'text-leaf-700');
+    b.classList.add('bg-ink-50', 'border-ink-200', 'text-ink-500');
+  });
+  if (btn) { btn.classList.remove('bg-ink-50', 'border-ink-200', 'text-ink-500'); btn.classList.add('bg-leaf-50', 'border-leaf-200', 'text-leaf-700'); }
+  calcFV();
+}
+
+// ── Mobile menu ──────────────────────────────────────────────────
+function toggleMobileMenu() {
+  const m = document.getElementById('mobileMenu'), btn = document.getElementById('menuBtn'), icon = document.getElementById('menuIcon');
+  const open = m.classList.toggle('hidden');
+  btn.setAttribute('aria-expanded', String(!open));
+  icon.innerHTML = open ? '<path d="M4 6h16M4 12h16M4 18h16"/>' : '<path d="M6 18L18 6M6 6l12 12"/>';
+}
+
+// ── Init ─────────────────────────────────────────────────────────
+function init() {
+  const now = new Date(), year = now.getFullYear(), month = now.getMonth() + 1;
+  const fyStart = month >= 4 ? year : year - 1;
+  document.getElementById('heroFY').textContent  = `FY ${fyStart}–${String(fyStart + 1).slice(-2)}`;
+  document.getElementById('footerYear').textContent = year;
+
+  ['initVal', 'finalVal', 'years', 'fvInit', 'targetCagr', 'fvYears'].forEach(id => {
+    const s = document.getElementById(id);
+    const i = document.getElementById(id + 'Input');
+    if (s && i) i.value = s.value;
+    updateTrack(id);
+  });
+  calcCAGR();
+}
+
+init();
+</script>
+</body>
+</html>
