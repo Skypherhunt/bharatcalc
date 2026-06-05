@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EPF Calculator India – Employee Provident Fund Returns | BharatCalc</title>
+  <meta name="description" content="Free EPF Calculator India — calculate Employee Provident Fund maturity amount, total interest and retirement corpus. Updated for current EPF interest rate 8.25% FY 2024-25. No login required." />
+  <meta name="keywords" content="EPF calculator India, employee provident fund calculator, EPF maturity calculator, EPF interest rate 2025, PF calculator India, provident fund calculator, EPF balance calculator" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/epf-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bharatcalc.online/calculator/epf-calculator.html" />
+  <meta property="og:title" content="EPF Calculator – Employee Provident Fund | BharatCalc" />
+  <meta property="og:description" content="Calculate EPF maturity amount and retirement corpus at 8.25% interest rate. Free, no login." />
+  <meta property="og:locale" content="en_IN" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"EPF Calculator","url":"https://bharatcalc.online/calculator/epf-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bharatcalc.online/"},{"@type":"ListItem","position":2,"name":"Finance","item":"https://bharatcalc.online/?cat=finance"},{"@type":"ListItem","position":3,"name":"EPF Calculator","item":"https://bharatcalc.online/calculator/epf-calculator.html"}]}}</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the current EPF interest rate?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The EPF interest rate for FY 2024-25 is 8.25% per annum, as declared by the EPFO. This rate is reviewed by the EPFO central board every year and is one of the highest guaranteed returns on a government-backed savings scheme in India." }
+      },
+      {
+        "@type": "Question",
+        "name": "How is EPF calculated?",
+        "acceptedAnswer": { "@type": "Answer", "text": "EPF corpus grows through two contribution streams: the employee contributes 12% of basic salary + DA to EPF, and the employer contributes 3.67% to EPF (the remaining 8.33% goes to the Employees' Pension Scheme). Interest at the declared annual rate is credited monthly on the running balance at the end of each financial year." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is EPF withdrawal taxable?",
+        "acceptedAnswer": { "@type": "Answer", "text": "EPF has EEE (Exempt-Exempt-Exempt) tax status: contributions up to ₹1.5 lakh qualify for 80C deduction, interest earned is tax-free, and the full maturity amount is tax-free — provided you have completed 5 continuous years of service. Premature withdrawal before 5 years is taxable as income." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between EPF and EPS?",
+        "acceptedAnswer": { "@type": "Answer", "text": "EPF (Employee Provident Fund) builds your retirement corpus — employee's 12% + employer's 3.67% goes here. EPS (Employee Pension Scheme) provides a monthly pension after retirement — employer's 8.33% (capped at ₹1,250/month) goes here. You can withdraw the EPF balance; EPS pays a monthly pension after age 58." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I withdraw EPF before retirement?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Partial withdrawals are allowed for specific purposes: housing (after 5 years of service), medical emergencies (no lock-in), marriage or education (after 7 years), and home renovation (after 10 years). Full withdrawal is permitted after 2 months of unemployment. All partial withdrawals are tax-free if service is 5+ years." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{display:['Clash Display','sans-serif'],sans:['Satoshi','sans-serif'],mono:['JetBrains Mono','monospace']},colors:{ink:{DEFAULT:'#0d1117',50:'#f5f7fa',100:'#e8ecf2',200:'#c9d2de',300:'#9aaabb',400:'#637b93',500:'#3d5a72',600:'#284560',700:'#1a3249',800:'#112338',900:'#0d1117'},leaf:{DEFAULT:'#16a34a',50:'#f0fdf4',100:'#dcfce7',200:'#bbf7d0',300:'#86efac',400:'#4ade80',500:'#22c55e',600:'#16a34a',700:'#15803d'},saffron:{DEFAULT:'#ea580c',50:'#fff7ed',100:'#ffedd5',400:'#fb923c',500:'#f97316',600:'#ea580c'}}}}}</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}body{font-family:'Satoshi',system-ui,sans-serif}.font-display{font-family:'Clash Display',system-ui,sans-serif}
+    .nav-link{position:relative}.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:#16a34a;transform:scaleX(0);transition:transform .2s;border-radius:1px}.nav-link:hover::after{transform:scaleX(1)}
+    input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:99px;outline:none;cursor:pointer}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:#16a34a;border:3px solid #fff;box-shadow:0 0 0 1px #16a34a,0 2px 6px rgba(22,163,74,.3);cursor:pointer}
+    .val-input{font-family:'JetBrains Mono',monospace}.val-input:focus{outline:none}
+    .donut-ring{transition:stroke-dasharray .5s cubic-bezier(.4,0,.2,1)}
+    .bar-emp{background:#16a34a;border-radius:4px 4px 0 0;transition:height .4s cubic-bezier(.4,0,.2,1)}
+    .bar-er{background:#4ade80;border-radius:4px 4px 0 0;transition:height .4s cubic-bezier(.4,0,.2,1)}
+    .bar-int{background:#86efac;border-radius:4px 4px 0 0;transition:height .4s cubic-bezier(.4,0,.2,1)}
+    .bar-group:hover .bar-tip{display:block}.bar-tip{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#0d1117;color:#fff;font-size:10px;font-family:'JetBrains Mono',monospace;white-space:nowrap;padding:4px 8px;border-radius:6px;pointer-events:none;z-index:10}
+    .bar-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:4px solid transparent;border-top-color:#0d1117}
+    .growth-table{border-collapse:collapse;width:100%}.growth-table th{position:sticky;top:0;background:#f5f7fa;z-index:1}.growth-table tbody tr:hover td{background:#f0fdf4}
+    .table-wrap{max-height:360px;overflow-y:auto}::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:3px}
+    .faq-item details summary{cursor:pointer;list-style:none}.faq-item details summary::-webkit-details-marker{display:none}.faq-item details[open] .faq-icon{transform:rotate(45deg)}.faq-icon{transition:transform .2s}
+    .breadcrumb a{transition:color .15s}
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9TD6B9GQ89');</script>
+</head>
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div>
+        <div class="leading-none"><div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div><div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div></div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+      </nav>
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700"><span>💰</span> Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700"><span>📄</span> Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700"><span>❤️</span> Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700"><span>➗</span> Math</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a><span>/</span>
+      <a href="../index.html?cat=finance" class="hover:text-ink-200">Finance</a><span>/</span>
+      <span class="text-ink-300">EPF Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-leaf-600/15 text-leaf-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-leaf-600/20">
+          <span class="w-1.5 h-1.5 bg-leaf-400 rounded-full animate-pulse"></span>
+          EPF Rate: 8.25% · FY 2024-25
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">EPF Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">Calculate your Employee Provident Fund maturity amount, total contributions and interest earned. Plan your retirement corpus with current EPF rate of 8.25%.</p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0">
+        <span class="w-1.5 h-1.5 bg-leaf-400 rounded-full"></span>Results update live
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-2 mt-5">
+      <div class="bg-leaf-600/10 border border-leaf-600/20 px-3 py-1.5 rounded-full text-xs font-semibold text-leaf-400">EEE Tax Status</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Employee 12% + Employer 3.67%</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Year-by-year breakdown</div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- Inputs -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-7">EPF Details</h2>
+
+      <!-- Basic Salary -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label class="text-sm font-semibold text-ink-700">Basic + DA Salary (monthly)</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="basicInput" type="number" class="val-input w-24 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="syncFromInput('basic',this.value)" />
+          </div>
+        </div>
+        <input type="range" id="basic" min="5000" max="200000" step="1000" value="30000" oninput="syncFromSlider('basic')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹5K</span><span>₹2L</span></div>
+      </div>
+
+      <!-- Current EPF Balance -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label class="text-sm font-semibold text-ink-700">Current EPF Balance</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="existingInput" type="number" class="val-input w-24 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="syncFromInput('existing',this.value)" />
+          </div>
+        </div>
+        <input type="range" id="existing" min="0" max="5000000" step="10000" value="0" oninput="syncFromSlider('existing')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹0</span><span>₹50L</span></div>
+      </div>
+
+      <!-- Age & Retirement Age -->
+      <div class="grid grid-cols-2 gap-4 mb-7">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <label class="text-sm font-semibold text-ink-700">Current Age</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <input id="ageInput" type="number" class="val-input w-12 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="syncFromInput('age',this.value)" />
+              <span class="text-sm text-ink-400 font-mono">yr</span>
+            </div>
+          </div>
+          <input type="range" id="age" min="18" max="58" step="1" value="28" oninput="syncFromSlider('age')" class="w-full" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>18</span><span>58</span></div>
+        </div>
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <label class="text-sm font-semibold text-ink-700">Retirement Age</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <input id="retireInput" type="number" class="val-input w-12 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="syncFromInput('retire',this.value)" />
+              <span class="text-sm text-ink-400 font-mono">yr</span>
+            </div>
+          </div>
+          <input type="range" id="retire" min="50" max="60" step="1" value="58" oninput="syncFromSlider('retire')" class="w-full" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>50</span><span>60</span></div>
+        </div>
+      </div>
+
+      <!-- EPF Interest Rate -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label class="text-sm font-semibold text-ink-700">EPF Interest Rate</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <input id="rateInput" type="number" class="val-input w-16 text-sm font-semibold text-ink-900 bg-transparent text-right" step="0.05" oninput="syncFromInput('rate',this.value)" />
+            <span class="text-sm text-ink-400 font-mono">%</span>
+          </div>
+        </div>
+        <input type="range" id="rate" min="5" max="12" step="0.05" value="8.25" oninput="syncFromSlider('rate')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>5%</span><span>12%</span></div>
+        <div class="flex flex-wrap gap-2 mt-2.5">
+          <button onclick="setRate(8.25,this)" data-rate="8.25" class="rate-btn text-[10px] px-2 py-1 bg-leaf-50 border border-leaf-200 rounded-md font-mono text-leaf-700 transition-colors">Current 8.25%</button>
+          <button onclick="setRate(8.50,this)" data-rate="8.50" class="rate-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">What-if 8.5%</button>
+          <button onclick="setRate(8.65,this)" data-rate="8.65" class="rate-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">Pre-2020 8.65%</button>
+        </div>
+      </div>
+
+      <!-- Quick Presets -->
+      <div>
+        <p class="text-xs text-ink-400 font-semibold uppercase tracking-wider mb-3">Goal presets</p>
+        <div class="grid grid-cols-2 gap-2">
+          <button onclick="applyPreset(15000,0,22,58)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors">
+            <div class="text-xs font-semibold text-ink-700">Fresher</div>
+            <div class="text-xs text-ink-400 font-mono">₹15K basic · 22yrs · retire 58</div>
+          </button>
+          <button onclick="applyPreset(30000,200000,28,58)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors">
+            <div class="text-xs font-semibold text-ink-700">Mid-career</div>
+            <div class="text-xs text-ink-400 font-mono">₹30K basic · ₹2L balance</div>
+          </button>
+          <button onclick="applyPreset(50000,1000000,35,58)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors">
+            <div class="text-xs font-semibold text-ink-700">Senior</div>
+            <div class="text-xs text-ink-400 font-mono">₹50K basic · ₹10L balance</div>
+          </button>
+          <button onclick="applyPreset(100000,3000000,45,58)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors">
+            <div class="text-xs font-semibold text-ink-700">Pre-retirement</div>
+            <div class="text-xs text-ink-400 font-mono">₹1L basic · ₹30L balance</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="flex flex-col gap-5">
+      <div class="bg-ink-900 rounded-2xl p-6 sm:p-8">
+        <p class="text-ink-400 text-xs font-semibold uppercase tracking-wider mb-2">EPF Maturity Amount</p>
+        <div class="font-display text-4xl sm:text-5xl font-bold text-white tracking-tight mb-1" id="maturity">₹0</div>
+        <p class="text-ink-400 text-xs" id="maturitySub">at retirement</p>
+        <div class="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-ink-700">
+          <div><p class="text-ink-500 text-xs mb-1">Employee Contribution</p><p class="font-mono font-semibold text-white text-base" id="empTotal">₹0</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Employer Contribution</p><p class="font-mono font-semibold text-leaf-400 text-base" id="erTotal">₹0</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Interest Earned</p><p class="font-mono font-semibold text-leaf-400 text-base" id="interestTotal">₹0</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Years to Retirement</p><p class="font-mono font-semibold text-white text-base" id="yearsLeft">0 yrs</p></div>
+        </div>
+        <div class="mt-4 bg-leaf-600/10 border border-leaf-600/20 rounded-xl p-3">
+          <p class="text-xs font-semibold text-leaf-400 mb-0.5">🛡️ EEE Tax Status</p>
+          <p class="text-xs text-ink-400">Contribution (80C), interest and maturity — all three are tax-free.</p>
+        </div>
+      </div>
+
+      <!-- Donut -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-6">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-5">Corpus Breakdown</h2>
+        <div class="flex items-center justify-between gap-6">
+          <div class="relative flex-shrink-0">
+            <svg width="140" height="140" viewBox="0 0 140 140">
+              <circle cx="70" cy="70" r="54" fill="none" stroke="#e8ecf2" stroke-width="18"/>
+              <circle id="arcEmp" cx="70" cy="70" r="54" fill="none" stroke="#16a34a" stroke-width="18" stroke-dasharray="339.29 0" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
+              <circle id="arcEr"  cx="70" cy="70" r="54" fill="none" stroke="#4ade80" stroke-width="18" stroke-dasharray="0 339.29" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
+              <circle id="arcInt" cx="70" cy="70" r="54" fill="none" stroke="#86efac" stroke-width="18" stroke-dasharray="0 339.29" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+              <span class="font-mono text-xs text-ink-400">corpus</span>
+              <span class="font-display font-bold text-ink-900 text-sm" id="donutCentre">₹0</span>
+            </div>
+          </div>
+          <div class="flex-1 space-y-3">
+            <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-sm bg-leaf-600"></div><div><p class="text-xs text-ink-500">Employee</p><p class="font-mono text-sm font-semibold text-ink-900" id="legEmp">₹0</p></div></div>
+            <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-sm bg-leaf-400"></div><div><p class="text-xs text-ink-500">Employer</p><p class="font-mono text-sm font-semibold text-ink-900" id="legEr">₹0</p></div></div>
+            <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-sm bg-leaf-300"></div><div><p class="text-xs text-ink-500">Interest</p><p class="font-mono text-sm font-semibold text-ink-900" id="legInt">₹0</p></div></div>
+            <div class="mt-3 h-2 w-full bg-ink-100 rounded-full overflow-hidden flex">
+              <div id="barEmpPct" class="h-full bg-leaf-600 transition-all duration-500" style="width:33%"></div>
+              <div id="barErPct"  class="h-full bg-leaf-400 transition-all duration-500" style="width:33%"></div>
+              <div id="barIntPct" class="h-full bg-leaf-300 transition-all duration-500" style="width:34%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bar Chart -->
+  <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8 mt-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+      <div><h2 class="font-display font-semibold text-ink-900 text-lg">Year-by-Year EPF Growth</h2><p class="text-xs text-ink-400 mt-0.5">How your EPF corpus builds towards retirement</p></div>
+      <div class="flex items-center gap-4 text-xs">
+        <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-leaf-600 inline-block"></span><span class="text-ink-500">Employee</span></div>
+        <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-leaf-400 inline-block"></span><span class="text-ink-500">Employer</span></div>
+        <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-leaf-300 inline-block"></span><span class="text-ink-500">Interest</span></div>
+      </div>
+    </div>
+    <div class="flex gap-2">
+      <div id="yLabels" class="flex flex-col justify-between text-right flex-shrink-0 pb-5" style="width:56px;">
+        <span class="text-[9px] font-mono text-ink-300 leading-none"></span><span class="text-[9px] font-mono text-ink-300 leading-none"></span><span class="text-[9px] font-mono text-ink-300 leading-none"></span><span class="text-[9px] font-mono text-ink-300 leading-none"></span><span class="text-[9px] font-mono text-ink-300 leading-none">0</span>
+      </div>
+      <div class="flex-1 relative" style="height:200px;">
+        <div class="absolute inset-0 flex flex-col justify-between pointer-events-none pb-5">
+          <div class="border-t border-ink-100/70 w-full"></div><div class="border-t border-ink-100/70 w-full"></div><div class="border-t border-ink-100/70 w-full"></div><div class="border-t border-ink-100/70 w-full"></div><div class="border-t border-ink-200 w-full"></div>
+        </div>
+        <div id="chartBars" class="absolute inset-0 flex items-end justify-between gap-0.5 pb-5"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ad -->
+  <div class="my-6"><div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400">Google AdSense — Responsive Ad Unit</div></div>
+
+  <!-- Table -->
+  <div class="bg-white border border-ink-100 rounded-2xl overflow-hidden">
+    <div class="p-6 border-b border-ink-100"><h2 class="font-display font-semibold text-ink-900 text-lg">Year-by-Year Schedule</h2><p class="text-xs text-ink-400 mt-0.5">Annual contributions, interest and closing balance</p></div>
+    <div class="table-wrap">
+      <table class="growth-table">
+        <thead><tr>
+          <th class="text-left text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Year</th>
+          <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Emp. Contribution</th>
+          <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Employer Contribution</th>
+          <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Interest</th>
+          <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Balance</th>
+        </tr></thead>
+        <tbody id="epfTable"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SEO Content -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">What is EPF?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">EPF (Employee Provident Fund) is a mandatory retirement savings scheme governed by the EPFO (Employees' Provident Fund Organisation) under the EPF Act, 1952. It applies to all organisations with 20 or more employees where salary ≤ ₹15,000/month (compulsory registration).</p>
+      <div class="bg-ink-50 rounded-xl p-4 space-y-2 text-xs text-ink-600 font-mono">
+        <div class="flex justify-between"><span>Employee contribution</span><span class="font-bold">12% of Basic+DA</span></div>
+        <div class="flex justify-between"><span>Employer EPF contribution</span><span class="font-bold">3.67% of Basic+DA</span></div>
+        <div class="flex justify-between"><span>Employer EPS contribution</span><span class="font-bold">8.33% (max ₹1,250/mo)</span></div>
+        <div class="flex justify-between"><span>Current interest rate</span><span class="font-bold text-leaf-700">8.25% p.a.</span></div>
+      </div>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">EPF Example</h2>
+      <div class="space-y-3">
+        <div class="bg-ink-50 rounded-xl p-3">
+          <p class="text-xs font-semibold text-ink-700 mb-1">Basic ₹30,000 · 30 years · 8.25%</p>
+          <div class="text-[10px] font-mono text-ink-500 space-y-0.5">
+            <div>Monthly employee = 12% × ₹30,000 = ₹3,600</div>
+            <div>Monthly employer EPF = 3.67% × ₹30,000 = ₹1,101</div>
+            <div>Total monthly = ₹4,701</div>
+          </div>
+          <div class="mt-2 pt-2 border-t border-ink-200 font-mono text-xs font-bold text-leaf-700">Maturity ≈ ₹1.84 Cr (30 years)</div>
+        </div>
+        <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+          <p class="text-xs font-semibold text-leaf-700 mb-1">💡 Voluntary PF (VPF)</p>
+          <p class="text-xs text-ink-500">You can voluntarily contribute beyond 12% (up to 100% of basic) to get higher EPF interest on savings. VPF earns the same 8.25% rate, tax-free.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about EPF</p>
+  <div class="grid md:grid-cols-2 gap-3">
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is the current EPF interest rate?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">The EPF interest rate for FY 2024-25 is <strong class="text-ink-700">8.25% per annum</strong>, announced by the EPFO Central Board of Trustees. It was 8.15% in FY 2023-24. Interest is calculated monthly but credited annually on March 31.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How much does the employer contribute to EPF?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Employer contributes 12% of basic+DA, but it is <strong class="text-ink-700">split</strong>: 3.67% goes to EPF account, and 8.33% goes to EPS (Employee Pension Scheme), capped at ₹1,250/month (calculated on max ₹15,000 basic). Only the 3.67% EPF part grows with interest in your PF account.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Can I withdraw EPF before retirement?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Partial withdrawal is allowed for specific purposes: housing (after 5 years), medical emergency, marriage, education, and natural calamity. Full withdrawal is allowed on retirement (age 58), resignation (after 2 months of unemployment), or permanent disability. TDS at 10% applies if withdrawn before 5 continuous years of service.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Is EPF interest tax-free?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">EPF has <strong class="text-ink-700">EEE status</strong> (Exempt-Exempt-Exempt): employee contribution is deductible under 80C, interest is tax-free, and maturity is tax-free. <em>Exception:</em> interest on employee contributions above ₹2.5 lakh/year (or ₹5L for govt employees) is taxable from FY 2021-22 onwards.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What happens to EPF if I change jobs?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">With UAN (Universal Account Number), your EPF account is portable. You can <strong class="text-ink-700">transfer</strong> your old EPF balance to the new employer's EPF account online via the EPFO Member Portal. The UAN stays the same throughout your career. Avoid withdrawing — keep transferring to benefit from compounding.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is VPF and should I use it?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">VPF (Voluntary Provident Fund) lets you contribute more than the mandatory 12% — up to 100% of your basic. It earns the same <strong class="text-ink-700">8.25% tax-free interest</strong>. Excellent for salaried employees who want safe, tax-free returns higher than FD or PPF. The extra contribution is deductible under 80C (within the ₹1.5L annual limit).</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How can I check my EPF balance?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Four ways to check: (1) EPFO Member Portal at epfindia.gov.in, (2) UMANG app, (3) SMS "EPFOHO UAN ENG" to 7738299899 from registered mobile, (4) Missed call to 011-22901406 from registered mobile. Your UAN and Aadhaar/PAN must be linked for online access.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">EPF vs NPS — which is better?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">EPF: fixed 8.25% rate, fully tax-free at maturity, government-guaranteed. NPS: market-linked (10–12% historical), partial tax on maturity (40% annuity mandatory). For <strong class="text-ink-700">safety and guaranteed returns</strong>: EPF + VPF wins. For <strong class="text-ink-700">higher long-term wealth</strong>: NPS Tier-1 equity allocation may beat EPF over 30+ years.</div></details></div>
+  </div>
+</section>
+
+<!-- Related -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="ppf-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="text-xl mb-2">💰</div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">PPF Calculator</div><div class="text-xs text-ink-400 mt-0.5">Public Provident Fund</div></a>
+    <a href="sip-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="text-xl mb-2">📈</div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">SIP Calculator</div><div class="text-xs text-ink-400 mt-0.5">Mutual fund returns</div></a>
+    <a href="fd-calculator.html"  class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="text-xl mb-2">🏛️</div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">FD Calculator</div><div class="text-xs text-ink-400 mt-0.5">Fixed deposit maturity</div></a>
+    <a href="income-tax-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="text-xl mb-2">📄</div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">Income Tax</div><div class="text-xs text-ink-400 mt-0.5">New vs old regime</div></a>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4"><div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div><div class="font-display font-semibold text-white">BharatCalc</div></div>
+        <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian.</p>
+        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700">⚠️ Results are estimates. Actual EPF balance depends on employer contributions and rate revisions by EPFO.</div>
+      </div>
+      <div><h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3><ul class="space-y-2.5 text-sm"><li><a href="sip-calculator.html" class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li><li><a href="emi-calculator.html" class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li><li><a href="ppf-calculator.html" class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li><li><a href="epf-calculator.html" class="hover:text-leaf-400 transition-colors font-semibold text-leaf-400">EPF Calculator</a></li><li><a href="fd-calculator.html" class="hover:text-leaf-400 transition-colors">FD Calculator</a></li></ul></div>
+      <div><h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax & Legal</h3><ul class="space-y-2.5 text-sm"><li><a href="income-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Income Tax</a></li><li><a href="gst-calculator.html" class="hover:text-leaf-400 transition-colors">GST Calculator</a></li><li><a href="hra-calculator.html" class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li></ul></div>
+      <div><h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Health & Math</h3><ul class="space-y-2.5 text-sm"><li><a href="bmi-calculator.html" class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li><li><a href="age-calculator.html" class="hover:text-leaf-400 transition-colors">Age Calculator</a></li><li><a href="percentage-calculator.html" class="hover:text-leaf-400 transition-colors">Percentage</a></li></ul></div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
+      <div class="flex gap-5"><a href="../about.html" class="hover:text-ink-300">About</a><a href="../privacy.html" class="hover:text-ink-300">Privacy</a><a href="../terms.html" class="hover:text-ink-300">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Helpers ──────────────────────────────────────────────────────
+function fmtINR(n){return '₹'+Math.round(n).toLocaleString('en-IN')}
+function fmtCompact(n){if(n>=10000000)return '₹'+(n/10000000).toFixed(2)+'Cr';if(n>=100000)return '₹'+(n/100000).toFixed(2)+'L';if(n>=1000)return '₹'+(n/1000).toFixed(1)+'K';return fmtINR(n)}
+function fmtPct(n){return n.toFixed(1)+'%'}
+
+function updateTrack(id){const el=document.getElementById(id);const pct=((parseFloat(el.value)-parseFloat(el.min))/(parseFloat(el.max)-parseFloat(el.min)))*100;el.style.background=`linear-gradient(to right,#16a34a ${pct}%,#e8ecf2 ${pct}%)`}
+function syncFromSlider(id){document.getElementById(id+'Input').value=document.getElementById(id).value;updateTrack(id);calc()}
+function syncFromInput(id,val){const s=document.getElementById(id);const c=Math.min(Math.max(parseFloat(val)||parseFloat(s.min),parseFloat(s.min)),parseFloat(s.max));s.value=c;updateTrack(id);calc()}
+
+function setRate(r,btn){document.getElementById('rate').value=r;document.getElementById('rateInput').value=r;updateTrack('rate');document.querySelectorAll('.rate-btn').forEach(b=>{b.classList.remove('bg-leaf-50','border-leaf-200','text-leaf-700');b.classList.add('bg-ink-50','border-ink-200','text-ink-500')});if(btn){btn.classList.remove('bg-ink-50','border-ink-200','text-ink-500');btn.classList.add('bg-leaf-50','border-leaf-200','text-leaf-700')}calc()}
+
+function applyPreset(basic,existing,age,retire){
+  ['basic','existing','age','retire'].forEach((id,i)=>{const vals=[basic,existing,age,retire];document.getElementById(id).value=Math.min(vals[i],parseFloat(document.getElementById(id).max));document.getElementById(id+'Input').value=vals[i];updateTrack(id)});calc()
+}
+
+// ── Calculation ─────────────────────────────────────────────────
+function calc(){
+  const basic    = parseFloat(document.getElementById('basicInput').value)||0;
+  const existing = parseFloat(document.getElementById('existingInput').value)||0;
+  const curAge   = parseFloat(document.getElementById('ageInput').value)||28;
+  const retireAge= parseFloat(document.getElementById('retireInput').value)||58;
+  const rate     = parseFloat(document.getElementById('rateInput').value)||8.25;
+  const years    = Math.max(0, retireAge - curAge);
+
+  // Monthly contributions
+  const empMonthly = basic * 0.12;
+  const erMonthly  = basic * 0.0367; // 3.67% goes to EPF account
+  const totalMonthly = empMonthly + erMonthly;
+
+  const r = rate / 100;
+  const rows = [];
+  let balance = existing;
+  let totalEmpContrib = 0, totalErContrib = 0, totalInterest = 0;
+
+  for(let y = 1; y <= years; y++){
+    const opening   = balance;
+    const empYearly = empMonthly * 12;
+    const erYearly  = erMonthly  * 12;
+    const contrib   = empYearly + erYearly;
+    // Interest on (opening + contributions added throughout year) — simplified: interest on (opening + contrib)
+    const interest  = (opening + contrib) * r;
+    balance         = opening + contrib + interest;
+    totalEmpContrib += empYearly;
+    totalErContrib  += erYearly;
+    totalInterest   += interest;
+    rows.push({year:y, empYearly, erYearly, interest, balance, totalEmpContrib, totalErContrib, totalInterest});
+  }
+
+  const totalCorpus = balance;
+  const empPct   = totalCorpus > 0 ? (totalEmpContrib  / totalCorpus)*100 : 33;
+  const erPct    = totalCorpus > 0 ? (totalErContrib   / totalCorpus)*100 : 33;
+  const intPct   = totalCorpus > 0 ? (totalInterest    / totalCorpus)*100 : 34;
+
+  // Result card
+  document.getElementById('maturity').textContent    = fmtCompact(totalCorpus);
+  document.getElementById('maturitySub').textContent = `at age ${retireAge} · ${years} years of contributions`;
+  document.getElementById('empTotal').textContent    = fmtCompact(totalEmpContrib);
+  document.getElementById('erTotal').textContent     = fmtCompact(totalErContrib);
+  document.getElementById('interestTotal').textContent = fmtCompact(totalInterest);
+  document.getElementById('yearsLeft').textContent   = years + ' yrs';
+
+  // Donut
+  const C = 2*Math.PI*54;
+  const ed = (empPct/100)*C, erd = (erPct/100)*C, id_ = (intPct/100)*C;
+  document.getElementById('arcEmp').setAttribute('stroke-dasharray',`${ed} ${C-ed}`);
+  document.getElementById('arcEr').setAttribute('stroke-dasharray',`${erd} ${C-erd}`);
+  document.getElementById('arcEr').setAttribute('stroke-dashoffset',`-${ed}`);
+  document.getElementById('arcInt').setAttribute('stroke-dasharray',`${id_} ${C-id_}`);
+  document.getElementById('arcInt').setAttribute('stroke-dashoffset',`-${ed+erd}`);
+  document.getElementById('donutCentre').textContent = fmtCompact(totalCorpus);
+  document.getElementById('legEmp').textContent = fmtCompact(totalEmpContrib);
+  document.getElementById('legEr').textContent  = fmtCompact(totalErContrib);
+  document.getElementById('legInt').textContent = fmtCompact(totalInterest);
+  document.getElementById('barEmpPct').style.width = empPct+'%';
+  document.getElementById('barErPct').style.width  = erPct+'%';
+  document.getElementById('barIntPct').style.width = intPct+'%';
+
+  // Bar chart
+  const maxV = Math.max(...rows.map(r=>r.balance), 1);
+  let step=1; if(rows.length>30)step=5; else if(rows.length>20)step=2;
+  const vis = rows.filter((_,i)=>(i+1)%step===0||i===rows.length-1);
+  document.getElementById('chartBars').innerHTML = vis.map(r=>{
+    const eH = Math.max((r.totalEmpContrib/maxV)*100,1);
+    const rH = Math.max((r.totalErContrib/maxV)*100,0);
+    const iH = Math.max((r.totalInterest/maxV)*100,0);
+    return `<div class="bar-group relative flex flex-col items-center flex-1 h-full justify-end cursor-pointer" style="min-width:10px;">
+      <div class="bar-tip">${r.year}yr·${fmtCompact(r.balance)}</div>
+      <div class="w-full flex flex-col justify-end" style="height:calc(100% - 20px);">
+        <div style="height:${iH}%;min-height:${r.totalInterest>0?2:0}px" class="bar-int w-full"></div>
+        <div style="height:${rH}%;min-height:${r.totalErContrib>0?2:0}px" class="bar-er w-full"></div>
+        <div style="height:${eH}%" class="bar-emp w-full"></div>
+      </div>
+      <div class="text-[9px] font-mono text-ink-300 mt-1 text-center" style="height:16px;">${r.year}</div>
+    </div>`;
+  }).join('');
+  const lbls=document.getElementById('yLabels').children, steps=[1,.75,.5,.25,0];
+  for(let i=0;i<lbls.length;i++)lbls[i].textContent=steps[i]>0?fmtCompact(maxV*steps[i]):'0';
+
+  // Table
+  document.getElementById('epfTable').innerHTML = rows.map((r,i)=>`
+    <tr class="${i%2===0?'bg-white':'bg-ink-50/40'}">
+      <td class="px-4 sm:px-6 py-3 text-sm font-semibold text-ink-700 font-mono">Year ${r.year}</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono text-ink-700">${fmtINR(r.empYearly)}</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono text-leaf-700">${fmtINR(r.erYearly)}</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono text-leaf-600">${fmtINR(r.interest)}</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono font-semibold text-ink-900">${fmtINR(r.balance)}</td>
+    </tr>`).join('');
+}
+
+function toggleMobileMenu(){const m=document.getElementById('mobileMenu'),btn=document.getElementById('menuBtn'),icon=document.getElementById('menuIcon');const open=m.classList.toggle('hidden');btn.setAttribute('aria-expanded',String(!open));icon.innerHTML=open?'<path d="M4 6h16M4 12h16M4 18h16"/>':'<path d="M6 18L18 6M6 6l12 12"/>';}
+
+function init(){
+  document.getElementById('footerYear').textContent=new Date().getFullYear();
+  ['basic','existing','age','retire','rate'].forEach(id=>{const s=document.getElementById(id);const i=document.getElementById(id+'Input');if(s&&i)i.value=s.value;updateTrack(id)});
+  document.querySelectorAll('.rate-btn').forEach(b=>{if(parseFloat(b.dataset.rate)===8.25){b.classList.remove('bg-ink-50','border-ink-200','text-ink-500');b.classList.add('bg-leaf-50','border-leaf-200','text-leaf-700')}});
+  calc();
+}
+init();
+</script>
+</body>
+</html>

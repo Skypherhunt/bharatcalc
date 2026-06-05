@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RD Calculator India – Recurring Deposit Maturity Calculator | BharatCalc</title>
+  <meta name="description" content="Free RD Calculator India — calculate recurring deposit maturity amount and interest earned with quarterly compounding. Updated for current RD rates 2025-26. No login required." />
+  <meta name="keywords" content="RD calculator India, recurring deposit calculator, RD maturity calculator, RD interest calculator, SBI RD calculator, post office RD calculator, recurring deposit returns India" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/rd-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bharatcalc.online/calculator/rd-calculator.html" />
+  <meta property="og:title" content="RD Calculator – Recurring Deposit Maturity | BharatCalc" />
+  <meta property="og:description" content="Calculate recurring deposit maturity amount with quarterly compounding. Free, no login." />
+  <meta property="og:locale" content="en_IN" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"RD Calculator","url":"https://bharatcalc.online/calculator/rd-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bharatcalc.online/"},{"@type":"ListItem","position":2,"name":"Finance","item":"https://bharatcalc.online/?cat=finance"},{"@type":"ListItem","position":3,"name":"RD Calculator","item":"https://bharatcalc.online/calculator/rd-calculator.html"}]}}</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is RD interest calculated?",
+        "acceptedAnswer": { "@type": "Answer", "text": "RD uses quarterly compounding. Each monthly deposit is treated as a separate deposit and earns compound interest from its deposit date. The formula is: A = P × (1 + r/400)^(4n), where P is the monthly deposit amount, r is the annual interest rate, and n is the tenure in years." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the RD interest rate in India in 2025?",
+        "acceptedAnswer": { "@type": "Answer", "text": "RD interest rates in 2025: SBI offers 6.5–7.0% p.a., HDFC Bank 7.0–7.25% p.a., ICICI Bank 7.0–7.25% p.a., and Post Office RD offers 6.7% p.a. Senior citizens typically get an additional 0.25–0.50% over regular rates. Rates vary by tenure and are subject to change." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is RD better than FD?",
+        "acceptedAnswer": { "@type": "Answer", "text": "RD is better if you want to invest a fixed amount monthly from your salary — it builds savings discipline. FD is better if you have a lump sum to invest, as it typically offers slightly higher rates and more tenure flexibility. Both are equally safe as deposits with scheduled commercial banks are insured up to ₹5 lakh under DICGC." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is RD interest taxable?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, RD interest is fully taxable as per your income tax slab rate. Banks deduct TDS at 10% if the total interest in a financial year exceeds ₹40,000 (₹50,000 for senior citizens). You can submit Form 15G (or 15H for senior citizens) to avoid TDS if your total income is below the taxable limit." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I withdraw RD before maturity?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, premature closure of RD is allowed, but most banks apply a penalty of 0.5–1% reduction on the applicable interest rate. Some banks also have a lock-in of 1–3 months. If you need urgent liquidity, consider taking a loan against your RD (most banks offer up to 90% of RD balance) instead of premature withdrawal." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{display:['Clash Display','sans-serif'],sans:['Satoshi','sans-serif'],mono:['JetBrains Mono','monospace']},colors:{ink:{DEFAULT:'#0d1117',50:'#f5f7fa',100:'#e8ecf2',200:'#c9d2de',300:'#9aaabb',400:'#637b93',500:'#3d5a72',600:'#284560',700:'#1a3249',800:'#112338',900:'#0d1117'},leaf:{DEFAULT:'#16a34a',50:'#f0fdf4',100:'#dcfce7',200:'#bbf7d0',300:'#86efac',400:'#4ade80',500:'#22c55e',600:'#16a34a',700:'#15803d'},saffron:{DEFAULT:'#ea580c',50:'#fff7ed',400:'#fb923c',500:'#f97316',600:'#ea580c'}}}}}</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}body{font-family:'Satoshi',system-ui,sans-serif}.font-display{font-family:'Clash Display',system-ui,sans-serif}
+    .nav-link{position:relative}.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:#16a34a;transform:scaleX(0);transition:transform .2s;border-radius:1px}.nav-link:hover::after{transform:scaleX(1)}
+    input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:99px;outline:none;cursor:pointer}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:#16a34a;border:3px solid #fff;box-shadow:0 0 0 1px #16a34a,0 2px 6px rgba(22,163,74,.3);cursor:pointer}
+    .val-input{font-family:'JetBrains Mono',monospace}.val-input:focus{outline:none}
+    .donut-ring{transition:stroke-dasharray .5s cubic-bezier(.4,0,.2,1)}
+    .bar-dep{background:#16a34a;border-radius:4px 4px 0 0;transition:height .4s cubic-bezier(.4,0,.2,1)}
+    .bar-int{background:#4ade80;border-radius:4px 4px 0 0;transition:height .4s cubic-bezier(.4,0,.2,1)}
+    .bar-group:hover .bar-tip{display:block}.bar-tip{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#0d1117;color:#fff;font-size:10px;font-family:'JetBrains Mono',monospace;white-space:nowrap;padding:4px 8px;border-radius:6px;pointer-events:none;z-index:10}
+    .bar-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:4px solid transparent;border-top-color:#0d1117}
+    .growth-table{border-collapse:collapse;width:100%}.growth-table th{position:sticky;top:0;background:#f5f7fa;z-index:1}.growth-table tbody tr:hover td{background:#f0fdf4}
+    .table-wrap{max-height:360px;overflow-y:auto}::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:3px}
+    .faq-item details summary{cursor:pointer;list-style:none}.faq-item details summary::-webkit-details-marker{display:none}.faq-item details[open] .faq-icon{transform:rotate(45deg)}.faq-icon{transition:transform .2s}
+    .breadcrumb a{transition:color .15s}
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9TD6B9GQ89');</script>
+</head>
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div>
+        <div class="leading-none"><div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div><div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div></div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 py-1">Math</a>
+      </nav>
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700"><span>💰</span> Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700"><span>📄</span> Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700"><span>❤️</span> Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700"><span>➗</span> Math</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a><span>/</span>
+      <a href="../index.html?cat=finance" class="hover:text-ink-200">Finance</a><span>/</span>
+      <span class="text-ink-300">RD Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-leaf-600/15 text-leaf-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-leaf-600/20">
+          <span class="w-1.5 h-1.5 bg-leaf-400 rounded-full animate-pulse"></span>
+          Updated for FY <span id="heroFY"></span>
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">RD Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">Calculate your Recurring Deposit maturity amount and interest earned. Uses quarterly compounding — the standard method used by all Indian banks.</p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0"><span class="w-1.5 h-1.5 bg-leaf-400 rounded-full"></span>Results update live</div>
+    </div>
+    <div class="flex flex-wrap gap-2 mt-5">
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Quarterly compounding</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Month-by-month breakdown</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">TDS applicable</div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- Inputs -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-7">RD Details</h2>
+
+      <!-- Monthly Deposit -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label class="text-sm font-semibold text-ink-700">Monthly Deposit</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="depositInput" type="number" class="val-input w-24 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="syncFromInput('deposit',this.value)" />
+          </div>
+        </div>
+        <input type="range" id="deposit" min="500" max="100000" step="500" value="5000" oninput="syncFromSlider('deposit')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹500</span><span>₹1L</span></div>
+      </div>
+
+      <!-- Interest Rate -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label class="text-sm font-semibold text-ink-700">Interest Rate (p.a.)</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <input id="rateInput" type="number" class="val-input w-16 text-sm font-semibold text-ink-900 bg-transparent text-right" step="0.1" oninput="syncFromInput('rate',this.value)" />
+            <span class="text-sm text-ink-400 font-mono">%</span>
+          </div>
+        </div>
+        <input type="range" id="rate" min="1" max="12" step="0.1" value="6.5" oninput="syncFromSlider('rate')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>1%</span><span>12%</span></div>
+        <div class="flex flex-wrap gap-2 mt-2.5">
+          <button onclick="setRate(6.5,this)"  data-rate="6.5"  class="rate-btn text-[10px] px-2 py-1 bg-leaf-50 border border-leaf-200 rounded-md font-mono text-leaf-700 transition-colors">SBI 6.5%</button>
+          <button onclick="setRate(6.7,this)"  data-rate="6.7"  class="rate-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">Post Office 6.7%</button>
+          <button onclick="setRate(7.0,this)"  data-rate="7.0"  class="rate-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">HDFC 7%</button>
+          <button onclick="setRate(8.0,this)"  data-rate="8.0"  class="rate-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">SFB 8%</button>
+        </div>
+      </div>
+
+      <!-- Tenure -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label class="text-sm font-semibold text-ink-700">Tenure</label>
+          <div class="flex items-center gap-2">
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <input id="tenureInput" type="number" class="val-input w-12 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="syncFromInput('tenure',this.value)" />
+              <span class="text-sm text-ink-400 font-mono" id="tenureUnit">mo</span>
+            </div>
+            <div class="flex rounded-lg border border-ink-200 overflow-hidden text-xs font-semibold">
+              <button id="tabMo" onclick="setTenureMode('months')" class="px-2.5 py-1.5 bg-ink-900 text-white transition-colors">Mo</button>
+              <button id="tabYr" onclick="setTenureMode('years')"  class="px-2.5 py-1.5 bg-white text-ink-500 hover:bg-ink-50 transition-colors">Yr</button>
+            </div>
+          </div>
+        </div>
+        <input type="range" id="tenure" min="3" max="120" step="1" value="24" oninput="syncFromSlider('tenure')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono" id="tenureRange"><span>3 mo</span><span>120 mo</span></div>
+        <div class="flex flex-wrap gap-2 mt-2.5">
+          <button onclick="setTenureVal(12)" class="t-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">1yr</button>
+          <button onclick="setTenureVal(24)" class="t-btn text-[10px] px-2 py-1 bg-leaf-50 border border-leaf-200 rounded-md font-mono text-leaf-700 transition-colors">2yr</button>
+          <button onclick="setTenureVal(36)" class="t-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">3yr</button>
+          <button onclick="setTenureVal(60)" class="t-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">5yr</button>
+          <button onclick="setTenureVal(120)" class="t-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">10yr</button>
+        </div>
+      </div>
+
+      <!-- Presets -->
+      <div>
+        <p class="text-xs text-ink-400 font-semibold uppercase tracking-wider mb-3">Goal presets</p>
+        <div class="grid grid-cols-2 gap-2">
+          <button onclick="applyPreset(2000,6.5,12)"  class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors"><div class="text-xs font-semibold text-ink-700">Starter</div><div class="text-xs text-ink-400 font-mono">₹2K/mo · 6.5% · 1yr</div></button>
+          <button onclick="applyPreset(5000,6.5,24)"  class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors"><div class="text-xs font-semibold text-ink-700">Short Goal</div><div class="text-xs text-ink-400 font-mono">₹5K/mo · 6.5% · 2yr</div></button>
+          <button onclick="applyPreset(10000,7.0,36)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors"><div class="text-xs font-semibold text-ink-700">Medium Goal</div><div class="text-xs text-ink-400 font-mono">₹10K/mo · 7% · 3yr</div></button>
+          <button onclick="applyPreset(25000,7.0,60)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors"><div class="text-xs font-semibold text-ink-700">Big Goal</div><div class="text-xs text-ink-400 font-mono">₹25K/mo · 7% · 5yr</div></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="flex flex-col gap-5">
+      <div class="bg-ink-900 rounded-2xl p-6 sm:p-8">
+        <p class="text-ink-400 text-xs font-semibold uppercase tracking-wider mb-2">Maturity Amount</p>
+        <div class="font-display text-4xl sm:text-5xl font-bold text-white tracking-tight mb-1" id="maturity">₹0</div>
+        <p class="text-ink-400 text-xs" id="maturitySub">after 24 months at 6.5% p.a.</p>
+        <div class="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-ink-700">
+          <div><p class="text-ink-500 text-xs mb-1">Total Deposited</p><p class="font-mono font-semibold text-white text-base" id="rDeposited">₹0</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Interest Earned</p><p class="font-mono font-semibold text-leaf-400 text-base" id="rInterest">₹0</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Effective Yield (p.a.)</p><p class="font-mono font-semibold text-white text-base" id="rYield">0%</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Return on Deposits</p><p class="font-mono font-semibold text-leaf-400 text-base" id="rReturn">0%</p></div>
+        </div>
+        <div class="mt-4 bg-saffron-600/10 border border-saffron-600/20 rounded-xl p-3">
+          <p class="text-xs font-semibold text-saffron-400 mb-0.5">⚠️ TDS Note</p>
+          <p class="text-xs text-ink-400" id="tdsNote">If annual interest exceeds ₹40,000 (₹50K for seniors), TDS at 10% is deducted. Submit Form 15G to avoid TDS.</p>
+        </div>
+      </div>
+
+      <!-- Donut -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-6">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-5">Investment Breakdown</h2>
+        <div class="flex items-center justify-between gap-6">
+          <div class="relative flex-shrink-0">
+            <svg width="140" height="140" viewBox="0 0 140 140">
+              <circle cx="70" cy="70" r="54" fill="none" stroke="#e8ecf2" stroke-width="18"/>
+              <circle id="arcDep" cx="70" cy="70" r="54" fill="none" stroke="#16a34a" stroke-width="18" stroke-dasharray="339.29 0" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
+              <circle id="arcInt" cx="70" cy="70" r="54" fill="none" stroke="#4ade80" stroke-width="18" stroke-dasharray="0 339.29" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"><span class="font-mono text-xs text-ink-400">maturity</span><span class="font-display font-bold text-ink-900 text-sm" id="donutCentre">₹0</span></div>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-4"><div class="w-3 h-3 rounded-sm bg-leaf-600"></div><div><p class="text-xs text-ink-500">Total Deposited</p><p class="font-mono font-semibold text-ink-900 text-sm" id="legDep">₹0</p><p class="font-mono text-xs text-ink-400" id="legDepPct">87%</p></div></div>
+            <div class="flex items-center gap-3"><div class="w-3 h-3 rounded-sm bg-leaf-400"></div><div><p class="text-xs text-ink-500">Interest Earned</p><p class="font-mono font-semibold text-ink-900 text-sm" id="legInt">₹0</p><p class="font-mono text-xs text-ink-400" id="legIntPct">13%</p></div></div>
+            <div class="mt-4 h-2 w-full bg-ink-100 rounded-full overflow-hidden flex">
+              <div id="barDepPct" class="h-full bg-leaf-600 rounded-l-full transition-all duration-500" style="width:87%"></div>
+              <div id="barIntPct" class="h-full bg-leaf-400 rounded-r-full transition-all duration-500" style="width:13%"></div>
+            </div>
+            <div class="flex justify-between text-xs text-ink-400 font-mono mt-1"><span id="blDep">Deposited 87%</span><span id="blInt">Interest 13%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bar Chart -->
+  <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8 mt-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+      <div><h2 class="font-display font-semibold text-ink-900 text-lg">Month-by-Month Growth</h2><p class="text-xs text-ink-400 mt-0.5">Cumulative deposits and interest earned over tenure</p></div>
+      <div class="flex items-center gap-4 text-xs"><div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-leaf-600 inline-block"></span><span class="text-ink-500">Deposited</span></div><div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-leaf-400 inline-block"></span><span class="text-ink-500">Interest</span></div></div>
+    </div>
+    <div class="flex gap-2">
+      <div id="yLabels" class="flex flex-col justify-between text-right flex-shrink-0 pb-5" style="width:56px;"><span class="text-[9px] font-mono text-ink-300 leading-none"></span><span class="text-[9px] font-mono text-ink-300 leading-none"></span><span class="text-[9px] font-mono text-ink-300 leading-none"></span><span class="text-[9px] font-mono text-ink-300 leading-none"></span><span class="text-[9px] font-mono text-ink-300 leading-none">0</span></div>
+      <div class="flex-1 relative" style="height:200px;">
+        <div class="absolute inset-0 flex flex-col justify-between pointer-events-none pb-5"><div class="border-t border-ink-100/70 w-full"></div><div class="border-t border-ink-100/70 w-full"></div><div class="border-t border-ink-100/70 w-full"></div><div class="border-t border-ink-100/70 w-full"></div><div class="border-t border-ink-200 w-full"></div></div>
+        <div id="chartBars" class="absolute inset-0 flex items-end justify-between gap-0.5 pb-5"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ad -->
+  <div class="my-6"><div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400">Google AdSense — Responsive Ad Unit</div></div>
+
+  <!-- Table -->
+  <div class="bg-white border border-ink-100 rounded-2xl overflow-hidden">
+    <div class="p-6 border-b border-ink-100"><h2 class="font-display font-semibold text-ink-900 text-lg">Schedule</h2><p class="text-xs text-ink-400 mt-0.5">Cumulative deposits, interest and balance by quarter</p></div>
+    <div class="table-wrap"><table class="growth-table">
+      <thead><tr>
+        <th class="text-left text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Period</th>
+        <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Total Deposited</th>
+        <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Interest Earned</th>
+        <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Balance</th>
+      </tr></thead>
+      <tbody id="rdTable"></tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- SEO Content -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">What is an RD?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">A Recurring Deposit (RD) is a savings instrument where you deposit a fixed amount every month for a fixed tenure. At the end of the tenure, you receive the total deposited amount plus the accumulated interest — making it perfect for disciplined saving towards a goal.</p>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">RDs use <strong class="text-ink-700">quarterly compounding</strong> — interest is calculated every quarter on the outstanding balance and added to the corpus.</p>
+      <div class="bg-ink-50 rounded-xl p-3 text-xs font-mono text-ink-600">
+        <p class="font-semibold text-ink-700 mb-1">RD Maturity Formula (Indian Banks)</p>
+        <p>M = R × [(1 + i)^n − 1] / (1 − (1+i)^(−1/3))</p>
+        <p class="text-ink-400 mt-1 text-[10px]">Where i = rate/400 (quarterly), n = total quarters, R = monthly deposit</p>
+      </div>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">RD vs SIP vs FD</h2>
+      <div class="space-y-2.5">
+        <div class="flex items-start gap-3 p-3 bg-leaf-50 border border-leaf-100 rounded-xl"><span class="text-lg">📅</span><div><p class="text-xs font-semibold text-leaf-800 mb-1">RD — Safe monthly savings</p><p class="text-xs text-ink-500">Fixed, guaranteed returns. No market risk. Good for short-term goals (1–5 years) like emergency fund, vacation, gadget purchase.</p></div></div>
+        <div class="flex items-start gap-3 p-3 bg-ink-50 border border-ink-100 rounded-xl"><span class="text-lg">📈</span><div><p class="text-xs font-semibold text-ink-800 mb-1">SIP — Market-linked monthly investing</p><p class="text-xs text-ink-500">Higher potential returns over 7+ years but with market volatility. Equity SIPs historically outperform RD significantly over long periods.</p></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">RD Example Calculations</h2>
+      <div class="space-y-3">
+        <div class="bg-ink-50 rounded-xl p-3"><div class="flex justify-between mb-1"><span class="text-xs font-semibold text-ink-700">₹5K/mo · 6.5% · 2 years</span><span class="font-mono text-xs font-bold text-leaf-700">₹1,29,565</span></div><div class="text-[10px] font-mono text-ink-400">Deposited ₹1,20,000 · Interest ₹9,565</div></div>
+        <div class="bg-ink-50 rounded-xl p-3"><div class="flex justify-between mb-1"><span class="text-xs font-semibold text-ink-700">₹10K/mo · 7% · 3 years</span><span class="font-mono text-xs font-bold text-leaf-700">₹4,03,768</span></div><div class="text-[10px] font-mono text-ink-400">Deposited ₹3,60,000 · Interest ₹43,768</div></div>
+        <div class="bg-ink-50 rounded-xl p-3"><div class="flex justify-between mb-1"><span class="text-xs font-semibold text-ink-700">₹25K/mo · 6.7% · 5 years</span><span class="font-mono text-xs font-bold text-leaf-700">₹17,72,504</span></div><div class="text-[10px] font-mono text-ink-400">Deposited ₹15,00,000 · Interest ₹2,72,504</div></div>
+      </div>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Current RD Rates in India</h2>
+      <div class="space-y-2">
+        <div class="flex justify-between py-2 border-b border-ink-50"><span class="text-sm text-ink-600">SBI</span><span class="font-mono text-sm font-semibold text-ink-800">6.50% (2yr)</span></div>
+        <div class="flex justify-between py-2 border-b border-ink-50"><span class="text-sm text-ink-600">HDFC Bank</span><span class="font-mono text-sm font-semibold text-ink-800">7.00% (2yr)</span></div>
+        <div class="flex justify-between py-2 border-b border-ink-50"><span class="text-sm text-ink-600">Post Office RD</span><span class="font-mono text-sm font-semibold text-leaf-700">6.70% (5yr)</span></div>
+        <div class="flex justify-between py-2 border-b border-ink-50"><span class="text-sm text-ink-600">Small Finance Banks</span><span class="font-mono text-sm font-semibold text-saffron-700">Up to 9%</span></div>
+        <div class="flex justify-between py-2"><span class="text-sm text-ink-600">Senior Citizens (extra)</span><span class="font-mono text-sm font-semibold text-leaf-700">+0.25–0.50%</span></div>
+      </div>
+      <p class="text-[10px] text-ink-300 mt-3 font-mono">* Indicative rates. Verify with your bank before opening.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about Recurring Deposits</p>
+  <div class="grid md:grid-cols-2 gap-3">
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How is RD interest calculated?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Indian banks use <strong class="text-ink-700">quarterly compounding</strong> for RDs. Each monthly installment is treated as a separate deposit earning compound interest from its month of deposit. The formula: M = R × [(1+i)^n − 1] / (1−(1+i)^(−1/3)), where i = rate/400, n = quarters. BharatCalc uses the installment-by-installment FV method for maximum accuracy.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What happens if I miss an RD installment?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">If you miss an installment, banks charge a <strong class="text-ink-700">penalty of ₹1 to ₹2 per ₹100 per month</strong> on the missed amount. If you miss more than a certain number (varies by bank, usually 3–4), the RD account may be marked irregular and could be closed prematurely. Set up an auto-debit to avoid missing payments.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Is RD interest taxable?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes. RD interest is fully taxable at your income slab rate as "Income from Other Sources." <strong class="text-ink-700">TDS at 10%</strong> is deducted if annual interest exceeds ₹40,000 (₹50,000 for senior citizens). Unlike FD where interest is credited annually, RD interest accrues monthly but is taxable in the year it accrues, not just at maturity.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Can I break an RD prematurely?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes, premature closure is allowed at most banks with a <strong class="text-ink-700">penalty of 0.5–1%</strong> on the applicable interest rate. You receive interest for the period actually completed, minus the penalty. Post Office RDs can be closed after 3 years (out of 5). Avoid premature closure to earn full interest.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">RD vs SIP — which is better?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">For short-term goals (&lt;3 years) and capital safety: <strong class="text-ink-700">RD wins</strong> with guaranteed returns. For long-term wealth (7+ years): <strong class="text-ink-700">equity SIP wins</strong> with historical returns of 12–15% vs RD's 6.5–7%. Both involve monthly discipline, but SIP has market risk. Use RD for your emergency fund and near-term goals; SIP for long-term wealth.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is the minimum RD amount in India?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Most banks allow RDs starting from <strong class="text-ink-700">₹100/month</strong>. Post Office RD minimum is ₹100/month with no upper limit. SBI minimum is ₹100/month. Online RD accounts can be opened instantly through net banking or mobile apps of most banks. There is no maximum limit on RD deposits.</div></details></div>
+  </div>
+</section>
+
+<!-- Related -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="fd-calculator.html"   class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="text-xl mb-2">🏛️</div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">FD Calculator</div><div class="text-xs text-ink-400 mt-0.5">Fixed deposit maturity</div></a>
+    <a href="sip-calculator.html"  class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="text-xl mb-2">📈</div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">SIP Calculator</div><div class="text-xs text-ink-400 mt-0.5">Mutual fund returns</div></a>
+    <a href="ppf-calculator.html"  class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="text-xl mb-2">💰</div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">PPF Calculator</div><div class="text-xs text-ink-400 mt-0.5">Public Provident Fund</div></a>
+    <a href="lumpsum-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="text-xl mb-2">💎</div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">Lumpsum Calculator</div><div class="text-xs text-ink-400 mt-0.5">One-time investment</div></a>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2"><div class="flex items-center gap-2.5 mb-4"><div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div><div class="font-display font-semibold text-white">BharatCalc</div></div><p class="text-sm text-ink-400 mb-4 max-w-xs">Free calculators for every Indian.</p><div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700">⚠️ RD interest is taxable. Consult your bank for exact maturity before opening.</div></div>
+      <div><h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3><ul class="space-y-2.5 text-sm"><li><a href="fd-calculator.html" class="hover:text-leaf-400 transition-colors">FD Calculator</a></li><li><a href="rd-calculator.html" class="hover:text-leaf-400 transition-colors font-semibold text-leaf-400">RD Calculator</a></li><li><a href="sip-calculator.html" class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li><li><a href="ppf-calculator.html" class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li></ul></div>
+      <div><h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax</h3><ul class="space-y-2.5 text-sm"><li><a href="income-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Income Tax</a></li><li><a href="gst-calculator.html" class="hover:text-leaf-400 transition-colors">GST Calculator</a></li></ul></div>
+      <div><h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Other</h3><ul class="space-y-2.5 text-sm"><li><a href="bmi-calculator.html" class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li><li><a href="age-calculator.html" class="hover:text-leaf-400 transition-colors">Age Calculator</a></li></ul></div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500"><p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p><div class="flex gap-5"><a href="../about.html" class="hover:text-ink-300">About</a><a href="../privacy.html" class="hover:text-ink-300">Privacy</a><a href="../terms.html" class="hover:text-ink-300">Terms</a></div></div>
+  </div>
+</footer>
+
+<script>
+let tenureMode='months';
+function fmtINR(n){return '₹'+Math.round(n).toLocaleString('en-IN')}
+function fmtCompact(n){if(n>=10000000)return '₹'+(n/10000000).toFixed(2)+'Cr';if(n>=100000)return '₹'+(n/100000).toFixed(2)+'L';if(n>=1000)return '₹'+(n/1000).toFixed(1)+'K';return fmtINR(n)}
+function fmtPct(n){return n.toFixed(1)+'%'}
+function updateTrack(id){const el=document.getElementById(id);const pct=((parseFloat(el.value)-parseFloat(el.min))/(parseFloat(el.max)-parseFloat(el.min)))*100;el.style.background=`linear-gradient(to right,#16a34a ${pct}%,#e8ecf2 ${pct}%)`}
+function syncFromSlider(id){document.getElementById(id+'Input').value=document.getElementById(id).value;updateTrack(id);calc()}
+function syncFromInput(id,val){const s=document.getElementById(id);const c=Math.min(Math.max(parseFloat(val)||parseFloat(s.min),parseFloat(s.min)),parseFloat(s.max));s.value=c;updateTrack(id);calc()}
+function setRate(r,btn){document.getElementById('rate').value=r;document.getElementById('rateInput').value=r;updateTrack('rate');document.querySelectorAll('.rate-btn').forEach(b=>{b.classList.remove('bg-leaf-50','border-leaf-200','text-leaf-700');b.classList.add('bg-ink-50','border-ink-200','text-ink-500')});if(btn){btn.classList.remove('bg-ink-50','border-ink-200','text-ink-500');btn.classList.add('bg-leaf-50','border-leaf-200','text-leaf-700')}calc()}
+function setTenureVal(mo){document.getElementById('tenure').value=Math.min(mo,parseFloat(document.getElementById('tenure').max));document.getElementById('tenureInput').value=mo;updateTrack('tenure');calc()}
+function setTenureMode(m){
+  tenureMode=m;
+  const s=document.getElementById('tenure');
+  if(m==='years'){s.min=1;s.max=10;s.step=1;if(parseFloat(s.value)>10)s.value=10;document.getElementById('tenureRange').innerHTML='<span>1 yr</span><span>10 yr</span>';document.getElementById('tenureUnit').textContent='yr';document.getElementById('tabYr').className='px-2.5 py-1.5 bg-ink-900 text-white transition-colors text-xs font-semibold';document.getElementById('tabMo').className='px-2.5 py-1.5 bg-white text-ink-500 hover:bg-ink-50 transition-colors text-xs font-semibold';}
+  else{s.min=3;s.max=120;s.step=1;const curYr=parseFloat(s.value);if(curYr<=10)s.value=Math.min(curYr*12,120);document.getElementById('tenureRange').innerHTML='<span>3 mo</span><span>120 mo</span>';document.getElementById('tenureUnit').textContent='mo';document.getElementById('tabMo').className='px-2.5 py-1.5 bg-ink-900 text-white transition-colors text-xs font-semibold';document.getElementById('tabYr').className='px-2.5 py-1.5 bg-white text-ink-500 hover:bg-ink-50 transition-colors text-xs font-semibold';}
+  document.getElementById('tenureInput').value=s.value;updateTrack('tenure');calc();
+}
+function applyPreset(dep,rate,mo){
+  if(tenureMode!=='months'){setTenureMode('months');}
+  document.getElementById('deposit').value=Math.min(dep,100000);document.getElementById('depositInput').value=dep;
+  document.getElementById('rate').value=rate;document.getElementById('rateInput').value=rate;
+  document.getElementById('tenure').value=Math.min(mo,120);document.getElementById('tenureInput').value=mo;
+  updateTrack('deposit');updateTrack('rate');updateTrack('tenure');calc();
+}
+
+function calc(){
+  const R = parseFloat(document.getElementById('depositInput').value)||0;
+  const annRate = parseFloat(document.getElementById('rateInput').value)||0;
+  const tenureRaw = parseFloat(document.getElementById('tenureInput').value)||1;
+  const months = tenureMode==='years' ? tenureRaw*12 : tenureRaw;
+  if(R<=0||annRate<=0||months<=0) return;
+
+  // RD maturity using FV of each monthly installment with quarterly compounding
+  // Each monthly installment of R earns interest for remaining months
+  // Quarterly rate = annRate/400
+  const i = annRate/400; // quarterly rate
+  let maturity = 0;
+  for(let mo=1;mo<=months;mo++){
+    const quartersRemaining = (months - mo + 1) / 3; // fractional quarters
+    maturity += R * Math.pow(1+i, quartersRemaining);
+  }
+
+  const totalDeposited = R * months;
+  const interest = maturity - totalDeposited;
+  const effYield = (Math.pow(1+i,4)-1)*100;
+  const returnPct = (interest/totalDeposited)*100;
+
+  document.getElementById('maturity').textContent    = fmtCompact(maturity);
+  document.getElementById('maturitySub').textContent = `after ${months} months at ${annRate.toFixed(1)}% p.a.`;
+  document.getElementById('rDeposited').textContent  = fmtCompact(totalDeposited);
+  document.getElementById('rInterest').textContent   = fmtCompact(interest);
+  document.getElementById('rYield').textContent      = effYield.toFixed(2)+'%';
+  document.getElementById('rReturn').textContent     = returnPct.toFixed(1)+'%';
+
+  const depPct=(totalDeposited/maturity)*100, intPct=(interest/maturity)*100;
+  const C=2*Math.PI*54;
+  const dd=(depPct/100)*C, id_=(intPct/100)*C;
+  document.getElementById('arcDep').setAttribute('stroke-dasharray',`${dd} ${C-dd}`);
+  document.getElementById('arcInt').setAttribute('stroke-dasharray',`${id_} ${C-id_}`);
+  document.getElementById('arcInt').setAttribute('stroke-dashoffset',`-${dd}`);
+  document.getElementById('donutCentre').textContent=fmtCompact(maturity);
+  document.getElementById('legDep').textContent=fmtCompact(totalDeposited);
+  document.getElementById('legInt').textContent=fmtCompact(interest);
+  document.getElementById('legDepPct').textContent=fmtPct(depPct);
+  document.getElementById('legIntPct').textContent=fmtPct(intPct);
+  document.getElementById('barDepPct').style.width=depPct+'%';
+  document.getElementById('barIntPct').style.width=intPct+'%';
+  document.getElementById('blDep').textContent='Deposited '+fmtPct(depPct);
+  document.getElementById('blInt').textContent='Interest '+fmtPct(intPct);
+
+  // Build quarterly rows for chart + table
+  const qRows=[];
+  for(let q=1;q<=Math.ceil(months/3);q++){
+    const moEnd=Math.min(q*3,months);
+    let bal=0;
+    for(let mo=1;mo<=moEnd;mo++){
+      const qRem=(moEnd-mo+1)/3;
+      bal+=R*Math.pow(1+i,qRem);
+    }
+    qRows.push({q,moEnd,bal,dep:R*moEnd,int:bal-R*moEnd});
+  }
+
+  // Bar chart
+  const maxV=qRows[qRows.length-1].bal;
+  let step=1;if(qRows.length>30)step=4;else if(qRows.length>15)step=2;
+  const vis=qRows.filter((_,i)=>(i+1)%step===0||i===qRows.length-1);
+  document.getElementById('chartBars').innerHTML=vis.map(r=>{
+    const dH=Math.max((r.dep/maxV)*100,1), iH=Math.max((r.int/maxV)*100,0);
+    const lbl=r.moEnd<=12?`M${r.moEnd}`:`Q${r.q}`;
+    return `<div class="bar-group relative flex flex-col items-center flex-1 h-full justify-end cursor-pointer" style="min-width:8px;"><div class="bar-tip">${lbl}·${fmtCompact(r.bal)}</div><div class="w-full flex flex-col justify-end" style="height:calc(100% - 20px);"><div style="height:${iH}%;min-height:${r.int>0?2:0}px" class="bar-int w-full"></div><div style="height:${dH}%" class="bar-dep w-full"></div></div><div class="text-[9px] font-mono text-ink-300 mt-1 text-center" style="height:16px;">${lbl}</div></div>`;
+  }).join('');
+  const lbls=document.getElementById('yLabels').children, steps=[1,.75,.5,.25,0];
+  for(let i=0;i<lbls.length;i++)lbls[i].textContent=steps[i]>0?fmtCompact(maxV*steps[i]):'0';
+
+  // Table (quarterly)
+  document.getElementById('rdTable').innerHTML=qRows.map((r,i)=>`
+    <tr class="${i%2===0?'bg-white':'bg-ink-50/40'}">
+      <td class="px-4 sm:px-6 py-3 text-sm font-semibold text-ink-700 font-mono">Q${r.q} (M${r.moEnd})</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono text-ink-700">${fmtINR(r.dep)}</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono text-leaf-700">${fmtINR(r.int)}</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono font-semibold text-ink-900">${fmtINR(r.bal)}</td>
+    </tr>`).join('');
+}
+
+function toggleMobileMenu(){const m=document.getElementById('mobileMenu'),btn=document.getElementById('menuBtn'),icon=document.getElementById('menuIcon');const open=m.classList.toggle('hidden');btn.setAttribute('aria-expanded',String(!open));icon.innerHTML=open?'<path d="M4 6h16M4 12h16M4 18h16"/>':'<path d="M6 18L18 6M6 6l12 12"/>';}
+
+function init(){
+  const now=new Date(),yr=now.getFullYear(),mo=now.getMonth()+1;
+  const fy=mo>=4?yr:yr-1;
+  document.getElementById('heroFY').textContent=`${fy}–${String(fy+1).slice(-2)}`;
+  document.getElementById('footerYear').textContent=yr;
+  ['deposit','rate','tenure'].forEach(id=>{const s=document.getElementById(id);document.getElementById(id+'Input').value=s.value;updateTrack(id)});
+  document.querySelectorAll('.rate-btn').forEach(b=>{if(parseFloat(b.dataset.rate)===6.5){b.classList.remove('bg-ink-50','border-ink-200','text-ink-500');b.classList.add('bg-leaf-50','border-leaf-200','text-leaf-700')}});
+  calc();
+}
+init();
+</script>
+</body>
+</html>

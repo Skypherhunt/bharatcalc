@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumpsum Calculator India – One-Time Investment Returns | BharatCalc</title>
+  <meta name="description" content="Free Lumpsum Calculator India — calculate returns on one-time mutual fund or lumpsum investment instantly. Compare FD, debt and equity returns. Updated for FY 2025-26." />
+  <meta name="keywords" content="lumpsum calculator India, one time investment calculator, lumpsum mutual fund calculator, lumpsum return calculator, lumpsum vs SIP calculator, mutual fund lumpsum India" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/lumpsum-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bharatcalc.online/calculator/lumpsum-calculator.html" />
+  <meta property="og:title" content="Lumpsum Calculator – One-Time Investment Returns | BharatCalc" />
+  <meta property="og:description" content="Calculate lumpsum mutual fund returns instantly. Compare across rates. Free, no login." />
+  <meta property="og:locale" content="en_IN" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Lumpsum Calculator","url":"https://bharatcalc.online/calculator/lumpsum-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bharatcalc.online/"},{"@type":"ListItem","position":2,"name":"Finance","item":"https://bharatcalc.online/?cat=finance"},{"@type":"ListItem","position":3,"name":"Lumpsum Calculator","item":"https://bharatcalc.online/calculator/lumpsum-calculator.html"}]}}</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is lumpsum return calculated?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Lumpsum return uses the compound interest formula: A = P × (1 + r/100)^n, where A is the maturity amount, P is the principal invested, r is the annual return rate (%), and n is the number of years. For example, ₹1 lakh invested at 12% for 10 years grows to ₹3.10 lakh." }
+      },
+      {
+        "@type": "Question",
+        "name": "Lumpsum vs SIP — which is better?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Lumpsum is better when markets are at a low, you have a large surplus, and you have a long investment horizon. SIP is better for salaried investors who want to average out market volatility through rupee cost averaging. For most individuals, SIP is the preferred approach as it reduces timing risk and builds discipline." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much will ₹1 lakh grow in 10 years?",
+        "acceptedAnswer": { "@type": "Answer", "text": "₹1 lakh invested as a lumpsum grows to: ₹2.59 lakh at 10% p.a., ₹3.10 lakh at 12% p.a., ₹4.04 lakh at 15% p.a., and ₹1.98 lakh at 7% p.a. (FD-like return) — all over 10 years. The power of compounding means higher-return investments grow dramatically over longer periods." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a realistic lumpsum return in India?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Historically, equity mutual funds in India have delivered 12–15% CAGR over 10+ year periods. Debt mutual funds return 6–8% p.a., bank FDs return 6.5–7.5% p.a., and PPF offers a guaranteed 7.1% p.a. Market-linked returns are not guaranteed and depend on economic conditions and fund performance." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much should I invest as lumpsum to get ₹1 crore?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Lumpsum required to reach ₹1 crore at 12% p.a.: ₹32.2 lakh for 10 years, ₹18.3 lakh for 15 years, ₹10.4 lakh for 20 years. At 15% p.a.: ₹24.7 lakh for 10 years, ₹12.3 lakh for 15 years, ₹6.1 lakh for 20 years. The longer you stay invested, the less you need to invest upfront." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{display:['Clash Display','sans-serif'],sans:['Satoshi','sans-serif'],mono:['JetBrains Mono','monospace']},colors:{ink:{DEFAULT:'#0d1117',50:'#f5f7fa',100:'#e8ecf2',200:'#c9d2de',300:'#9aaabb',400:'#637b93',500:'#3d5a72',600:'#284560',700:'#1a3249',800:'#112338',900:'#0d1117'},leaf:{DEFAULT:'#16a34a',50:'#f0fdf4',100:'#dcfce7',200:'#bbf7d0',300:'#86efac',400:'#4ade80',500:'#22c55e',600:'#16a34a',700:'#15803d'},saffron:{DEFAULT:'#ea580c',50:'#fff7ed',400:'#fb923c',500:'#f97316',600:'#ea580c'}}}}}</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}body{font-family:'Satoshi',system-ui,sans-serif}.font-display{font-family:'Clash Display',system-ui,sans-serif}
+    .nav-link{position:relative}.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:#16a34a;transform:scaleX(0);transition:transform .2s;border-radius:1px}.nav-link:hover::after{transform:scaleX(1)}
+    input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:99px;outline:none;cursor:pointer}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:#16a34a;border:3px solid #fff;box-shadow:0 0 0 1px #16a34a,0 2px 6px rgba(22,163,74,.3);cursor:pointer}
+    .val-input{font-family:'JetBrains Mono',monospace}.val-input:focus{outline:none}
+    .donut-ring{transition:stroke-dasharray .5s cubic-bezier(.4,0,.2,1)}
+    .bar-princ{background:#16a34a;border-radius:4px 4px 0 0;transition:height .4s cubic-bezier(.4,0,.2,1)}
+    .bar-gain{background:#4ade80;border-radius:4px 4px 0 0;transition:height .4s cubic-bezier(.4,0,.2,1)}
+    .bar-group:hover .bar-tip{display:block}.bar-tip{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#0d1117;color:#fff;font-size:10px;font-family:'JetBrains Mono',monospace;white-space:nowrap;padding:4px 8px;border-radius:6px;pointer-events:none;z-index:10}
+    .bar-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:4px solid transparent;border-top-color:#0d1117}
+    .growth-table{border-collapse:collapse;width:100%}.growth-table th{position:sticky;top:0;background:#f5f7fa;z-index:1}.growth-table tbody tr:hover td{background:#f0fdf4}
+    .table-wrap{max-height:360px;overflow-y:auto}::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:3px}
+    .faq-item details summary{cursor:pointer;list-style:none}.faq-item details summary::-webkit-details-marker{display:none}.faq-item details[open] .faq-icon{transform:rotate(45deg)}.faq-icon{transition:transform .2s}
+    .breadcrumb a{transition:color .15s}
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9TD6B9GQ89');</script>
+</head>
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div>
+        <div class="leading-none"><div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div><div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div></div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+      </nav>
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700"><span>💰</span> Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700"><span>📄</span> Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700"><span>❤️</span> Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700"><span>➗</span> Math</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a><span>/</span>
+      <a href="../index.html?cat=finance" class="hover:text-ink-200">Finance</a><span>/</span>
+      <span class="text-ink-300">Lumpsum Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-leaf-600/15 text-leaf-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-leaf-600/20">
+          <span class="w-1.5 h-1.5 bg-leaf-400 rounded-full animate-pulse"></span>
+          Updated for FY <span id="heroFY"></span>
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">Lumpsum Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">Calculate the future value of a one-time lumpsum investment. Compare returns across FD, debt and equity rates. See year-by-year growth chart.</p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0"><span class="w-1.5 h-1.5 bg-leaf-400 rounded-full"></span>Results update live</div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- Inputs -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-7">Investment Details</h2>
+
+      <!-- Investment Amount -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label class="text-sm font-semibold text-ink-700">Investment Amount</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="principalInput" type="number" class="val-input w-28 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="syncFromInput('principal',this.value)" />
+          </div>
+        </div>
+        <input type="range" id="principal" min="10000" max="10000000" step="10000" value="100000" oninput="syncFromSlider('principal')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹10K</span><span>₹1Cr</span></div>
+      </div>
+
+      <!-- Expected Return -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label class="text-sm font-semibold text-ink-700">Expected Return (p.a.)</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <input id="rateInput" type="number" class="val-input w-16 text-sm font-semibold text-ink-900 bg-transparent text-right" step="0.5" oninput="syncFromInput('rate',this.value)" />
+            <span class="text-sm text-ink-400 font-mono">%</span>
+          </div>
+        </div>
+        <input type="range" id="rate" min="1" max="30" step="0.5" value="12" oninput="syncFromSlider('rate')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>1%</span><span>30%</span></div>
+        <div class="flex flex-wrap gap-2 mt-2.5">
+          <button onclick="setRate(7,this)"  data-rate="7"  class="bench-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">FD ~7%</button>
+          <button onclick="setRate(10,this)" data-rate="10" class="bench-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">Debt ~10%</button>
+          <button onclick="setRate(12,this)" data-rate="12" class="bench-btn text-[10px] px-2 py-1 bg-leaf-50 border border-leaf-200 rounded-md font-mono text-leaf-700 transition-colors">Nifty ~12%</button>
+          <button onclick="setRate(15,this)" data-rate="15" class="bench-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">MidCap ~15%</button>
+        </div>
+      </div>
+
+      <!-- Tenure -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label class="text-sm font-semibold text-ink-700">Investment Period</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <input id="yearsInput" type="number" class="val-input w-14 text-sm font-semibold text-ink-900 bg-transparent text-right" oninput="syncFromInput('years',this.value)" />
+            <span class="text-sm text-ink-400 font-mono">yr</span>
+          </div>
+        </div>
+        <input type="range" id="years" min="1" max="40" step="1" value="10" oninput="syncFromSlider('years')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>1 yr</span><span>40 yr</span></div>
+      </div>
+
+      <!-- Presets -->
+      <div>
+        <p class="text-xs text-ink-400 font-semibold uppercase tracking-wider mb-3">Goal presets</p>
+        <div class="grid grid-cols-2 gap-2">
+          <button onclick="applyPreset(100000,12,5)"   class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors"><div class="text-xs font-semibold text-ink-700">Short Term</div><div class="text-xs text-ink-400 font-mono">₹1L · 12% · 5yr</div></button>
+          <button onclick="applyPreset(500000,12,10)"  class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors"><div class="text-xs font-semibold text-ink-700">Medium Term</div><div class="text-xs text-ink-400 font-mono">₹5L · 12% · 10yr</div></button>
+          <button onclick="applyPreset(1000000,15,15)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors"><div class="text-xs font-semibold text-ink-700">Wealth Creation</div><div class="text-xs text-ink-400 font-mono">₹10L · 15% · 15yr</div></button>
+          <button onclick="applyPreset(5000000,12,20)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors"><div class="text-xs font-semibold text-ink-700">Retirement</div><div class="text-xs text-ink-400 font-mono">₹50L · 12% · 20yr</div></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="flex flex-col gap-5">
+      <div class="bg-ink-900 rounded-2xl p-6 sm:p-8">
+        <p class="text-ink-400 text-xs font-semibold uppercase tracking-wider mb-2">Future Value</p>
+        <div class="font-display text-4xl sm:text-5xl font-bold text-white tracking-tight mb-1" id="futureValue">₹3.11L</div>
+        <p class="text-ink-400 text-xs" id="fvSub">after 10 years at 12% p.a.</p>
+        <div class="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-ink-700">
+          <div><p class="text-ink-500 text-xs mb-1">Invested</p><p class="font-mono font-semibold text-white text-base" id="rInvested">₹1,00,000</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Total Gain</p><p class="font-mono font-semibold text-leaf-400 text-base" id="rGain">₹2,10,585</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Absolute Return</p><p class="font-mono font-semibold text-white text-base" id="rAbsolute">210.6%</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Wealth Multiplier</p><p class="font-mono font-semibold text-leaf-400 text-base" id="rMultiple">3.11×</p></div>
+        </div>
+      </div>
+
+      <!-- Donut -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-6">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-5">Growth Breakdown</h2>
+        <div class="flex items-center justify-between gap-6">
+          <div class="relative flex-shrink-0">
+            <svg width="140" height="140" viewBox="0 0 140 140">
+              <circle cx="70" cy="70" r="54" fill="none" stroke="#e8ecf2" stroke-width="18"/>
+              <circle id="arcInv"  cx="70" cy="70" r="54" fill="none" stroke="#16a34a" stroke-width="18" stroke-dasharray="339.29 0" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
+              <circle id="arcGain" cx="70" cy="70" r="54" fill="none" stroke="#4ade80" stroke-width="18" stroke-dasharray="0 339.29" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"><span class="font-mono text-xs text-ink-400">value</span><span class="font-display font-bold text-ink-900 text-sm" id="donutCentre">₹3.1L</span></div>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-4"><div class="w-3 h-3 rounded-sm bg-leaf-600"></div><div><p class="text-xs text-ink-500">Invested</p><p class="font-mono font-semibold text-ink-900 text-sm" id="legInv">₹1,00,000</p><p class="font-mono text-xs text-ink-400" id="legInvPct">32.2%</p></div></div>
+            <div class="flex items-center gap-3"><div class="w-3 h-3 rounded-sm bg-leaf-400"></div><div><p class="text-xs text-ink-500">Gain</p><p class="font-mono font-semibold text-ink-900 text-sm" id="legGain">₹2,10,585</p><p class="font-mono text-xs text-ink-400" id="legGainPct">67.8%</p></div></div>
+            <div class="mt-4 h-2 w-full bg-ink-100 rounded-full overflow-hidden flex">
+              <div id="barInvPct"  class="h-full bg-leaf-600 rounded-l-full transition-all duration-500" style="width:32%"></div>
+              <div id="barGainPct" class="h-full bg-leaf-400 rounded-r-full transition-all duration-500" style="width:68%"></div>
+            </div>
+            <div class="flex justify-between text-xs text-ink-400 font-mono mt-1"><span id="blInv">Invested 32%</span><span id="blGain">Gain 68%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bar Chart -->
+  <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8 mt-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+      <div><h2 class="font-display font-semibold text-ink-900 text-lg">Year-by-Year Growth</h2><p class="text-xs text-ink-400 mt-0.5">How your one-time investment compounds over time</p></div>
+      <div class="flex items-center gap-4 text-xs"><div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-leaf-600 inline-block"></span><span class="text-ink-500">Invested</span></div><div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-leaf-400 inline-block"></span><span class="text-ink-500">Gain</span></div></div>
+    </div>
+    <div class="flex gap-2">
+      <div id="yLabels" class="flex flex-col justify-between text-right flex-shrink-0 pb-5" style="width:56px;"><span class="text-[9px] font-mono text-ink-300 leading-none"></span><span class="text-[9px] font-mono text-ink-300 leading-none"></span><span class="text-[9px] font-mono text-ink-300 leading-none"></span><span class="text-[9px] font-mono text-ink-300 leading-none"></span><span class="text-[9px] font-mono text-ink-300 leading-none">0</span></div>
+      <div class="flex-1 relative" style="height:200px;">
+        <div class="absolute inset-0 flex flex-col justify-between pointer-events-none pb-5"><div class="border-t border-ink-100/70 w-full"></div><div class="border-t border-ink-100/70 w-full"></div><div class="border-t border-ink-100/70 w-full"></div><div class="border-t border-ink-100/70 w-full"></div><div class="border-t border-ink-200 w-full"></div></div>
+        <div id="chartBars" class="absolute inset-0 flex items-end justify-between gap-0.5 pb-5"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ad -->
+  <div class="my-6"><div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400">Google AdSense — Responsive Ad Unit</div></div>
+
+  <!-- Table -->
+  <div class="bg-white border border-ink-100 rounded-2xl overflow-hidden">
+    <div class="p-6 border-b border-ink-100"><h2 class="font-display font-semibold text-ink-900 text-lg">Year-by-Year Schedule</h2><p class="text-xs text-ink-400 mt-0.5">Value of investment at end of each year</p></div>
+    <div class="table-wrap"><table class="growth-table">
+      <thead><tr>
+        <th class="text-left text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Year</th>
+        <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Value</th>
+        <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Gain</th>
+        <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Absolute Return</th>
+      </tr></thead>
+      <tbody id="lsTable"></tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- SEO Content -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">What is Lumpsum Investment?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">A lumpsum investment is a one-time deposit of a large amount into a mutual fund, FD, or any investment vehicle — as opposed to a SIP (monthly installments). Lumpsum investing works best when markets are undervalued or when you have a large corpus available (bonus, inheritance, business sale).</p>
+      <div class="bg-ink-50 rounded-xl p-4 font-mono text-sm text-ink-700 mb-3">FV = P × (1 + r)^n</div>
+      <p class="text-xs text-ink-400">Where P = principal, r = annual return rate, n = years. Returns compound annually.</p>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Lumpsum vs SIP</h2>
+      <div class="space-y-3">
+        <div class="flex items-start gap-3 p-3 bg-leaf-50 border border-leaf-100 rounded-xl"><span class="text-lg">💎</span><div><p class="text-xs font-semibold text-leaf-800 mb-1">Lumpsum wins when…</p><p class="text-xs text-ink-500">Markets are clearly undervalued (post-crash). You have a large one-time amount. You're investing for 7+ years and can handle volatility.</p></div></div>
+        <div class="flex items-start gap-3 p-3 bg-ink-50 border border-ink-100 rounded-xl"><span class="text-lg">📅</span><div><p class="text-xs font-semibold text-ink-800 mb-1">SIP wins when…</p><p class="text-xs text-ink-500">You invest monthly from salary. Markets are at all-time highs. You want rupee-cost averaging to reduce timing risk.</p></div></div>
+        <div class="bg-saffron-50 border border-saffron-100 rounded-xl p-3"><p class="text-xs font-semibold text-saffron-700 mb-1">💡 Best of both worlds</p><p class="text-xs text-ink-500">Invest lumpsum in debt funds first, then do a Systematic Transfer Plan (STP) into equity over 6–12 months.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Example Calculations</h2>
+      <div class="space-y-3">
+        <div class="bg-ink-50 rounded-xl p-3"><div class="flex justify-between mb-1"><span class="text-xs font-semibold text-ink-700">₹1L · 12% · 10 years</span><span class="font-mono text-xs font-bold text-leaf-700">₹3,10,585</span></div><div class="text-[10px] font-mono text-ink-400">Gain ₹2,10,585 · 3.1× return</div></div>
+        <div class="bg-ink-50 rounded-xl p-3"><div class="flex justify-between mb-1"><span class="text-xs font-semibold text-ink-700">₹5L · 15% · 15 years</span><span class="font-mono text-xs font-bold text-leaf-700">₹40.91L</span></div><div class="text-[10px] font-mono text-ink-400">Gain ₹35.91L · 8.18× return</div></div>
+        <div class="bg-ink-50 rounded-xl p-3"><div class="flex justify-between mb-1"><span class="text-xs font-semibold text-ink-700">₹10L · 12% · 20 years</span><span class="font-mono text-xs font-bold text-leaf-700">₹96.46L</span></div><div class="text-[10px] font-mono text-ink-400">Almost 1 crore · 9.65× return</div></div>
+        <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3"><p class="text-xs font-semibold text-leaf-700 mb-1">💡 Rule of 72</p><p class="text-xs text-ink-500">At 12%, money doubles in 72÷12 = 6 years. ₹1L becomes ₹2L in 6yr, ₹4L in 12yr, ₹8L in 18yr.</p></div>
+      </div>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Return Rate Benchmarks</h2>
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between py-2 border-b border-ink-50"><span class="text-sm text-ink-600">Fixed Deposit</span><div class="flex items-center gap-2"><div class="w-20 bg-ink-100 rounded-full h-1.5"><div class="bg-ink-400 h-1.5 rounded-full" style="width:47%"></div></div><span class="font-mono text-xs font-semibold text-ink-600">6–7.5%</span></div></div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50"><span class="text-sm text-ink-600">PPF / Debt Funds</span><div class="flex items-center gap-2"><div class="w-20 bg-ink-100 rounded-full h-1.5"><div class="bg-blue-400 h-1.5 rounded-full" style="width:53%"></div></div><span class="font-mono text-xs font-semibold text-ink-600">7–10%</span></div></div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50"><span class="text-sm text-ink-600">Nifty 50 (large-cap)</span><div class="flex items-center gap-2"><div class="w-20 bg-ink-100 rounded-full h-1.5"><div class="bg-leaf-500 h-1.5 rounded-full" style="width:73%"></div></div><span class="font-mono text-xs font-semibold text-leaf-700">11–13%</span></div></div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50"><span class="text-sm text-ink-600">Mid-cap Funds</span><div class="flex items-center gap-2"><div class="w-20 bg-ink-100 rounded-full h-1.5"><div class="bg-leaf-600 h-1.5 rounded-full" style="width:87%"></div></div><span class="font-mono text-xs font-semibold text-leaf-700">13–16%</span></div></div>
+        <div class="flex items-center justify-between py-2"><span class="text-sm text-ink-600">Small-cap Funds</span><div class="flex items-center gap-2"><div class="w-20 bg-ink-100 rounded-full h-1.5"><div class="bg-saffron-500 h-1.5 rounded-full" style="width:100%"></div></div><span class="font-mono text-xs font-semibold text-saffron-700">15–20%</span></div></div>
+      </div>
+      <p class="text-[10px] text-ink-300 mt-3 font-mono">* Historical averages. Past performance does not guarantee future returns.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about lumpsum investing</p>
+  <div class="grid md:grid-cols-2 gap-3">
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is the difference between lumpsum and SIP?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Lumpsum = one large investment upfront (bonus, inheritance). SIP = fixed monthly amount invested regularly. <strong class="text-ink-700">Lumpsum benefits from market timing</strong> if you invest at market lows. SIP provides rupee-cost averaging, reducing timing risk. Both compound over time — lumpsum starts compounding the full amount from day one.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Is lumpsum investment safe?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Safety depends on where you invest. Lumpsum in FD = very safe (guaranteed returns). Lumpsum in equity mutual funds = market-linked, can fall short-term but historically rewarding for 7+ year horizons. <strong class="text-ink-700">Risk decreases with longer holding period</strong>. For money needed within 3 years, avoid equity lumpsum.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is the minimum lumpsum investment in mutual funds?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Most mutual funds require a minimum lumpsum of <strong class="text-ink-700">₹500 to ₹5,000</strong>. Many large AMCs (HDFC, ICICI, SBI, Axis) allow ₹1,000 minimum for most schemes. Some liquid funds accept ₹500. There is no maximum limit. Invest as little or as much as suits your financial plan.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How is lumpsum return taxed in India?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">For equity mutual funds held <strong class="text-ink-700">&gt;1 year</strong>: LTCG at 12.5% above ₹1.25 lakh per year. Held <strong class="text-ink-700">&lt;1 year</strong>: STCG at 20%. For debt funds: gains are added to income and taxed at slab rate (no indexation from FY 2023-24). FD returns are taxed at your income slab rate.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is STP (Systematic Transfer Plan)?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">STP lets you invest a lumpsum in a debt/liquid fund, then <strong class="text-ink-700">systematically transfer</strong> a fixed amount to an equity fund every month. This gives you the safety of deploying gradually (like SIP) while earning better-than-savings returns on the waiting corpus. Ideal for large lumpsum amounts at market peaks.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How accurate is this lumpsum calculator?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">BharatCalc uses the standard compound interest formula FV = P × (1+r)^n with annual compounding. Results are <strong class="text-ink-700">mathematically exact</strong> at the assumed constant return rate. Actual mutual fund returns vary year-to-year based on market conditions. Use for planning purposes only.</div></details></div>
+  </div>
+</section>
+
+<!-- Related -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="sip-calculator.html"  class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="text-xl mb-2">📈</div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">SIP Calculator</div><div class="text-xs text-ink-400 mt-0.5">Monthly investment returns</div></a>
+    <a href="cagr-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="text-xl mb-2">📊</div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">CAGR Calculator</div><div class="text-xs text-ink-400 mt-0.5">Compound annual growth rate</div></a>
+    <a href="fd-calculator.html"   class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="text-xl mb-2">🏛️</div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">FD Calculator</div><div class="text-xs text-ink-400 mt-0.5">Fixed deposit maturity</div></a>
+    <a href="ppf-calculator.html"  class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="text-xl mb-2">💰</div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">PPF Calculator</div><div class="text-xs text-ink-400 mt-0.5">Tax-free long-term</div></a>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2"><div class="flex items-center gap-2.5 mb-4"><div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div><div class="font-display font-semibold text-white">BharatCalc</div></div><p class="text-sm text-ink-400 mb-4 max-w-xs">Free calculators for every Indian.</p><div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700">⚠️ Returns shown are estimates. Actual mutual fund returns vary. Consult a SEBI-registered advisor.</div></div>
+      <div><h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3><ul class="space-y-2.5 text-sm"><li><a href="sip-calculator.html" class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li><li><a href="emi-calculator.html" class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li><li><a href="lumpsum-calculator.html" class="hover:text-leaf-400 transition-colors font-semibold text-leaf-400">Lumpsum Calculator</a></li><li><a href="fd-calculator.html" class="hover:text-leaf-400 transition-colors">FD Calculator</a></li></ul></div>
+      <div><h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax</h3><ul class="space-y-2.5 text-sm"><li><a href="income-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Income Tax</a></li><li><a href="gst-calculator.html" class="hover:text-leaf-400 transition-colors">GST Calculator</a></li><li><a href="hra-calculator.html" class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li></ul></div>
+      <div><h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Other</h3><ul class="space-y-2.5 text-sm"><li><a href="bmi-calculator.html" class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li><li><a href="age-calculator.html" class="hover:text-leaf-400 transition-colors">Age Calculator</a></li></ul></div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500"><p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p><div class="flex gap-5"><a href="../about.html" class="hover:text-ink-300">About</a><a href="../privacy.html" class="hover:text-ink-300">Privacy</a><a href="../terms.html" class="hover:text-ink-300">Terms</a></div></div>
+  </div>
+</footer>
+
+<script>
+function fmtINR(n){return '₹'+Math.round(n).toLocaleString('en-IN')}
+function fmtCompact(n){if(n>=10000000)return '₹'+(n/10000000).toFixed(2)+'Cr';if(n>=100000)return '₹'+(n/100000).toFixed(2)+'L';if(n>=1000)return '₹'+(n/1000).toFixed(1)+'K';return fmtINR(n)}
+function fmtPct(n){return n.toFixed(1)+'%'}
+function updateTrack(id){const el=document.getElementById(id);const pct=((parseFloat(el.value)-parseFloat(el.min))/(parseFloat(el.max)-parseFloat(el.min)))*100;el.style.background=`linear-gradient(to right,#16a34a ${pct}%,#e8ecf2 ${pct}%)`}
+function syncFromSlider(id){document.getElementById(id+'Input').value=document.getElementById(id).value;updateTrack(id);calc()}
+function syncFromInput(id,val){const s=document.getElementById(id);const c=Math.min(Math.max(parseFloat(val)||parseFloat(s.min),parseFloat(s.min)),parseFloat(s.max));s.value=c;updateTrack(id);calc()}
+function setRate(r,btn){document.getElementById('rate').value=r;document.getElementById('rateInput').value=r;updateTrack('rate');document.querySelectorAll('.bench-btn').forEach(b=>{b.classList.remove('bg-leaf-50','border-leaf-200','text-leaf-700');b.classList.add('bg-ink-50','border-ink-200','text-ink-500')});if(btn){btn.classList.remove('bg-ink-50','border-ink-200','text-ink-500');btn.classList.add('bg-leaf-50','border-leaf-200','text-leaf-700')}calc()}
+function applyPreset(p,r,y){document.getElementById('principal').value=Math.min(p,10000000);document.getElementById('principalInput').value=p;document.getElementById('rate').value=r;document.getElementById('rateInput').value=r;document.getElementById('years').value=y;document.getElementById('yearsInput').value=y;updateTrack('principal');updateTrack('rate');updateTrack('years');calc()}
+
+function calc(){
+  const P = parseFloat(document.getElementById('principalInput').value)||0;
+  const r = (parseFloat(document.getElementById('rateInput').value)||0)/100;
+  const n = parseInt(document.getElementById('yearsInput').value)||1;
+  if(P<=0||r<=0) return;
+
+  const rows=[];
+  for(let y=1;y<=n;y++){const fv=P*Math.pow(1+r,y);rows.push({y,fv,gain:fv-P,absRet:(fv-P)/P*100})}
+  const last=rows[rows.length-1];
+  const invPct=(P/last.fv)*100, gainPct=(last.gain/last.fv)*100;
+
+  document.getElementById('futureValue').textContent=fmtCompact(last.fv);
+  document.getElementById('fvSub').textContent=`after ${n} year${n>1?'s':''} at ${(r*100).toFixed(1)}% p.a.`;
+  document.getElementById('rInvested').textContent=fmtCompact(P);
+  document.getElementById('rGain').textContent=fmtCompact(last.gain);
+  document.getElementById('rAbsolute').textContent=(last.gain/P*100).toFixed(1)+'%';
+  document.getElementById('rMultiple').textContent=(last.fv/P).toFixed(2)+'×';
+
+  // Donut
+  const C=2*Math.PI*54;
+  const id_=(invPct/100)*C, gd=(gainPct/100)*C;
+  document.getElementById('arcInv').setAttribute('stroke-dasharray',`${id_} ${C-id_}`);
+  document.getElementById('arcGain').setAttribute('stroke-dasharray',`${gd} ${C-gd}`);
+  document.getElementById('arcGain').setAttribute('stroke-dashoffset',`-${id_}`);
+  document.getElementById('donutCentre').textContent=fmtCompact(last.fv);
+  document.getElementById('legInv').textContent=fmtCompact(P);
+  document.getElementById('legGain').textContent=fmtCompact(last.gain);
+  document.getElementById('legInvPct').textContent=fmtPct(invPct);
+  document.getElementById('legGainPct').textContent=fmtPct(gainPct);
+  document.getElementById('barInvPct').style.width=invPct+'%';
+  document.getElementById('barGainPct').style.width=gainPct+'%';
+  document.getElementById('blInv').textContent='Invested '+fmtPct(invPct);
+  document.getElementById('blGain').textContent='Gain '+fmtPct(gainPct);
+
+  // Bar chart
+  const maxV=last.fv;
+  let step=1;if(rows.length>30)step=5;else if(rows.length>20)step=2;
+  const vis=rows.filter((_,i)=>(i+1)%step===0||i===rows.length-1);
+  document.getElementById('chartBars').innerHTML=vis.map(r=>{
+    const pH=Math.max((P/maxV)*100,1), gH=Math.max((r.gain/maxV)*100,0);
+    return `<div class="bar-group relative flex flex-col items-center flex-1 h-full justify-end cursor-pointer" style="min-width:10px;"><div class="bar-tip">${r.y}yr·${fmtCompact(r.fv)}</div><div class="w-full flex flex-col justify-end" style="height:calc(100% - 20px);"><div style="height:${gH}%;min-height:${r.gain>0?2:0}px" class="bar-gain w-full"></div><div style="height:${pH}%" class="bar-princ w-full"></div></div><div class="text-[9px] font-mono text-ink-300 mt-1 text-center" style="height:16px;">${r.y}</div></div>`;
+  }).join('');
+  const lbls=document.getElementById('yLabels').children, steps=[1,.75,.5,.25,0];
+  for(let i=0;i<lbls.length;i++)lbls[i].textContent=steps[i]>0?fmtCompact(maxV*steps[i]):'0';
+
+  // Table
+  document.getElementById('lsTable').innerHTML=rows.map((r,i)=>`
+    <tr class="${i%2===0?'bg-white':'bg-ink-50/40'}">
+      <td class="px-4 sm:px-6 py-3 text-sm font-semibold text-ink-700 font-mono">Year ${r.y}</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono font-semibold text-ink-900">${fmtINR(r.fv)}</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono text-leaf-700">${fmtCompact(r.gain)}</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono text-ink-500">+${r.absRet.toFixed(1)}%</td>
+    </tr>`).join('');
+}
+
+function toggleMobileMenu(){const m=document.getElementById('mobileMenu'),btn=document.getElementById('menuBtn'),icon=document.getElementById('menuIcon');const open=m.classList.toggle('hidden');btn.setAttribute('aria-expanded',String(!open));icon.innerHTML=open?'<path d="M4 6h16M4 12h16M4 18h16"/>':'<path d="M6 18L18 6M6 6l12 12"/>';}
+
+function init(){
+  const now=new Date(),yr=now.getFullYear(),mo=now.getMonth()+1;
+  const fy=mo>=4?yr:yr-1;
+  document.getElementById('heroFY').textContent=`${fy}–${String(fy+1).slice(-2)}`;
+  document.getElementById('footerYear').textContent=yr;
+  ['principal','rate','years'].forEach(id=>{const s=document.getElementById(id);document.getElementById(id+'Input').value=s.value;updateTrack(id)});
+  document.querySelectorAll('.bench-btn').forEach(b=>{if(parseFloat(b.dataset.rate)===12){b.classList.remove('bg-ink-50','border-ink-200','text-ink-500');b.classList.add('bg-leaf-50','border-leaf-200','text-leaf-700')}});
+  calc();
+}
+init();
+</script>
+</body>
+</html>

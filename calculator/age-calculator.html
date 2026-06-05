@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Age Calculator India – Exact Age in Years, Months & Days | BharatCalc</title>
+  <meta name="description" content="Free Age Calculator India — find your exact age in years, months and days. Calculate next birthday countdown, age in total days, weeks, months and hours. Zodiac sign included." />
+  <meta name="keywords" content="age calculator India, exact age calculator, age calculator years months days, birthday calculator, how old am I calculator, age in days calculator, next birthday calculator" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/age-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bharatcalc.online/calculator/age-calculator.html" />
+  <meta property="og:title" content="Age Calculator – Exact Age in Years, Months & Days | BharatCalc" />
+  <meta property="og:description" content="Find your exact age instantly. Next birthday countdown, zodiac sign, age in days and hours. Free, no login." />
+  <meta property="og:locale" content="en_IN" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Age Calculator","url":"https://bharatcalc.online/calculator/age-calculator.html","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bharatcalc.online/"},{"@type":"ListItem","position":2,"name":"Health","item":"https://bharatcalc.online/?cat=health"},{"@type":"ListItem","position":3,"name":"Age Calculator","item":"https://bharatcalc.online/calculator/age-calculator.html"}]}}</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How to calculate exact age from date of birth?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Exact age = Current date − Date of birth. First count complete years (last birthday to today). Then count remaining complete months. Finally count remaining days. Our calculator handles leap years and varying month lengths automatically to give you an exact age in years, months, and days." }
+      },
+      {
+        "@type": "Question",
+        "name": "How many days old am I?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Your age in days = sum of days in each complete year (365 or 366 for leap years) + days in remaining months + remaining days. For example, a person born on January 1, 2000 turns approximately 9,300+ days old around June 2025. Use our age calculator above for the exact count based on your date of birth." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate my age for a government form or passport?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For government documents, age is calculated as the number of completed years as of the specified reference date (usually the application date). If you were born on June 15, 2000 and the reference date is June 10, 2025, your age is 24 years — the 25th birthday has not yet passed. Use the 'As of date' option in our calculator to compute age for any reference date." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is my zodiac sign by date of birth?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Zodiac signs by birth date: Aries (Mar 21–Apr 19), Taurus (Apr 20–May 20), Gemini (May 21–Jun 20), Cancer (Jun 21–Jul 22), Leo (Jul 23–Aug 22), Virgo (Aug 23–Sep 22), Libra (Sep 23–Oct 22), Scorpio (Oct 23–Nov 21), Sagittarius (Nov 22–Dec 21), Capricorn (Dec 22–Jan 19), Aquarius (Jan 20–Feb 18), Pisces (Feb 19–Mar 20). Our age calculator shows your zodiac sign automatically." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the minimum age to open a bank account in India?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In India, minors can have a savings account jointly held with a parent or guardian. Some banks allow minors aged 10+ to operate accounts independently with limited features. For a full-feature bank account, investment account, or credit card, you must be 18 years or older. For a PAN card, there is no minimum age requirement." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{display:['Clash Display','sans-serif'],sans:['Satoshi','sans-serif'],mono:['JetBrains Mono','monospace']},colors:{ink:{DEFAULT:'#0d1117',50:'#f5f7fa',100:'#e8ecf2',200:'#c9d2de',300:'#9aaabb',400:'#637b93',500:'#3d5a72',600:'#284560',700:'#1a3249',800:'#112338',900:'#0d1117'},leaf:{DEFAULT:'#16a34a',50:'#f0fdf4',100:'#dcfce7',200:'#bbf7d0',300:'#86efac',400:'#4ade80',500:'#22c55e',600:'#16a34a',700:'#15803d'},saffron:{DEFAULT:'#ea580c',50:'#fff7ed',400:'#fb923c',500:'#f97316',600:'#ea580c'},violet:{50:'#f5f3ff',100:'#ede9fe',400:'#a78bfa',600:'#7c3aed',700:'#6d28d9'}}}}}</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}body{font-family:'Satoshi',system-ui,sans-serif}.font-display{font-family:'Clash Display',system-ui,sans-serif}
+    .nav-link{position:relative}.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:#16a34a;transform:scaleX(0);transition:transform .2s;border-radius:1px}.nav-link:hover::after{transform:scaleX(1)}
+    input[type=date]{font-family:'Satoshi',system-ui,sans-serif;color-scheme:light}
+    .val-input:focus{outline:none}
+    .stat-card{transition:transform .15s}.stat-card:hover{transform:translateY(-2px)}
+    .birthday-bar{background:linear-gradient(to right,#16a34a,#4ade80);border-radius:99px;transition:width .5s cubic-bezier(.4,0,.2,1)}
+    .faq-item details summary{cursor:pointer;list-style:none}.faq-item details summary::-webkit-details-marker{display:none}.faq-item details[open] .faq-icon{transform:rotate(45deg)}.faq-icon{transition:transform .2s}
+    .breadcrumb a{transition:color .15s}::-webkit-scrollbar{width:5px}::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:3px}
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9TD6B9GQ89');</script>
+</head>
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div>
+        <div class="leading-none"><div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div><div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div></div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 py-1">Math</a>
+      </nav>
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700"><span>💰</span> Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700"><span>📄</span> Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700"><span>❤️</span> Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700"><span>➗</span> Math</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a><span>/</span>
+      <a href="../index.html?cat=health" class="hover:text-ink-200">Health</a><span>/</span>
+      <span class="text-ink-300">Age Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-violet-600/15 text-violet-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-violet-600/20">
+          <span class="w-1.5 h-1.5 bg-violet-400 rounded-full animate-pulse"></span>
+          Live · Updates with real-time clock
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">Age Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">Find your exact age in years, months and days. Get next birthday countdown, zodiac sign, day of birth, and your age expressed in total days, weeks and hours.</p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0"><span class="w-1.5 h-1.5 bg-violet-400 rounded-full animate-pulse"></span>Updating every second</div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="grid lg:grid-cols-5 gap-6">
+
+    <!-- Input panel -->
+    <div class="lg:col-span-2 bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-7">Your Details</h2>
+
+      <!-- Date of Birth -->
+      <div class="mb-7">
+        <label class="text-sm font-semibold text-ink-700 block mb-3">Date of Birth</label>
+        <input type="date" id="dob" class="w-full px-4 py-3 bg-ink-50 border-2 border-leaf-200 rounded-xl text-ink-900 font-semibold focus:border-leaf-500 focus:outline-none transition-colors text-sm" oninput="calc()" max="" />
+        <p class="text-xs text-ink-400 mt-2">Enter your date of birth to calculate your exact age.</p>
+      </div>
+
+      <!-- Calculate to date -->
+      <div class="mb-7">
+        <label class="text-sm font-semibold text-ink-700 block mb-2">Calculate Age As Of</label>
+        <div class="flex gap-2 mb-3">
+          <button id="btnToday" onclick="setToDate('today',this)" class="flex-1 py-2 text-xs font-semibold rounded-xl border bg-ink-900 text-white border-ink-900 transition-all">Today</button>
+          <button id="btnCustom" onclick="setToDate('custom',this)" class="flex-1 py-2 text-xs font-semibold rounded-xl border border-ink-200 text-ink-500 hover:border-leaf-400 transition-all">Custom Date</button>
+        </div>
+        <input type="date" id="toDate" class="w-full px-4 py-3 bg-ink-50 border border-ink-200 rounded-xl text-ink-900 font-semibold focus:border-leaf-500 focus:outline-none transition-colors text-sm hidden" oninput="calc()" />
+      </div>
+
+      <!-- Famous birthdays on same date -->
+      <div class="bg-violet-50 border border-violet-100 rounded-xl p-4">
+        <p class="text-xs font-semibold text-violet-700 mb-2">🎂 Your Birthday Details</p>
+        <div class="space-y-1.5 text-xs text-ink-500">
+          <div class="flex justify-between"><span>Day of birth:</span><span class="font-semibold text-ink-700" id="dayOfBirth">—</span></div>
+          <div class="flex justify-between"><span>Zodiac sign:</span><span class="font-semibold text-ink-700" id="zodiacSign">—</span></div>
+          <div class="flex justify-between"><span>Birth year type:</span><span class="font-semibold text-ink-700" id="leapYear">—</span></div>
+          <div class="flex justify-between"><span>Generation:</span><span class="font-semibold text-ink-700" id="generation">—</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="lg:col-span-3 space-y-5">
+
+      <!-- Main age result -->
+      <div class="bg-ink-900 rounded-2xl p-6 sm:p-8">
+        <p class="text-ink-400 text-xs font-semibold uppercase tracking-wider mb-3">Your Exact Age</p>
+        <div id="ageMain" class="font-display text-4xl sm:text-5xl font-bold text-white tracking-tight mb-1">— years, — months, — days</div>
+        <p class="text-ink-400 text-xs" id="ageSub">Enter your date of birth to calculate</p>
+        <!-- Birthday progress bar -->
+        <div class="mt-5 pt-5 border-t border-ink-700">
+          <div class="flex justify-between text-xs text-ink-400 mb-2">
+            <span>Progress through current year</span>
+            <span id="birthdayPct">0%</span>
+          </div>
+          <div class="h-2.5 bg-ink-700 rounded-full overflow-hidden">
+            <div id="birthdayBar" class="h-full birthday-bar" style="width:0%"></div>
+          </div>
+          <p class="text-xs text-ink-400 mt-2" id="birthdayCountdown">—</p>
+        </div>
+      </div>
+
+      <!-- Stats grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <div class="stat-card bg-white border border-ink-100 rounded-xl p-4">
+          <p class="text-xs text-ink-400 mb-1">Total Months</p>
+          <p class="font-mono font-bold text-ink-900 text-lg" id="statMonths">—</p>
+        </div>
+        <div class="stat-card bg-white border border-ink-100 rounded-xl p-4">
+          <p class="text-xs text-ink-400 mb-1">Total Weeks</p>
+          <p class="font-mono font-bold text-ink-900 text-lg" id="statWeeks">—</p>
+        </div>
+        <div class="stat-card bg-white border border-ink-100 rounded-xl p-4">
+          <p class="text-xs text-ink-400 mb-1">Total Days</p>
+          <p class="font-mono font-bold text-ink-900 text-lg" id="statDays">—</p>
+        </div>
+        <div class="stat-card bg-white border border-ink-100 rounded-xl p-4">
+          <p class="text-xs text-ink-400 mb-1">Total Hours</p>
+          <p class="font-mono font-bold text-ink-900 text-lg" id="statHours">—</p>
+        </div>
+        <div class="stat-card bg-white border border-ink-100 rounded-xl p-4">
+          <p class="text-xs text-ink-400 mb-1">Total Minutes</p>
+          <p class="font-mono font-bold text-ink-900 text-lg" id="statMinutes">—</p>
+        </div>
+        <div class="stat-card bg-white border border-ink-100 rounded-xl p-4">
+          <p class="text-xs text-ink-400 mb-1">Heartbeats (est.)</p>
+          <p class="font-mono font-bold text-ink-900 text-lg" id="statHeartbeats">—</p>
+        </div>
+      </div>
+
+      <!-- Next birthday card -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-6">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-4">🎂 Next Birthday Countdown</h2>
+        <div class="grid grid-cols-4 gap-3" id="countdownGrid">
+          <div class="text-center bg-ink-50 rounded-xl p-3"><div class="font-display text-2xl font-bold text-ink-900" id="cdDays">—</div><div class="text-xs text-ink-400 mt-1">Days</div></div>
+          <div class="text-center bg-ink-50 rounded-xl p-3"><div class="font-display text-2xl font-bold text-ink-900" id="cdHours">—</div><div class="text-xs text-ink-400 mt-1">Hours</div></div>
+          <div class="text-center bg-ink-50 rounded-xl p-3"><div class="font-display text-2xl font-bold text-ink-900" id="cdMins">—</div><div class="text-xs text-ink-400 mt-1">Minutes</div></div>
+          <div class="text-center bg-ink-50 rounded-xl p-3"><div class="font-display text-2xl font-bold text-ink-900" id="cdSecs">—</div><div class="text-xs text-ink-400 mt-1">Seconds</div></div>
+        </div>
+        <p class="text-xs text-ink-400 mt-3 text-center" id="nextBirthdayDate">Enter your date of birth above</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Ad -->
+  <div class="my-6"><div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400">Google AdSense — Responsive Ad Unit</div></div>
+</section>
+
+<!-- SEO Content -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Zodiac Signs — Quick Reference</h2>
+      <div class="grid grid-cols-2 gap-1.5 text-xs">
+        <div class="flex justify-between bg-ink-50 rounded-lg px-3 py-2"><span class="font-semibold">♈ Aries</span><span class="text-ink-500">Mar 21 – Apr 19</span></div>
+        <div class="flex justify-between bg-ink-50 rounded-lg px-3 py-2"><span class="font-semibold">♉ Taurus</span><span class="text-ink-500">Apr 20 – May 20</span></div>
+        <div class="flex justify-between bg-ink-50 rounded-lg px-3 py-2"><span class="font-semibold">♊ Gemini</span><span class="text-ink-500">May 21 – Jun 20</span></div>
+        <div class="flex justify-between bg-ink-50 rounded-lg px-3 py-2"><span class="font-semibold">♋ Cancer</span><span class="text-ink-500">Jun 21 – Jul 22</span></div>
+        <div class="flex justify-between bg-ink-50 rounded-lg px-3 py-2"><span class="font-semibold">♌ Leo</span><span class="text-ink-500">Jul 23 – Aug 22</span></div>
+        <div class="flex justify-between bg-ink-50 rounded-lg px-3 py-2"><span class="font-semibold">♍ Virgo</span><span class="text-ink-500">Aug 23 – Sep 22</span></div>
+        <div class="flex justify-between bg-ink-50 rounded-lg px-3 py-2"><span class="font-semibold">♎ Libra</span><span class="text-ink-500">Sep 23 – Oct 22</span></div>
+        <div class="flex justify-between bg-ink-50 rounded-lg px-3 py-2"><span class="font-semibold">♏ Scorpio</span><span class="text-ink-500">Oct 23 – Nov 21</span></div>
+        <div class="flex justify-between bg-ink-50 rounded-lg px-3 py-2"><span class="font-semibold">♐ Sagittarius</span><span class="text-ink-500">Nov 22 – Dec 21</span></div>
+        <div class="flex justify-between bg-ink-50 rounded-lg px-3 py-2"><span class="font-semibold">♑ Capricorn</span><span class="text-ink-500">Dec 22 – Jan 19</span></div>
+        <div class="flex justify-between bg-ink-50 rounded-lg px-3 py-2"><span class="font-semibold">♒ Aquarius</span><span class="text-ink-500">Jan 20 – Feb 18</span></div>
+        <div class="flex justify-between bg-ink-50 rounded-lg px-3 py-2"><span class="font-semibold">♓ Pisces</span><span class="text-ink-500">Feb 19 – Mar 20</span></div>
+      </div>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Generational Guide</h2>
+      <div class="space-y-2">
+        <div class="flex items-center justify-between py-2 border-b border-ink-50"><div><span class="text-sm font-medium text-ink-700">Silent Generation</span><p class="text-[10px] text-ink-400">Born 1928–1945</p></div><span class="font-mono text-sm text-ink-600">79–96 yrs</span></div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50"><div><span class="text-sm font-medium text-ink-700">Baby Boomers</span><p class="text-[10px] text-ink-400">Born 1946–1964</p></div><span class="font-mono text-sm text-ink-600">60–78 yrs</span></div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50"><div><span class="text-sm font-medium text-ink-700">Generation X</span><p class="text-[10px] text-ink-400">Born 1965–1980</p></div><span class="font-mono text-sm text-ink-600">44–59 yrs</span></div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50"><div><span class="text-sm font-medium text-ink-700">Millennials (Gen Y)</span><p class="text-[10px] text-ink-400">Born 1981–1996</p></div><span class="font-mono text-sm text-leaf-700 font-semibold">28–43 yrs</span></div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50"><div><span class="text-sm font-medium text-ink-700">Generation Z</span><p class="text-[10px] text-ink-400">Born 1997–2012</p></div><span class="font-mono text-sm text-leaf-700 font-semibold">12–27 yrs</span></div>
+        <div class="flex items-center justify-between py-2"><div><span class="text-sm font-medium text-ink-700">Generation Alpha</span><p class="text-[10px] text-ink-400">Born 2013–present</p></div><span class="font-mono text-sm text-ink-600">0–11 yrs</span></div>
+      </div>
+      <p class="text-[10px] text-ink-300 mt-2 font-mono">* Ages as of 2024. Generation boundaries vary by source.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about age calculation</p>
+  <div class="grid md:grid-cols-2 gap-3">
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How is exact age calculated?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Age is calculated by finding the difference between the date of birth and today (or a specified date). Years are counted first, then remaining months, then remaining days. Importantly, the day count accounts for the varying lengths of months — a month of February has 28 or 29 days, not 30.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is the legal age of majority in India?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">In India, the legal age of majority is <strong class="text-ink-700">18 years</strong> as per the Indian Majority Act. The legal age for marriage is 18 for women and 21 for men (proposed to be raised to 21 for both). The voting age is 18. The age for criminal liability is 18. Senior citizen benefits apply from age 60.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How are leap years handled in age calculation?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">A leap year has 366 days (February has 29 days). If you were born on Feb 29, your birthday is celebrated on Feb 28 or Mar 1 in non-leap years (varies by country/person preference). Our calculator uses Feb 28 as the birthday in non-leap years for Feb 29 births. A year is a leap year if divisible by 4, except century years must be divisible by 400.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What are the important age milestones in India?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Key age milestones: <strong class="text-ink-700">5</strong> (school admission), <strong class="text-ink-700">15</strong> (minor driving permit in some states), <strong class="text-ink-700">18</strong> (voting, driving license, legal majority), <strong class="text-ink-700">21</strong> (marriage for men), <strong class="text-ink-700">25</strong> (car insurance benefits), <strong class="text-ink-700">40</strong> (regular health checks recommended), <strong class="text-ink-700">55</strong> (NPS annuity eligibility), <strong class="text-ink-700">58</strong> (EPF retirement), <strong class="text-ink-700">60</strong> (senior citizen benefits, higher FD rates).</div></details></div>
+  </div>
+</section>
+
+<!-- Related -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="bmi-calculator.html"         class="bg-white border border-ink-100 hover:border-violet-200 hover:bg-violet-50 rounded-xl p-4 transition-all group"><div class="text-xl mb-2">⚖️</div><div class="text-sm font-semibold text-ink-800 group-hover:text-violet-700">BMI Calculator</div><div class="text-xs text-ink-400 mt-0.5">Body Mass Index</div></a>
+    <a href="epf-calculator.html"         class="bg-white border border-ink-100 hover:border-violet-200 hover:bg-violet-50 rounded-xl p-4 transition-all group"><div class="text-xl mb-2">👷</div><div class="text-sm font-semibold text-ink-800 group-hover:text-violet-700">EPF Calculator</div><div class="text-xs text-ink-400 mt-0.5">Provident fund corpus</div></a>
+    <a href="sip-calculator.html"         class="bg-white border border-ink-100 hover:border-violet-200 hover:bg-violet-50 rounded-xl p-4 transition-all group"><div class="text-xl mb-2">📈</div><div class="text-sm font-semibold text-ink-800 group-hover:text-violet-700">SIP Calculator</div><div class="text-xs text-ink-400 mt-0.5">Mutual fund returns</div></a>
+    <a href="fd-calculator.html"          class="bg-white border border-ink-100 hover:border-violet-200 hover:bg-violet-50 rounded-xl p-4 transition-all group"><div class="text-xl mb-2">🏛️</div><div class="text-sm font-semibold text-ink-800 group-hover:text-violet-700">FD Calculator</div><div class="text-xs text-ink-400 mt-0.5">Fixed deposit maturity</div></a>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2"><div class="flex items-center gap-2.5 mb-4"><div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div><div class="font-display font-semibold text-white">BharatCalc</div></div><p class="text-sm text-ink-400 mb-4 max-w-xs">Free calculators for every Indian.</p><div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700">⚠️ Age calculation is based on standard calendar arithmetic. Results are for reference only.</div></div>
+      <div><h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3><ul class="space-y-2.5 text-sm"><li><a href="sip-calculator.html" class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li><li><a href="emi-calculator.html" class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li><li><a href="ppf-calculator.html" class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li><li><a href="fd-calculator.html"  class="hover:text-leaf-400 transition-colors">FD Calculator</a></li></ul></div>
+      <div><h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax</h3><ul class="space-y-2.5 text-sm"><li><a href="income-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Income Tax</a></li><li><a href="gst-calculator.html" class="hover:text-leaf-400 transition-colors">GST Calculator</a></li><li><a href="hra-calculator.html" class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li></ul></div>
+      <div><h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Health</h3><ul class="space-y-2.5 text-sm"><li><a href="bmi-calculator.html" class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li><li><a href="age-calculator.html" class="hover:text-leaf-400 transition-colors font-semibold text-leaf-400">Age Calculator</a></li></ul></div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500"><p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p><div class="flex gap-5"><a href="../about.html" class="hover:text-ink-300">About</a><a href="../privacy.html" class="hover:text-ink-300">Privacy</a><a href="../terms.html" class="hover:text-ink-300">Terms</a></div></div>
+  </div>
+</footer>
+
+<script>
+let useCustomTo = false;
+let timerID = null;
+
+// ── Zodiac ──────────────────────────────────────────────────────
+function getZodiac(mo, day) {
+  const z=[['Capricorn',1,19],['Aquarius',2,18],['Pisces',3,20],['Aries',4,19],['Taurus',5,20],['Gemini',6,20],['Cancer',7,22],['Leo',8,22],['Virgo',9,22],['Libra',10,22],['Scorpio',11,21],['Sagittarius',12,21],['Capricorn',12,31]];
+  const signs={Aries:'♈',Taurus:'♉',Gemini:'♊',Cancer:'♋',Leo:'♌',Virgo:'♍',Libra:'♎',Scorpio:'♏',Sagittarius:'♐',Capricorn:'♑',Aquarius:'♒',Pisces:'♓'};
+  for(const [name,m,d] of z){if(mo<m||(mo===m&&day<=d)){return signs[name]+' '+name;}}
+  return '♑ Capricorn';
+}
+
+// ── Generation ──────────────────────────────────────────────────
+function getGeneration(yr) {
+  if(yr>=2013) return 'Generation Alpha (α)';
+  if(yr>=1997) return 'Generation Z';
+  if(yr>=1981) return 'Millennial (Gen Y)';
+  if(yr>=1965) return 'Generation X';
+  if(yr>=1946) return 'Baby Boomer';
+  if(yr>=1928) return 'Silent Generation';
+  return 'Greatest Generation';
+}
+
+// ── Days in month ───────────────────────────────────────────────
+function daysInMonth(yr, mo) {
+  return new Date(yr, mo, 0).getDate();
+}
+
+// ── Exact age calculation ────────────────────────────────────────
+function calcAge(dob, to) {
+  let y = to.getFullYear() - dob.getFullYear();
+  let m = to.getMonth()    - dob.getMonth();
+  let d = to.getDate()     - dob.getDate();
+  if(d < 0){ m--; d += daysInMonth(to.getFullYear(), to.getMonth()); }
+  if(m < 0){ y--; m += 12; }
+  return {y, m, d};
+}
+
+// ── Format large number ──────────────────────────────────────────
+function fmtNum(n) { return Math.round(n).toLocaleString('en-IN'); }
+
+let useCustomDate = false;
+
+function setToDate(type, btn) {
+  useCustomDate = type==='custom';
+  document.getElementById('btnToday').className  = type==='today'  ? 'flex-1 py-2 text-xs font-semibold rounded-xl border bg-ink-900 text-white border-ink-900 transition-all' : 'flex-1 py-2 text-xs font-semibold rounded-xl border border-ink-200 text-ink-500 hover:border-leaf-400 transition-all';
+  document.getElementById('btnCustom').className = type==='custom' ? 'flex-1 py-2 text-xs font-semibold rounded-xl border bg-ink-900 text-white border-ink-900 transition-all' : 'flex-1 py-2 text-xs font-semibold rounded-xl border border-ink-200 text-ink-500 hover:border-leaf-400 transition-all';
+  document.getElementById('toDate').classList.toggle('hidden', type==='today');
+  calc();
+}
+
+// ── Main ─────────────────────────────────────────────────────────
+function calc() {
+  const dobVal = document.getElementById('dob').value;
+  if(!dobVal) return;
+  const dob = new Date(dobVal);
+  if(isNaN(dob)) return;
+
+  const toVal = document.getElementById('toDate').value;
+  const now   = new Date();
+  const to    = (useCustomDate && toVal) ? new Date(toVal) : now;
+  if(dob > to) { document.getElementById('ageMain').textContent = 'Date of birth cannot be in the future'; return; }
+
+  const {y,m,d} = calcAge(dob, to);
+  const totalDays  = Math.floor((to - dob) / 86400000);
+  const totalMonths = y*12 + m;
+  const totalWeeks = Math.floor(totalDays/7);
+  const totalHours = totalDays*24;
+  const totalMins  = totalHours*60;
+  const heartbeats = totalMins*72; // avg 72 bpm
+
+  // Main display
+  document.getElementById('ageMain').textContent = `${y} year${y!==1?'s':''}, ${m} month${m!==1?'s':''}, ${d} day${d!==1?'s':''}`;
+  document.getElementById('ageSub').textContent  = `Born ${dob.toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}`;
+
+  // Stats
+  document.getElementById('statMonths').textContent    = fmtNum(totalMonths);
+  document.getElementById('statWeeks').textContent     = fmtNum(totalWeeks);
+  document.getElementById('statDays').textContent      = fmtNum(totalDays);
+  document.getElementById('statHours').textContent     = fmtNum(totalHours);
+  document.getElementById('statMinutes').textContent   = fmtNum(totalMins);
+  document.getElementById('statHeartbeats').textContent= fmtNum(heartbeats);
+
+  // Birthday details
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  document.getElementById('dayOfBirth').textContent = days[dob.getDay()];
+  document.getElementById('zodiacSign').textContent = getZodiac(dob.getMonth()+1, dob.getDate());
+  const birthYear = dob.getFullYear();
+  const isLeap = (birthYear%4===0&&birthYear%100!==0)||(birthYear%400===0);
+  document.getElementById('leapYear').textContent   = isLeap ? '🗓️ Leap year' : 'Non-leap year';
+  document.getElementById('generation').textContent = getGeneration(birthYear);
+
+  // Next birthday
+  let nextBday = new Date(to.getFullYear(), dob.getMonth(), dob.getDate());
+  if(nextBday <= to) nextBday.setFullYear(nextBday.getFullYear()+1);
+  const msLeft = nextBday - now;
+  if(msLeft >= 0) {
+    const dLeft  = Math.floor(msLeft/86400000);
+    const hLeft  = Math.floor((msLeft%86400000)/3600000);
+    const minLeft= Math.floor((msLeft%3600000)/60000);
+    const sLeft  = Math.floor((msLeft%60000)/1000);
+    document.getElementById('cdDays').textContent  = dLeft;
+    document.getElementById('cdHours').textContent = hLeft;
+    document.getElementById('cdMins').textContent  = String(minLeft).padStart(2,'0');
+    document.getElementById('cdSecs').textContent  = String(sLeft).padStart(2,'0');
+    document.getElementById('nextBirthdayDate').textContent = `Next birthday: ${nextBday.toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}`;
+  }
+
+  // Birthday progress bar (how far through current birthday year)
+  const lastBday = new Date(to.getFullYear(), dob.getMonth(), dob.getDate());
+  if(lastBday > to) lastBday.setFullYear(lastBday.getFullYear()-1);
+  const yearMs = nextBday - lastBday;
+  const elapsed = to - lastBday;
+  const pct = Math.min(Math.round((elapsed/yearMs)*100), 100);
+  document.getElementById('birthdayBar').style.width = pct+'%';
+  document.getElementById('birthdayPct').textContent  = pct+'%';
+  document.getElementById('birthdayCountdown').textContent = pct===100 ? '🎉 Happy Birthday!' : `${pct}% through your current year of life`;
+}
+
+// ── Live countdown ───────────────────────────────────────────────
+function startLive() {
+  if(timerID) clearInterval(timerID);
+  timerID = setInterval(()=>{ if(document.getElementById('dob').value) calc(); }, 1000);
+}
+
+function toggleMobileMenu(){const m=document.getElementById('mobileMenu'),btn=document.getElementById('menuBtn'),icon=document.getElementById('menuIcon');const open=m.classList.toggle('hidden');btn.setAttribute('aria-expanded',String(!open));icon.innerHTML=open?'<path d="M4 6h16M4 12h16M4 18h16"/>':'<path d="M6 18L18 6M6 6l12 12"/>';}
+
+function init(){
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+  // Set max date to today
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('dob').max = today;
+  document.getElementById('toDate').max = today;
+  // Default: a sample DOB for demo
+  const demo = new Date(); demo.setFullYear(demo.getFullYear()-25);
+  document.getElementById('dob').value = demo.toISOString().split('T')[0];
+  calc();
+  startLive();
+}
+init();
+</script>
+</body>
+</html>
