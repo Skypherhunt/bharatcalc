@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TDS Calculator India – Tax Deducted at Source FY 2025-26 | BharatCalc</title>
+  <meta name="description" content="Free TDS Calculator India — calculate Tax Deducted at Source for salary, FD interest, rent, contractor, professional fees, commission and more. All major TDS sections covered. FY 2025-26." />
+  <meta name="keywords" content="TDS calculator India, tax deducted at source calculator, TDS rate calculator, section 194A TDS, section 194C TDS, section 194J TDS, TDS on rent, TDS on salary, TDS on FD interest India 2025, TDS calculator online free" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/tds-calculator.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://bharatcalc.online/calculator/tds-calculator.html" />
+  <meta property="og:title"       content="TDS Calculator – Tax Deducted at Source | BharatCalc" />
+  <meta property="og:description" content="Calculate TDS for all major sections — FD interest, rent, professional fees, contractor, commission. Free, no login." />
+  <meta property="og:image"       content="https://bharatcalc.online/og/tds-calculator.png" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="TDS Calculator | BharatCalc" />
+  <meta name="twitter:description" content="Calculate TDS for all payment types instantly. Free — by BharatCalc." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "TDS Calculator",
+    "url": "https://bharatcalc.online/calculator/tds-calculator.html",
+    "description": "Calculate Tax Deducted at Source (TDS) for all major payment types under Indian tax law.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",           "item": "https://bharatcalc.online/" },
+        { "@type": "ListItem", "position": 2, "name": "Tax",            "item": "https://bharatcalc.online/?cat=tax" },
+        { "@type": "ListItem", "position": 3, "name": "TDS Calculator", "item": "https://bharatcalc.online/calculator/tds-calculator.html" }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Clash Display', 'sans-serif'],
+            sans:    ['Satoshi', 'sans-serif'],
+            mono:    ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
+            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Satoshi', system-ui, sans-serif; }
+    .font-display { font-family: 'Clash Display', system-ui, sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #16a34a; transform: scaleX(0); transition: transform 0.2s; border-radius: 1px; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .val-input { font-family: 'JetBrains Mono', monospace; }
+    .val-input:focus { outline: none; box-shadow: none; }
+    .section-tab { transition: all 0.15s; cursor: pointer; }
+    .section-tab.active { background: #ea580c; color: #fff; border-color: #ea580c; }
+    .toggle-btn { transition: all 0.15s; }
+    .toggle-btn.active { background: #0d1117; color: #fff; border-color: #0d1117; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    .breadcrumb a { transition: color 0.15s; }
+    .faq-item details summary { cursor: pointer; list-style: none; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9TD6B9GQ89');</script>
+</head>
+
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+        <div class="leading-none">
+          <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
+          <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+        <a href="../index.html?cat=tools"   class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+      </nav>
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-leaf-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/></svg> Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-rose-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg> Math</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a>
+      <span>/</span>
+      <a href="../index.html?cat=tax" class="hover:text-ink-200">Tax</a>
+      <span>/</span>
+      <span class="text-ink-300">TDS Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-orange-600/15 text-orange-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-orange-600/20">
+          <span class="w-1.5 h-1.5 bg-orange-400 rounded-full inline-block animate-pulse"></span>
+          FY 2025-26 TDS Rates
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">TDS Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
+          Calculate Tax Deducted at Source for all major payment types — FD interest, rent, salary, professional fees, contractor, commission and more.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0">
+        <span class="w-1.5 h-1.5 bg-orange-400 rounded-full inline-block"></span>
+        Results update live
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-2 mt-5">
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">10 Major Sections</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">PAN / No-PAN rates</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Senior Citizen support</div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <div class="grid lg:grid-cols-5 gap-6">
+
+    <!-- LEFT: Section selector + inputs -->
+    <div class="lg:col-span-3 space-y-5">
+
+      <!-- Payment type tabs -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-5">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-4">Select Payment Type</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="sectionTabs" role="group" aria-label="TDS section selector">
+          <!-- tabs injected by JS -->
+        </div>
+      </div>
+
+      <!-- Section info + inputs -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-6">
+        <div class="flex items-start gap-3 mb-5 p-3 bg-orange-50 border border-orange-100 rounded-xl">
+          <div>
+            <p class="text-sm font-semibold text-orange-800" id="sectionTitle">Section 194A — Interest (FD/RD)</p>
+            <p class="text-xs text-orange-600 mt-0.5" id="sectionDesc">TDS on interest income from banks, co-op societies and post offices</p>
+          </div>
+        </div>
+
+        <!-- PAN toggle -->
+        <div class="mb-5">
+          <label class="text-sm font-semibold text-ink-700 block mb-3">PAN Available?</label>
+          <div class="flex gap-2">
+            <button id="btnPanYes" onclick="setPan(true)"  class="toggle-btn active flex-1 py-2.5 px-4 text-sm font-semibold border border-ink-200 rounded-xl transition-all">Yes — PAN available</button>
+            <button id="btnPanNo"  onclick="setPan(false)" class="toggle-btn flex-1 py-2.5 px-4 text-sm font-semibold border border-ink-200 rounded-xl text-ink-500 transition-all">No PAN</button>
+          </div>
+        </div>
+
+        <!-- Senior Citizen (for 194A) -->
+        <div id="seniorRow" class="mb-5">
+          <label class="text-sm font-semibold text-ink-700 block mb-3">Is Payee a Senior Citizen? <span class="text-xs text-ink-400 font-normal">(age 60+, affects threshold)</span></label>
+          <div class="flex gap-2">
+            <button id="btnSeniorNo"  onclick="setSenior(false)" class="toggle-btn active flex-1 py-2.5 px-4 text-sm font-semibold border border-ink-200 rounded-xl transition-all">No</button>
+            <button id="btnSeniorYes" onclick="setSenior(true)"  class="toggle-btn flex-1 py-2.5 px-4 text-sm font-semibold border border-ink-200 rounded-xl text-ink-500 transition-all">Yes (Senior Citizen)</button>
+          </div>
+        </div>
+
+        <!-- Deductee type (for 194C) -->
+        <div id="deducteeRow" class="mb-5 hidden">
+          <label class="text-sm font-semibold text-ink-700 block mb-3">Deductee Type</label>
+          <div class="flex gap-2">
+            <button id="btnIndHuf" onclick="setDeductee('individual')" class="toggle-btn active flex-1 py-2.5 px-4 text-sm font-semibold border border-ink-200 rounded-xl transition-all">Individual / HUF</button>
+            <button id="btnOthers" onclick="setDeductee('others')"     class="toggle-btn flex-1 py-2.5 px-4 text-sm font-semibold border border-ink-200 rounded-xl text-ink-500 transition-all">Company / Others</button>
+          </div>
+        </div>
+
+        <!-- Payment Amount -->
+        <div>
+          <label for="paymentAmount" class="text-sm font-semibold text-ink-700 block mb-2">Payment Amount <span class="text-xs text-ink-400 font-normal" id="annualNote">(annual amount for threshold check)</span></label>
+          <div class="flex items-center gap-2 bg-ink-50 border border-ink-200 rounded-xl px-4 py-3 focus-within:border-orange-400 transition-colors">
+            <span class="text-ink-400 font-semibold">₹</span>
+            <input id="paymentAmount" type="number" class="val-input flex-1 text-xl font-bold text-ink-900 bg-transparent" min="0" step="1000" value="50000" oninput="calc()" placeholder="0" />
+          </div>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <button onclick="setAmount(50000)"  class="text-[10px] px-2 py-1 bg-ink-50 hover:bg-orange-50 border border-ink-200 hover:border-orange-200 rounded-md font-mono text-ink-500 hover:text-orange-700 transition-colors">₹50K</button>
+            <button onclick="setAmount(100000)" class="text-[10px] px-2 py-1 bg-ink-50 hover:bg-orange-50 border border-ink-200 hover:border-orange-200 rounded-md font-mono text-ink-500 hover:text-orange-700 transition-colors">₹1L</button>
+            <button onclick="setAmount(500000)" class="text-[10px] px-2 py-1 bg-ink-50 hover:bg-orange-50 border border-ink-200 hover:border-orange-200 rounded-md font-mono text-ink-500 hover:text-orange-700 transition-colors">₹5L</button>
+            <button onclick="setAmount(1000000)" class="text-[10px] px-2 py-1 bg-ink-50 hover:bg-orange-50 border border-ink-200 hover:border-orange-200 rounded-md font-mono text-ink-500 hover:text-orange-700 transition-colors">₹10L</button>
+            <button onclick="setAmount(2400000)" class="text-[10px] px-2 py-1 bg-ink-50 hover:bg-orange-50 border border-ink-200 hover:border-orange-200 rounded-md font-mono text-ink-500 hover:text-orange-700 transition-colors">₹24L</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div class="lg:col-span-2 flex flex-col gap-4">
+
+      <!-- TDS Result -->
+      <div id="resultCard" class="bg-orange-900 rounded-2xl p-6">
+        <p class="text-orange-300 text-xs font-semibold uppercase tracking-wider mb-2">TDS Amount</p>
+        <div class="font-display text-5xl font-bold text-white tracking-tight mb-1" id="tdsAmount">₹0</div>
+        <p class="text-orange-300 text-xs" id="tdsRateLabel">Rate: 10%</p>
+        <div class="grid grid-cols-2 gap-3 mt-5 pt-5 border-t border-orange-700/50">
+          <div>
+            <p class="text-orange-400 text-xs mb-1">Gross Payment</p>
+            <p class="font-mono font-semibold text-white text-sm" id="grossPayment">₹0</p>
+          </div>
+          <div>
+            <p class="text-orange-400 text-xs mb-1">Net Payment</p>
+            <p class="font-mono font-semibold text-orange-200 text-sm" id="netPayment">₹0</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Threshold check -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-5">
+        <h3 class="text-sm font-semibold text-ink-900 mb-3">Threshold Check</h3>
+        <div id="thresholdCheck" class="space-y-2.5">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+
+      <!-- No-PAN rate warning -->
+      <div id="noPanWarning" class="hidden bg-red-50 border border-red-100 rounded-2xl p-4">
+        <div class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <div>
+            <p class="text-xs font-semibold text-red-700 mb-1">Higher TDS without PAN</p>
+            <p class="text-xs text-red-600">Without PAN, TDS is deducted at 20% or the applicable rate — whichever is higher. Link your PAN to avoid excess deduction.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section details card -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-5">
+        <h3 class="text-sm font-semibold text-ink-900 mb-3">Section Details</h3>
+        <div id="sectionDetails" class="space-y-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TDS Rate Reference Table -->
+  <div class="bg-white border border-ink-100 rounded-2xl overflow-hidden mt-6">
+    <div class="p-5 border-b border-ink-100">
+      <h2 class="font-display font-semibold text-ink-900 text-lg">TDS Rate Reference — FY 2025-26</h2>
+      <p class="text-xs text-ink-400 mt-0.5">All rates applicable for resident Indians. Higher of 20% or rate applies if PAN not furnished.</p>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-xs" aria-label="TDS rate reference table">
+        <thead>
+          <tr class="bg-ink-50 border-b border-ink-100">
+            <th class="px-4 py-3 text-left text-ink-500 font-semibold">Section</th>
+            <th class="px-4 py-3 text-left text-ink-500 font-semibold">Nature of Payment</th>
+            <th class="px-4 py-3 text-right text-ink-500 font-semibold">Threshold</th>
+            <th class="px-4 py-3 text-right text-ink-500 font-semibold">TDS Rate</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-ink-50" id="rateTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Ad placeholder -->
+  <div class="my-6">
+    <div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400" aria-hidden="true">Google AdSense — Responsive Ad Unit</div>
+  </div>
+
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">What is TDS?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">TDS (Tax Deducted at Source) is a mechanism where the payer deducts tax at the time of making certain payments — salary, interest, rent, professional fees, etc. — and deposits it with the government on behalf of the recipient.</p>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">The recipient gets credit for the TDS when filing their Income Tax Return (ITR). If TDS deducted is more than the actual tax liability, the excess is refunded by the IT department.</p>
+      <div class="bg-orange-50 border border-orange-100 rounded-xl p-3 mt-3">
+        <p class="text-xs font-semibold text-orange-800 mb-1">Key Rule</p>
+        <p class="text-xs text-orange-700">TDS is only applicable when the payment crosses the threshold limit. For example, Section 194A TDS on FD interest applies only if annual interest exceeds ₹40,000 (₹50,000 for senior citizens).</p>
+      </div>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">TDS vs TCS — What's the Difference?</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs">
+          <thead><tr class="bg-ink-50"><th class="px-3 py-2.5 text-left text-ink-500 font-semibold">Feature</th><th class="px-3 py-2.5 text-center text-orange-600 font-semibold">TDS</th><th class="px-3 py-2.5 text-center text-blue-600 font-semibold">TCS</th></tr></thead>
+          <tbody class="divide-y divide-ink-50">
+            <tr><td class="px-3 py-2.5 text-ink-600 font-medium">Full Form</td><td class="px-3 py-2.5 text-center text-ink-600">Tax Deducted at Source</td><td class="px-3 py-2.5 text-center text-ink-600">Tax Collected at Source</td></tr>
+            <tr><td class="px-3 py-2.5 text-ink-600 font-medium">Who deducts</td><td class="px-3 py-2.5 text-center text-ink-600">Payer</td><td class="px-3 py-2.5 text-center text-ink-600">Seller/Collector</td></tr>
+            <tr><td class="px-3 py-2.5 text-ink-600 font-medium">When</td><td class="px-3 py-2.5 text-center text-ink-600">At time of payment</td><td class="px-3 py-2.5 text-center text-ink-600">At time of sale</td></tr>
+            <tr><td class="px-3 py-2.5 text-ink-600 font-medium">Examples</td><td class="px-3 py-2.5 text-center text-ink-600">Salary, rent, FD interest</td><td class="px-3 py-2.5 text-center text-ink-600">Car sale, scrap, forest</td></tr>
+            <tr><td class="px-3 py-2.5 text-ink-600 font-medium">Form</td><td class="px-3 py-2.5 text-center text-orange-600 font-semibold">Form 16/16A/26Q</td><td class="px-3 py-2.5 text-center text-blue-600 font-semibold">Form 27D</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">How to Claim TDS Refund?</h2>
+      <ul class="space-y-3 text-sm text-ink-500">
+        <li class="flex items-start gap-2.5"><span class="text-orange-600 font-bold mt-0.5">1.</span><span>Download your <strong class="text-ink-700">Form 26AS</strong> from the IT portal (incometax.gov.in) — it shows all TDS deducted on your PAN.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-orange-600 font-bold mt-0.5">2.</span><span>File your <strong class="text-ink-700">ITR before July 31</strong> (or the extended deadline) for the relevant assessment year.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-orange-600 font-bold mt-0.5">3.</span><span>In your ITR, enter the TDS details. The system automatically computes <strong class="text-ink-700">Tax Payable or Refund Due</strong>.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-orange-600 font-bold mt-0.5">4.</span><span>Verify your ITR via Aadhaar OTP or net banking. The refund is credited to your bank account usually within <strong class="text-ink-700">30–45 days</strong> of e-verification.</span></li>
+      </ul>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Submit Form 15G / 15H to Avoid TDS</h2>
+      <div class="space-y-3">
+        <div class="p-3 bg-leaf-50 border border-leaf-100 rounded-xl">
+          <p class="text-xs font-semibold text-leaf-800 mb-1">Form 15G — For individuals below 60</p>
+          <p class="text-xs text-ink-500">If your total income is below the basic exemption limit (₹3 lakh under new regime) and your FD interest is below ₹2.5 lakh, submit Form 15G to the bank to request nil TDS on interest.</p>
+        </div>
+        <div class="p-3 bg-blue-50 border border-blue-100 rounded-xl">
+          <p class="text-xs font-semibold text-blue-800 mb-1">Form 15H — For senior citizens (60+)</p>
+          <p class="text-xs text-ink-500">Senior citizens can submit Form 15H if their estimated tax liability is nil (i.e., income after deductions falls below taxable limit), requesting the bank not to deduct TDS.</p>
+        </div>
+        <p class="text-xs text-ink-400 font-mono">Submit at the start of each financial year. Forms are available at your bank branch or online banking portal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about TDS in India</p>
+  <div class="grid md:grid-cols-2 gap-3">
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is the TDS rate on FD interest?</span>
+          <span class="faq-icon text-orange-500 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Under Section 194A, TDS on FD interest is <strong class="text-ink-700">10%</strong> if annual interest from a bank exceeds <strong class="text-ink-700">₹40,000</strong> (₹50,000 for senior citizens aged 60+). Without PAN, the rate becomes 20%. Submit Form 15G/15H if your income is below the taxable limit to get zero TDS.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is TDS on rent above ₹50,000/month?</span>
+          <span class="faq-icon text-orange-500 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Under Section 194-IB, individuals/HUFs paying rent exceeding <strong class="text-ink-700">₹50,000 per month</strong> must deduct TDS at <strong class="text-ink-700">2%</strong> (reduced from 5% in Budget 2024). Under Section 194-I (applicable to companies), TDS on rent for land/building is 10% if annual rent exceeds ₹2,40,000; for plant/machinery it is 2%.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is TDS on professional fees (194J)?</span>
+          <span class="faq-icon text-orange-500 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Under Section 194J, TDS is deducted on payments to professionals (doctors, lawyers, CAs, architects) at <strong class="text-ink-700">10%</strong> if the amount exceeds ₹30,000 per year. For technical services (call centre, software development), the rate is <strong class="text-ink-700">2%</strong>. Royalty payments also attract 10% TDS under 194J.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What happens if TDS is not deducted?</span>
+          <span class="faq-icon text-orange-500 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          If TDS is not deducted when required: (1) The payer is liable to pay <strong class="text-ink-700">interest at 1% per month</strong> from the date TDS was deductible. (2) The payment amount may be disallowed as a business expense — increasing your taxable profit. (3) A penalty under Section 271C equal to the TDS amount may be levied. Always check TDS applicability before making large payments.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">When does TDS apply on salary?</span>
+          <span class="faq-icon text-orange-500 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Under Section 192, TDS on salary applies when annual salary exceeds the basic exemption limit: <strong class="text-ink-700">₹3 lakh (new regime)</strong> or <strong class="text-ink-700">₹2.5 lakh (old regime)</strong>. The employer deducts TDS as per the applicable income tax slab rate. Employees declare their regime choice to the employer at the start of the year. Form 16 is issued by the employer showing salary and TDS details.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is TDS on property purchase?</span>
+          <span class="faq-icon text-orange-500 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Under Section 194-IA, the buyer must deduct <strong class="text-ink-700">1% TDS</strong> when purchasing immovable property (other than agricultural land) worth <strong class="text-ink-700">₹50 lakh or more</strong>. The buyer must deposit this TDS using Form 26QB and provide Form 16B to the seller. This applies to resident sellers; for NRI sellers, Section 195 with higher TDS rates applies.
+        </div>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- Related Calculators -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="income-tax-calculator.html" class="bg-white border border-ink-100 hover:border-orange-200 hover:bg-orange-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-orange-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-orange-700 transition-colors">Income Tax</div>
+      <div class="text-xs text-ink-400 mt-0.5">New vs old regime</div>
+    </a>
+    <a href="gst-calculator.html" class="bg-white border border-ink-100 hover:border-orange-200 hover:bg-orange-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-saffron-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-orange-700 transition-colors">GST Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Add or remove GST</div>
+    </a>
+    <a href="hra-calculator.html" class="bg-white border border-ink-100 hover:border-orange-200 hover:bg-orange-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-teal-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 12L12 3l9 9"/><path d="M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-orange-700 transition-colors">HRA Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">House rent exemption</div>
+    </a>
+    <a href="fd-calculator.html" class="bg-white border border-ink-100 hover:border-orange-200 hover:bg-orange-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-leaf-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-orange-700 transition-colors">FD Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Fixed deposit returns</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+          <div class="font-display font-semibold text-white">BharatCalc</div>
+        </div>
+        <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
+        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700"><svg class="w-3.5 h-3.5 inline-block mr-1 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> TDS rates are for guidance. Verify with a CA for your specific situation. Rates may be modified by budget notifications.</div>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="sip-calculator.html"  class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
+          <li><a href="emi-calculator.html"  class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
+          <li><a href="ppf-calculator.html"  class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
+          <li><a href="fd-calculator.html"   class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
+          <li><a href="nps-calculator.html"  class="hover:text-leaf-400 transition-colors">NPS Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax & Legal</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="income-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
+          <li><a href="gst-calculator.html"        class="hover:text-leaf-400 transition-colors">GST Calculator</a></li>
+          <li><a href="hra-calculator.html"        class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li>
+          <li><a href="tds-calculator.html"        class="hover:text-leaf-400 transition-colors font-semibold text-leaf-400">TDS Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Health & Math</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="bmi-calculator.html"          class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li>
+          <li><a href="age-calculator.html"          class="hover:text-leaf-400 transition-colors">Age Calculator</a></li>
+          <li><a href="calorie-calculator.html"      class="hover:text-leaf-400 transition-colors">Calorie Calculator</a></li>
+          <li><a href="ideal-weight-calculator.html" class="hover:text-leaf-400 transition-colors">Ideal Weight</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
+      <div class="flex items-center gap-5">
+        <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
+        <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
+        <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
+        <a href="https://github.com/Skypherhunt" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
+        <a href="https://www.linkedin.com/in/abhinav-kumar70/" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const btn  = document.getElementById('menuBtn');
+  const isHidden = menu.classList.contains('hidden');
+  menu.classList.toggle('hidden', !isHidden);
+  btn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+}
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+function fmtINR(n) {
+  if (n >= 1e7) return '₹' + (n / 1e7).toFixed(2) + 'Cr';
+  if (n >= 1e5) return '₹' + (n / 1e5).toFixed(2) + 'L';
+  return '₹' + Math.round(n).toLocaleString('en-IN');
+}
+
+// TDS sections definition
+const sections = [
+  {
+    id: 'interest',
+    label: '194A', sublabel: 'FD / Interest',
+    title: 'Section 194A — Interest (FD / RD / Savings)',
+    desc: 'TDS on interest from banks, co-op societies, post offices',
+    threshold: 40000, thresholdSenior: 50000,
+    rate: 10, rateNoPan: 20,
+    showSenior: true, showDeductee: false,
+    details: [
+      { k: 'Section', v: '194A' },
+      { k: 'Applicable on', v: 'Interest from bank FD/RD, savings A/C, post office' },
+      { k: 'Threshold (Normal)', v: '₹40,000 per year' },
+      { k: 'Threshold (Senior 60+)', v: '₹50,000 per year' },
+      { k: 'Rate (with PAN)', v: '10%' },
+      { k: 'Rate (no PAN)', v: '20%' },
+      { k: 'Form', v: '26Q / 16A' },
+    ]
+  },
+  {
+    id: 'salary',
+    label: '192', sublabel: 'Salary',
+    title: 'Section 192 — Salary',
+    desc: 'TDS on salary income as per applicable income tax slab',
+    threshold: 300000, thresholdSenior: 300000,
+    rate: null, rateNoPan: 20,
+    showSenior: false, showDeductee: false, isSalary: true,
+    details: [
+      { k: 'Section', v: '192' },
+      { k: 'Applicable on', v: 'Salary, wages, bonus, pension' },
+      { k: 'Threshold (New regime)', v: '₹3,00,000 per year' },
+      { k: 'Threshold (Old regime)', v: '₹2,50,000 per year' },
+      { k: 'Rate', v: 'As per income tax slab' },
+      { k: 'Form', v: 'Form 16' },
+    ]
+  },
+  {
+    id: 'contractor',
+    label: '194C', sublabel: 'Contractor',
+    title: 'Section 194C — Contractor / Sub-contractor',
+    desc: 'TDS on payments to contractors for work done',
+    threshold: 30000, thresholdSingle: 30000, thresholdAggregate: 100000,
+    rate: 1, rateCompany: 2, rateNoPan: 20,
+    showSenior: false, showDeductee: true,
+    details: [
+      { k: 'Section', v: '194C' },
+      { k: 'Applicable on', v: 'Payments to contractors for any work' },
+      { k: 'Threshold', v: '₹30,000 single payment OR ₹1,00,000 aggregate/year' },
+      { k: 'Rate (Individual/HUF)', v: '1%' },
+      { k: 'Rate (Company/Others)', v: '2%' },
+      { k: 'Rate (No PAN)', v: '20%' },
+      { k: 'Form', v: '26Q / 16A' },
+    ]
+  },
+  {
+    id: 'professional',
+    label: '194J', sublabel: 'Prof. Fees',
+    title: 'Section 194J — Professional / Technical Fees',
+    desc: 'TDS on fees to doctors, lawyers, CAs, technical services',
+    threshold: 30000,
+    rate: 10, rateTech: 2, rateNoPan: 20,
+    showSenior: false, showDeductee: false,
+    isProfessional: true,
+    details: [
+      { k: 'Section', v: '194J' },
+      { k: 'Applicable on', v: 'Professional services: legal, medical, engineering, accountancy' },
+      { k: 'Threshold', v: '₹30,000 per year' },
+      { k: 'Rate (Professional fees)', v: '10%' },
+      { k: 'Rate (Technical services)', v: '2%' },
+      { k: 'Rate (No PAN)', v: '20%' },
+      { k: 'Form', v: '26Q / 16A' },
+    ]
+  },
+  {
+    id: 'rent',
+    label: '194-I', sublabel: 'Rent',
+    title: 'Section 194-I — Rent (by Companies/Firms)',
+    desc: 'TDS on rent for land, building, plant and machinery',
+    threshold: 240000,
+    rate: 10, rateMachinery: 2, rateNoPan: 20,
+    showSenior: false, showDeductee: false,
+    isRent: true,
+    details: [
+      { k: 'Section', v: '194-I' },
+      { k: 'Applicable to', v: 'Companies, firms, LLPs paying rent' },
+      { k: 'Threshold', v: '₹2,40,000 per year' },
+      { k: 'Rate (Land/Building/Furniture)', v: '10%' },
+      { k: 'Rate (Plant/Machinery/Equipment)', v: '2%' },
+      { k: 'Rate (No PAN)', v: '20%' },
+      { k: 'Note', v: 'Individuals paying rent >₹50K/month use Section 194-IB (2%)' },
+    ]
+  },
+  {
+    id: 'commission',
+    label: '194H', sublabel: 'Commission',
+    title: 'Section 194H — Commission / Brokerage',
+    desc: 'TDS on commission or brokerage payments',
+    threshold: 15000,
+    rate: 5, rateNoPan: 20,
+    showSenior: false, showDeductee: false,
+    details: [
+      { k: 'Section', v: '194H' },
+      { k: 'Applicable on', v: 'Commission or brokerage paid to agents, brokers' },
+      { k: 'Threshold', v: '₹15,000 per year' },
+      { k: 'Rate (with PAN)', v: '5%' },
+      { k: 'Rate (No PAN)', v: '20%' },
+      { k: 'Form', v: '26Q / 16A' },
+    ]
+  },
+  {
+    id: 'lottery',
+    label: '194B', sublabel: 'Lottery/Prize',
+    title: 'Section 194B — Lottery / Prize / Game Show',
+    desc: 'TDS on winnings from lottery, game shows, crossword puzzles',
+    threshold: 10000,
+    rate: 30, rateNoPan: 30,
+    showSenior: false, showDeductee: false,
+    details: [
+      { k: 'Section', v: '194B' },
+      { k: 'Applicable on', v: 'Lottery winnings, game shows, crossword puzzle prizes' },
+      { k: 'Threshold', v: '₹10,000 per payment' },
+      { k: 'Rate', v: '30% (flat, regardless of PAN)' },
+      { k: 'Note', v: 'TDS from the prize money before payout' },
+      { k: 'Form', v: '26Q' },
+    ]
+  },
+  {
+    id: 'property',
+    label: '194-IA', sublabel: 'Property',
+    title: 'Section 194-IA — Purchase of Property',
+    desc: 'TDS on buying immovable property (not agricultural land)',
+    threshold: 5000000,
+    rate: 1, rateNoPan: 20,
+    showSenior: false, showDeductee: false,
+    details: [
+      { k: 'Section', v: '194-IA' },
+      { k: 'Applicable on', v: 'Buyer deducts from seller when buying immovable property' },
+      { k: 'Threshold', v: '₹50,00,000 (₹50 lakh) — on sale value' },
+      { k: 'Rate', v: '1%' },
+      { k: 'Rate (No PAN)', v: '20%' },
+      { k: 'Form', v: '26QB — online filing by buyer' },
+    ]
+  },
+];
+
+let currentSection = sections[0];
+let panAvailable   = true;
+let seniorCitizen  = false;
+let deducteeType   = 'individual';
+
+function buildTabs() {
+  const container = document.getElementById('sectionTabs');
+  container.innerHTML = '';
+  sections.forEach((s, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'section-tab ' + (i === 0 ? 'active' : 'text-ink-600') + ' text-left px-3 py-2.5 rounded-xl border border-ink-200 transition-all';
+    btn.innerHTML = `<div class="text-xs font-bold">${s.label}</div><div class="text-[11px] text-current opacity-75">${s.sublabel}</div>`;
+    btn.onclick = () => selectSection(s, btn);
+    container.appendChild(btn);
+  });
+}
+
+function selectSection(s, clickedBtn) {
+  currentSection = s;
+  document.querySelectorAll('.section-tab').forEach(b => {
+    b.classList.remove('active');
+    b.classList.add('text-ink-600');
+  });
+  clickedBtn.classList.add('active');
+  clickedBtn.classList.remove('text-ink-600');
+
+  document.getElementById('sectionTitle').textContent = s.title;
+  document.getElementById('sectionDesc').textContent  = s.desc;
+  document.getElementById('seniorRow').classList.toggle('hidden', !s.showSenior);
+  document.getElementById('deducteeRow').classList.toggle('hidden', !s.showDeductee);
+  calc();
+}
+
+function setPan(val) {
+  panAvailable = val;
+  document.getElementById('btnPanYes').classList.toggle('active', val);
+  document.getElementById('btnPanNo').classList.toggle('active', !val);
+  document.getElementById('btnPanYes').classList.toggle('text-ink-500', !val);
+  document.getElementById('btnPanNo').classList.toggle('text-ink-500', val);
+  document.getElementById('noPanWarning').classList.toggle('hidden', val);
+  calc();
+}
+
+function setSenior(val) {
+  seniorCitizen = val;
+  document.getElementById('btnSeniorYes').classList.toggle('active', val);
+  document.getElementById('btnSeniorNo').classList.toggle('active', !val);
+  document.getElementById('btnSeniorYes').classList.toggle('text-ink-500', !val);
+  document.getElementById('btnSeniorNo').classList.toggle('text-ink-500', val);
+  calc();
+}
+
+function setDeductee(type) {
+  deducteeType = type;
+  document.getElementById('btnIndHuf').classList.toggle('active', type === 'individual');
+  document.getElementById('btnOthers').classList.toggle('active', type === 'others');
+  document.getElementById('btnIndHuf').classList.toggle('text-ink-500', type !== 'individual');
+  document.getElementById('btnOthers').classList.toggle('text-ink-500', type === 'individual');
+  calc();
+}
+
+function setAmount(amt) {
+  document.getElementById('paymentAmount').value = amt;
+  calc();
+}
+
+function calc() {
+  const amount = parseFloat(document.getElementById('paymentAmount').value) || 0;
+  const s = currentSection;
+
+  const threshold = (s.showSenior && seniorCitizen) ? (s.thresholdSenior || s.threshold) : s.threshold;
+  const belowThreshold = amount <= threshold;
+
+  let tdsRate = 0;
+  let tdsLabel = '';
+
+  if (s.isSalary) {
+    tdsLabel = 'As per slab';
+    const tds = 0;
+    document.getElementById('tdsAmount').textContent  = 'Per slab';
+    document.getElementById('tdsRateLabel').textContent = 'Rate: As per income tax slab';
+    document.getElementById('grossPayment').textContent = fmtINR(amount);
+    document.getElementById('netPayment').textContent   = 'Slab-based';
+  } else {
+    if (belowThreshold) {
+      tdsRate = 0;
+    } else if (!panAvailable) {
+      tdsRate = Math.max(s.rateNoPan || 20, s.rate || 0);
+    } else if (s.id === 'contractor' && deducteeType === 'others') {
+      tdsRate = s.rateCompany || 2;
+    } else {
+      tdsRate = s.rate || 0;
+    }
+
+    const tdsAmt = belowThreshold ? 0 : amount * tdsRate / 100;
+    const netAmt = amount - tdsAmt;
+
+    document.getElementById('tdsAmount').textContent    = fmtINR(tdsAmt);
+    document.getElementById('tdsRateLabel').textContent = belowThreshold ? 'Below threshold — no TDS' : `Rate: ${tdsRate}%`;
+    document.getElementById('grossPayment').textContent = fmtINR(amount);
+    document.getElementById('netPayment').textContent   = fmtINR(netAmt);
+  }
+
+  // Threshold check
+  const tc = document.getElementById('thresholdCheck');
+  const threshLabel = (s.showSenior && seniorCitizen) ? `₹${(threshold/1000).toFixed(0)}K (Senior Citizen limit)` : `₹${threshold >= 100000 ? (threshold/100000).toFixed(0)+'L' : (threshold/1000).toFixed(0)+'K'}`;
+  const aboveThresh = amount > threshold;
+  tc.innerHTML = `
+    <div class="flex items-center justify-between p-2.5 rounded-xl ${aboveThresh ? 'bg-red-50 border border-red-100' : 'bg-leaf-50 border border-leaf-100'}">
+      <div>
+        <p class="text-xs font-semibold ${aboveThresh ? 'text-red-700' : 'text-leaf-700'}">Threshold: ${threshLabel}</p>
+        <p class="text-xs ${aboveThresh ? 'text-red-500' : 'text-leaf-500'} mt-0.5">Your amount: ${fmtINR(amount)}</p>
+      </div>
+      <span class="text-sm font-bold ${aboveThresh ? 'text-red-600' : 'text-leaf-600'}">${aboveThresh ? 'TDS applies' : 'No TDS'}</span>
+    </div>
+    ${s.isProfessional ? `<p class="text-xs text-ink-400 mt-2">Professional fees: 10% | Technical services: 2%</p>` : ''}
+    ${s.isRent ? `<p class="text-xs text-ink-400 mt-2">Land/Building: 10% | Plant & Machinery: 2%</p>` : ''}
+  `;
+
+  // Section details
+  const sd = document.getElementById('sectionDetails');
+  sd.innerHTML = s.details.map(d => `
+    <div class="flex justify-between text-xs py-1.5 border-b border-ink-50 last:border-0">
+      <span class="text-ink-500">${d.k}</span>
+      <span class="text-ink-800 font-medium text-right ml-4">${d.v}</span>
+    </div>`).join('');
+}
+
+function buildRateTable() {
+  const tbody = document.getElementById('rateTable');
+  const rows = [
+    ['192',    'Salary',                          'As per slab (New: ₹3L, Old: ₹2.5L)',  'Slab rate'],
+    ['194A',   'Interest — Bank FD/RD',           '₹40,000 (₹50,000 Senior)',             '10%'],
+    ['194B',   'Lottery / Game show winnings',    '₹10,000 per payment',                  '30%'],
+    ['194C',   'Contractor / Sub-contractor',     '₹30,000 single / ₹1L aggregate',       '1% (Indiv), 2% (Co.)'],
+    ['194H',   'Commission / Brokerage',          '₹15,000',                              '5%'],
+    ['194-I',  'Rent — Land/Building/Furniture',  '₹2,40,000',                            '10%'],
+    ['194-I',  'Rent — Plant/Machinery',          '₹2,40,000',                            '2%'],
+    ['194-IB', 'Rent (Individuals >₹50K/mo)',     '₹50,000 per month',                    '2%'],
+    ['194-IA', 'Purchase of property',            '₹50,00,000',                           '1%'],
+    ['194J',   'Professional fees',               '₹30,000',                              '10%'],
+    ['194J',   'Technical services',              '₹30,000',                              '2%'],
+    ['194N',   'Cash withdrawal from bank',       '₹1 crore',                             '2%'],
+  ];
+  tbody.innerHTML = rows.map((r, i) => `
+    <tr class="${i % 2 === 0 ? '' : 'bg-ink-50/50'}">
+      <td class="px-4 py-3 font-mono text-orange-700 font-semibold">${r[0]}</td>
+      <td class="px-4 py-3 text-ink-700">${r[1]}</td>
+      <td class="px-4 py-3 text-right font-mono text-ink-600">${r[2]}</td>
+      <td class="px-4 py-3 text-right font-mono font-semibold text-ink-900">${r[3]}</td>
+    </tr>`).join('');
+}
+
+// Init
+buildTabs();
+buildRateTable();
+// Select first tab
+selectSection(sections[0], document.querySelector('.section-tab'));
+</script>
+</body>
+</html>

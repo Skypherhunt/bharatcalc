@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NPS Calculator India – National Pension Scheme Corpus & Pension | BharatCalc</title>
+  <meta name="description" content="Free NPS Calculator India — calculate your National Pension Scheme corpus at retirement, lump-sum withdrawal (60%) and monthly pension from annuity (40%). Updated for FY 2025-26." />
+  <meta name="keywords" content="NPS calculator India, national pension scheme calculator, NPS corpus calculator, NPS pension calculator, NPS maturity calculator, NPS return calculator India, NPS tier 1 calculator, NPS monthly pension calculator, NPS 2025" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/nps-calculator.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://bharatcalc.online/calculator/nps-calculator.html" />
+  <meta property="og:title"       content="NPS Calculator – National Pension Scheme | BharatCalc" />
+  <meta property="og:description" content="Calculate NPS corpus, lump-sum and monthly pension instantly. Free, no login." />
+  <meta property="og:image"       content="https://bharatcalc.online/og/nps-calculator.png" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="NPS Calculator | BharatCalc" />
+  <meta name="twitter:description" content="Calculate your NPS retirement corpus and monthly pension. Free — by BharatCalc." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "NPS Calculator",
+    "url": "https://bharatcalc.online/calculator/nps-calculator.html",
+    "description": "Calculate National Pension Scheme corpus, lump-sum withdrawal and monthly pension.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",           "item": "https://bharatcalc.online/" },
+        { "@type": "ListItem", "position": 2, "name": "Finance",        "item": "https://bharatcalc.online/?cat=finance" },
+        { "@type": "ListItem", "position": 3, "name": "NPS Calculator", "item": "https://bharatcalc.online/calculator/nps-calculator.html" }
+      ]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How is NPS corpus calculated?", "acceptedAnswer": { "@type": "Answer", "text": "NPS corpus is calculated using the future value of recurring investment (SIP formula): FV = P × [(1+r)^n - 1] / r × (1+r), where P is monthly contribution, r is monthly rate (annual rate ÷ 12 ÷ 100), and n is number of months until retirement." } },
+      { "@type": "Question", "name": "What percentage of NPS corpus can I withdraw at retirement?", "acceptedAnswer": { "@type": "Answer", "text": "At NPS maturity (age 60), you can withdraw up to 60% of the corpus as a tax-free lump sum. The remaining 40% must be invested in an annuity plan to generate a regular monthly pension. If total corpus is less than ₹5 lakh, you can withdraw 100%." } },
+      { "@type": "Question", "name": "Is NPS better than PPF?", "acceptedAnswer": { "@type": "Answer", "text": "NPS offers potentially higher returns (8-12% p.a. in equity funds) vs PPF's fixed 7.1% p.a. NPS also offers an additional ₹50,000 tax deduction under 80CCD(1B) over the ₹1.5L 80C limit. However, 40% of NPS must go to annuity (taxable pension), while PPF is fully tax-free. NPS suits aggressive, long-horizon investors; PPF suits conservative investors." } },
+      { "@type": "Question", "name": "What is the NPS annuity rate?", "acceptedAnswer": { "@type": "Answer", "text": "NPS annuity rates depend on the Annuity Service Provider (ASP) and plan chosen. Typical rates range from 5% to 7% p.a. on the annuity corpus. Monthly pension = (Annuity Corpus × Annuity Rate%) ÷ 12. Annuity income is taxable as per your income tax slab." } }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Clash Display', 'sans-serif'],
+            sans:    ['Satoshi', 'sans-serif'],
+            mono:    ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
+            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Satoshi', system-ui, sans-serif; }
+    .font-display { font-family: 'Clash Display', system-ui, sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #16a34a; transform: scaleX(0); transition: transform 0.2s; border-radius: 1px; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 5px; border-radius: 99px; outline: none; cursor: pointer; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #1d4ed8; border: 3px solid #fff; box-shadow: 0 0 0 1px #1d4ed8, 0 2px 6px rgba(29,78,216,0.3); cursor: pointer; transition: box-shadow 0.15s; }
+    input[type=range]::-webkit-slider-thumb:hover { box-shadow: 0 0 0 1px #1d4ed8, 0 2px 12px rgba(29,78,216,0.45); }
+    input[type=range]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #1d4ed8; border: 3px solid #fff; box-shadow: 0 0 0 1px #1d4ed8; cursor: pointer; }
+    .val-input { font-family: 'JetBrains Mono', monospace; }
+    .val-input:focus { outline: none; }
+    .growth-table { border-collapse: collapse; width: 100%; }
+    .growth-table th { position: sticky; top: 0; background: #f5f7fa; z-index: 1; }
+    .growth-table tbody tr:hover td { background: #eff6ff; }
+    .table-wrap { max-height: 360px; overflow-y: auto; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    .breadcrumb a { transition: color 0.15s; }
+    .faq-item details summary { cursor: pointer; list-style: none; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9TD6B9GQ89');</script>
+</head>
+
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+        <div class="leading-none">
+          <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
+          <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+        <a href="../index.html?cat=tools"   class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+      </nav>
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-leaf-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/></svg> Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-rose-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg> Math</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a>
+      <span>/</span>
+      <a href="../index.html?cat=finance" class="hover:text-ink-200">Finance</a>
+      <span>/</span>
+      <span class="text-ink-300">NPS Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-blue-600/15 text-blue-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-blue-600/20">
+          <span class="w-1.5 h-1.5 bg-blue-400 rounded-full inline-block animate-pulse"></span>
+          Updated for FY 2025-26
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">NPS Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
+          Calculate your National Pension Scheme corpus at retirement, tax-free lump-sum withdrawal, and estimated monthly pension from annuity.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0">
+        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full inline-block"></span>
+        Results update live
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-2 mt-5">
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">60% Lump-sum Withdrawal</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">40% Annuity Pension</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Year-by-year growth</div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- LEFT: Inputs -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-7">Contribution Details</h2>
+
+      <!-- Monthly Contribution -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="monthly" class="text-sm font-semibold text-ink-700">Monthly Contribution</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="monthlyInput" type="number" class="val-input w-24 text-sm font-semibold text-ink-900 bg-transparent text-right" min="500" max="200000" step="500" oninput="syncFromInput('monthly', this.value)" />
+          </div>
+        </div>
+        <input type="range" id="monthly" min="500" max="100000" step="500" value="5000" oninput="syncFromSlider('monthly')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹500</span><span>₹1L</span></div>
+      </div>
+
+      <!-- Current Age -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="currentAge" class="text-sm font-semibold text-ink-700">Current Age</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <input id="currentAgeInput" type="number" class="val-input w-14 text-sm font-semibold text-ink-900 bg-transparent text-right" min="18" max="59" oninput="syncFromInput('currentAge', this.value)" />
+            <span class="text-sm text-ink-400 font-mono">yrs</span>
+          </div>
+        </div>
+        <input type="range" id="currentAge" min="18" max="59" step="1" value="30" oninput="syncFromSlider('currentAge')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>18 yrs</span><span>59 yrs</span></div>
+      </div>
+
+      <!-- Expected Return -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="returnRate" class="text-sm font-semibold text-ink-700">Expected Annual Return</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <input id="returnRateInput" type="number" class="val-input w-14 text-sm font-semibold text-ink-900 bg-transparent text-right" min="6" max="14" step="0.5" oninput="syncFromInput('returnRate', this.value)" />
+            <span class="text-sm text-ink-400 font-mono">%</span>
+          </div>
+        </div>
+        <input type="range" id="returnRate" min="6" max="14" step="0.5" value="10" oninput="syncFromSlider('returnRate')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>6%</span><span>14%</span></div>
+        <div class="flex gap-2 mt-2.5 flex-wrap">
+          <button onclick="setReturnRate(8, this)"  class="rr-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-blue-50 border border-ink-200 hover:border-blue-200 rounded-md font-mono text-ink-500 hover:text-blue-700 transition-colors">Govt Sec ~8%</button>
+          <button onclick="setReturnRate(10, this)" class="rr-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-blue-50 border border-ink-200 hover:border-blue-200 rounded-md font-mono text-ink-500 hover:text-blue-700 transition-colors">Balanced ~10%</button>
+          <button onclick="setReturnRate(12, this)" class="rr-btn text-[10px] px-2 py-1 bg-ink-50 hover:bg-blue-50 border border-ink-200 hover:border-blue-200 rounded-md font-mono text-ink-500 hover:text-blue-700 transition-colors">Equity ~12%</button>
+        </div>
+      </div>
+
+      <!-- Annuity Rate -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="annuityRate" class="text-sm font-semibold text-ink-700">Annuity Rate (p.a.)</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <input id="annuityRateInput" type="number" class="val-input w-14 text-sm font-semibold text-ink-900 bg-transparent text-right" min="4" max="9" step="0.25" oninput="syncFromInput('annuityRate', this.value)" />
+            <span class="text-sm text-ink-400 font-mono">%</span>
+          </div>
+        </div>
+        <input type="range" id="annuityRate" min="4" max="9" step="0.25" value="6" oninput="syncFromSlider('annuityRate')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>4%</span><span>9%</span></div>
+        <p class="text-xs text-ink-400 mt-2">Rate offered by Annuity Service Provider (ASP) on the 40% annuity corpus.</p>
+      </div>
+
+      <!-- Annuity % -->
+      <div>
+        <div class="flex items-center justify-between mb-3">
+          <label for="annuityPct" class="text-sm font-semibold text-ink-700">Annuity Allocation</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <input id="annuityPctInput" type="number" class="val-input w-14 text-sm font-semibold text-ink-900 bg-transparent text-right" min="40" max="100" step="5" oninput="syncFromInput('annuityPct', this.value)" />
+            <span class="text-sm text-ink-400 font-mono">%</span>
+          </div>
+        </div>
+        <input type="range" id="annuityPct" min="40" max="100" step="5" value="40" oninput="syncFromSlider('annuityPct')" class="w-full" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>40% (min)</span><span>100%</span></div>
+        <p class="text-xs text-ink-400 mt-2">Minimum 40% must go to annuity as per PFRDA rules. Remaining is your lump-sum.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div class="flex flex-col gap-5">
+      <div class="bg-blue-900 rounded-2xl p-6 sm:p-8">
+        <p class="text-blue-300 text-xs font-semibold uppercase tracking-wider mb-2">Total NPS Corpus at 60</p>
+        <div class="font-display text-4xl sm:text-5xl font-bold text-white tracking-tight mb-1" id="corpusResult">₹0</div>
+        <p class="text-blue-300 text-xs" id="yearsLabel">after 0 years of contribution</p>
+        <div class="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-blue-700/50">
+          <div>
+            <p class="text-blue-400 text-xs mb-1">Total Invested</p>
+            <p class="font-mono font-semibold text-white text-sm" id="totalInvested">₹0</p>
+          </div>
+          <div>
+            <p class="text-blue-400 text-xs mb-1">Wealth Gained</p>
+            <p class="font-mono font-semibold text-blue-300 text-sm" id="wealthGained">₹0</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lumpsum + Pension -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-white border border-ink-100 rounded-2xl p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-8 bg-leaf-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-leaf-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <p class="text-xs font-semibold text-ink-600">Lump Sum <span class="text-ink-400 font-normal">(tax-free)</span></p>
+          </div>
+          <div class="font-display text-2xl font-bold text-ink-900" id="lumpsum">₹0</div>
+          <p class="text-xs text-ink-400 mt-1 font-mono" id="lumpsumPct">60% of corpus</p>
+        </div>
+        <div class="bg-white border border-ink-100 rounded-2xl p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-8 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <p class="text-xs font-semibold text-ink-600">Monthly Pension</p>
+          </div>
+          <div class="font-display text-2xl font-bold text-ink-900" id="monthlyPension">₹0</div>
+          <p class="text-xs text-ink-400 mt-1 font-mono" id="annuityCorpusLabel">annuity corpus: ₹0</p>
+        </div>
+      </div>
+
+      <!-- Corpus breakdown -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-6">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-4">Corpus Breakdown</h2>
+        <div class="space-y-3">
+          <div>
+            <div class="flex justify-between text-xs mb-1.5">
+              <span class="font-semibold text-ink-700">Lump Sum Withdrawal</span>
+              <span class="font-mono text-ink-800" id="barLumpsumLabel">₹0 (60%)</span>
+            </div>
+            <div class="h-2.5 bg-ink-100 rounded-full overflow-hidden">
+              <div id="barLumpsum" class="h-full bg-leaf-500 rounded-full transition-all duration-500" style="width:60%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs mb-1.5">
+              <span class="font-semibold text-ink-700">Annuity Corpus</span>
+              <span class="font-mono text-ink-800" id="barAnnuityLabel">₹0 (40%)</span>
+            </div>
+            <div class="h-2.5 bg-ink-100 rounded-full overflow-hidden">
+              <div id="barAnnuity" class="h-full bg-blue-500 rounded-full transition-all duration-500" style="width:40%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs mb-1.5">
+              <span class="font-semibold text-ink-700">Total Invested</span>
+              <span class="font-mono text-ink-800" id="barInvestedLabel">₹0</span>
+            </div>
+            <div class="h-2.5 bg-ink-100 rounded-full overflow-hidden">
+              <div id="barInvested" class="h-full bg-ink-400 rounded-full transition-all duration-500" style="width:30%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 p-3 bg-amber-50 border border-amber-100 rounded-xl">
+          <p class="text-xs text-amber-700"><svg class="w-3.5 h-3.5 inline mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg> Monthly pension (annuity income) is taxable as per your income tax slab at retirement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Year-by-year table -->
+  <div class="bg-white border border-ink-100 rounded-2xl overflow-hidden mt-6">
+    <div class="p-6 border-b border-ink-100">
+      <h2 class="font-display font-semibold text-ink-900 text-lg">Year-by-Year NPS Growth</h2>
+      <p class="text-xs text-ink-400 mt-0.5">Cumulative corpus at end of each year</p>
+    </div>
+    <div class="table-wrap">
+      <table class="growth-table" aria-label="NPS year-by-year growth">
+        <thead>
+          <tr>
+            <th class="text-left  text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Year</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Age</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Invested (Cumul.)</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Returns</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Corpus</th>
+          </tr>
+        </thead>
+        <tbody id="growthBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Ad placeholder -->
+  <div class="my-6">
+    <div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400" aria-hidden="true">Google AdSense — Responsive Ad Unit</div>
+  </div>
+
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">How is NPS Corpus Calculated?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">NPS corpus grows through monthly contributions compounded at the expected rate of return:</p>
+      <div class="bg-ink-50 rounded-xl p-4 font-mono text-sm text-ink-700 mb-4">Corpus = P × [(1+r)ⁿ − 1] / r × (1+r)</div>
+      <p class="text-xs text-ink-400 leading-relaxed mb-3">Where <strong class="text-ink-600">P</strong> is monthly contribution, <strong class="text-ink-600">r</strong> is monthly rate (annual ÷ 12 ÷ 100), <strong class="text-ink-600">n</strong> is total months. Returns vary based on asset allocation (Equity/Corporate/Govt).</p>
+      <div class="mt-3 grid grid-cols-3 gap-2 text-center">
+        <div class="bg-blue-50 rounded-xl p-2.5">
+          <div class="text-xs font-semibold text-blue-700">Equity (E)</div>
+          <div class="font-mono text-sm font-bold text-blue-900 mt-1">~12%</div>
+          <div class="text-[10px] text-blue-500">Historical</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-2.5">
+          <div class="text-xs font-semibold text-ink-700">Corp Bond (C)</div>
+          <div class="font-mono text-sm font-bold text-ink-900 mt-1">~9%</div>
+          <div class="text-[10px] text-ink-500">Historical</div>
+        </div>
+        <div class="bg-leaf-50 rounded-xl p-2.5">
+          <div class="text-xs font-semibold text-leaf-700">Govt Sec (G)</div>
+          <div class="font-mono text-sm font-bold text-leaf-900 mt-1">~8%</div>
+          <div class="text-[10px] text-leaf-500">Historical</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">NPS Tax Benefits</h2>
+      <div class="space-y-3">
+        <div class="flex items-start gap-3 p-3 bg-leaf-50 border border-leaf-100 rounded-xl">
+          <div class="w-8 h-8 bg-leaf-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="text-white text-xs font-bold">1</span>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-ink-800">Section 80CCD(1) — ₹1.5 Lakh</p>
+            <p class="text-xs text-ink-500 mt-0.5">NPS contributions up to 10% of salary (or 20% for self-employed) qualify under 80CCD(1), within the ₹1.5L 80C limit.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-blue-50 border border-blue-100 rounded-xl">
+          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="text-white text-xs font-bold">2</span>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-ink-800">Section 80CCD(1B) — Additional ₹50,000</p>
+            <p class="text-xs text-ink-500 mt-0.5">Exclusive to NPS — additional ₹50,000 deduction over and above the ₹1.5L 80C limit. Max annual benefit: ₹2L.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-amber-50 border border-amber-100 rounded-xl">
+          <div class="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span class="text-white text-xs font-bold">!</span>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-ink-800">At Maturity</p>
+            <p class="text-xs text-ink-500 mt-0.5">60% lump-sum is tax-free. Monthly pension from the 40% annuity is taxable as income at retirement slab rate. New tax regime: no 80CCD deductions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">NPS vs PPF — Quick Comparison</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs">
+          <thead><tr class="bg-ink-50"><th class="px-3 py-2.5 text-left text-ink-500 font-semibold">Feature</th><th class="px-3 py-2.5 text-center text-blue-600 font-semibold">NPS</th><th class="px-3 py-2.5 text-center text-leaf-600 font-semibold">PPF</th></tr></thead>
+          <tbody class="divide-y divide-ink-50">
+            <tr><td class="px-3 py-2.5 text-ink-600 font-medium">Returns</td><td class="px-3 py-2.5 text-center font-mono text-blue-700">8–12%*</td><td class="px-3 py-2.5 text-center font-mono text-leaf-700">7.1%</td></tr>
+            <tr><td class="px-3 py-2.5 text-ink-600 font-medium">Lock-in</td><td class="px-3 py-2.5 text-center text-ink-600">Till age 60</td><td class="px-3 py-2.5 text-center text-ink-600">15 years</td></tr>
+            <tr><td class="px-3 py-2.5 text-ink-600 font-medium">Extra deduction</td><td class="px-3 py-2.5 text-center text-blue-700 font-semibold">+₹50,000</td><td class="px-3 py-2.5 text-center text-ink-400">None</td></tr>
+            <tr><td class="px-3 py-2.5 text-ink-600 font-medium">Maturity tax</td><td class="px-3 py-2.5 text-center text-ink-600">60% tax-free</td><td class="px-3 py-2.5 text-center text-leaf-700 font-semibold">100% tax-free</td></tr>
+            <tr><td class="px-3 py-2.5 text-ink-600 font-medium">Market risk</td><td class="px-3 py-2.5 text-center text-saffron-600">Yes (equity)</td><td class="px-3 py-2.5 text-center text-leaf-600">No (fixed)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-[10px] text-ink-400 mt-3 font-mono">* Equity fund historical; not guaranteed</p>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">NPS Example Calculations</h2>
+      <div class="space-y-3">
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹5,000/mo · Age 30 · 10% return</span>
+            <span class="font-mono text-xs font-bold text-blue-700">₹1.14Cr</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Lumpsum ₹68.4L · Pension ~₹22,800/mo</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹10,000/mo · Age 25 · 10% return</span>
+            <span class="font-mono text-xs font-bold text-blue-700">₹3.82Cr</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Lumpsum ₹2.29Cr · Pension ~₹76,400/mo</div>
+        </div>
+        <div class="bg-blue-50 border border-blue-100 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-blue-700">₹5,000/mo · Age 30 · 12% return</span>
+            <span class="font-mono text-xs font-bold text-blue-700">₹1.76Cr</span>
+          </div>
+          <div class="text-[10px] text-blue-500 font-mono">Lumpsum ₹1.06Cr · Pension ~₹35,200/mo</div>
+        </div>
+        <p class="text-[10px] text-ink-400 font-mono">* Annuity at 6% p.a. on 40% corpus. Pension is taxable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about NPS and this calculator</p>
+  <div class="grid md:grid-cols-2 gap-3">
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How is NPS corpus calculated?</span>
+          <span class="faq-icon text-blue-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          NPS uses the standard SIP future-value formula: <strong class="text-ink-700">FV = P × [(1+r)ⁿ − 1] / r × (1+r)</strong>, where P is monthly contribution, r is monthly return (annual ÷ 12 ÷ 100), and n is total months. For example, ₹5,000/month at 10% for 30 years gives ≈ ₹1.14 crore.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What happens to NPS at age 60?</span>
+          <span class="faq-icon text-blue-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          At age 60, you can withdraw up to <strong class="text-ink-700">60% of the corpus as a tax-free lump sum</strong>. The remaining 40% must be invested in an IRDAI-approved annuity plan with a registered Annuity Service Provider (ASP) to receive a regular monthly pension. If the total corpus is less than ₹5 lakh, you can withdraw 100%.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Is NPS pension taxable?</span>
+          <span class="faq-icon text-blue-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          The 60% lump-sum withdrawal at maturity is <strong class="text-ink-700">completely tax-free</strong>. However, the monthly pension received from the annuity is treated as income and taxed at your income tax slab rate during retirement. If you choose a larger annuity allocation (more than 40%), the additional pension is also taxable.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Can I withdraw NPS before 60?</span>
+          <span class="faq-icon text-blue-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Partial withdrawal (up to 25% of own contributions) is allowed after 3 years for specific purposes: higher education, marriage, home purchase, or critical illness. Premature exit before 60 requires 80% to go to annuity (only 20% as lump sum), except if corpus is less than ₹2.5 lakh — then 100% withdrawal is allowed.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Which NPS fund is best?</span>
+          <span class="faq-icon text-blue-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          For long-term wealth creation (20+ years), the <strong class="text-ink-700">Equity (E) fund</strong> has historically given the highest returns (~10–12% p.a.). For moderate risk, opt for Active Choice with 75% Equity, 15% Corporate, 10% Government. For age 50+, Auto Choice (LC-25 or LC-50) gradually shifts to safer assets. Fund managers include SBI, UTI, LIC, HDFC, Kotak, and ICICI.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Is NPS available under the new tax regime?</span>
+          <span class="faq-icon text-blue-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Under the <strong class="text-ink-700">new tax regime</strong> (FY 2025-26), the 80CCD(1) and 80CCD(1B) deductions are not available. However, employer contributions to NPS (up to 14% of salary for government employees, 10% for private) are still exempt under Section 80CCD(2) in both regimes. If you opt for old regime, you can claim both 80CCD(1) and 80CCD(1B) deductions.
+        </div>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- Related Calculators -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="ppf-calculator.html" class="bg-white border border-ink-100 hover:border-blue-200 hover:bg-blue-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-purple-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-blue-700 transition-colors">PPF Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Public Provident Fund</div>
+    </a>
+    <a href="epf-calculator.html" class="bg-white border border-ink-100 hover:border-blue-200 hover:bg-blue-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-blue-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-blue-700 transition-colors">EPF Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Provident fund corpus</div>
+    </a>
+    <a href="sip-calculator.html" class="bg-white border border-ink-100 hover:border-blue-200 hover:bg-blue-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-leaf-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="17 7 21 7 21 11"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-blue-700 transition-colors">SIP Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Mutual fund returns</div>
+    </a>
+    <a href="income-tax-calculator.html" class="bg-white border border-ink-100 hover:border-blue-200 hover:bg-blue-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-orange-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-blue-700 transition-colors">Income Tax</div>
+      <div class="text-xs text-ink-400 mt-0.5">New vs old regime</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+          <div class="font-display font-semibold text-white">BharatCalc</div>
+        </div>
+        <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
+        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700"><svg class="w-3.5 h-3.5 inline-block mr-1 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> NPS returns are estimates based on assumed rates. Actual returns vary. Consult a PFRDA-registered advisor before investing.</div>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="sip-calculator.html"     class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
+          <li><a href="emi-calculator.html"     class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
+          <li><a href="ppf-calculator.html"     class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
+          <li><a href="epf-calculator.html"     class="hover:text-leaf-400 transition-colors">EPF Calculator</a></li>
+          <li><a href="nps-calculator.html"     class="hover:text-leaf-400 transition-colors font-semibold text-leaf-400">NPS Calculator</a></li>
+          <li><a href="fd-calculator.html"      class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
+          <li><a href="lumpsum-calculator.html" class="hover:text-leaf-400 transition-colors">Lumpsum Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax & Legal</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="income-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
+          <li><a href="gst-calculator.html"        class="hover:text-leaf-400 transition-colors">GST Calculator</a></li>
+          <li><a href="hra-calculator.html"        class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li>
+          <li><a href="tds-calculator.html"        class="hover:text-leaf-400 transition-colors">TDS Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Health & Math</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="bmi-calculator.html"               class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li>
+          <li><a href="age-calculator.html"               class="hover:text-leaf-400 transition-colors">Age Calculator</a></li>
+          <li><a href="calorie-calculator.html"           class="hover:text-leaf-400 transition-colors">Calorie Calculator</a></li>
+          <li><a href="ideal-weight-calculator.html"      class="hover:text-leaf-400 transition-colors">Ideal Weight</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
+      <div class="flex items-center gap-5">
+        <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
+        <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
+        <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
+        <a href="https://github.com/Skypherhunt" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
+        <a href="https://www.linkedin.com/in/abhinav-kumar70/" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const btn  = document.getElementById('menuBtn');
+  const isHidden = menu.classList.contains('hidden');
+  menu.classList.toggle('hidden', !isHidden);
+  btn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+}
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+function fmt(n) {
+  if (n >= 1e7) return '₹' + (n / 1e7).toFixed(2) + 'Cr';
+  if (n >= 1e5) return '₹' + (n / 1e5).toFixed(2) + 'L';
+  return '₹' + Math.round(n).toLocaleString('en-IN');
+}
+
+function updateTrack(id, color) {
+  const el  = document.getElementById(id);
+  const pct = ((parseFloat(el.value) - parseFloat(el.min)) / (parseFloat(el.max) - parseFloat(el.min))) * 100;
+  el.style.background = `linear-gradient(to right, ${color} ${pct}%, #e8ecf2 ${pct}%)`;
+}
+
+function syncFromSlider(id) {
+  const inputEl = document.getElementById(id + 'Input');
+  if (inputEl) inputEl.value = document.getElementById(id).value;
+  updateTrack(id, '#1d4ed8');
+  calc();
+}
+
+function syncFromInput(id, val) {
+  const slider = document.getElementById(id);
+  if (!slider) { calc(); return; }
+  const clamped = Math.min(Math.max(parseFloat(val) || parseFloat(slider.min), parseFloat(slider.min)), parseFloat(slider.max));
+  slider.value = clamped;
+  updateTrack(id, '#1d4ed8');
+  calc();
+}
+
+function setReturnRate(rate, btn) {
+  document.getElementById('returnRate').value = rate;
+  document.getElementById('returnRateInput').value = rate;
+  updateTrack('returnRate', '#1d4ed8');
+  calc();
+}
+
+function calc() {
+  const P   = parseFloat(document.getElementById('monthly').value) || 0;
+  const age = parseInt(document.getElementById('currentAge').value) || 30;
+  const r   = (parseFloat(document.getElementById('returnRate').value) || 10) / 100 / 12;
+  const ar  = (parseFloat(document.getElementById('annuityRate').value) || 6) / 100;
+  const ap  = (parseFloat(document.getElementById('annuityPct').value) || 40) / 100;
+  const years = Math.max(60 - age, 1);
+  const n   = years * 12;
+
+  const corpus      = P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+  const invested    = P * n;
+  const gained      = corpus - invested;
+  const lumpsum     = corpus * (1 - ap);
+  const annuityCorpus = corpus * ap;
+  const monthlyPension = annuityCorpus * ar / 12;
+
+  document.getElementById('corpusResult').textContent    = fmt(corpus);
+  document.getElementById('yearsLabel').textContent      = `after ${years} year${years !== 1 ? 's' : ''} of contribution`;
+  document.getElementById('totalInvested').textContent   = fmt(invested);
+  document.getElementById('wealthGained').textContent    = fmt(gained);
+  document.getElementById('lumpsum').textContent         = fmt(lumpsum);
+  document.getElementById('lumpsumPct').textContent      = `${Math.round((1-ap)*100)}% of corpus`;
+  document.getElementById('monthlyPension').textContent  = fmt(monthlyPension);
+  document.getElementById('annuityCorpusLabel').textContent = `annuity: ${fmt(annuityCorpus)}`;
+
+  const lumpsumPct2 = corpus > 0 ? ((1-ap)*100) : 60;
+  const annuityPct2 = 100 - lumpsumPct2;
+  const investedPct = corpus > 0 ? Math.min((invested / corpus) * 100, 100) : 30;
+  document.getElementById('barLumpsum').style.width   = lumpsumPct2 + '%';
+  document.getElementById('barAnnuity').style.width   = annuityPct2 + '%';
+  document.getElementById('barInvested').style.width  = investedPct + '%';
+  document.getElementById('barLumpsumLabel').textContent = `${fmt(lumpsum)} (${Math.round(lumpsumPct2)}%)`;
+  document.getElementById('barAnnuityLabel').textContent = `${fmt(annuityCorpus)} (${Math.round(annuityPct2)}%)`;
+  document.getElementById('barInvestedLabel').textContent = fmt(invested);
+
+  // Year-by-year table
+  const tbody = document.getElementById('growthBody');
+  tbody.innerHTML = '';
+  for (let y = 1; y <= years; y++) {
+    const nm   = y * 12;
+    const corp = P * ((Math.pow(1 + r, nm) - 1) / r) * (1 + r);
+    const inv  = P * nm;
+    const ret  = corp - inv;
+    const tr = document.createElement('tr');
+    tr.className = 'border-t border-ink-50' + (y % 2 === 0 ? ' bg-blue-50/30' : '');
+    tr.innerHTML = `
+      <td class="px-4 sm:px-6 py-3 font-mono text-sm text-ink-700">Year ${y}</td>
+      <td class="px-4 sm:px-6 py-3 font-mono text-sm text-right text-ink-600">${age + y}</td>
+      <td class="px-4 sm:px-6 py-3 font-mono text-sm text-right text-ink-700">${fmt(inv)}</td>
+      <td class="px-4 sm:px-6 py-3 font-mono text-sm text-right text-blue-600">${fmt(ret)}</td>
+      <td class="px-4 sm:px-6 py-3 font-mono text-sm text-right font-semibold text-ink-900">${fmt(corp)}</td>`;
+    tbody.appendChild(tr);
+  }
+}
+
+// Init
+['monthly','currentAge','returnRate','annuityRate','annuityPct'].forEach(id => {
+  const el = document.getElementById(id);
+  const input = document.getElementById(id + 'Input');
+  if (input) input.value = el.value;
+  updateTrack(id, '#1d4ed8');
+});
+calc();
+</script>
+</body>
+</html>

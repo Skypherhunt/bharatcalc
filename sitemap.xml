@@ -100,6 +100,34 @@
   </url>
 
   <url>
+    <loc>https://bharatcalc.online/calculator/nps-calculator.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bharatcalc.online/calculator/tds-calculator.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bharatcalc.online/calculator/calorie-calculator.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bharatcalc.online/calculator/ideal-weight-calculator.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://bharatcalc.online/about.html</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>yearly</changefreq>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -125,9 +125,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-14">
       <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
-        <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center">
-          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
-        </div>
+        <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
         <div class="leading-none">
           <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
           <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
@@ -145,10 +143,10 @@
       </button>
     </div>
     <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
-      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>💰</span> Finance</a>
-      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>📄</span> Tax</a>
-      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>❤️</span> Health</a>
-      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><span>➗</span> Math</a>
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-leaf-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/></svg> Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-rose-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg> Math</a>
     </div>
   </div>
 </header>
@@ -193,8 +191,8 @@
 
   <!-- Mode tabs: Regular vs Senior Citizen -->
   <div class="flex gap-2 mb-6 flex-wrap" role="group" aria-label="Investor type">
-    <button class="mode-tab active px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 transition-all" onclick="setInvestorType('regular', this)" id="tabRegular">👤 Regular</button>
-    <button class="mode-tab px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:border-leaf-400 transition-all" onclick="setInvestorType('senior', this)" id="tabSenior">🧓 Senior Citizen (+0.5%)</button>
+    <button class="mode-tab active px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 transition-all" onclick="setInvestorType('regular', this)" id="tabRegular"><span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 22v-2a7 7 0 0114 0v2"/></svg> Regular</span></button>
+    <button class="mode-tab px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:border-leaf-400 transition-all" onclick="setInvestorType('senior', this)" id="tabSenior"><span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5 22v-2a7 7 0 0114 0v2"/><path d="M9 14l-2 8M15 14l2 8"/></svg> Senior Citizen (+0.5%)</span></button>
   </div>
 
   <div class="grid lg:grid-cols-2 gap-6">
@@ -441,7 +439,7 @@
         FDs are considered one of the <strong class="text-ink-700">safest investments</strong> since they are covered by DICGC (Deposit Insurance and Credit Guarantee Corporation) insurance up to ₹5 lakh per bank per depositor.
       </p>
       <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
-        <p class="text-xs font-semibold text-leaf-700 mb-1">📌 DICGC Insurance</p>
+        <p class="text-xs font-semibold text-leaf-700 mb-1">DICGC Insurance</p>
         <p class="text-xs text-ink-500">Your FD is insured up to ₹5 lakh (principal + interest) per bank. For amounts exceeding this, consider spreading across multiple banks.</p>
       </div>
     </div>
@@ -470,35 +468,35 @@
       <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">FD Interest Rates in India (FY 2025-26)</h2>
       <div class="space-y-2.5">
         <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
-          <span class="text-sm text-ink-600 font-medium">🏦 SBI (1–3 years)</span>
+          <span class="text-sm text-ink-600 font-medium">SBI (1–3 years)</span>
           <div class="text-right">
             <span class="font-mono text-sm font-semibold text-ink-800">6.50–7.00%</span>
             <span class="text-xs text-leaf-600 block">Sr: 7.00–7.50%</span>
           </div>
         </div>
         <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
-          <span class="text-sm text-ink-600 font-medium">🏦 HDFC Bank (1–3 years)</span>
+          <span class="text-sm text-ink-600 font-medium">HDFC Bank (1–3 years)</span>
           <div class="text-right">
             <span class="font-mono text-sm font-semibold text-ink-800">7.00–7.25%</span>
             <span class="text-xs text-leaf-600 block">Sr: 7.50–7.75%</span>
           </div>
         </div>
         <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
-          <span class="text-sm text-ink-600 font-medium">🏦 ICICI Bank (1–3 years)</span>
+          <span class="text-sm text-ink-600 font-medium">ICICI Bank (1–3 years)</span>
           <div class="text-right">
             <span class="font-mono text-sm font-semibold text-ink-800">7.00–7.25%</span>
             <span class="text-xs text-leaf-600 block">Sr: 7.50–7.75%</span>
           </div>
         </div>
         <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
-          <span class="text-sm text-ink-600 font-medium">📮 Post Office TD (5 yr)</span>
+          <span class="text-sm text-ink-600 font-medium">Post Office TD (5 yr)</span>
           <div class="text-right">
             <span class="font-mono text-sm font-semibold text-leaf-700">7.50%</span>
             <span class="text-xs text-leaf-600 block">Tax benefit u/s 80C</span>
           </div>
         </div>
         <div class="flex items-center justify-between py-2.5">
-          <span class="text-sm text-ink-600 font-medium">🏦 Small Finance Banks</span>
+          <span class="text-sm text-ink-600 font-medium">Small Finance Banks</span>
           <div class="text-right">
             <span class="font-mono text-sm font-semibold text-saffron-700">8.00–9.00%</span>
             <span class="text-xs text-ink-400 block">Higher risk, check DICGC</span>
@@ -533,7 +531,7 @@
           <div class="text-[10px] text-ink-400 font-mono">Interest ₹4,43,938 · Gain 44.39%</div>
         </div>
         <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
-          <div class="text-xs font-semibold text-leaf-700 mb-1">💡 Senior Citizen bonus</div>
+          <div class="text-xs font-semibold text-leaf-700 mb-1">Senior Citizen bonus</div>
           <div class="text-xs text-ink-500">At 7.5% (+0.5% sr benefit), same ₹10L for 5 years = <strong class="text-ink-700">₹14,69,328</strong> — ₹25,390 extra vs regular rate.</div>
         </div>
       </div>
@@ -546,21 +544,21 @@
       <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Cumulative vs Non-Cumulative FD</h2>
       <div class="space-y-3">
         <div class="flex items-start gap-3 p-3 bg-leaf-50 border border-leaf-100 rounded-xl">
-          <span class="text-lg mt-0.5">📈</span>
+          <span class="text-leaf-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="17 7 21 7 21 11"/></svg></span>
           <div>
             <p class="text-xs font-semibold text-leaf-800 mb-1">Cumulative FD — Better for Wealth Creation</p>
             <p class="text-xs text-ink-500">Interest is compounded and added to the principal. Paid only at maturity. Best for long-term goals — you earn interest on interest, maximising returns.</p>
           </div>
         </div>
         <div class="flex items-start gap-3 p-3 bg-ink-50 border border-ink-100 rounded-xl">
-          <span class="text-lg mt-0.5">💸</span>
+          <span class="text-orange-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>
           <div>
             <p class="text-xs font-semibold text-ink-800 mb-1">Non-Cumulative FD — Better for Regular Income</p>
             <p class="text-xs text-ink-500">Interest is paid out monthly, quarterly, or half-yearly. Principal returned at maturity. Best for retirees or anyone needing a regular income stream.</p>
           </div>
         </div>
         <div class="bg-saffron-50 border border-saffron-100 rounded-xl p-3">
-          <p class="text-xs font-semibold text-saffron-700 mb-1">⚠️ Tax on FD interest</p>
+          <p class="text-xs font-semibold text-saffron-700 mb-1 flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Tax on FD interest</p>
           <p class="text-xs text-ink-500">FD interest is taxable at your slab rate. TDS at 10% is deducted if annual interest exceeds ₹40,000 (₹50,000 for seniors). File Form 15G/15H to avoid TDS.</p>
         </div>
       </div>
@@ -725,22 +723,22 @@
   <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
   <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
     <a href="ppf-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
-      <div class="text-xl mb-2">💰</div>
+      <div class="mb-2 text-purple-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
       <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">PPF Calculator</div>
       <div class="text-xs text-ink-400 mt-0.5">Tax-free long-term returns</div>
     </a>
     <a href="sip-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
-      <div class="text-xl mb-2">📈</div>
+      <div class="mb-2 text-leaf-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="17 7 21 7 21 11"/></svg></div>
       <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">SIP Calculator</div>
       <div class="text-xs text-ink-400 mt-0.5">Mutual fund SIP returns</div>
     </a>
     <a href="cagr-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
-      <div class="text-xl mb-2">📊</div>
+      <div class="mb-2 text-leaf-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="9" rx="0.5"/><rect x="13" y="7" width="3" height="14" rx="0.5"/></svg></div>
       <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">CAGR Calculator</div>
       <div class="text-xs text-ink-400 mt-0.5">Compound annual growth rate</div>
     </a>
     <a href="emi-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
-      <div class="text-xl mb-2">🏦</div>
+      <div class="mb-2 text-blue-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4M14 15h4"/></svg></div>
       <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">EMI Calculator</div>
       <div class="text-xs text-ink-400 mt-0.5">Home, car & personal loans</div>
     </a>
@@ -755,13 +753,11 @@
     <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
       <div class="lg:col-span-2">
         <div class="flex items-center gap-2.5 mb-4">
-          <div class="w-8 h-8 bg-leaf-600 rounded-xl flex items-center justify-center">
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
-          </div>
+          <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
           <div class="font-display font-semibold text-white">BharatCalc</div>
         </div>
         <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
-        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700">⚠️ Results are estimates. FD interest is taxable at your slab rate. Consult your bank for exact rates before booking.</div>
+        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700"><svg class="w-3.5 h-3.5 inline-block mr-1 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Results are estimates. FD interest is taxable at your slab rate. Consult your bank for exact rates before booking.</div>
       </div>
       <div>
         <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
@@ -795,11 +791,12 @@
     </div>
     <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
       <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
-      <div class="flex gap-5">
+      <div class="flex items-center gap-5">
         <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
         <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
         <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
-        <a href="../contact.html" class="hover:text-ink-300 transition-colors">Contact</a>
+        <a href="https://github.com/Skypherhunt" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
+        <a href="https://www.linkedin.com/in/abhinav-kumar70/" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
       </div>
     </div>
   </div>
