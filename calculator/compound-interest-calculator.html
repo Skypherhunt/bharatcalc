@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compound Interest Calculator India – CI with Year-by-Year Breakdown | BharatCalc</title>
+  <meta name="description" content="Free Compound Interest Calculator India — calculate compound interest with principal, interest rate, time period and compounding frequency (annual, quarterly, monthly, daily). See year-by-year growth table. No login." />
+  <meta name="keywords" content="compound interest calculator India, compound interest calculator, CI calculator, compound interest formula, compounding frequency calculator, annual compound interest, monthly compound interest, compound interest vs simple interest, FD interest calculator" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/compound-interest-calculator.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://bharatcalc.online/calculator/compound-interest-calculator.html" />
+  <meta property="og:title"       content="Compound Interest Calculator | BharatCalc" />
+  <meta property="og:description" content="Calculate compound interest with any compounding frequency. See year-by-year growth. Free — by BharatCalc." />
+  <meta property="og:image"       content="https://bharatcalc.online/og/compound-interest-calculator.png" />
+  <meta property="og:locale"      content="en_IN" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Compound Interest Calculator | BharatCalc" />
+  <meta name="twitter:description" content="CI calculator with year-by-year breakdown. Free — by BharatCalc." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Compound Interest Calculator",
+    "url": "https://bharatcalc.online/calculator/compound-interest-calculator.html",
+    "description": "Calculate compound interest with any compounding frequency and see year-by-year growth breakdown.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",                         "item": "https://bharatcalc.online/" },
+        { "@type": "ListItem", "position": 2, "name": "Math",                         "item": "https://bharatcalc.online/index.html?cat=math" },
+        { "@type": "ListItem", "position": 3, "name": "Compound Interest Calculator", "item": "https://bharatcalc.online/calculator/compound-interest-calculator.html" }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is the compound interest formula?", "acceptedAnswer": { "@type": "Answer", "text": "Compound Interest formula: A = P × (1 + r/n)^(n×t), where A is the final amount, P is the principal, r is the annual interest rate (as decimal), n is the number of compounding periods per year, and t is the time in years. CI = A − P." } },
+      { "@type": "Question", "name": "What is the difference between simple and compound interest?", "acceptedAnswer": { "@type": "Answer", "text": "Simple interest is calculated only on the principal amount. Compound interest is calculated on the principal plus accumulated interest — so interest earns interest. For ₹1,00,000 at 10% for 5 years: SI = ₹50,000; CI (annual) = ₹61,051. The difference grows exponentially with time." } },
+      { "@type": "Question", "name": "Which compounding frequency is best?", "acceptedAnswer": { "@type": "Answer", "text": "More frequent compounding gives more return. Daily > Monthly > Quarterly > Half-yearly > Annually. However, the difference between quarterly and monthly is small for typical rates. Most Indian FDs compound quarterly." } }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Clash Display', 'sans-serif'],
+            sans:    ['Satoshi', 'sans-serif'],
+            mono:    ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
+            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Satoshi', system-ui, sans-serif; }
+    .font-display { font-family: 'Clash Display', system-ui, sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #16a34a; transform: scaleX(0); transition: transform 0.2s; border-radius: 1px; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 5px; border-radius: 99px; outline: none; cursor: pointer; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #16a34a; border: 3px solid #fff; box-shadow: 0 0 0 1px #16a34a, 0 2px 6px rgba(22,163,74,0.3); cursor: pointer; }
+    input[type=range]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #16a34a; border: 3px solid #fff; cursor: pointer; }
+    .val-input { font-family: 'JetBrains Mono', monospace; }
+    .val-input:focus { outline: none; }
+    .freq-btn { transition: all 0.15s; }
+    .freq-btn.active { background: #0d1117; color: #fff; border-color: #0d1117; }
+    .ci-table { border-collapse: collapse; width: 100%; }
+    .ci-table th { position: sticky; top: 0; background: #f5f7fa; z-index: 1; }
+    .ci-table tbody tr:hover td { background: #f0fdf4; }
+    .table-wrap { max-height: 360px; overflow-y: auto; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    .breadcrumb a { transition: color 0.15s; }
+    .faq-item details summary { cursor: pointer; list-style: none; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
+    .donut-ring { transition: stroke-dasharray 0.5s cubic-bezier(.4,0,.2,1); }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9TD6B9GQ89');
+  </script>
+</head>
+
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+        <div class="leading-none">
+          <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
+          <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+        <a href="../index.html?cat=tools"   class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+      </nav>
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors">Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors">Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors">Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors">Math</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a>
+      <span>/</span>
+      <a href="../index.html?cat=math" class="hover:text-ink-200">Math</a>
+      <span>/</span>
+      <span class="text-ink-300">Compound Interest Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-indigo-500/15 text-indigo-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-indigo-500/20">
+          <span class="w-1.5 h-1.5 bg-indigo-400 rounded-full inline-block animate-pulse"></span>
+          A = P(1 + r/n)^nt
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">Compound Interest Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
+          Calculate compound interest with any compounding frequency. See how your money grows year by year with the power of compounding.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0">
+        <span class="w-1.5 h-1.5 bg-leaf-400 rounded-full inline-block"></span>
+        Results update live
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- LEFT: Inputs -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-7">Investment Details</h2>
+
+      <!-- Principal -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="principal" class="text-sm font-semibold text-ink-700">Principal Amount</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="principalInput" type="number" class="val-input w-28 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1000" max="100000000" step="1000" oninput="syncFromInput('principal', this.value)" />
+          </div>
+        </div>
+        <input type="range" id="principal" min="1000" max="100000000" step="1000" value="100000" oninput="syncFromSlider('principal')" class="w-full" aria-label="Principal slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹1K</span><span>₹10Cr</span></div>
+      </div>
+
+      <!-- Rate -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="rate" class="text-sm font-semibold text-ink-700">Annual Interest Rate</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <input id="rateInput" type="number" class="val-input w-16 text-sm font-semibold text-ink-900 bg-transparent text-right" min="0.1" max="50" step="0.1" oninput="syncFromInput('rate', this.value)" />
+            <span class="text-sm text-ink-400 font-mono">%</span>
+          </div>
+        </div>
+        <input type="range" id="rate" min="0.1" max="50" step="0.1" value="10" oninput="syncFromSlider('rate')" class="w-full" aria-label="Rate slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>0.1%</span><span>50%</span></div>
+        <div class="flex flex-wrap gap-2 mt-2.5">
+          <button onclick="setRate(6.5)"  class="rate-hint text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">FD ~6.5%</button>
+          <button onclick="setRate(7.1)"  class="rate-hint text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">PPF 7.1%</button>
+          <button onclick="setRate(10)"   class="rate-hint text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">Equity ~10%</button>
+          <button onclick="setRate(12)"   class="rate-hint text-[10px] px-2 py-1 bg-ink-50 hover:bg-leaf-50 border border-ink-200 hover:border-leaf-200 rounded-md font-mono text-ink-500 hover:text-leaf-700 transition-colors">MF ~12%</button>
+        </div>
+      </div>
+
+      <!-- Time -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="time" class="text-sm font-semibold text-ink-700">Time Period</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <input id="timeInput" type="number" class="val-input w-12 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1" max="50" step="1" oninput="syncFromInput('time', this.value)" />
+            <span class="text-sm text-ink-400 font-mono">yr</span>
+          </div>
+        </div>
+        <input type="range" id="time" min="1" max="50" step="1" value="10" oninput="syncFromSlider('time')" class="w-full" aria-label="Time slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>1 yr</span><span>50 yr</span></div>
+      </div>
+
+      <!-- Compounding frequency -->
+      <div class="mb-7">
+        <p class="text-sm font-semibold text-ink-700 mb-3">Compounding Frequency</p>
+        <div class="grid grid-cols-3 sm:grid-cols-5 gap-2">
+          <button class="freq-btn px-2 py-2 rounded-xl border border-ink-200 text-xs font-semibold text-ink-600 transition-all" onclick="setFreq(1,   this)">Annual</button>
+          <button class="freq-btn px-2 py-2 rounded-xl border border-ink-200 text-xs font-semibold text-ink-600 transition-all" onclick="setFreq(2,   this)">Half-yr</button>
+          <button class="freq-btn active px-2 py-2 rounded-xl border border-ink-200 text-xs font-semibold text-ink-600 transition-all" onclick="setFreq(4,   this)">Quarterly</button>
+          <button class="freq-btn px-2 py-2 rounded-xl border border-ink-200 text-xs font-semibold text-ink-600 transition-all" onclick="setFreq(12,  this)">Monthly</button>
+          <button class="freq-btn px-2 py-2 rounded-xl border border-ink-200 text-xs font-semibold text-ink-600 transition-all" onclick="setFreq(365, this)">Daily</button>
+        </div>
+      </div>
+
+      <!-- Quick presets -->
+      <div>
+        <p class="text-xs text-ink-400 font-semibold uppercase tracking-wider mb-3">Quick presets</p>
+        <div class="grid grid-cols-2 gap-2">
+          <button onclick="applyPreset(100000,  6.5, 5,  4)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-indigo-50 border border-ink-100 hover:border-indigo-200 rounded-xl transition-colors">
+            <div class="text-xs font-semibold text-ink-700">FD</div>
+            <div class="text-xs text-ink-400 font-mono">₹1L · 6.5% · 5yr · Q</div>
+          </button>
+          <button onclick="applyPreset(500000,  7.1, 15, 1)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-indigo-50 border border-ink-100 hover:border-indigo-200 rounded-xl transition-colors">
+            <div class="text-xs font-semibold text-ink-700">PPF</div>
+            <div class="text-xs text-ink-400 font-mono">₹5L · 7.1% · 15yr · Y</div>
+          </button>
+          <button onclick="applyPreset(1000000, 12, 20, 12)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-indigo-50 border border-ink-100 hover:border-indigo-200 rounded-xl transition-colors">
+            <div class="text-xs font-semibold text-ink-700">Equity MF</div>
+            <div class="text-xs text-ink-400 font-mono">₹10L · 12% · 20yr · M</div>
+          </button>
+          <button onclick="applyPreset(100000,  10, 30, 4)"  class="text-left px-3 py-2.5 bg-ink-50 hover:bg-indigo-50 border border-ink-100 hover:border-indigo-200 rounded-xl transition-colors">
+            <div class="text-xs font-semibold text-ink-700">Long-term</div>
+            <div class="text-xs text-ink-400 font-mono">₹1L · 10% · 30yr · Q</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div class="flex flex-col gap-5">
+      <div class="bg-ink-900 rounded-2xl p-6 sm:p-8">
+        <p class="text-ink-400 text-xs font-semibold uppercase tracking-wider mb-2">Total Amount (A)</p>
+        <div class="font-display text-4xl sm:text-5xl font-bold text-white tracking-tight mb-1" id="totalResult">₹1,61,051</div>
+        <p class="text-ink-400 text-xs" id="totalNote">After 10 years at 10% quarterly compounding</p>
+        <div class="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-ink-700">
+          <div><p class="text-ink-500 text-xs mb-1">Principal (P)</p><p class="font-mono font-semibold text-white text-base" id="principalResult">₹1,00,000</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Compound Interest</p><p class="font-mono font-semibold text-leaf-400 text-base" id="ciResult">₹61,051</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Simple Interest (for ref)</p><p class="font-mono font-semibold text-ink-300 text-base" id="siResult">₹1,00,000</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">CI vs SI Gain</p><p class="font-mono font-semibold text-saffron-400 text-base" id="ciGain">₹0</p></div>
+        </div>
+      </div>
+
+      <!-- Donut chart -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-6">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-5">Amount Breakdown</h2>
+        <div class="flex items-center justify-between gap-6">
+          <div class="relative flex-shrink-0">
+            <svg width="140" height="140" viewBox="0 0 140 140" aria-label="CI breakdown donut chart">
+              <circle cx="70" cy="70" r="54" fill="none" stroke="#e8ecf2" stroke-width="18"/>
+              <circle id="arcPrincipal" cx="70" cy="70" r="54" fill="none" stroke="#4f46e5" stroke-width="18" stroke-dasharray="339.29 0" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
+              <circle id="arcCI" cx="70" cy="70" r="54" fill="none" stroke="#22c55e" stroke-width="18" stroke-dasharray="0 339.29" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 70 70)" class="donut-ring"/>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+              <span class="font-mono text-xs text-ink-400">total</span>
+              <span class="font-display font-bold text-ink-900 text-sm leading-tight" id="donutCentre">₹1.6L</span>
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-3 h-3 rounded-sm bg-indigo-600 flex-shrink-0"></div>
+              <div>
+                <p class="text-xs text-ink-500 font-medium">Principal</p>
+                <p class="font-mono font-semibold text-ink-900 text-sm" id="legendPrincipal">₹1,00,000</p>
+                <p class="font-mono text-xs text-ink-400" id="legendPrincipalPct">62.1%</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-sm bg-leaf-500 flex-shrink-0"></div>
+              <div>
+                <p class="text-xs text-ink-500 font-medium">Interest Earned</p>
+                <p class="font-mono font-semibold text-ink-900 text-sm" id="legendCI">₹61,051</p>
+                <p class="font-mono text-xs text-ink-400" id="legendCIPct">37.9%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ad placeholder -->
+  <div class="my-6">
+    <div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400" aria-hidden="true">Google AdSense — Responsive Ad Unit</div>
+  </div>
+
+  <!-- Year-by-year table -->
+  <div class="bg-white border border-ink-100 rounded-2xl overflow-hidden">
+    <div class="p-6 border-b border-ink-100">
+      <h2 class="font-display font-semibold text-ink-900 text-lg">Year-by-Year Growth</h2>
+      <p class="text-xs text-ink-400 mt-0.5">How your ₹ grows with compound interest each year</p>
+    </div>
+    <div class="table-wrap">
+      <table class="ci-table" aria-label="Compound interest year-by-year">
+        <thead>
+          <tr>
+            <th class="text-left text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Year</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Opening Balance</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Interest Earned</th>
+            <th class="text-right text-xs font-semibold text-ink-500 px-4 sm:px-6 py-3 border-b border-ink-100">Closing Balance</th>
+          </tr>
+        </thead>
+        <tbody id="ciTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Compound Interest Formula</h2>
+      <div class="bg-ink-50 rounded-xl p-4 font-mono text-sm text-ink-700 mb-4">A = P × (1 + r/n)^(n×t)</div>
+      <div class="space-y-2 text-xs text-ink-500">
+        <div class="flex gap-3"><span class="font-mono font-semibold text-ink-700 w-4">A</span><span>= Final amount (principal + interest)</span></div>
+        <div class="flex gap-3"><span class="font-mono font-semibold text-ink-700 w-4">P</span><span>= Principal (initial investment)</span></div>
+        <div class="flex gap-3"><span class="font-mono font-semibold text-ink-700 w-4">r</span><span>= Annual interest rate (as decimal, e.g. 10% = 0.10)</span></div>
+        <div class="flex gap-3"><span class="font-mono font-semibold text-ink-700 w-4">n</span><span>= Compounding frequency per year (1=annual, 4=quarterly, 12=monthly, 365=daily)</span></div>
+        <div class="flex gap-3"><span class="font-mono font-semibold text-ink-700 w-4">t</span><span>= Time in years</span></div>
+      </div>
+      <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3 mt-4">
+        <p class="text-xs font-semibold text-leaf-700 mb-1">Example</p>
+        <p class="text-xs text-ink-500">₹1,00,000 at 10% quarterly for 10 years:<br/>A = 1,00,000 × (1 + 0.10/4)^(4×10) = ₹1,64,362</p>
+      </div>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Rule of 72 — Quick Doubling Time</h2>
+      <p class="text-sm text-ink-500 mb-4">The Rule of 72 is a quick formula to estimate how long it takes to double your money:</p>
+      <div class="bg-ink-50 rounded-xl p-4 font-mono text-sm text-ink-700 mb-4">Doubling Time = 72 ÷ Interest Rate (%)</div>
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between py-1.5 border-b border-ink-50">
+          <span class="text-sm text-ink-600">6.5% (FD)</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">≈ 11.1 years</span>
+        </div>
+        <div class="flex items-center justify-between py-1.5 border-b border-ink-50">
+          <span class="text-sm text-ink-600">7.1% (PPF)</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">≈ 10.1 years</span>
+        </div>
+        <div class="flex items-center justify-between py-1.5 border-b border-ink-50">
+          <span class="text-sm text-ink-600">10% (Equity)</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">≈ 7.2 years</span>
+        </div>
+        <div class="flex items-center justify-between py-1.5">
+          <span class="text-sm text-ink-600">12% (MF)</span>
+          <span class="font-mono text-sm font-semibold text-leaf-700">≈ 6 years</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about compound interest</p>
+  <div class="grid md:grid-cols-2 gap-3">
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is compound interest in simple words?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Compound interest means <strong class="text-ink-700">earning interest on your interest</strong>. If you invest ₹1,000 at 10% p.a., after year 1 you earn ₹100 (total ₹1,100). In year 2, you earn 10% on ₹1,100 = ₹110 — not ₹100. Einstein reportedly called it the "eighth wonder of the world."
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How does compounding frequency affect returns?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          More frequent compounding = more returns, but the difference is small at typical rates. For ₹1L at 10% for 10 years: Annual compounding → ₹2,59,374; Quarterly → ₹2,68,506; Monthly → ₹2,70,704; Daily → ₹2,71,791. Most Indian bank FDs use quarterly compounding.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is the effective annual rate (EAR)?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          The Effective Annual Rate (EAR) is the actual annual rate after accounting for compounding: <strong class="text-ink-700">EAR = (1 + r/n)^n − 1</strong>. Example: 10% nominal rate compounded monthly → EAR = (1 + 0.10/12)^12 − 1 = 10.47%. This is why FDs at 7% quarterly can advertise slightly higher effective yields.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How do mutual funds use compounding?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          In growth mutual funds, returns are automatically reinvested — so the fund compounds continuously. This is why staying invested for 15–20+ years in equity funds can turn modest SIP amounts into large corpus. For example, ₹10,000/month for 20 years at 12% CAGR = ₹98+ lakh, vs ₹24 lakh invested.
+        </div>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- Related calculators -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="fd-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-indigo-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 22V12M21 22V12M12 22V12M2 12h20"/><path d="M12 2 2 7h20L12 2z"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">FD Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Fixed deposit maturity</div>
+    </a>
+    <a href="sip-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-leaf-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">SIP Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Mutual fund returns</div>
+    </a>
+    <a href="cagr-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-leaf-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="9" rx="0.5"/><rect x="13" y="7" width="3" height="14" rx="0.5"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">CAGR Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Growth rate</div>
+    </a>
+    <a href="percentage-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-blue-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">Percentage Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">% calculations</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+          <div class="font-display font-semibold text-white">BharatCalc</div>
+        </div>
+        <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
+        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700"><svg class="w-3.5 h-3.5 inline-block mr-1 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> All results are estimates for informational purposes only. Consult a SEBI-registered advisor.</div>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="sip-calculator.html"      class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
+          <li><a href="emi-calculator.html"      class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
+          <li><a href="ppf-calculator.html"      class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
+          <li><a href="fd-calculator.html"       class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
+          <li><a href="lumpsum-calculator.html"  class="hover:text-leaf-400 transition-colors">Lumpsum Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="income-tax-calculator.html"  class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
+          <li><a href="gst-calculator.html"         class="hover:text-leaf-400 transition-colors">GST Calculator</a></li>
+          <li><a href="gratuity-calculator.html"    class="hover:text-leaf-400 transition-colors">Gratuity</a></li>
+          <li><a href="advance-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Advance Tax</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Health & Math</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="bmi-calculator.html"               class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li>
+          <li><a href="due-date-calculator.html"          class="hover:text-leaf-400 transition-colors">Due Date Calculator</a></li>
+          <li><a href="percentage-calculator.html"        class="hover:text-leaf-400 transition-colors">Percentage Calculator</a></li>
+          <li><a href="compound-interest-calculator.html" class="hover:text-leaf-400 transition-colors font-semibold text-indigo-400">Compound Interest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
+      <div class="flex items-center gap-5">
+        <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
+        <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
+        <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
+        <a href="https://github.com/Skypherhunt" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
+        <a href="https://www.linkedin.com/in/abhinav-kumar70/" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+let freqN = 4;
+
+function fmtINR(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+function fmtCompact(n) {
+  if (n >= 10000000) return '₹' + (n / 10000000).toFixed(2) + 'Cr';
+  if (n >= 100000)   return '₹' + (n / 100000).toFixed(2) + 'L';
+  return fmtINR(n);
+}
+
+function updateTrack(id) {
+  const el = document.getElementById(id);
+  const pct = ((+el.value - +el.min) / (+el.max - +el.min)) * 100;
+  el.style.background = `linear-gradient(to right, #16a34a ${pct}%, #e8ecf2 ${pct}%)`;
+}
+
+function syncFromSlider(id) {
+  document.getElementById(id + 'Input').value = document.getElementById(id).value;
+  updateTrack(id);
+  calculate();
+}
+
+function syncFromInput(id, val) {
+  const sl = document.getElementById(id);
+  const v = Math.min(+sl.max, Math.max(+sl.min, +val));
+  sl.value = v;
+  updateTrack(id);
+  calculate();
+}
+
+function setFreq(n, btn) {
+  freqN = n;
+  document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  calculate();
+}
+
+function setRate(r) {
+  document.getElementById('rate').value = r;
+  document.getElementById('rateInput').value = r;
+  updateTrack('rate');
+  calculate();
+}
+
+function applyPreset(p, r, t, n) {
+  document.getElementById('principal').value = p;
+  document.getElementById('principalInput').value = p;
+  document.getElementById('rate').value = r;
+  document.getElementById('rateInput').value = r;
+  document.getElementById('time').value = t;
+  document.getElementById('timeInput').value = t;
+  freqN = n;
+  document.querySelectorAll('.freq-btn').forEach(b => {
+    const btnN = parseInt(b.getAttribute('onclick').match(/\d+/)[0]);
+    b.classList.toggle('active', btnN === n);
+  });
+  updateTrack('principal');
+  updateTrack('rate');
+  updateTrack('time');
+  calculate();
+}
+
+function calculate() {
+  const P = +document.getElementById('principal').value;
+  const r = +document.getElementById('rate').value / 100;
+  const t = +document.getElementById('time').value;
+  const n = freqN;
+
+  const A  = P * Math.pow(1 + r / n, n * t);
+  const CI = A - P;
+  const SI = P * r * t;
+  const ciVsSi = CI - SI;
+
+  const totalCirc = 2 * Math.PI * 54; // 339.29
+  const pPct = (P / A) * totalCirc;
+  const iPct = (CI / A) * totalCirc;
+
+  document.getElementById('totalResult').textContent    = fmtINR(A);
+  document.getElementById('principalResult').textContent = fmtINR(P);
+  document.getElementById('ciResult').textContent       = fmtINR(CI);
+  document.getElementById('siResult').textContent       = fmtINR(SI);
+  document.getElementById('ciGain').textContent         = fmtINR(ciVsSi);
+
+  const freqLabel = {1:'annually',2:'half-yearly',4:'quarterly',12:'monthly',365:'daily'}[n] || '';
+  document.getElementById('totalNote').textContent = `After ${t} year${t>1?'s':''} at ${(r*100).toFixed(1)}% ${freqLabel} compounding`;
+
+  document.getElementById('donutCentre').textContent = fmtCompact(A);
+  document.getElementById('legendPrincipal').textContent = fmtINR(P);
+  document.getElementById('legendPrincipalPct').textContent = ((P/A)*100).toFixed(1) + '%';
+  document.getElementById('legendCI').textContent = fmtINR(CI);
+  document.getElementById('legendCIPct').textContent = ((CI/A)*100).toFixed(1) + '%';
+
+  document.getElementById('arcPrincipal').setAttribute('stroke-dasharray', `${pPct} ${totalCirc - pPct}`);
+  document.getElementById('arcCI').setAttribute('stroke-dasharray', `${iPct} ${totalCirc - iPct}`);
+  document.getElementById('arcCI').setAttribute('stroke-dashoffset', `-${pPct}`);
+
+  // Year-by-year table
+  const tbody = document.getElementById('ciTableBody');
+  let rows = '';
+  let balance = P;
+  for (let yr = 1; yr <= t; yr++) {
+    const newBalance = P * Math.pow(1 + r / n, n * yr);
+    const interest = newBalance - balance;
+    const isHighlight = yr % 5 === 0;
+    rows += `<tr class="${isHighlight ? 'bg-indigo-50/30' : ''}">
+      <td class="px-4 sm:px-6 py-3 text-sm font-semibold text-ink-700">${yr}</td>
+      <td class="px-4 sm:px-6 py-3 text-right font-mono text-sm text-ink-600">${fmtINR(balance)}</td>
+      <td class="px-4 sm:px-6 py-3 text-right font-mono text-sm text-leaf-700 font-semibold">+${fmtINR(interest)}</td>
+      <td class="px-4 sm:px-6 py-3 text-right font-mono text-sm font-bold text-ink-900">${fmtINR(newBalance)}</td>
+    </tr>`;
+    balance = newBalance;
+  }
+  tbody.innerHTML = rows;
+}
+
+function toggleMobileMenu() {
+  const m = document.getElementById('mobileMenu');
+  const btn = document.getElementById('menuBtn');
+  const icon = document.getElementById('menuIcon');
+  const open = m.classList.toggle('hidden');
+  btn.setAttribute('aria-expanded', String(!open));
+  icon.innerHTML = open ? '<path d="M4 6h16M4 12h16M4 18h16"/>' : '<path d="M6 18L18 6M6 6l12 12"/>';
+}
+
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+// Init
+document.getElementById('principalInput').value = 100000;
+document.getElementById('rateInput').value       = 10;
+document.getElementById('timeInput').value       = 10;
+updateTrack('principal');
+updateTrack('rate');
+updateTrack('time');
+calculate();
+</script>
+</body>
+</html>

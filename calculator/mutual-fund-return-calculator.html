@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mutual Fund Return Calculator India – CAGR & Absolute Return | BharatCalc</title>
+  <meta name="description" content="Free Mutual Fund Return Calculator India — calculate CAGR, absolute return, and XIRR on your mutual fund investment. Compare lumpsum and SIP returns. No login. Updated 2026." />
+  <meta name="keywords" content="mutual fund return calculator India, CAGR calculator mutual fund, absolute return calculator, mutual fund XIRR calculator, lumpsum return calculator, mutual fund calculator India, MF return calculator, NAV return calculator, mutual fund profit calculator" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/mutual-fund-return-calculator.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://bharatcalc.online/calculator/mutual-fund-return-calculator.html" />
+  <meta property="og:title"       content="Mutual Fund Return Calculator – CAGR & Profit | BharatCalc" />
+  <meta property="og:description" content="Calculate CAGR, absolute return on your mutual fund investment. Free, instant, no login." />
+  <meta property="og:image"       content="https://bharatcalc.online/og/mutual-fund-return-calculator.png" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Mutual Fund Return Calculator | BharatCalc" />
+  <meta name="twitter:description" content="CAGR, absolute return, lumpsum & SIP profit. Free — by BharatCalc." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Mutual Fund Return Calculator",
+    "url": "https://bharatcalc.online/calculator/mutual-fund-return-calculator.html",
+    "description": "Calculate CAGR, absolute return percentage and profit/loss on mutual fund investments for both lumpsum and SIP.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",    "item": "https://bharatcalc.online/" },
+        { "@type": "ListItem", "position": 2, "name": "Finance", "item": "https://bharatcalc.online/?cat=finance" },
+        { "@type": "ListItem", "position": 3, "name": "Mutual Fund Return Calculator", "item": "https://bharatcalc.online/calculator/mutual-fund-return-calculator.html" }
+      ]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is CAGR in mutual funds?",
+        "acceptedAnswer": { "@type": "Answer", "text": "CAGR (Compound Annual Growth Rate) is the annualized rate at which your investment has grown. Formula: CAGR = (Final Value / Initial Value)^(1/years) − 1. For example, if ₹1 lakh grew to ₹2 lakh in 5 years, CAGR = (2,00,000/1,00,000)^(1/5) − 1 = 14.87% p.a." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is absolute return in mutual funds?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Absolute return is the total percentage gain or loss on your investment, without considering the time period. Formula: Absolute Return = ((Current Value − Invested Amount) / Invested Amount) × 100. For example, if you invested ₹1 lakh and it grew to ₹1.5 lakh, absolute return = 50%. This differs from CAGR which is annualized." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good CAGR for a mutual fund in India?",
+        "acceptedAnswer": { "@type": "Answer", "text": "As a general benchmark: large-cap equity funds have historically delivered 10–12% CAGR over 10+ years. Mid-cap funds: 12–15% CAGR. Small-cap funds: 13–18% CAGR (with higher volatility). Debt funds: 6–8% CAGR. Index funds tracking Nifty 50 have delivered ~12% CAGR over 20 years. Any CAGR above 12% p.a. over 10+ years is considered excellent." }
+      },
+      {
+        "@type": "Question",
+        "name": "How is mutual fund return calculated from NAV?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Mutual fund return from NAV is: Absolute Return = ((Current NAV − Purchase NAV) / Purchase NAV) × 100. For CAGR, you need the number of years: CAGR = ((Current NAV / Purchase NAV)^(1/years) − 1) × 100. If you invested ₹50,000 in units at NAV ₹25, you got 2,000 units. If current NAV is ₹40, your current value is ₹80,000 — a 60% absolute return." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is XIRR in mutual funds?",
+        "acceptedAnswer": { "@type": "Answer", "text": "XIRR (Extended Internal Rate of Return) is used to calculate the annualized return on investments with irregular cash flows, like monthly SIPs. Unlike CAGR (which works for a single lumpsum), XIRR accounts for each SIP instalment's different investment duration. It is the most accurate metric for measuring SIP returns." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Clash Display', 'sans-serif'],
+            sans:    ['Satoshi', 'sans-serif'],
+            mono:    ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
+            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Satoshi', system-ui, sans-serif; }
+    .font-display { font-family: 'Clash Display', system-ui, sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #16a34a; transform: scaleX(0); transition: transform 0.2s; border-radius: 1px; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .preset-tab { transition: all 0.15s; }
+    .preset-tab.active { background: #0d1117; color: #fff; border-color: #0d1117; }
+    input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 5px; border-radius: 99px; outline: none; cursor: pointer; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #16a34a; border: 3px solid #fff; box-shadow: 0 0 0 1px #16a34a, 0 2px 6px rgba(22,163,74,0.3); cursor: pointer; }
+    input[type=range]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #16a34a; border: 3px solid #fff; cursor: pointer; }
+    .faq-item details summary { cursor: pointer; list-style: none; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
+    .val-input { font-family: 'JetBrains Mono', monospace; }
+    .val-input:focus { outline: none; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    .donut-ring { transition: stroke-dasharray 0.5s cubic-bezier(.4,0,.2,1); }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9TD6B9GQ89');
+  </script>
+</head>
+
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+        <div class="leading-none">
+          <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
+          <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+        <a href="../index.html?cat=tools"   class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+      </nav>
+      <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors">Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors">Tax</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a>
+      <span>/</span>
+      <a href="../index.html?cat=finance" class="hover:text-ink-200">Finance</a>
+      <span>/</span>
+      <span class="text-ink-300">Mutual Fund Return Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-leaf-600/15 text-leaf-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-leaf-600/20">
+          <span class="w-1.5 h-1.5 bg-leaf-400 rounded-full inline-block animate-pulse"></span>
+          CAGR · Absolute Return · Lumpsum &amp; SIP
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">Mutual Fund Return Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
+          Calculate CAGR, absolute return, and profit/loss on your mutual fund investment. Works for both lumpsum and SIP investments.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0">
+        <span class="w-1.5 h-1.5 bg-leaf-400 rounded-full inline-block"></span>
+        Results update live
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <!-- Mode tabs -->
+  <div class="flex gap-2 mb-6 flex-wrap" role="group" aria-label="Return mode">
+    <button class="preset-tab active px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600" onclick="setMode('lumpsum', this)">Lumpsum Return</button>
+    <button class="preset-tab px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:border-leaf-400 transition-all" onclick="setMode('sip', this)">SIP Return (XIRR)</button>
+    <button class="preset-tab px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:border-leaf-400 transition-all" onclick="setMode('nav', this)">NAV-based Return</button>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- LEFT: Inputs -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+
+      <!-- LUMPSUM -->
+      <div id="paneLumpsum">
+        <h2 class="font-display font-semibold text-ink-900 text-lg mb-6">Lumpsum Investment</h2>
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <label class="text-sm font-semibold text-ink-700">Invested Amount</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <span class="text-sm text-ink-400 font-mono">₹</span>
+              <input id="lsInvestInput" type="number" class="val-input w-28 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1000" max="100000000" step="1000" value="100000" oninput="syncFromInput('lsInvest', this.value)" />
+            </div>
+          </div>
+          <input type="range" id="lsInvest" min="1000" max="10000000" step="1000" value="100000" oninput="syncFromSlider('lsInvest')" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹1K</span><span>₹1Cr</span></div>
+        </div>
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <label class="text-sm font-semibold text-ink-700">Current Value</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <span class="text-sm text-ink-400 font-mono">₹</span>
+              <input id="lsCurrentInput" type="number" class="val-input w-28 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1000" max="200000000" step="1000" value="250000" oninput="syncFromInput('lsCurrent', this.value)" />
+            </div>
+          </div>
+          <input type="range" id="lsCurrent" min="1000" max="20000000" step="1000" value="250000" oninput="syncFromSlider('lsCurrent')" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹1K</span><span>₹2Cr</span></div>
+        </div>
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <label class="text-sm font-semibold text-ink-700">Investment Period</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <input id="lsYearsInput" type="number" class="val-input w-12 text-sm font-semibold text-ink-900 bg-transparent text-right" min="0.25" max="30" step="0.25" value="5" oninput="syncFromInput('lsYears', this.value)" />
+              <span class="text-sm text-ink-400 font-mono">yr</span>
+            </div>
+          </div>
+          <input type="range" id="lsYears" min="0.25" max="30" step="0.25" value="5" oninput="syncFromSlider('lsYears')" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>0.25 yr</span><span>30 yr</span></div>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <button onclick="setLSPreset(100000, 200000, 5)"  class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors text-xs font-semibold text-ink-700">2× in 5 years</button>
+          <button onclick="setLSPreset(100000, 400000, 10)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors text-xs font-semibold text-ink-700">4× in 10 years</button>
+          <button onclick="setLSPreset(500000, 1000000, 6)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors text-xs font-semibold text-ink-700">₹5L → ₹10L in 6yr</button>
+          <button onclick="setLSPreset(1000000, 3000000, 10)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-leaf-50 border border-ink-100 hover:border-leaf-200 rounded-xl transition-colors text-xs font-semibold text-ink-700">₹10L → ₹30L in 10yr</button>
+        </div>
+      </div>
+
+      <!-- SIP XIRR -->
+      <div id="paneSip" class="hidden">
+        <h2 class="font-display font-semibold text-ink-900 text-lg mb-6">SIP Return (approx. XIRR)</h2>
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <label class="text-sm font-semibold text-ink-700">Monthly SIP Amount</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <span class="text-sm text-ink-400 font-mono">₹</span>
+              <input id="sipAmtInput" type="number" class="val-input w-24 text-sm font-semibold text-ink-900 bg-transparent text-right" min="500" max="500000" step="500" value="10000" oninput="syncFromInput('sipAmt', this.value)" />
+            </div>
+          </div>
+          <input type="range" id="sipAmt" min="500" max="500000" step="500" value="10000" oninput="syncFromSlider('sipAmt')" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹500</span><span>₹5L</span></div>
+        </div>
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <label class="text-sm font-semibold text-ink-700">Current Portfolio Value</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <span class="text-sm text-ink-400 font-mono">₹</span>
+              <input id="sipValueInput" type="number" class="val-input w-28 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1000" max="200000000" step="1000" value="2500000" oninput="syncFromInput('sipValue', this.value)" />
+            </div>
+          </div>
+          <input type="range" id="sipValue" min="1000" max="20000000" step="1000" value="2500000" oninput="syncFromSlider('sipValue')" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹1K</span><span>₹2Cr</span></div>
+        </div>
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <label class="text-sm font-semibold text-ink-700">SIP Duration</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <input id="sipYearsInput" type="number" class="val-input w-12 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1" max="30" step="1" value="10" oninput="syncFromInput('sipYears', this.value)" />
+              <span class="text-sm text-ink-400 font-mono">yr</span>
+            </div>
+          </div>
+          <input type="range" id="sipYears" min="1" max="30" step="1" value="10" oninput="syncFromSlider('sipYears')" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>1 yr</span><span>30 yr</span></div>
+        </div>
+        <div class="bg-blue-50 border border-blue-100 rounded-xl p-3 text-xs text-ink-500 leading-relaxed">
+          XIRR is approximated using Newton-Raphson iteration over monthly cash flows. This matches the result shown by most mutual fund platforms.
+        </div>
+      </div>
+
+      <!-- NAV-based -->
+      <div id="paneNav" class="hidden">
+        <h2 class="font-display font-semibold text-ink-900 text-lg mb-6">NAV-based Return</h2>
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <label class="text-sm font-semibold text-ink-700">Purchase NAV</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <span class="text-sm text-ink-400 font-mono">₹</span>
+              <input id="buyNavInput" type="number" class="val-input w-24 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1" max="10000" step="0.01" value="50" oninput="syncFromInput('buyNav', this.value)" />
+            </div>
+          </div>
+          <input type="range" id="buyNav" min="1" max="5000" step="0.5" value="50" oninput="syncFromSlider('buyNav')" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹1</span><span>₹5000</span></div>
+        </div>
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <label class="text-sm font-semibold text-ink-700">Current NAV</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <span class="text-sm text-ink-400 font-mono">₹</span>
+              <input id="curNavInput" type="number" class="val-input w-24 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1" max="10000" step="0.01" value="85" oninput="syncFromInput('curNav', this.value)" />
+            </div>
+          </div>
+          <input type="range" id="curNav" min="1" max="5000" step="0.5" value="85" oninput="syncFromSlider('curNav')" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹1</span><span>₹5000</span></div>
+        </div>
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <label class="text-sm font-semibold text-ink-700">Units Held</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <input id="unitsInput" type="number" class="val-input w-24 text-sm font-semibold text-ink-900 bg-transparent text-right" min="1" max="1000000" step="0.001" value="2000" oninput="syncFromInput('units', this.value)" />
+            </div>
+          </div>
+          <input type="range" id="units" min="1" max="100000" step="1" value="2000" oninput="syncFromSlider('units')" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>1</span><span>1L</span></div>
+        </div>
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <label class="text-sm font-semibold text-ink-700">Holding Period</label>
+            <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+              <input id="navYearsInput" type="number" class="val-input w-12 text-sm font-semibold text-ink-900 bg-transparent text-right" min="0.25" max="30" step="0.25" value="3" oninput="syncFromInput('navYears', this.value)" />
+              <span class="text-sm text-ink-400 font-mono">yr</span>
+            </div>
+          </div>
+          <input type="range" id="navYears" min="0.25" max="30" step="0.25" value="3" oninput="syncFromSlider('navYears')" />
+          <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>0.25 yr</span><span>30 yr</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div class="flex flex-col gap-5">
+      <div class="bg-ink-900 rounded-2xl p-6 sm:p-8">
+        <p class="text-ink-400 text-xs font-semibold uppercase tracking-wider mb-2" id="mainLabel">CAGR</p>
+        <div class="font-display text-5xl font-bold tracking-tight mb-1" id="mainResult" style="color: #4ade80;">—</div>
+        <p class="text-ink-400 text-xs" id="mainSub">per annum, annualised</p>
+        <div class="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-ink-700" id="statsGrid"></div>
+      </div>
+
+      <div class="bg-white border border-ink-100 rounded-2xl p-6">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-5">Return Breakdown</h2>
+        <div class="flex items-center justify-center gap-8">
+          <div class="relative flex-shrink-0">
+            <svg width="130" height="130" viewBox="0 0 130 130">
+              <circle cx="65" cy="65" r="50" fill="none" stroke="#e8ecf2" stroke-width="16"/>
+              <circle id="arcInvested" cx="65" cy="65" r="50" fill="none" stroke="#16a34a" stroke-width="16" stroke-dasharray="314.16 0" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 65 65)" class="donut-ring"/>
+              <circle id="arcGain"     cx="65" cy="65" r="50" fill="none" stroke="#4ade80" stroke-width="16" stroke-dasharray="0 314.16" stroke-dashoffset="0" stroke-linecap="butt" transform="rotate(-90 65 65)" class="donut-ring"/>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+              <span class="font-mono text-[10px] text-ink-400">gain</span>
+              <span class="font-display font-bold text-ink-900 text-sm" id="donutGain">—</span>
+            </div>
+          </div>
+          <div class="flex-1 space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-sm bg-leaf-600 flex-shrink-0"></div>
+              <div>
+                <p class="text-xs text-ink-500">Invested</p>
+                <p class="font-mono font-semibold text-ink-900 text-sm" id="legendInvested">—</p>
+                <p class="font-mono text-xs text-ink-400" id="legendInvestedPct">—</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-sm bg-leaf-400 flex-shrink-0"></div>
+              <div>
+                <p class="text-xs text-ink-500">Gain / Loss</p>
+                <p class="font-mono font-semibold text-ink-900 text-sm" id="legendGain">—</p>
+                <p class="font-mono text-xs text-ink-400" id="legendGainPct">—</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rating badge -->
+      <div id="ratingCard" class="bg-white border border-ink-100 rounded-2xl p-5 hidden">
+        <p class="text-xs font-semibold text-ink-400 uppercase tracking-wider mb-2">Return Rating</p>
+        <div class="flex items-center gap-3">
+          <div id="ratingBadge" class="px-4 py-2 rounded-xl font-display font-bold text-lg"></div>
+          <p class="text-sm text-ink-500" id="ratingText"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMULA -->
+  <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8 mt-6">
+    <h2 class="font-display font-semibold text-ink-900 text-lg mb-5">Formulas Used</h2>
+    <div class="grid sm:grid-cols-3 gap-5">
+      <div class="bg-ink-50 rounded-xl p-4 border border-ink-100">
+        <p class="text-xs font-semibold text-leaf-700 uppercase tracking-wider mb-2">CAGR</p>
+        <p class="font-mono text-sm text-ink-800">(FV / PV)^(1/n) − 1</p>
+        <p class="text-xs text-ink-400 mt-2">FV = final value, PV = invested, n = years</p>
+      </div>
+      <div class="bg-ink-50 rounded-xl p-4 border border-ink-100">
+        <p class="text-xs font-semibold text-leaf-700 uppercase tracking-wider mb-2">Absolute Return</p>
+        <p class="font-mono text-sm text-ink-800">((FV − PV) / PV) × 100</p>
+        <p class="text-xs text-ink-400 mt-2">Total % gain, not annualised</p>
+      </div>
+      <div class="bg-ink-50 rounded-xl p-4 border border-ink-100">
+        <p class="text-xs font-semibold text-leaf-700 uppercase tracking-wider mb-2">XIRR (SIP)</p>
+        <p class="font-mono text-sm text-ink-800">Newton-Raphson on IRR</p>
+        <p class="text-xs text-ink-400 mt-2">Annualised return on monthly SIPs</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BENCHMARK TABLE -->
+  <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8 mt-6">
+    <h2 class="font-display font-semibold text-ink-900 text-lg mb-5">CAGR Benchmark — Indian Mutual Funds</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-ink-100">
+            <th class="text-left py-2 pr-4 text-xs font-semibold text-ink-400 uppercase tracking-wider">Category</th>
+            <th class="text-left py-2 pr-4 text-xs font-semibold text-ink-400 uppercase tracking-wider">5-Year CAGR</th>
+            <th class="text-left py-2 pr-4 text-xs font-semibold text-ink-400 uppercase tracking-wider">10-Year CAGR</th>
+            <th class="text-left py-2 text-xs font-semibold text-ink-400 uppercase tracking-wider">Risk Level</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-ink-50">
+          <tr><td class="py-2.5 pr-4 font-semibold text-ink-800">Large-Cap Equity</td><td class="py-2.5 pr-4 font-mono text-leaf-700">10–13%</td><td class="py-2.5 pr-4 font-mono text-leaf-700">11–14%</td><td class="py-2.5 text-ink-500">Moderate</td></tr>
+          <tr><td class="py-2.5 pr-4 font-semibold text-ink-800">Mid-Cap Equity</td><td class="py-2.5 pr-4 font-mono text-leaf-700">12–18%</td><td class="py-2.5 pr-4 font-mono text-leaf-700">13–18%</td><td class="py-2.5 text-saffron-600">Moderately High</td></tr>
+          <tr><td class="py-2.5 pr-4 font-semibold text-ink-800">Small-Cap Equity</td><td class="py-2.5 pr-4 font-mono text-leaf-700">14–22%</td><td class="py-2.5 pr-4 font-mono text-leaf-700">14–20%</td><td class="py-2.5 text-red-500">High</td></tr>
+          <tr><td class="py-2.5 pr-4 font-semibold text-ink-800">Index (Nifty 50)</td><td class="py-2.5 pr-4 font-mono text-leaf-700">10–13%</td><td class="py-2.5 pr-4 font-mono text-leaf-700">~12%</td><td class="py-2.5 text-ink-500">Moderate</td></tr>
+          <tr><td class="py-2.5 pr-4 font-semibold text-ink-800">Debt / Liquid</td><td class="py-2.5 pr-4 font-mono text-ink-600">6–7.5%</td><td class="py-2.5 pr-4 font-mono text-ink-600">6–8%</td><td class="py-2.5 text-leaf-700">Low</td></tr>
+          <tr><td class="py-2.5 pr-4 font-semibold text-ink-800">ELSS (Tax Saving)</td><td class="py-2.5 pr-4 font-mono text-leaf-700">11–16%</td><td class="py-2.5 pr-4 font-mono text-leaf-700">12–17%</td><td class="py-2.5 text-saffron-600">Moderately High</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-ink-400 mt-3">Historical averages. Past returns do not guarantee future performance.</p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8 mt-6">
+    <h2 class="font-display font-semibold text-ink-900 text-xl mb-6">Frequently Asked Questions</h2>
+    <div class="space-y-3">
+      <div class="faq-item border border-ink-100 rounded-xl overflow-hidden">
+        <details>
+          <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+            <span class="font-semibold text-sm text-ink-800">What is CAGR in mutual funds?</span>
+            <svg class="faq-icon w-5 h-5 text-ink-400 flex-shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed">CAGR is the annualised rate your investment grew. Formula: CAGR = (Final Value / Initial Value)^(1/years) − 1. Example: ₹1 lakh → ₹2 lakh in 5 years = CAGR of 14.87%.</div>
+        </details>
+      </div>
+      <div class="faq-item border border-ink-100 rounded-xl overflow-hidden">
+        <details>
+          <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+            <span class="font-semibold text-sm text-ink-800">What is absolute return vs CAGR?</span>
+            <svg class="faq-icon w-5 h-5 text-ink-400 flex-shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed">Absolute return = total % gain over the holding period regardless of time. CAGR normalises this to a per-year figure. A 100% absolute return over 10 years = 7.18% CAGR. Use CAGR to compare funds held for different durations.</div>
+        </details>
+      </div>
+      <div class="faq-item border border-ink-100 rounded-xl overflow-hidden">
+        <details>
+          <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+            <span class="font-semibold text-sm text-ink-800">What is a good CAGR for a mutual fund in India?</span>
+            <svg class="faq-icon w-5 h-5 text-ink-400 flex-shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed">A CAGR above 12% over 10+ years is considered excellent for equity funds in India. The Nifty 50 index has historically delivered ~12% CAGR. Debt funds typically deliver 6–8%. Any return consistently beating inflation (6%) and FD rates (7%) adds real value.</div>
+        </details>
+      </div>
+      <div class="faq-item border border-ink-100 rounded-xl overflow-hidden">
+        <details>
+          <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+            <span class="font-semibold text-sm text-ink-800">How is mutual fund return calculated from NAV?</span>
+            <svg class="faq-icon w-5 h-5 text-ink-400 flex-shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed">Absolute return from NAV: ((Current NAV − Purchase NAV) / Purchase NAV) × 100. If you bought at ₹50 NAV and it's now ₹85, absolute return = 70%. Your profit in rupees = (Current NAV − Purchase NAV) × Units held.</div>
+        </details>
+      </div>
+      <div class="faq-item border border-ink-100 rounded-xl overflow-hidden">
+        <details>
+          <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+            <span class="font-semibold text-sm text-ink-800">What is XIRR and when should I use it?</span>
+            <svg class="faq-icon w-5 h-5 text-ink-400 flex-shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed">Use XIRR when you've invested via SIP (monthly installments), since each installment has a different holding period. CAGR is only accurate for single lumpsum investments. XIRR is the industry standard metric for SIP performance, and this calculator approximates it using Newton-Raphson iteration.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED -->
+  <div class="mt-8">
+    <h2 class="font-display font-semibold text-ink-900 text-xl mb-5">Related Calculators</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+      <a href="sip-calculator.html"     class="bg-white border border-ink-100 hover:border-leaf-200 rounded-2xl p-4 flex flex-col gap-2 hover:shadow-md transition-all group">
+        <div class="w-10 h-10 bg-leaf-100 text-leaf-700 rounded-xl flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="17 7 21 7 21 11"/></svg></div>
+        <div class="font-display font-semibold text-sm text-ink-900 group-hover:text-leaf-700 transition-colors">SIP Calculator</div>
+        <div class="text-xs text-ink-400">Plan monthly SIPs</div>
+      </a>
+      <a href="lumpsum-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 rounded-2xl p-4 flex flex-col gap-2 hover:shadow-md transition-all group">
+        <div class="w-10 h-10 bg-leaf-100 text-leaf-700 rounded-xl flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><ellipse cx="12" cy="7" rx="9" ry="3"/><path d="M3 7v4c0 1.66 4.03 3 9 3s9-1.34 9-3V7"/></svg></div>
+        <div class="font-display font-semibold text-sm text-ink-900 group-hover:text-leaf-700 transition-colors">Lumpsum Calculator</div>
+        <div class="text-xs text-ink-400">One-time investment</div>
+      </a>
+      <a href="cagr-calculator.html"    class="bg-white border border-ink-100 hover:border-leaf-200 rounded-2xl p-4 flex flex-col gap-2 hover:shadow-md transition-all group">
+        <div class="w-10 h-10 bg-leaf-100 text-leaf-700 rounded-xl flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="9" rx="0.5"/><rect x="13" y="7" width="3" height="14" rx="0.5"/></svg></div>
+        <div class="font-display font-semibold text-sm text-ink-900 group-hover:text-leaf-700 transition-colors">CAGR Calculator</div>
+        <div class="text-xs text-ink-400">Growth rate of any investment</div>
+      </a>
+      <a href="fd-calculator.html"      class="bg-white border border-ink-100 hover:border-leaf-200 rounded-2xl p-4 flex flex-col gap-2 hover:shadow-md transition-all group">
+        <div class="w-10 h-10 bg-indigo-100 text-indigo-700 rounded-xl flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 22V12M21 22V12M12 22V12M2 12h20"/><path d="M12 2 2 7h20L12 2z"/></svg></div>
+        <div class="font-display font-semibold text-sm text-ink-900 group-hover:text-leaf-700 transition-colors">FD Calculator</div>
+        <div class="text-xs text-ink-400">Fixed deposit returns</div>
+      </a>
+    </div>
+  </div>
+
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+          <div class="font-display font-semibold text-white">BharatCalc</div>
+        </div>
+        <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
+        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700">Returns shown are estimates. Actual mutual fund returns vary. Consult a SEBI-registered advisor before investing.</div>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="sip-calculator.html"      class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
+          <li><a href="lumpsum-calculator.html"  class="hover:text-leaf-400 transition-colors">Lumpsum Calculator</a></li>
+          <li><a href="cagr-calculator.html"     class="hover:text-leaf-400 transition-colors">CAGR Calculator</a></li>
+          <li><a href="fd-calculator.html"       class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
+          <li><a href="mutual-fund-return-calculator.html" class="hover:text-leaf-400 transition-colors font-semibold text-leaf-400">MF Return Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="income-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
+          <li><a href="gst-calculator.html"        class="hover:text-leaf-400 transition-colors">GST Calculator</a></li>
+          <li><a href="hra-calculator.html"        class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tools</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="date-calculator.html"   class="hover:text-leaf-400 transition-colors">Date Calculator</a></li>
+          <li><a href="age-calculator.html"    class="hover:text-leaf-400 transition-colors">Age Calculator</a></li>
+          <li><a href="bmi-calculator.html"    class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
+      <div class="flex items-center gap-5">
+        <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
+        <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
+        <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+let mode = 'lumpsum';
+
+function fmtINR(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+function fmtCompact(n) {
+  if (Math.abs(n) >= 10000000) return '₹' + (n / 10000000).toFixed(2) + 'Cr';
+  if (Math.abs(n) >= 100000)   return '₹' + (n / 100000).toFixed(2) + 'L';
+  if (Math.abs(n) >= 1000)     return '₹' + (n / 1000).toFixed(1) + 'K';
+  return fmtINR(n);
+}
+
+function updateTrack(id) {
+  const el  = document.getElementById(id);
+  if (!el) return;
+  const pct = ((parseFloat(el.value) - parseFloat(el.min)) / (parseFloat(el.max) - parseFloat(el.min))) * 100;
+  el.style.background = `linear-gradient(to right, #16a34a ${pct}%, #e8ecf2 ${pct}%)`;
+}
+
+function syncFromSlider(id) {
+  const el = document.getElementById(id);
+  document.getElementById(id + 'Input').value = el.value;
+  updateTrack(id);
+  calculate();
+}
+
+function syncFromInput(id, val) {
+  const slider = document.getElementById(id);
+  if (!slider) return;
+  const clamped = Math.min(Math.max(parseFloat(val) || parseFloat(slider.min), parseFloat(slider.min)), parseFloat(slider.max));
+  slider.value = clamped;
+  updateTrack(id);
+  calculate();
+}
+
+function setMode(m, btn) {
+  mode = m;
+  document.querySelectorAll('.preset-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  ['Lumpsum','Sip','Nav'].forEach(p => {
+    document.getElementById('pane' + p).classList.toggle('hidden', p.toLowerCase() !== m);
+  });
+  calculate();
+}
+
+function setLSPreset(inv, cur, yr) {
+  document.getElementById('lsInvest').value  = inv;
+  document.getElementById('lsCurrent').value = cur;
+  document.getElementById('lsYears').value   = yr;
+  ['lsInvest','lsCurrent','lsYears'].forEach(id => {
+    document.getElementById(id + 'Input').value = document.getElementById(id).value;
+    updateTrack(id);
+  });
+  calculate();
+}
+
+function renderResult(cagr, absReturn, invested, current, gain) {
+  const isGain = gain >= 0;
+  const cagrColor = cagr >= 12 ? '#4ade80' : cagr >= 8 ? '#fbbf24' : '#f87171';
+  document.getElementById('mainResult').textContent = isFinite(cagr) ? cagr.toFixed(2) + '%' : 'N/A';
+  document.getElementById('mainResult').style.color = cagrColor;
+  document.getElementById('mainLabel').textContent = 'CAGR';
+  document.getElementById('mainSub').textContent = 'per annum, annualised';
+  document.getElementById('statsGrid').innerHTML = `
+    <div><p class="text-ink-500 text-xs mb-1">Invested</p><p class="font-mono font-semibold text-white text-sm">${fmtCompact(invested)}</p></div>
+    <div><p class="text-ink-500 text-xs mb-1">Current Value</p><p class="font-mono font-semibold text-white text-sm">${fmtCompact(current)}</p></div>
+    <div><p class="text-ink-500 text-xs mb-1">${isGain ? 'Profit' : 'Loss'}</p><p class="font-mono font-semibold ${isGain ? 'text-leaf-400' : 'text-red-400'} text-sm">${fmtCompact(Math.abs(gain))}</p></div>
+    <div><p class="text-ink-500 text-xs mb-1">Absolute Return</p><p class="font-mono font-semibold text-white text-sm">${absReturn.toFixed(2)}%</p></div>
+  `;
+
+  const circ = 314.16;
+  const invPct = invested / current;
+  const gainPct = 1 - invPct;
+  const invArc = Math.max(0, Math.min(circ, invPct * circ));
+  const gainArc = circ - invArc;
+  document.getElementById('arcInvested').setAttribute('stroke-dasharray', `${invArc} ${circ - invArc}`);
+  document.getElementById('arcGain').setAttribute('stroke', isGain ? '#4ade80' : '#f87171');
+  document.getElementById('arcGain').setAttribute('stroke-dasharray', `${gainArc} ${circ - gainArc}`);
+  document.getElementById('arcGain').setAttribute('stroke-dashoffset', -invArc);
+  document.getElementById('donutGain').textContent = absReturn.toFixed(1) + '%';
+  document.getElementById('legendInvested').textContent = fmtCompact(invested);
+  document.getElementById('legendGain').textContent = fmtCompact(Math.abs(gain));
+  document.getElementById('legendInvestedPct').textContent = (invPct * 100).toFixed(1) + '% of current';
+  document.getElementById('legendGainPct').textContent = (Math.abs(gainPct) * 100).toFixed(1) + '% of current';
+
+  const card = document.getElementById('ratingCard');
+  const badge = document.getElementById('ratingBadge');
+  const txt = document.getElementById('ratingText');
+  card.classList.remove('hidden');
+  if (!isFinite(cagr)) { card.classList.add('hidden'); return; }
+  if (cagr >= 15) { badge.textContent = 'Outstanding'; badge.className = 'px-4 py-2 rounded-xl font-display font-bold text-lg bg-leaf-100 text-leaf-700'; txt.textContent = `${cagr.toFixed(1)}% CAGR — beats most active funds and benchmarks.`; }
+  else if (cagr >= 12) { badge.textContent = 'Excellent'; badge.className = 'px-4 py-2 rounded-xl font-display font-bold text-lg bg-green-100 text-green-700'; txt.textContent = `${cagr.toFixed(1)}% CAGR — in line with top large-cap and index funds.`; }
+  else if (cagr >= 8)  { badge.textContent = 'Good'; badge.className = 'px-4 py-2 rounded-xl font-display font-bold text-lg bg-blue-100 text-blue-700'; txt.textContent = `${cagr.toFixed(1)}% CAGR — beats FD and inflation, solid result.`; }
+  else if (cagr >= 6)  { badge.textContent = 'Average'; badge.className = 'px-4 py-2 rounded-xl font-display font-bold text-lg bg-yellow-100 text-yellow-700'; txt.textContent = `${cagr.toFixed(1)}% CAGR — similar to FD or debt fund returns.`; }
+  else if (cagr >= 0)  { badge.textContent = 'Below Average'; badge.className = 'px-4 py-2 rounded-xl font-display font-bold text-lg bg-orange-100 text-orange-700'; txt.textContent = `${cagr.toFixed(1)}% CAGR — below inflation. Consider reviewing fund selection.`; }
+  else { badge.textContent = 'Loss'; badge.className = 'px-4 py-2 rounded-xl font-display font-bold text-lg bg-red-100 text-red-700'; txt.textContent = `${Math.abs(cagr).toFixed(1)}% CAGR loss — markets can be volatile in the short term.`; }
+}
+
+function calcXIRR(cashFlows) {
+  let rate = 0.1;
+  for (let i = 0; i < 100; i++) {
+    let npv = 0, dnpv = 0;
+    for (let j = 0; j < cashFlows.length; j++) {
+      const t = cashFlows[j].t;
+      const cf = cashFlows[j].cf;
+      npv  += cf / Math.pow(1 + rate, t);
+      dnpv -= t * cf / Math.pow(1 + rate, t + 1);
+    }
+    const newRate = rate - npv / dnpv;
+    if (Math.abs(newRate - rate) < 1e-8) return newRate;
+    rate = newRate;
+  }
+  return rate;
+}
+
+function calculate() {
+  if (mode === 'lumpsum') {
+    const invested = parseFloat(document.getElementById('lsInvest').value)  || 0;
+    const current  = parseFloat(document.getElementById('lsCurrent').value) || 0;
+    const years    = parseFloat(document.getElementById('lsYears').value)   || 1;
+    if (!invested || !current || !years) return;
+    const cagr = (Math.pow(current / invested, 1 / years) - 1) * 100;
+    const abs  = ((current - invested) / invested) * 100;
+    renderResult(cagr, abs, invested, current, current - invested);
+  }
+  else if (mode === 'sip') {
+    const monthly = parseFloat(document.getElementById('sipAmt').value)   || 0;
+    const current = parseFloat(document.getElementById('sipValue').value) || 0;
+    const years   = parseFloat(document.getElementById('sipYears').value) || 1;
+    if (!monthly || !current || !years) return;
+    const months = Math.round(years * 12);
+    const invested = monthly * months;
+    const cfs = [];
+    for (let i = 0; i < months; i++) cfs.push({ t: (months - i) / 12, cf: -monthly });
+    cfs.push({ t: 0, cf: current });
+    let xirr;
+    try { xirr = calcXIRR(cfs) * 100; } catch(e) { xirr = NaN; }
+    const abs = ((current - invested) / invested) * 100;
+    renderResult(xirr, abs, invested, current, current - invested);
+  }
+  else {
+    const buyNav  = parseFloat(document.getElementById('buyNav').value)   || 0;
+    const curNav  = parseFloat(document.getElementById('curNav').value)   || 0;
+    const units   = parseFloat(document.getElementById('units').value)    || 0;
+    const years   = parseFloat(document.getElementById('navYears').value) || 1;
+    if (!buyNav || !curNav || !units || !years) return;
+    const invested = buyNav * units;
+    const current  = curNav * units;
+    const cagr = (Math.pow(curNav / buyNav, 1 / years) - 1) * 100;
+    const abs  = ((curNav - buyNav) / buyNav) * 100;
+    renderResult(cagr, abs, invested, current, current - invested);
+  }
+}
+
+['lsInvest','lsCurrent','lsYears','sipAmt','sipValue','sipYears','buyNav','curNav','units','navYears'].forEach(id => updateTrack(id));
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+calculate();
+</script>
+</body>
+</html>

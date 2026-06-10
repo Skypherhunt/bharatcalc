@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Date Calculator India – Days Between Dates, Add/Subtract Days | BharatCalc</title>
+  <meta name="description" content="Free Date Calculator India — find days between two dates, add or subtract days from a date, calculate business days and weeks. Instant, no login. Updated 2026." />
+  <meta name="keywords" content="date calculator India, days between two dates, date difference calculator, add days to date, subtract days from date, business days calculator, working days calculator India, date calculator online free" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/date-calculator.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://bharatcalc.online/calculator/date-calculator.html" />
+  <meta property="og:title"       content="Date Calculator – Days Between Dates | BharatCalc" />
+  <meta property="og:description" content="Find exact days, weeks, months between two dates. Add or subtract days from any date. Free, instant, no login." />
+  <meta property="og:image"       content="https://bharatcalc.online/og/date-calculator.png" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Date Calculator | BharatCalc" />
+  <meta name="twitter:description" content="Days between dates, date add/subtract, business days. Free — by BharatCalc." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Date Calculator",
+    "url": "https://bharatcalc.online/calculator/date-calculator.html",
+    "description": "Calculate days between two dates, add or subtract days from a date, find business days.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",    "item": "https://bharatcalc.online/" },
+        { "@type": "ListItem", "position": 2, "name": "Math",    "item": "https://bharatcalc.online/?cat=math" },
+        { "@type": "ListItem", "position": 3, "name": "Date Calculator", "item": "https://bharatcalc.online/calculator/date-calculator.html" }
+      ]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate the number of days between two dates?",
+        "acceptedAnswer": { "@type": "Answer", "text": "To find days between two dates, enter the start date and end date in the Date Difference tab. The calculator instantly shows the total days, weeks, months, and years between the two dates." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I add days to a date?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Use the Add/Subtract tab. Enter your start date, select 'Add', enter the number of days (or weeks, months, years), and the calculator instantly shows the resulting date." }
+      },
+      {
+        "@type": "Question",
+        "name": "What are business days?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Business days (or working days) are Monday through Friday, excluding weekends (Saturday and Sunday). The Business Days tab calculates the number of working days between two dates, excluding weekends." }
+      },
+      {
+        "@type": "Question",
+        "name": "How many weeks are in a year?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A standard calendar year has 52 weeks and 1 day (365 days ÷ 7 = 52.14 weeks). A leap year has 52 weeks and 2 days (366 days). Our date calculator shows you the exact weeks and remaining days between any two dates." }
+      },
+      {
+        "@type": "Question",
+        "name": "How is a date difference calculated?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Date difference is calculated by converting both dates to a timestamp (milliseconds since Unix epoch), finding the absolute difference, and converting back to days, months, and years. The formula is: Days = (Date2 - Date1) / (1000 × 60 × 60 × 24)." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Clash Display', 'sans-serif'],
+            sans:    ['Satoshi', 'sans-serif'],
+            mono:    ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
+            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Satoshi', system-ui, sans-serif; }
+    .font-display { font-family: 'Clash Display', system-ui, sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #16a34a; transform: scaleX(0); transition: transform 0.2s; border-radius: 1px; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .preset-tab { transition: all 0.15s; }
+    .preset-tab.active { background: #0d1117; color: #fff; border-color: #0d1117; }
+    .faq-item details summary { cursor: pointer; list-style: none; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
+    input[type="date"] { color-scheme: light; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9TD6B9GQ89');
+  </script>
+</head>
+
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+        <div class="leading-none">
+          <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
+          <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+        <a href="../index.html?cat=tools"   class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+      </nav>
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors">Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors">Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors">Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors">Math</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a>
+      <span>/</span>
+      <a href="../index.html?cat=math" class="hover:text-ink-200">Math</a>
+      <span>/</span>
+      <span class="text-ink-300">Date Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-blue-600/15 text-blue-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-blue-600/20">
+          <span class="w-1.5 h-1.5 bg-blue-400 rounded-full inline-block animate-pulse"></span>
+          Date · Duration · Business Days
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">Date Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
+          Find days between two dates, add or subtract days from any date, and calculate business (working) days. Instant results.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0">
+        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full inline-block"></span>
+        Results update live
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <!-- Mode tabs -->
+  <div class="flex gap-2 mb-6 flex-wrap" role="group" aria-label="Calculator mode">
+    <button class="preset-tab active px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600" onclick="setMode('diff', this)">Date Difference</button>
+    <button class="preset-tab px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:border-blue-400 transition-all" onclick="setMode('add', this)">Add / Subtract</button>
+    <button class="preset-tab px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:border-blue-400 transition-all" onclick="setMode('biz', this)">Business Days</button>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- LEFT: Inputs -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+
+      <!-- DATE DIFFERENCE -->
+      <div id="paneDiff">
+        <h2 class="font-display font-semibold text-ink-900 text-lg mb-6">Date Difference</h2>
+        <div class="mb-5">
+          <label class="block text-sm font-semibold text-ink-700 mb-2">Start Date</label>
+          <input type="date" id="diffStart" class="w-full border border-ink-200 rounded-xl px-4 py-3 text-sm font-mono text-ink-900 focus:outline-none focus:ring-2 focus:ring-blue-400/30 focus:border-blue-400 transition-all bg-white" oninput="calculate()" />
+        </div>
+        <div class="mb-5">
+          <label class="block text-sm font-semibold text-ink-700 mb-2">End Date</label>
+          <input type="date" id="diffEnd" class="w-full border border-ink-200 rounded-xl px-4 py-3 text-sm font-mono text-ink-900 focus:outline-none focus:ring-2 focus:ring-blue-400/30 focus:border-blue-400 transition-all bg-white" oninput="calculate()" />
+        </div>
+        <div class="mt-6 grid grid-cols-2 gap-3">
+          <button onclick="setToday('diffStart')" class="text-xs px-3 py-2 bg-ink-50 border border-ink-200 rounded-xl hover:bg-blue-50 hover:border-blue-200 text-ink-600 hover:text-blue-700 font-medium transition-colors">Set start to today</button>
+          <button onclick="setToday('diffEnd')"   class="text-xs px-3 py-2 bg-ink-50 border border-ink-200 rounded-xl hover:bg-blue-50 hover:border-blue-200 text-ink-600 hover:text-blue-700 font-medium transition-colors">Set end to today</button>
+          <button onclick="swapDates()"           class="col-span-2 text-xs px-3 py-2 bg-ink-50 border border-ink-200 rounded-xl hover:bg-blue-50 hover:border-blue-200 text-ink-600 hover:text-blue-700 font-medium transition-colors">⇄ Swap dates</button>
+        </div>
+        <div class="mt-5">
+          <p class="text-xs text-ink-400 font-semibold uppercase tracking-wider mb-3">Quick presets</p>
+          <div class="grid grid-cols-2 gap-2">
+            <button onclick="setPreset(0, 365)"  class="text-left px-3 py-2.5 bg-ink-50 hover:bg-blue-50 border border-ink-100 hover:border-blue-200 rounded-xl transition-colors text-xs font-semibold text-ink-700">Today → 1 year later</button>
+            <button onclick="setPreset(-365, 0)" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-blue-50 border border-ink-100 hover:border-blue-200 rounded-xl transition-colors text-xs font-semibold text-ink-700">1 year ago → Today</button>
+            <button onclick="setFinancialYear()" class="text-left px-3 py-2.5 bg-ink-50 hover:bg-blue-50 border border-ink-100 hover:border-blue-200 rounded-xl transition-colors text-xs font-semibold text-ink-700">Current FY (Apr–Mar)</button>
+            <button onclick="setPreset(-30, 0)"  class="text-left px-3 py-2.5 bg-ink-50 hover:bg-blue-50 border border-ink-100 hover:border-blue-200 rounded-xl transition-colors text-xs font-semibold text-ink-700">Last 30 days</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADD / SUBTRACT -->
+      <div id="paneAdd" class="hidden">
+        <h2 class="font-display font-semibold text-ink-900 text-lg mb-6">Add / Subtract from a Date</h2>
+        <div class="mb-5">
+          <label class="block text-sm font-semibold text-ink-700 mb-2">Start Date</label>
+          <input type="date" id="addStart" class="w-full border border-ink-200 rounded-xl px-4 py-3 text-sm font-mono text-ink-900 focus:outline-none focus:ring-2 focus:ring-blue-400/30 focus:border-blue-400 transition-all bg-white" oninput="calculate()" />
+        </div>
+        <div class="mb-5">
+          <label class="block text-sm font-semibold text-ink-700 mb-2">Operation</label>
+          <div class="flex gap-3">
+            <button id="btnAdd" onclick="setOp('add')"      class="flex-1 py-3 rounded-xl border border-ink-200 text-sm font-semibold bg-ink-900 text-white transition-all">+ Add</button>
+            <button id="btnSub" onclick="setOp('subtract')" class="flex-1 py-3 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:bg-blue-50 hover:border-blue-300 transition-all">− Subtract</button>
+          </div>
+        </div>
+        <div class="mb-5">
+          <label class="block text-sm font-semibold text-ink-700 mb-2">Amount</label>
+          <input type="number" id="addAmount" min="0" max="99999" value="30" class="w-full border border-ink-200 rounded-xl px-4 py-3 text-sm font-mono text-ink-900 focus:outline-none focus:ring-2 focus:ring-blue-400/30 focus:border-blue-400 transition-all bg-white" oninput="calculate()" />
+        </div>
+        <div class="mb-5">
+          <label class="block text-sm font-semibold text-ink-700 mb-2">Unit</label>
+          <select id="addUnit" class="w-full border border-ink-200 rounded-xl px-4 py-3 text-sm font-semibold text-ink-900 focus:outline-none focus:ring-2 focus:ring-blue-400/30 focus:border-blue-400 transition-all bg-white" onchange="calculate()">
+            <option value="days">Days</option>
+            <option value="weeks">Weeks</option>
+            <option value="months">Months</option>
+            <option value="years">Years</option>
+          </select>
+        </div>
+        <button onclick="setToday('addStart')" class="w-full text-xs px-3 py-2 bg-ink-50 border border-ink-200 rounded-xl hover:bg-blue-50 hover:border-blue-200 text-ink-600 hover:text-blue-700 font-medium transition-colors">Set start to today</button>
+      </div>
+
+      <!-- BUSINESS DAYS -->
+      <div id="paneBiz" class="hidden">
+        <h2 class="font-display font-semibold text-ink-900 text-lg mb-6">Business / Working Days</h2>
+        <div class="mb-5">
+          <label class="block text-sm font-semibold text-ink-700 mb-2">Start Date</label>
+          <input type="date" id="bizStart" class="w-full border border-ink-200 rounded-xl px-4 py-3 text-sm font-mono text-ink-900 focus:outline-none focus:ring-2 focus:ring-blue-400/30 focus:border-blue-400 transition-all bg-white" oninput="calculate()" />
+        </div>
+        <div class="mb-5">
+          <label class="block text-sm font-semibold text-ink-700 mb-2">End Date</label>
+          <input type="date" id="bizEnd" class="w-full border border-ink-200 rounded-xl px-4 py-3 text-sm font-mono text-ink-900 focus:outline-none focus:ring-2 focus:ring-blue-400/30 focus:border-blue-400 transition-all bg-white" oninput="calculate()" />
+        </div>
+        <p class="text-xs text-ink-400 bg-ink-50 rounded-xl p-3 border border-ink-100">Weekends (Sat &amp; Sun) are excluded. Indian public holidays are not automatically excluded.</p>
+        <div class="mt-4 grid grid-cols-2 gap-2">
+          <button onclick="setToday('bizStart')" class="text-xs px-3 py-2 bg-ink-50 border border-ink-200 rounded-xl hover:bg-blue-50 hover:border-blue-200 text-ink-600 hover:text-blue-700 font-medium transition-colors">Start = Today</button>
+          <button onclick="setToday('bizEnd')"   class="text-xs px-3 py-2 bg-ink-50 border border-ink-200 rounded-xl hover:bg-blue-50 hover:border-blue-200 text-ink-600 hover:text-blue-700 font-medium transition-colors">End = Today</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Result -->
+    <div class="flex flex-col gap-5">
+      <div id="resultCard" class="bg-ink-900 rounded-2xl p-6 sm:p-8 min-h-[200px] flex flex-col justify-center">
+        <p id="resultEmpty" class="text-ink-400 text-sm text-center">Select two dates to see the result</p>
+        <div id="resultContent" class="hidden">
+          <p class="text-ink-400 text-xs font-semibold uppercase tracking-wider mb-2" id="resultLabel">Difference</p>
+          <div class="font-display text-4xl sm:text-5xl font-bold text-white tracking-tight mb-1" id="resultMain">—</div>
+          <p class="text-ink-400 text-sm mt-1" id="resultSub"></p>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-6 border-t border-ink-700" id="resultGrid"></div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-ink-100 rounded-2xl p-6">
+        <h3 class="font-display font-semibold text-ink-900 text-base mb-4">Breakdown</h3>
+        <div id="breakdown" class="text-sm text-ink-400 text-center py-4">Result will appear here</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMULA -->
+  <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8 mt-6">
+    <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">How Date Difference is Calculated</h2>
+    <div class="grid sm:grid-cols-3 gap-5">
+      <div class="bg-ink-50 rounded-xl p-4 border border-ink-100">
+        <p class="text-xs font-semibold text-ink-400 uppercase tracking-wider mb-2">Total Days</p>
+        <p class="font-mono text-sm text-ink-800">(Date₂ − Date₁) ÷ 86400000</p>
+        <p class="text-xs text-ink-400 mt-2">86400000 ms = 1 day</p>
+      </div>
+      <div class="bg-ink-50 rounded-xl p-4 border border-ink-100">
+        <p class="text-xs font-semibold text-ink-400 uppercase tracking-wider mb-2">Total Weeks</p>
+        <p class="font-mono text-sm text-ink-800">Total Days ÷ 7</p>
+        <p class="text-xs text-ink-400 mt-2">Remainder = extra days</p>
+      </div>
+      <div class="bg-ink-50 rounded-xl p-4 border border-ink-100">
+        <p class="text-xs font-semibold text-ink-400 uppercase tracking-wider mb-2">Business Days</p>
+        <p class="font-mono text-sm text-ink-800">Exclude Sat + Sun</p>
+        <p class="text-xs text-ink-400 mt-2">Iterate day by day</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXAMPLE -->
+  <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8 mt-6">
+    <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Example Calculations</h2>
+    <div class="grid sm:grid-cols-2 gap-5">
+      <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-4">
+        <p class="text-xs font-semibold text-leaf-700 uppercase tracking-wider mb-3">Days between India's Republic Day and Independence Day</p>
+        <div class="space-y-1.5 text-sm">
+          <div class="flex justify-between"><span class="text-ink-500">Start</span><span class="font-mono font-semibold text-ink-800">26 Jan 2026</span></div>
+          <div class="flex justify-between"><span class="text-ink-500">End</span><span class="font-mono font-semibold text-ink-800">15 Aug 2026</span></div>
+          <div class="border-t border-leaf-200 pt-1.5 flex justify-between"><span class="font-semibold text-ink-700">Days</span><span class="font-mono font-bold text-leaf-700">200 days</span></div>
+          <div class="flex justify-between"><span class="text-ink-500">Weeks</span><span class="font-mono text-ink-600">28 weeks, 4 days</span></div>
+        </div>
+      </div>
+      <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+        <p class="text-xs font-semibold text-blue-700 uppercase tracking-wider mb-3">Add 90 days to a date</p>
+        <div class="space-y-1.5 text-sm">
+          <div class="flex justify-between"><span class="text-ink-500">Start</span><span class="font-mono font-semibold text-ink-800">01 Apr 2026</span></div>
+          <div class="flex justify-between"><span class="text-ink-500">Add</span><span class="font-mono font-semibold text-ink-800">90 days</span></div>
+          <div class="border-t border-blue-200 pt-1.5 flex justify-between"><span class="font-semibold text-ink-700">Result</span><span class="font-mono font-bold text-blue-700">30 Jun 2026</span></div>
+          <div class="flex justify-between"><span class="text-ink-500">Day of week</span><span class="font-mono text-ink-600">Tuesday</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8 mt-6">
+    <h2 class="font-display font-semibold text-ink-900 text-xl mb-6">Frequently Asked Questions</h2>
+    <div class="space-y-3">
+      <div class="faq-item border border-ink-100 rounded-xl overflow-hidden">
+        <details>
+          <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+            <span class="font-semibold text-sm text-ink-800">How do I calculate the number of days between two dates?</span>
+            <svg class="faq-icon w-5 h-5 text-ink-400 flex-shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed">Enter the start date and end date in the Date Difference tab above. The calculator instantly shows total days, weeks, months, and years between the two dates.</div>
+        </details>
+      </div>
+      <div class="faq-item border border-ink-100 rounded-xl overflow-hidden">
+        <details>
+          <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+            <span class="font-semibold text-sm text-ink-800">How do I add days to a date?</span>
+            <svg class="faq-icon w-5 h-5 text-ink-400 flex-shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed">Use the Add/Subtract tab. Enter your start date, select "Add", enter the number of days (or weeks, months, years), and the result date appears instantly.</div>
+        </details>
+      </div>
+      <div class="faq-item border border-ink-100 rounded-xl overflow-hidden">
+        <details>
+          <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+            <span class="font-semibold text-sm text-ink-800">What are business days?</span>
+            <svg class="faq-icon w-5 h-5 text-ink-400 flex-shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed">Business days (working days) are Monday through Friday, excluding Saturday and Sunday. This is commonly used for contract deadlines, financial settlement, and notice periods. Indian public holidays are not automatically excluded.</div>
+        </details>
+      </div>
+      <div class="faq-item border border-ink-100 rounded-xl overflow-hidden">
+        <details>
+          <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+            <span class="font-semibold text-sm text-ink-800">How many weeks are in a year?</span>
+            <svg class="faq-icon w-5 h-5 text-ink-400 flex-shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed">A standard year has 52 weeks and 1 day (365 days). A leap year has 52 weeks and 2 days (366 days). Our calculator shows exact weeks and remaining days between any two dates.</div>
+        </details>
+      </div>
+      <div class="faq-item border border-ink-100 rounded-xl overflow-hidden">
+        <details>
+          <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+            <span class="font-semibold text-sm text-ink-800">How is the date difference formula calculated?</span>
+            <svg class="faq-icon w-5 h-5 text-ink-400 flex-shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed">Both dates are converted to milliseconds since the Unix epoch (1 Jan 1970). The absolute difference is divided by 86,400,000 (ms in a day) to get total days. Weeks, months, and years are derived from this.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED -->
+  <div class="mt-8">
+    <h2 class="font-display font-semibold text-ink-900 text-xl mb-5">Related Calculators</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+      <a href="age-calculator.html"        class="bg-white border border-ink-100 hover:border-blue-200 rounded-2xl p-4 flex flex-col gap-2 hover:shadow-md transition-all group">
+        <div class="w-10 h-10 bg-purple-100 text-purple-700 rounded-xl flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="12" cy="16" r="2" fill="currentColor" stroke="none"/></svg></div>
+        <div class="font-display font-semibold text-sm text-ink-900 group-hover:text-leaf-700 transition-colors">Age Calculator</div>
+        <div class="text-xs text-ink-400">Exact age in years/months</div>
+      </a>
+      <a href="due-date-calculator.html"   class="bg-white border border-ink-100 hover:border-blue-200 rounded-2xl p-4 flex flex-col gap-2 hover:shadow-md transition-all group">
+        <div class="w-10 h-10 bg-pink-100 text-pink-700 rounded-xl flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div class="font-display font-semibold text-sm text-ink-900 group-hover:text-leaf-700 transition-colors">Due Date Calculator</div>
+        <div class="text-xs text-ink-400">Pregnancy due date</div>
+      </a>
+      <a href="timezone-converter.html"    class="bg-white border border-ink-100 hover:border-blue-200 rounded-2xl p-4 flex flex-col gap-2 hover:shadow-md transition-all group">
+        <div class="w-10 h-10 bg-teal-100 text-teal-700 rounded-xl flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div class="font-display font-semibold text-sm text-ink-900 group-hover:text-leaf-700 transition-colors">Time Zone Converter</div>
+        <div class="text-xs text-ink-400">IST to global time zones</div>
+      </a>
+      <a href="percentage-calculator.html" class="bg-white border border-ink-100 hover:border-blue-200 rounded-2xl p-4 flex flex-col gap-2 hover:shadow-md transition-all group">
+        <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-xl flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></svg></div>
+        <div class="font-display font-semibold text-sm text-ink-900 group-hover:text-leaf-700 transition-colors">Percentage Calculator</div>
+        <div class="text-xs text-ink-400">% of a number, % change</div>
+      </a>
+    </div>
+  </div>
+
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+          <div class="font-display font-semibold text-white">BharatCalc</div>
+        </div>
+        <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="sip-calculator.html"     class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
+          <li><a href="emi-calculator.html"     class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
+          <li><a href="ppf-calculator.html"     class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
+          <li><a href="fd-calculator.html"      class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
+          <li><a href="lumpsum-calculator.html" class="hover:text-leaf-400 transition-colors">Lumpsum Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax & Legal</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="income-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
+          <li><a href="gst-calculator.html"        class="hover:text-leaf-400 transition-colors">GST Calculator</a></li>
+          <li><a href="hra-calculator.html"        class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li>
+          <li><a href="tds-calculator.html"        class="hover:text-leaf-400 transition-colors">TDS Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Health & Tools</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="bmi-calculator.html"       class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li>
+          <li><a href="age-calculator.html"       class="hover:text-leaf-400 transition-colors">Age Calculator</a></li>
+          <li><a href="date-calculator.html"      class="hover:text-leaf-400 transition-colors font-semibold text-leaf-400">Date Calculator</a></li>
+          <li><a href="timezone-converter.html"   class="hover:text-leaf-400 transition-colors">Time Zone Converter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
+      <div class="flex items-center gap-5">
+        <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
+        <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
+        <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+let mode = 'diff';
+let addOp = 'add';
+
+function toggleMobileMenu() {
+  const m = document.getElementById('mobileMenu');
+  m.classList.toggle('hidden');
+}
+
+function setMode(m, btn) {
+  mode = m;
+  document.querySelectorAll('.preset-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('paneDiff').classList.add('hidden');
+  document.getElementById('paneAdd').classList.add('hidden');
+  document.getElementById('paneBiz').classList.add('hidden');
+  document.getElementById('pane' + m.charAt(0).toUpperCase() + m.slice(1)).classList.remove('hidden');
+  calculate();
+}
+
+function setOp(op) {
+  addOp = op;
+  document.getElementById('btnAdd').className = op === 'add' ? 'flex-1 py-3 rounded-xl border border-ink-200 text-sm font-semibold bg-ink-900 text-white transition-all' : 'flex-1 py-3 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:bg-blue-50 hover:border-blue-300 transition-all';
+  document.getElementById('btnSub').className = op === 'subtract' ? 'flex-1 py-3 rounded-xl border border-ink-200 text-sm font-semibold bg-ink-900 text-white transition-all' : 'flex-1 py-3 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:bg-blue-50 hover:border-blue-300 transition-all';
+  calculate();
+}
+
+function setToday(id) {
+  document.getElementById(id).value = new Date().toISOString().split('T')[0];
+  calculate();
+}
+
+function swapDates() {
+  const a = document.getElementById('diffStart').value;
+  const b = document.getElementById('diffEnd').value;
+  document.getElementById('diffStart').value = b;
+  document.getElementById('diffEnd').value   = a;
+  calculate();
+}
+
+function setPreset(startOffset, endOffset) {
+  const now = new Date();
+  const s = new Date(now); s.setDate(s.getDate() + startOffset);
+  const e = new Date(now); e.setDate(e.getDate() + endOffset);
+  document.getElementById('diffStart').value = s.toISOString().split('T')[0];
+  document.getElementById('diffEnd').value   = e.toISOString().split('T')[0];
+  calculate();
+}
+
+function setFinancialYear() {
+  const now = new Date();
+  const fyStart = now.getMonth() >= 3 ? new Date(now.getFullYear(), 3, 1) : new Date(now.getFullYear() - 1, 3, 1);
+  const fyEnd   = new Date(fyStart.getFullYear() + 1, 2, 31);
+  document.getElementById('diffStart').value = fyStart.toISOString().split('T')[0];
+  document.getElementById('diffEnd').value   = fyEnd.toISOString().split('T')[0];
+  calculate();
+}
+
+const DAYS_OF_WEEK = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+function fmtDate(d) { return `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()} (${DAYS_OF_WEEK[d.getDay()]})`; }
+
+function showEmpty() {
+  document.getElementById('resultEmpty').classList.remove('hidden');
+  document.getElementById('resultContent').classList.add('hidden');
+  document.getElementById('breakdown').innerHTML = '<p class="text-sm text-ink-400 text-center py-4">Result will appear here</p>';
+}
+
+function showResult(label, main, sub, gridItems, breakdownHtml) {
+  document.getElementById('resultEmpty').classList.add('hidden');
+  document.getElementById('resultContent').classList.remove('hidden');
+  document.getElementById('resultLabel').textContent = label;
+  document.getElementById('resultMain').textContent  = main;
+  document.getElementById('resultSub').textContent   = sub;
+  document.getElementById('resultGrid').innerHTML = gridItems.map(item =>
+    `<div><p class="text-ink-500 text-xs mb-1">${item.label}</p><p class="font-mono font-semibold text-white text-sm">${item.value}</p></div>`
+  ).join('');
+  document.getElementById('breakdown').innerHTML = breakdownHtml;
+}
+
+function calculate() {
+  if (mode === 'diff') calcDiff();
+  else if (mode === 'add') calcAdd();
+  else calcBiz();
+}
+
+function calcDiff() {
+  const sv = document.getElementById('diffStart').value;
+  const ev = document.getElementById('diffEnd').value;
+  if (!sv || !ev) { showEmpty(); return; }
+  let d1 = new Date(sv), d2 = new Date(ev);
+  const sign = d2 >= d1 ? 1 : -1;
+  if (sign < 0) [d1, d2] = [d2, d1];
+
+  const ms   = d2 - d1;
+  const days  = Math.floor(ms / 86400000);
+  const weeks = Math.floor(days / 7);
+  const rem   = days % 7;
+
+  let y = d2.getFullYear() - d1.getFullYear();
+  let m = d2.getMonth() - d1.getMonth();
+  let d = d2.getDate() - d1.getDate();
+  if (d < 0) { m--; const prev = new Date(d2.getFullYear(), d2.getMonth(), 0); d += prev.getDate(); }
+  if (m < 0) { y--; m += 12; }
+
+  const label = sign >= 0 ? 'Difference (end is later)' : 'Difference (start is later)';
+  const mainText = `${days.toLocaleString('en-IN')} days`;
+  const subText  = `${weeks} weeks, ${rem} day${rem !== 1 ? 's' : ''}`;
+
+  const grid = [
+    { label: 'Years',  value: y.toString() },
+    { label: 'Months', value: m.toString() },
+    { label: 'Days',   value: d.toString() },
+    { label: 'Hours',  value: (days * 24).toLocaleString('en-IN') },
+  ];
+
+  const bd = `
+    <div class="space-y-2 text-sm">
+      <div class="flex justify-between border-b border-ink-100 pb-2"><span class="text-ink-500">From</span><span class="font-mono font-semibold text-ink-800">${fmtDate(d1)}</span></div>
+      <div class="flex justify-between border-b border-ink-100 pb-2"><span class="text-ink-500">To</span><span class="font-mono font-semibold text-ink-800">${fmtDate(d2)}</span></div>
+      <div class="flex justify-between border-b border-ink-100 pb-2"><span class="text-ink-500">Total days</span><span class="font-mono font-semibold text-ink-800">${days.toLocaleString('en-IN')}</span></div>
+      <div class="flex justify-between border-b border-ink-100 pb-2"><span class="text-ink-500">Total weeks</span><span class="font-mono font-semibold text-ink-800">${weeks} wk ${rem} d</span></div>
+      <div class="flex justify-between"><span class="text-ink-500">In years/months/days</span><span class="font-mono font-semibold text-ink-800">${y}y ${m}m ${d}d</span></div>
+    </div>`;
+  showResult(label, mainText, subText, grid, bd);
+}
+
+function calcAdd() {
+  const sv  = document.getElementById('addStart').value;
+  const amt = parseInt(document.getElementById('addAmount').value) || 0;
+  const unit = document.getElementById('addUnit').value;
+  if (!sv) { showEmpty(); return; }
+  const d = new Date(sv);
+  const result = new Date(d);
+  const factor = addOp === 'add' ? 1 : -1;
+  if (unit === 'days')   result.setDate(result.getDate() + factor * amt);
+  if (unit === 'weeks')  result.setDate(result.getDate() + factor * amt * 7);
+  if (unit === 'months') result.setMonth(result.getMonth() + factor * amt);
+  if (unit === 'years')  result.setFullYear(result.getFullYear() + factor * amt);
+
+  const totalDays = Math.abs(Math.floor((result - d) / 86400000));
+  const mainText = `${result.getDate()} ${MONTHS[result.getMonth()]} ${result.getFullYear()}`;
+  showResult(
+    `${addOp === 'add' ? '+' : '-'} ${amt} ${unit} from ${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`,
+    mainText,
+    DAYS_OF_WEEK[result.getDay()],
+    [
+      { label: 'Day of week', value: DAYS_OF_WEEK[result.getDay()] },
+      { label: 'Total days shifted', value: totalDays.toLocaleString('en-IN') },
+      { label: 'Month',  value: MONTHS[result.getMonth()] },
+      { label: 'Year',   value: result.getFullYear().toString() },
+    ],
+    `<div class="space-y-2 text-sm">
+      <div class="flex justify-between border-b border-ink-100 pb-2"><span class="text-ink-500">Start date</span><span class="font-mono font-semibold text-ink-800">${fmtDate(d)}</span></div>
+      <div class="flex justify-between border-b border-ink-100 pb-2"><span class="text-ink-500">Operation</span><span class="font-mono font-semibold text-ink-800">${addOp === 'add' ? '+' : '-'} ${amt} ${unit}</span></div>
+      <div class="flex justify-between"><span class="text-ink-500">Result date</span><span class="font-mono font-bold text-leaf-700">${fmtDate(result)}</span></div>
+    </div>`
+  );
+}
+
+function calcBiz() {
+  const sv = document.getElementById('bizStart').value;
+  const ev = document.getElementById('bizEnd').value;
+  if (!sv || !ev) { showEmpty(); return; }
+  let d1 = new Date(sv), d2 = new Date(ev);
+  if (d2 < d1) [d1, d2] = [d2, d1];
+
+  let bizDays = 0, cur = new Date(d1), total = 0;
+  while (cur <= d2) {
+    total++;
+    const dow = cur.getDay();
+    if (dow !== 0 && dow !== 6) bizDays++;
+    cur.setDate(cur.getDate() + 1);
+  }
+  const weekends = total - bizDays;
+
+  showResult(
+    'Business Days',
+    `${bizDays.toLocaleString('en-IN')} working days`,
+    `out of ${total.toLocaleString('en-IN')} total days`,
+    [
+      { label: 'Total Days',    value: total.toLocaleString('en-IN') },
+      { label: 'Business Days', value: bizDays.toLocaleString('en-IN') },
+      { label: 'Weekend Days',  value: weekends.toLocaleString('en-IN') },
+      { label: 'Full Weeks',    value: Math.floor(total / 7).toString() },
+    ],
+    `<div class="space-y-2 text-sm">
+      <div class="flex justify-between border-b border-ink-100 pb-2"><span class="text-ink-500">From</span><span class="font-mono font-semibold text-ink-800">${fmtDate(d1)}</span></div>
+      <div class="flex justify-between border-b border-ink-100 pb-2"><span class="text-ink-500">To</span><span class="font-mono font-semibold text-ink-800">${fmtDate(d2)}</span></div>
+      <div class="flex justify-between border-b border-ink-100 pb-2"><span class="text-ink-500">Total calendar days</span><span class="font-mono font-semibold text-ink-800">${total}</span></div>
+      <div class="flex justify-between border-b border-ink-100 pb-2"><span class="text-ink-500">Weekend days excluded</span><span class="font-mono font-semibold text-ink-800">${weekends}</span></div>
+      <div class="flex justify-between"><span class="text-ink-500 font-semibold">Working days</span><span class="font-mono font-bold text-leaf-700">${bizDays}</span></div>
+    </div>`
+  );
+}
+
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+setToday('diffStart');
+setToday('diffEnd');
+calculate();
+</script>
+</body>
+</html>

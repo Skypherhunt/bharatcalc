@@ -649,7 +649,7 @@
       <p class="text-xs text-ink-400 mt-4 font-mono">* Calculated using the standard SIP future-value formula with monthly compounding. Actual mutual fund returns vary with market conditions.</p>
       <div class="mt-4 flex flex-wrap gap-3">
         <a href="sip-calculator.html" class="inline-flex items-center gap-2 px-4 py-2 bg-leaf-600 hover:bg-leaf-700 text-white text-sm font-semibold rounded-xl transition-colors">Calculate your SIP →</a>
-        <a href="step-up-sip-calculator.html" class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-ink-200 hover:border-leaf-400 text-ink-700 text-sm font-semibold rounded-xl transition-colors">Try Step-up SIP calculator</a>
+        <a href="#" onclick="event.preventDefault();var b=document.querySelectorAll('.preset-tab')[1];setSipMode('stepup',b);window.scrollTo({top:0,behavior:'smooth'});" class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-ink-200 hover:border-leaf-400 text-ink-700 text-sm font-semibold rounded-xl transition-colors">Try Step-up SIP calculator</a>
       </div>
     </div>
   </div>
@@ -765,7 +765,7 @@
   <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
   <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
     <a href="cagr-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
-      <div class="text-xl mb-2">�</div>
+      <div class="mb-2 text-leaf-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="9" rx="0.5"/><rect x="13" y="7" width="3" height="14" rx="0.5"/></svg></div>
       <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">CAGR Calculator</div>
       <div class="text-xs text-ink-400 mt-0.5">Compound annual growth rate</div>
     </a>
@@ -780,7 +780,7 @@
       <div class="text-xs text-ink-400 mt-0.5">Public Provident Fund</div>
     </a>
     <a href="lumpsum-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
-      <div class="text-xl mb-2">�</div>
+      <div class="mb-2 text-leaf-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="7" rx="9" ry="3"/><path d="M3 7v4c0 1.66 4.03 3 9 3s9-1.34 9-3V7M3 11v4c0 1.66 4.03 3 9 3s9-1.34 9-3v-4"/></svg></div>
       <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">Lumpsum Calculator</div>
       <div class="text-xs text-ink-400 mt-0.5">One-time investment</div>
     </a>

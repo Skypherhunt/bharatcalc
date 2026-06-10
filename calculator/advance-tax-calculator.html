@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advance Tax Calculator India – Quarterly Advance Tax Due Dates 2025-26 | BharatCalc</title>
+  <meta name="description" content="Free Advance Tax Calculator India — calculate your quarterly advance tax instalments for FY 2025-26 under both new and old tax regime. See exact due dates: 15 June, 15 September, 15 December, 15 March." />
+  <meta name="keywords" content="advance tax calculator India, advance tax 2025-26, advance tax due dates, advance tax calculator, quarterly advance tax, advance tax instalments, advance tax payment schedule, Section 207 advance tax, advance tax for salaried, advance tax for business" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/advance-tax-calculator.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://bharatcalc.online/calculator/advance-tax-calculator.html" />
+  <meta property="og:title"       content="Advance Tax Calculator – Quarterly Instalments FY 2025-26 | BharatCalc" />
+  <meta property="og:description" content="Calculate your advance tax quarterly instalments for FY 2025-26. Know exact amounts due by June 15, Sep 15, Dec 15, Mar 15. Free — by BharatCalc." />
+  <meta property="og:image"       content="https://bharatcalc.online/og/advance-tax-calculator.png" />
+  <meta property="og:locale"      content="en_IN" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Advance Tax Calculator | BharatCalc" />
+  <meta name="twitter:description" content="Quarterly advance tax calculation for FY 2025-26. Free — by BharatCalc." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Advance Tax Calculator",
+    "url": "https://bharatcalc.online/calculator/advance-tax-calculator.html",
+    "description": "Calculate quarterly advance tax instalments for FY 2025-26 under new and old tax regime.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",                  "item": "https://bharatcalc.online/" },
+        { "@type": "ListItem", "position": 2, "name": "Tax",                   "item": "https://bharatcalc.online/index.html?cat=tax" },
+        { "@type": "ListItem", "position": 3, "name": "Advance Tax Calculator","item": "https://bharatcalc.online/calculator/advance-tax-calculator.html" }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is advance tax?", "acceptedAnswer": { "@type": "Answer", "text": "Advance tax is income tax paid in instalments during the financial year rather than a lump sum at year end. It is required when your tax liability after TDS exceeds ₹10,000 in a financial year. The due dates are: 15% by June 15, 45% by September 15, 75% by December 15, and 100% by March 15." } },
+      { "@type": "Question", "name": "Who is required to pay advance tax?", "acceptedAnswer": { "@type": "Answer", "text": "Any taxpayer (individual, HUF, firm, company) whose estimated tax liability for the year exceeds ₹10,000 after deducting TDS must pay advance tax. Senior citizens (60+) with no business income are exempt from advance tax. Salaried employees whose full tax is deducted as TDS need not pay advance tax separately." } },
+      { "@type": "Question", "name": "What happens if advance tax is not paid?", "acceptedAnswer": { "@type": "Answer", "text": "If advance tax is not paid or is paid short, interest under Section 234B (1% per month on unpaid tax) and Section 234C (1% per month on each instalment shortfall) becomes applicable. These interests are calculated from the due dates until the actual payment date." } }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Clash Display', 'sans-serif'],
+            sans:    ['Satoshi', 'sans-serif'],
+            mono:    ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
+            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Satoshi', system-ui, sans-serif; }
+    .font-display { font-family: 'Clash Display', system-ui, sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #16a34a; transform: scaleX(0); transition: transform 0.2s; border-radius: 1px; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 5px; border-radius: 99px; outline: none; cursor: pointer; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #16a34a; border: 3px solid #fff; box-shadow: 0 0 0 1px #16a34a, 0 2px 6px rgba(22,163,74,0.3); cursor: pointer; }
+    input[type=range]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #16a34a; border: 3px solid #fff; cursor: pointer; }
+    .val-input { font-family: 'JetBrains Mono', monospace; }
+    .val-input:focus { outline: none; }
+    .regime-tab { transition: all 0.15s; }
+    .regime-tab.active { background: #0d1117; color: #fff; border-color: #0d1117; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    .breadcrumb a { transition: color 0.15s; }
+    .faq-item details summary { cursor: pointer; list-style: none; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
+    .installment-row { transition: background 0.15s; }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9TD6B9GQ89');
+  </script>
+</head>
+
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+        <div class="leading-none">
+          <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
+          <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+        <a href="../index.html?cat=tools"   class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+      </nav>
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors">Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors">Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors">Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors">Math</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a>
+      <span>/</span>
+      <a href="../index.html?cat=tax" class="hover:text-ink-200">Tax</a>
+      <span>/</span>
+      <span class="text-ink-300">Advance Tax Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-saffron-500/15 text-saffron-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-saffron-500/20">
+          <span class="w-1.5 h-1.5 bg-saffron-400 rounded-full inline-block animate-pulse"></span>
+          FY 2025–26 Due Dates
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">Advance Tax Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
+          Calculate your quarterly advance tax instalments for FY 2025-26. Know exactly how much to pay by each due date to avoid interest under Section 234C.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0">
+        <span class="w-1.5 h-1.5 bg-leaf-400 rounded-full inline-block"></span>
+        Results update live
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <!-- Regime selector -->
+  <div class="flex gap-2 mb-6 flex-wrap" role="group" aria-label="Tax regime">
+    <button class="regime-tab active px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 transition-all" onclick="setRegime('new', this)">New Regime (Default)</button>
+    <button class="regime-tab px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 transition-all" onclick="setRegime('old', this)">Old Regime</button>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- LEFT: Inputs -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-7">Income Details (FY 2025-26)</h2>
+
+      <!-- Annual Income -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="income" class="text-sm font-semibold text-ink-700">Estimated Annual Income</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="incomeInput" type="number" class="val-input w-28 text-sm font-semibold text-ink-900 bg-transparent text-right" min="100000" max="10000000" step="50000" oninput="syncFromInput('income', this.value)" />
+          </div>
+        </div>
+        <input type="range" id="income" min="100000" max="10000000" step="50000" value="1200000" oninput="syncFromSlider('income')" class="w-full" aria-label="Annual income slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹1L</span><span>₹1Cr</span></div>
+      </div>
+
+      <!-- TDS Deducted -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="tds" class="text-sm font-semibold text-ink-700">TDS Already Deducted (Annual)</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="tdsInput" type="number" class="val-input w-28 text-sm font-semibold text-ink-900 bg-transparent text-right" min="0" max="2000000" step="1000" oninput="syncFromInput('tds', this.value)" />
+          </div>
+        </div>
+        <input type="range" id="tds" min="0" max="2000000" step="1000" value="0" oninput="syncFromSlider('tds')" class="w-full" aria-label="TDS slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹0</span><span>₹20L</span></div>
+      </div>
+
+      <!-- Other Deductions (old regime) -->
+      <div id="deductionsRow" class="mb-7 hidden">
+        <div class="flex items-center justify-between mb-3">
+          <label for="deductions" class="text-sm font-semibold text-ink-700">80C + Other Deductions</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="deductionsInput" type="number" class="val-input w-28 text-sm font-semibold text-ink-900 bg-transparent text-right" min="0" max="500000" step="5000" oninput="syncFromInput('deductions', this.value)" />
+          </div>
+        </div>
+        <input type="range" id="deductions" min="0" max="500000" step="5000" value="150000" oninput="syncFromSlider('deductions')" class="w-full" aria-label="Deductions slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹0</span><span>₹5L</span></div>
+      </div>
+
+      <div id="requireAlert" class="bg-saffron-50 border border-saffron-100 rounded-xl p-4 text-xs text-ink-500 leading-relaxed">
+        <p class="font-semibold text-saffron-700 mb-1">Advance Tax Required?</p>
+        <p id="requireText">Advance tax is required if your tax liability after TDS exceeds <strong class="text-ink-700">₹10,000</strong> for the year.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div class="flex flex-col gap-5">
+      <div class="bg-ink-900 rounded-2xl p-6 sm:p-8">
+        <p class="text-ink-400 text-xs font-semibold uppercase tracking-wider mb-2">Total Tax Liability</p>
+        <div class="font-display text-4xl sm:text-5xl font-bold text-white tracking-tight mb-1" id="totalTaxResult">₹0</div>
+        <p class="text-ink-400 text-xs" id="taxNote">After standard deduction of ₹75,000 (new regime)</p>
+        <div class="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-ink-700">
+          <div><p class="text-ink-500 text-xs mb-1">Gross Tax</p><p class="font-mono font-semibold text-white text-base" id="grossTaxResult">₹0</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Cess (4%)</p><p class="font-mono font-semibold text-saffron-400 text-base" id="cessResult">₹0</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">TDS Deducted</p><p class="font-mono font-semibold text-leaf-400 text-base" id="tdsResult">₹0</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Net Advance Tax</p><p class="font-mono font-semibold text-saffron-400 text-base" id="netAdvTaxResult">₹0</p></div>
+        </div>
+      </div>
+
+      <!-- Instalment schedule -->
+      <div class="bg-white border border-ink-100 rounded-2xl p-6">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-4">Quarterly Instalment Schedule</h2>
+        <div class="space-y-2" id="instalmentTable">
+          <!-- Filled by JS -->
+        </div>
+        <p class="text-[10px] text-ink-400 mt-3 font-mono">* Due by midnight of due date. Pay via Challan 280 on Income Tax Portal.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ad placeholder -->
+  <div class="my-6">
+    <div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400" aria-hidden="true">Google AdSense — Responsive Ad Unit</div>
+  </div>
+
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Advance Tax Due Dates FY 2025-26</h2>
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <div><p class="text-sm font-semibold text-ink-700">1st Instalment</p><p class="text-xs text-ink-400">Due by 15 June 2025</p></div>
+          <span class="font-mono text-sm font-bold text-saffron-600">15% of total tax</span>
+        </div>
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <div><p class="text-sm font-semibold text-ink-700">2nd Instalment</p><p class="text-xs text-ink-400">Due by 15 September 2025</p></div>
+          <span class="font-mono text-sm font-bold text-saffron-600">45% of total tax</span>
+        </div>
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <div><p class="text-sm font-semibold text-ink-700">3rd Instalment</p><p class="text-xs text-ink-400">Due by 15 December 2025</p></div>
+          <span class="font-mono text-sm font-bold text-saffron-600">75% of total tax</span>
+        </div>
+        <div class="flex items-center justify-between py-2.5">
+          <div><p class="text-sm font-semibold text-ink-700">4th Instalment</p><p class="text-xs text-ink-400">Due by 15 March 2026</p></div>
+          <span class="font-mono text-sm font-bold text-saffron-600">100% of total tax</span>
+        </div>
+      </div>
+      <p class="text-[10px] text-ink-400 mt-3">Note: The cumulative percentage by each date. The amount due at each instalment is the difference from the previous one.</p>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">New Regime Tax Slabs FY 2025-26</h2>
+      <div class="space-y-2">
+        <div class="flex items-center justify-between py-1.5 border-b border-ink-50">
+          <span class="text-sm text-ink-600">Up to ₹3,00,000</span>
+          <span class="font-mono text-sm font-semibold text-leaf-700">0%</span>
+        </div>
+        <div class="flex items-center justify-between py-1.5 border-b border-ink-50">
+          <span class="text-sm text-ink-600">₹3L – ₹7L</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">5%</span>
+        </div>
+        <div class="flex items-center justify-between py-1.5 border-b border-ink-50">
+          <span class="text-sm text-ink-600">₹7L – ₹10L</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">10%</span>
+        </div>
+        <div class="flex items-center justify-between py-1.5 border-b border-ink-50">
+          <span class="text-sm text-ink-600">₹10L – ₹12L</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">15%</span>
+        </div>
+        <div class="flex items-center justify-between py-1.5 border-b border-ink-50">
+          <span class="text-sm text-ink-600">₹12L – ₹15L</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">20%</span>
+        </div>
+        <div class="flex items-center justify-between py-1.5">
+          <span class="text-sm text-ink-600">Above ₹15L</span>
+          <span class="font-mono text-sm font-semibold text-saffron-600">30%</span>
+        </div>
+      </div>
+      <p class="text-[10px] text-ink-400 mt-3">+ 4% Health & Education Cess on tax. Standard deduction of ₹75,000 applies in new regime.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about advance tax in India</p>
+  <div class="grid md:grid-cols-2 gap-3">
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is advance tax and who must pay it?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Advance tax is income tax paid in advance during the same financial year instead of at year end. It applies to individuals, HUFs, firms, and companies whose tax liability after TDS exceeds <strong class="text-ink-700">₹10,000</strong>. Senior citizens (60+) with no business income are exempt.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What interest is charged if I miss an instalment?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Section 234C charges <strong class="text-ink-700">1% per month</strong> on shortfall of each instalment. Section 234B charges <strong class="text-ink-700">1% per month</strong> if you paid less than 90% of total tax by March 31. Both interests are calculated from the due date to the payment date.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Do salaried employees need to pay advance tax?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Generally, no. If your employer deducts TDS on your full salary income, you don't need to pay advance tax separately. However, if you have additional income (rent, capital gains, freelance, interest) that results in more than ₹10,000 additional tax, you must pay advance tax on that income.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How do I pay advance tax online?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Pay advance tax via <strong class="text-ink-700">Challan 280</strong> on the Income Tax e-filing portal (incometax.gov.in). Select "Advance Tax" as the payment type, enter your PAN, assessment year (2026-27 for FY 2025-26), and pay via net banking or debit card. Download the challan as proof.
+        </div>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- Related calculators -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="income-tax-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-saffron-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">Income Tax Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">New vs old regime</div>
+    </a>
+    <a href="tds-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-red-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">TDS Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Tax deducted at source</div>
+    </a>
+    <a href="gratuity-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-amber-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">Gratuity Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Gratuity on retirement</div>
+    </a>
+    <a href="hra-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-teal-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 12L12 3l9 9"/><path d="M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">HRA Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">HRA exemption</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+          <div class="font-display font-semibold text-white">BharatCalc</div>
+        </div>
+        <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
+        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700"><svg class="w-3.5 h-3.5 inline-block mr-1 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> All results are estimates. Consult a CA or tax advisor for your specific situation.</div>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="sip-calculator.html"  class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
+          <li><a href="emi-calculator.html"  class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
+          <li><a href="ppf-calculator.html"  class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
+          <li><a href="fd-calculator.html"   class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
+          <li><a href="epf-calculator.html"  class="hover:text-leaf-400 transition-colors">EPF Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="income-tax-calculator.html"  class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
+          <li><a href="gst-calculator.html"         class="hover:text-leaf-400 transition-colors">GST Calculator</a></li>
+          <li><a href="hra-calculator.html"         class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li>
+          <li><a href="tds-calculator.html"         class="hover:text-leaf-400 transition-colors">TDS Calculator</a></li>
+          <li><a href="gratuity-calculator.html"    class="hover:text-leaf-400 transition-colors">Gratuity</a></li>
+          <li><a href="advance-tax-calculator.html" class="hover:text-leaf-400 transition-colors font-semibold text-saffron-400">Advance Tax</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Health & Math</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="bmi-calculator.html"               class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li>
+          <li><a href="age-calculator.html"               class="hover:text-leaf-400 transition-colors">Age Calculator</a></li>
+          <li><a href="due-date-calculator.html"          class="hover:text-leaf-400 transition-colors">Due Date Calculator</a></li>
+          <li><a href="percentage-calculator.html"        class="hover:text-leaf-400 transition-colors">Percentage Calculator</a></li>
+          <li><a href="compound-interest-calculator.html" class="hover:text-leaf-400 transition-colors">Compound Interest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
+      <div class="flex items-center gap-5">
+        <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
+        <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
+        <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
+        <a href="https://github.com/Skypherhunt" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
+        <a href="https://www.linkedin.com/in/abhinav-kumar70/" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+let regime = 'new';
+
+function fmtINR(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+
+function updateTrack(id) {
+  const el = document.getElementById(id);
+  const min = +el.min, max = +el.max, val = +el.value;
+  const pct = ((val - min) / (max - min)) * 100;
+  el.style.background = `linear-gradient(to right, #16a34a ${pct}%, #e8ecf2 ${pct}%)`;
+}
+
+function syncFromSlider(id) {
+  document.getElementById(id + 'Input').value = document.getElementById(id).value;
+  updateTrack(id);
+  calculate();
+}
+
+function syncFromInput(id, val) {
+  const sl = document.getElementById(id);
+  const v = Math.min(+sl.max, Math.max(+sl.min, +val));
+  sl.value = v;
+  updateTrack(id);
+  calculate();
+}
+
+function setRegime(r, btn) {
+  regime = r;
+  document.querySelectorAll('.regime-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('deductionsRow').classList.toggle('hidden', r !== 'old');
+  calculate();
+}
+
+function calcTaxNew(taxableIncome) {
+  let tax = 0;
+  const slabs = [[300000,0],[700000,0.05],[1000000,0.10],[1200000,0.15],[1500000,0.20],[Infinity,0.30]];
+  let prev = 0;
+  for (const [limit, rate] of slabs) {
+    if (taxableIncome <= prev) break;
+    tax += (Math.min(taxableIncome, limit) - prev) * rate;
+    prev = limit;
+  }
+  if (taxableIncome <= 700000 && tax <= 25000) tax = 0; // rebate u/s 87A new regime up to 7L
+  else if (taxableIncome <= 1200000 && tax <= 60000) tax = 0; // rebate up to 12L
+  return tax;
+}
+
+function calcTaxOld(taxableIncome) {
+  let tax = 0;
+  if (taxableIncome <= 250000) return 0;
+  if (taxableIncome <= 500000) tax = (taxableIncome - 250000) * 0.05;
+  else if (taxableIncome <= 1000000) tax = 12500 + (taxableIncome - 500000) * 0.20;
+  else tax = 112500 + (taxableIncome - 1000000) * 0.30;
+  if (tax <= 12500 && taxableIncome <= 500000) tax = 0; // rebate 87A
+  return tax;
+}
+
+function calculate() {
+  const income     = +document.getElementById('income').value;
+  const tds        = +document.getElementById('tds').value;
+  const deductions = regime === 'old' ? +document.getElementById('deductions').value : 0;
+
+  let taxableIncome;
+  let taxNote;
+  if (regime === 'new') {
+    taxableIncome = Math.max(0, income - 75000); // standard deduction
+    taxNote = 'After standard deduction of ₹75,000 (new regime)';
+  } else {
+    taxableIncome = Math.max(0, income - 50000 - deductions); // old regime standard deduction + 80C etc
+    taxNote = 'After ₹50K standard deduction + your deductions (old regime)';
+  }
+
+  const grossTax = regime === 'new' ? calcTaxNew(taxableIncome) : calcTaxOld(taxableIncome);
+  const cess = grossTax * 0.04;
+  const totalTax = grossTax + cess;
+  const netAdvTax = Math.max(0, totalTax - tds);
+
+  document.getElementById('totalTaxResult').textContent = fmtINR(totalTax);
+  document.getElementById('taxNote').textContent        = taxNote;
+  document.getElementById('grossTaxResult').textContent = fmtINR(grossTax);
+  document.getElementById('cessResult').textContent     = fmtINR(cess);
+  document.getElementById('tdsResult').textContent      = fmtINR(tds);
+  document.getElementById('netAdvTaxResult').textContent = fmtINR(netAdvTax);
+
+  // Instalment schedule
+  const pcts = [
+    { q: '1st', due: '15 June 2025',    cumPct: 0.15 },
+    { q: '2nd', due: '15 Sep 2025',     cumPct: 0.45 },
+    { q: '3rd', due: '15 Dec 2025',     cumPct: 0.75 },
+    { q: '4th', due: '15 Mar 2026',     cumPct: 1.00 },
+  ];
+
+  const tbody = document.getElementById('instalmentTable');
+  let prevCum = 0;
+  tbody.innerHTML = pcts.map((p, i) => {
+    const cum     = Math.round(netAdvTax * p.cumPct);
+    const instAmt = cum - prevCum;
+    prevCum = cum;
+    const highlight = i === 3 ? 'bg-saffron-50 border-saffron-100' : 'bg-ink-50 border-ink-100';
+    return `
+    <div class="installment-row flex items-center justify-between rounded-xl border p-3 ${highlight}">
+      <div>
+        <p class="text-xs font-semibold text-ink-700">${p.q} Instalment (${p.cumPct * 100}% cumulative)</p>
+        <p class="text-[10px] text-ink-400 mt-0.5">Due by ${p.due}</p>
+      </div>
+      <div class="text-right">
+        <p class="font-mono text-sm font-bold text-saffron-600">${fmtINR(instAmt)}</p>
+        <p class="text-[10px] text-ink-400 font-mono">Cumulative: ${fmtINR(cum)}</p>
+      </div>
+    </div>`;
+  }).join('');
+
+  const alert = document.getElementById('requireAlert');
+  if (netAdvTax > 10000) {
+    alert.className = 'bg-saffron-50 border border-saffron-100 rounded-xl p-4 text-xs text-ink-500 leading-relaxed';
+    alert.innerHTML = `<p class="font-semibold text-saffron-700 mb-1">Advance Tax Required</p><p>Your net advance tax liability is <strong class="text-ink-700">${fmtINR(netAdvTax)}</strong> which exceeds ₹10,000. You must pay quarterly instalments as shown.</p>`;
+  } else if (netAdvTax > 0) {
+    alert.className = 'bg-leaf-50 border border-leaf-100 rounded-xl p-4 text-xs text-ink-500 leading-relaxed';
+    alert.innerHTML = `<p class="font-semibold text-leaf-700 mb-1">Advance Tax Not Required</p><p>Your net tax liability is <strong class="text-ink-700">${fmtINR(netAdvTax)}</strong> which is below ₹10,000. You can pay the full amount when filing your ITR.</p>`;
+  } else {
+    alert.className = 'bg-leaf-50 border border-leaf-100 rounded-xl p-4 text-xs text-ink-500 leading-relaxed';
+    alert.innerHTML = '<p class="font-semibold text-leaf-700 mb-1">No Advance Tax Due</p><p>Your TDS covers your full tax liability. No additional advance tax payment is needed.</p>';
+  }
+}
+
+function toggleMobileMenu() {
+  const m = document.getElementById('mobileMenu');
+  const btn = document.getElementById('menuBtn');
+  const icon = document.getElementById('menuIcon');
+  const open = m.classList.toggle('hidden');
+  btn.setAttribute('aria-expanded', String(!open));
+  icon.innerHTML = open ? '<path d="M4 6h16M4 12h16M4 18h16"/>' : '<path d="M6 18L18 6M6 6l12 12"/>';
+}
+
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+// Init
+document.getElementById('incomeInput').value = 1200000;
+document.getElementById('tdsInput').value    = 0;
+document.getElementById('deductionsInput').value = 150000;
+updateTrack('income');
+updateTrack('tds');
+updateTrack('deductions');
+calculate();
+</script>
+</body>
+</html>

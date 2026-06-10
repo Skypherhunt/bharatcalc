@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Time Zone Converter India – IST to USA, UK, Dubai, Singapore & More | BharatCalc</title>
+  <meta name="description" content="Free Time Zone Converter India — convert IST to EST, PST, GMT, Dubai, Singapore, Tokyo, Sydney and 15+ global time zones instantly. World clock included. No login." />
+  <meta name="keywords" content="time zone converter India, IST to EST, IST to GMT, IST to Dubai time, IST to Singapore time, time zone converter IST, India time to USA time, IST to PST, IST to CET, world clock India, time difference calculator India" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/timezone-converter.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://bharatcalc.online/calculator/timezone-converter.html" />
+  <meta property="og:title"       content="Time Zone Converter – IST to Global | BharatCalc" />
+  <meta property="og:description" content="Convert IST to 15+ global time zones instantly. World clock, DST-aware. Free, no login." />
+  <meta property="og:image"       content="https://bharatcalc.online/og/timezone-converter.png" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Time Zone Converter | BharatCalc" />
+  <meta name="twitter:description" content="IST to EST, GMT, Dubai, Singapore and more. Instant, DST-aware — by BharatCalc." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Time Zone Converter",
+    "url": "https://bharatcalc.online/calculator/timezone-converter.html",
+    "description": "Convert India Standard Time (IST) to 15+ global time zones instantly. DST-aware world clock.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",  "item": "https://bharatcalc.online/" },
+        { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://bharatcalc.online/?cat=tools" },
+        { "@type": "ListItem", "position": 3, "name": "Time Zone Converter", "item": "https://bharatcalc.online/calculator/timezone-converter.html" }
+      ]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the time difference between IST and EST?",
+        "acceptedAnswer": { "@type": "Answer", "text": "IST (India Standard Time, UTC+5:30) is 10 hours 30 minutes ahead of EST (Eastern Standard Time, UTC-5). During US Eastern Daylight Time (EDT, UTC-4), the difference is 9 hours 30 minutes. So if it is 9:00 AM IST, it is 10:30 PM EST the previous night." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is IST to GMT offset?",
+        "acceptedAnswer": { "@type": "Answer", "text": "IST (India Standard Time) is UTC+5:30, meaning it is 5 hours and 30 minutes ahead of GMT (UTC+0). So if it is 12:00 PM IST, it is 6:30 AM GMT." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the time difference between India and Dubai?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Dubai uses Gulf Standard Time (GST, UTC+4), which is 1 hour 30 minutes behind IST. If it is 12:00 PM in India (IST), it is 10:30 AM in Dubai." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is IST to Singapore time?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Singapore Standard Time (SGT) is UTC+8, which is 2 hours 30 minutes ahead of IST (UTC+5:30). If it is 12:00 PM in India, it is 2:30 PM in Singapore." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does India observe Daylight Saving Time?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. India does not observe Daylight Saving Time (DST). India Standard Time (IST) remains at UTC+5:30 throughout the year. However, countries like the USA, UK, and most of Europe do observe DST, which changes the offset between those countries and India by 1 hour during the summer months." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Clash Display', 'sans-serif'],
+            sans:    ['Satoshi', 'sans-serif'],
+            mono:    ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
+            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Satoshi', system-ui, sans-serif; }
+    .font-display { font-family: 'Clash Display', system-ui, sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #16a34a; transform: scaleX(0); transition: transform 0.2s; border-radius: 1px; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .preset-tab { transition: all 0.15s; }
+    .preset-tab.active { background: #0d1117; color: #fff; border-color: #0d1117; }
+    .tz-card { transition: all 0.15s; }
+    .tz-card.night { background: #0d1117; color: #9aaabb; }
+    .tz-card.day   { background: #f0fdf4; color: #0d1117; }
+    .faq-item details summary { cursor: pointer; list-style: none; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
+    input[type="datetime-local"] { color-scheme: light; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9TD6B9GQ89');
+  </script>
+</head>
+
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+        <div class="leading-none">
+          <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
+          <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+        <a href="../index.html?cat=tools"   class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+      </nav>
+      <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors">Finance</a>
+      <a href="../index.html?cat=tools"   class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors">Tools</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a>
+      <span>/</span>
+      <a href="../index.html?cat=tools" class="hover:text-ink-200">Tools</a>
+      <span>/</span>
+      <span class="text-ink-300">Time Zone Converter</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-teal-600/15 text-teal-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-teal-600/20">
+          <span class="w-1.5 h-1.5 bg-teal-400 rounded-full inline-block animate-pulse"></span>
+          IST · 15+ Time Zones · DST-aware
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">Time Zone Converter</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
+          Convert India Standard Time (IST) to any city worldwide — New York, London, Dubai, Singapore, Tokyo and more. DST-aware, updates live.
+        </p>
+      </div>
+      <div id="liveIST" class="text-white font-mono text-right flex-shrink-0">
+        <div class="text-3xl font-bold" id="istClock">—</div>
+        <div class="text-xs text-ink-400 mt-1">India Standard Time (IST)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <div class="grid lg:grid-cols-3 gap-6">
+
+    <!-- LEFT: Input -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-6">Convert from IST</h2>
+
+      <div class="mb-5">
+        <label class="block text-sm font-semibold text-ink-700 mb-2">Date &amp; Time (IST)</label>
+        <input type="datetime-local" id="istInput" class="w-full border border-ink-200 rounded-xl px-4 py-3 text-sm font-mono text-ink-900 focus:outline-none focus:ring-2 focus:ring-teal-400/30 focus:border-teal-400 transition-all bg-white" oninput="convertTime()" />
+      </div>
+
+      <button onclick="setNow()" class="w-full py-2.5 bg-ink-900 hover:bg-ink-700 text-white text-sm font-semibold rounded-xl transition-colors mb-6">Use Current Time</button>
+
+      <div>
+        <p class="text-xs text-ink-400 font-semibold uppercase tracking-wider mb-3">Quick presets</p>
+        <div class="grid grid-cols-2 gap-2">
+          <button onclick="setHour(9)"  class="text-xs px-3 py-2.5 bg-ink-50 hover:bg-teal-50 border border-ink-100 hover:border-teal-200 rounded-xl transition-colors font-medium text-ink-700">9:00 AM IST</button>
+          <button onclick="setHour(12)" class="text-xs px-3 py-2.5 bg-ink-50 hover:bg-teal-50 border border-ink-100 hover:border-teal-200 rounded-xl transition-colors font-medium text-ink-700">12:00 PM IST</button>
+          <button onclick="setHour(15)" class="text-xs px-3 py-2.5 bg-ink-50 hover:bg-teal-50 border border-ink-100 hover:border-teal-200 rounded-xl transition-colors font-medium text-ink-700">3:00 PM IST</button>
+          <button onclick="setHour(18)" class="text-xs px-3 py-2.5 bg-ink-50 hover:bg-teal-50 border border-ink-100 hover:border-teal-200 rounded-xl transition-colors font-medium text-ink-700">6:00 PM IST</button>
+        </div>
+      </div>
+
+      <div class="mt-6 bg-teal-50 border border-teal-100 rounded-xl p-4">
+        <p class="text-xs font-semibold text-teal-700 mb-2">About IST</p>
+        <p class="text-xs text-ink-500 leading-relaxed">India Standard Time is UTC+5:30. India does <strong>not</strong> observe Daylight Saving Time (DST). It is the same timezone throughout the year.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results grid -->
+    <div class="lg:col-span-2">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="font-display font-semibold text-ink-900 text-lg">World Clock</h2>
+        <span class="text-xs text-ink-400" id="convertedLabel">Showing current time</span>
+      </div>
+      <div id="tzGrid" class="grid sm:grid-cols-2 gap-3"></div>
+    </div>
+  </div>
+
+  <!-- OFFSET TABLE -->
+  <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8 mt-6">
+    <h2 class="font-display font-semibold text-ink-900 text-lg mb-5">IST Offset Reference Table</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-ink-100">
+            <th class="text-left py-2 pr-4 text-xs font-semibold text-ink-400 uppercase tracking-wider">City / Region</th>
+            <th class="text-left py-2 pr-4 text-xs font-semibold text-ink-400 uppercase tracking-wider">Timezone</th>
+            <th class="text-left py-2 pr-4 text-xs font-semibold text-ink-400 uppercase tracking-wider">UTC Offset</th>
+            <th class="text-left py-2 text-xs font-semibold text-ink-400 uppercase tracking-wider">vs IST</th>
+          </tr>
+        </thead>
+        <tbody id="offsetTable" class="divide-y divide-ink-50"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8 mt-6">
+    <h2 class="font-display font-semibold text-ink-900 text-xl mb-6">Frequently Asked Questions</h2>
+    <div class="space-y-3">
+      <div class="faq-item border border-ink-100 rounded-xl overflow-hidden">
+        <details>
+          <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+            <span class="font-semibold text-sm text-ink-800">What is the time difference between IST and EST?</span>
+            <svg class="faq-icon w-5 h-5 text-ink-400 flex-shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed">IST (UTC+5:30) is 10 hours 30 minutes ahead of EST (UTC-5). During US EDT (UTC-4), the difference is 9 hours 30 minutes. If it's 9:00 AM IST, it's 10:30 PM EST the previous night.</div>
+        </details>
+      </div>
+      <div class="faq-item border border-ink-100 rounded-xl overflow-hidden">
+        <details>
+          <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+            <span class="font-semibold text-sm text-ink-800">What is IST to GMT offset?</span>
+            <svg class="faq-icon w-5 h-5 text-ink-400 flex-shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed">IST is UTC+5:30, which is 5 hours 30 minutes ahead of GMT (UTC+0). If it's 12:00 PM IST, it's 6:30 AM GMT.</div>
+        </details>
+      </div>
+      <div class="faq-item border border-ink-100 rounded-xl overflow-hidden">
+        <details>
+          <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+            <span class="font-semibold text-sm text-ink-800">What is the time difference between India and Dubai?</span>
+            <svg class="faq-icon w-5 h-5 text-ink-400 flex-shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed">Dubai uses GST (UTC+4), which is 1 hour 30 minutes behind IST. If it's 12:00 PM in India, it's 10:30 AM in Dubai.</div>
+        </details>
+      </div>
+      <div class="faq-item border border-ink-100 rounded-xl overflow-hidden">
+        <details>
+          <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+            <span class="font-semibold text-sm text-ink-800">What is IST to Singapore time?</span>
+            <svg class="faq-icon w-5 h-5 text-ink-400 flex-shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed">Singapore Standard Time (SGT) is UTC+8, which is 2 hours 30 minutes ahead of IST (UTC+5:30). If it's 12:00 PM in India, it's 2:30 PM in Singapore.</div>
+        </details>
+      </div>
+      <div class="faq-item border border-ink-100 rounded-xl overflow-hidden">
+        <details>
+          <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+            <span class="font-semibold text-sm text-ink-800">Does India observe Daylight Saving Time?</span>
+            <svg class="faq-icon w-5 h-5 text-ink-400 flex-shrink-0 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed">No. India does not observe DST. IST remains at UTC+5:30 all year. Countries like the USA, UK, and most of Europe do observe DST, changing the offset vs. India by 1 hour during summer.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED -->
+  <div class="mt-8">
+    <h2 class="font-display font-semibold text-ink-900 text-xl mb-5">Related Calculators</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+      <a href="date-calculator.html"    class="bg-white border border-ink-100 hover:border-teal-200 rounded-2xl p-4 flex flex-col gap-2 hover:shadow-md transition-all group">
+        <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-xl flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div class="font-display font-semibold text-sm text-ink-900 group-hover:text-leaf-700 transition-colors">Date Calculator</div>
+        <div class="text-xs text-ink-400">Days between dates</div>
+      </a>
+      <a href="age-calculator.html"     class="bg-white border border-ink-100 hover:border-teal-200 rounded-2xl p-4 flex flex-col gap-2 hover:shadow-md transition-all group">
+        <div class="w-10 h-10 bg-purple-100 text-purple-700 rounded-xl flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div class="font-display font-semibold text-sm text-ink-900 group-hover:text-leaf-700 transition-colors">Age Calculator</div>
+        <div class="text-xs text-ink-400">Exact age in years</div>
+      </a>
+      <a href="sip-calculator.html"     class="bg-white border border-ink-100 hover:border-teal-200 rounded-2xl p-4 flex flex-col gap-2 hover:shadow-md transition-all group">
+        <div class="w-10 h-10 bg-leaf-100 text-leaf-700 rounded-xl flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="17 7 21 7 21 11"/></svg></div>
+        <div class="font-display font-semibold text-sm text-ink-900 group-hover:text-leaf-700 transition-colors">SIP Calculator</div>
+        <div class="text-xs text-ink-400">Mutual fund returns</div>
+      </a>
+      <a href="percentage-calculator.html" class="bg-white border border-ink-100 hover:border-teal-200 rounded-2xl p-4 flex flex-col gap-2 hover:shadow-md transition-all group">
+        <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-xl flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></svg></div>
+        <div class="font-display font-semibold text-sm text-ink-900 group-hover:text-leaf-700 transition-colors">Percentage Calculator</div>
+        <div class="text-xs text-ink-400">% of a number</div>
+      </a>
+    </div>
+  </div>
+
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+          <div class="font-display font-semibold text-white">BharatCalc</div>
+        </div>
+        <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="sip-calculator.html"     class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
+          <li><a href="emi-calculator.html"     class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
+          <li><a href="ppf-calculator.html"     class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
+          <li><a href="fd-calculator.html"      class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="income-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
+          <li><a href="gst-calculator.html"        class="hover:text-leaf-400 transition-colors">GST Calculator</a></li>
+          <li><a href="hra-calculator.html"        class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tools</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="date-calculator.html"     class="hover:text-leaf-400 transition-colors">Date Calculator</a></li>
+          <li><a href="timezone-converter.html"  class="hover:text-leaf-400 transition-colors font-semibold text-leaf-400">Time Zone Converter</a></li>
+          <li><a href="age-calculator.html"      class="hover:text-leaf-400 transition-colors">Age Calculator</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
+      <div class="flex items-center gap-5">
+        <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
+        <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
+        <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const ZONES = [
+  { city: 'India (IST)',          tz: 'Asia/Kolkata',          flag: '🇮🇳', abbr: 'IST'  },
+  { city: 'New York (EST/EDT)',    tz: 'America/New_York',      flag: '🇺🇸', abbr: 'ET'   },
+  { city: 'Los Angeles (PST/PDT)',tz: 'America/Los_Angeles',   flag: '🇺🇸', abbr: 'PT'   },
+  { city: 'Chicago (CST/CDT)',    tz: 'America/Chicago',       flag: '🇺🇸', abbr: 'CT'   },
+  { city: 'London (GMT/BST)',     tz: 'Europe/London',         flag: '🇬🇧', abbr: 'GMT'  },
+  { city: 'Paris / Berlin (CET)', tz: 'Europe/Paris',          flag: '🇪🇺', abbr: 'CET'  },
+  { city: 'Dubai (GST)',          tz: 'Asia/Dubai',            flag: '🇦🇪', abbr: 'GST'  },
+  { city: 'Riyadh (AST)',         tz: 'Asia/Riyadh',           flag: '🇸🇦', abbr: 'AST'  },
+  { city: 'Singapore (SGT)',      tz: 'Asia/Singapore',        flag: '🇸🇬', abbr: 'SGT'  },
+  { city: 'Kuala Lumpur (MYT)',   tz: 'Asia/Kuala_Lumpur',     flag: '🇲🇾', abbr: 'MYT'  },
+  { city: 'Tokyo (JST)',          tz: 'Asia/Tokyo',            flag: '🇯🇵', abbr: 'JST'  },
+  { city: 'Sydney (AEST/AEDT)',   tz: 'Australia/Sydney',      flag: '🇦🇺', abbr: 'AEST' },
+  { city: 'Hong Kong (HKT)',      tz: 'Asia/Hong_Kong',        flag: '🇭🇰', abbr: 'HKT'  },
+  { city: 'Karachi (PKT)',        tz: 'Asia/Karachi',          flag: '🇵🇰', abbr: 'PKT'  },
+  { city: 'Dhaka (BDT)',          tz: 'Asia/Dhaka',            flag: '🇧🇩', abbr: 'BDT'  },
+  { city: 'Kathmandu (NPT)',      tz: 'Asia/Kathmandu',        flag: '🇳🇵', abbr: 'NPT'  },
+];
+
+function getNow() { return new Date(); }
+
+function getISTOffsetMin(tz, date) {
+  const fmt = d => new Intl.DateTimeFormat('en-US', { timeZone: d, hour: 'numeric', hour12: false, minute: 'numeric' });
+  const istParts = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Kolkata', hour: 'numeric', hour12: false, minute: 'numeric', year: 'numeric', month: 'numeric', day: 'numeric' }).formatToParts(date);
+  const tzParts  = new Intl.DateTimeFormat('en-US', { timeZone: tz,             hour: 'numeric', hour12: false, minute: 'numeric', year: 'numeric', month: 'numeric', day: 'numeric' }).formatToParts(date);
+  const toMin = parts => {
+    const get = t => parseInt(parts.find(p => p.type === t).value);
+    let h = get('hour'); if (h === 24) h = 0;
+    return get('year') * 525960 + get('month') * 43800 + get('day') * 1440 + h * 60 + get('minute');
+  };
+  return toMin(tzParts) - toMin(istParts);
+}
+
+function fmtTZ(date, tz) {
+  return new Intl.DateTimeFormat('en-IN', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: true }).format(date);
+}
+function fmtDateTZ(date, tz) {
+  return new Intl.DateTimeFormat('en-IN', { timeZone: tz, weekday: 'short', day: 'numeric', month: 'short' }).format(date);
+}
+function isNight(date, tz) {
+  const h = parseInt(new Intl.DateTimeFormat('en-US', { timeZone: tz, hour: 'numeric', hour12: false }).format(date));
+  return h >= 21 || h < 6;
+}
+
+function renderGrid(date) {
+  const grid = document.getElementById('tzGrid');
+  grid.innerHTML = ZONES.map(z => {
+    const time = fmtTZ(date, z.tz);
+    const dateStr = fmtDateTZ(date, z.tz);
+    const night = isNight(date, z.tz);
+    const offsetMin = getISTOffsetMin(z.tz, date);
+    const offsetSign = offsetMin >= 0 ? '+' : '-';
+    const ah = Math.floor(Math.abs(offsetMin) / 60);
+    const am = Math.abs(offsetMin) % 60;
+    const offsetStr = z.tz === 'Asia/Kolkata' ? '(IST)' : `(${offsetSign}${ah}h${am ? am + 'm' : ''} from IST)`;
+    const bg   = night ? 'bg-ink-900 border-ink-700' : (z.tz === 'Asia/Kolkata' ? 'bg-leaf-50 border-leaf-200' : 'bg-white border-ink-100');
+    const textC = night ? 'text-white' : 'text-ink-900';
+    const sub   = night ? 'text-ink-400' : 'text-ink-500';
+    return `
+      <div class="${bg} border rounded-2xl p-4 transition-all">
+        <div class="flex items-start justify-between gap-2 mb-2">
+          <div>
+            <div class="font-mono font-bold text-xl ${textC}">${time}</div>
+            <div class="text-xs ${sub} mt-0.5">${dateStr}</div>
+          </div>
+          <span class="text-xl flex-shrink-0">${z.flag}</span>
+        </div>
+        <div class="font-semibold text-sm ${textC}">${z.city}</div>
+        <div class="text-xs ${sub} mt-1">${offsetStr}</div>
+        ${night ? '<div class="text-xs text-ink-500 mt-1">🌙 Night</div>' : ''}
+      </div>`;
+  }).join('');
+}
+
+function renderOffsetTable(date) {
+  const tbody = document.getElementById('offsetTable');
+  tbody.innerHTML = ZONES.map(z => {
+    const offsetMin = getISTOffsetMin(z.tz, date);
+    const offsetSign = offsetMin >= 0 ? '+' : '−';
+    const ah = Math.floor(Math.abs(offsetMin) / 60);
+    const am = Math.abs(offsetMin) % 60;
+    const offsetStr = offsetMin === 0 ? '—' : `${offsetSign}${ah}h${am ? ' ' + am + 'm' : ''}`;
+    const utcParts = new Intl.DateTimeFormat('en-US', { timeZone: z.tz, timeZoneName: 'shortOffset' }).formatToParts(date);
+    const utc = (utcParts.find(p => p.type === 'timeZoneName') || {}).value || '';
+    return `<tr class="text-sm">
+      <td class="py-2.5 pr-4 font-semibold text-ink-800">${z.flag} ${z.city}</td>
+      <td class="py-2.5 pr-4 font-mono text-ink-600">${z.abbr}</td>
+      <td class="py-2.5 pr-4 font-mono text-ink-600">${utc}</td>
+      <td class="py-2.5 font-mono font-semibold ${offsetMin < 0 ? 'text-saffron-600' : offsetMin === 0 ? 'text-ink-400' : 'text-leaf-700'}">${offsetStr}</td>
+    </tr>`;
+  }).join('');
+}
+
+function toLocalDatetimeValue(date) {
+  const ist = new Date(date.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+  const pad = n => String(n).padStart(2, '0');
+  return `${ist.getFullYear()}-${pad(ist.getMonth()+1)}-${pad(ist.getDate())}T${pad(ist.getHours())}:${pad(ist.getMinutes())}`;
+}
+
+function convertTime() {
+  const val = document.getElementById('istInput').value;
+  if (!val) return;
+  const [datePart, timePart] = val.split('T');
+  const [y, m, d] = datePart.split('-').map(Number);
+  const [hh, mm]  = timePart.split(':').map(Number);
+  const istMs = Date.UTC(y, m - 1, d, hh - 5, mm - 30);
+  const date = new Date(istMs);
+  document.getElementById('convertedLabel').textContent = `Showing: ${new Intl.DateTimeFormat('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' }).format(date)} IST`;
+  renderGrid(date);
+  renderOffsetTable(date);
+}
+
+function setNow() {
+  const now = getNow();
+  document.getElementById('istInput').value = toLocalDatetimeValue(now);
+  document.getElementById('convertedLabel').textContent = 'Showing current time';
+  renderGrid(now);
+  renderOffsetTable(now);
+}
+
+function setHour(h) {
+  const now = getNow();
+  const ist = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+  ist.setHours(h, 0, 0, 0);
+  const pad = n => String(n).padStart(2, '0');
+  document.getElementById('istInput').value = `${ist.getFullYear()}-${pad(ist.getMonth()+1)}-${pad(ist.getDate())}T${pad(h)}:00`;
+  convertTime();
+}
+
+function updateLiveClock() {
+  const now = getNow();
+  const t = new Intl.DateTimeFormat('en-IN', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }).format(now);
+  document.getElementById('istClock').textContent = t;
+}
+
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+setNow();
+updateLiveClock();
+setInterval(updateLiveClock, 1000);
+</script>
+</body>
+</html>
