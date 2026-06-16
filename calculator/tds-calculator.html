@@ -40,6 +40,23 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is the TDS rate on FD interest?", "acceptedAnswer": { "@type": "Answer", "text": "Under Section 194A, TDS on FD interest is 10% if annual interest from a bank exceeds ₹50,000 (₹1,00,000 for senior citizens aged 60+). Both limits were raised in Budget 2025 (earlier ₹40,000 / ₹50,000). Without PAN, the rate becomes 20%. Submit Form 15G/15H if your income is below the taxable limit to get zero TDS." } },
+      { "@type": "Question", "name": "What is TDS on rent above ₹50,000/month?", "acceptedAnswer": { "@type": "Answer", "text": "Under Section 194-IB, individuals/HUFs not under tax audit paying rent exceeding ₹50,000 per month must deduct TDS at 2% (reduced from 5% w.e.f. 1 Oct 2024), once a year using Form 26QC with no TAN needed. Under Section 194-I (companies, firms and those under audit), TDS on rent for land/building is 10% and for plant/machinery 2%; from Budget 2025 the threshold is ₹50,000 per month instead of ₹2,40,000 per year." } },
+      { "@type": "Question", "name": "What is TDS on professional fees (194J)?", "acceptedAnswer": { "@type": "Answer", "text": "Under Section 194J, TDS is deducted on payments to professionals (doctors, lawyers, CAs, architects) at 10% if the amount exceeds ₹50,000 per year (raised from ₹30,000 in Budget 2025). For technical services the rate is 2%. Royalty payments also attract 10% TDS under 194J." } },
+      { "@type": "Question", "name": "What happens if TDS is not deducted?", "acceptedAnswer": { "@type": "Answer", "text": "If TDS is not deducted when required, the payer is liable to pay interest at 1% per month from the date TDS was deductible, the payment may be disallowed as a business expense, and a penalty under Section 271C equal to the TDS amount may be levied." } },
+      { "@type": "Question", "name": "When does TDS apply on salary?", "acceptedAnswer": { "@type": "Answer", "text": "Under Section 192, TDS on salary applies when annual salary exceeds the basic exemption limit: ₹4 lakh under the new regime (FY 2025-26) or ₹2.5 lakh under the old regime. The employer deducts TDS at the applicable slab rate. Under the new regime, income up to ₹12 lakh is effectively tax-free after the Section 87A rebate, so many employees see little or no salary TDS." } },
+      { "@type": "Question", "name": "What is TDS on property purchase?", "acceptedAnswer": { "@type": "Answer", "text": "Under Section 194-IA, the buyer must deduct 1% TDS when purchasing immovable property (other than agricultural land) worth ₹50 lakh or more. The buyer deposits it using Form 26QB and gives Form 16B to the seller. For NRI sellers, Section 195 with higher rates applies." } },
+      { "@type": "Question", "name": "What is Section 194T (TDS on partner's remuneration)?", "acceptedAnswer": { "@type": "Answer", "text": "Section 194T is a new TDS section introduced in Budget 2025, effective 1 April 2025. A partnership firm or LLP must deduct 10% TDS on salary, remuneration, bonus, commission or interest paid to its partners once the total to a partner exceeds ₹20,000 in a year. Earlier, no TDS applied on such payments." } },
+      { "@type": "Question", "name": "By when must deducted TDS be deposited?", "acceptedAnswer": { "@type": "Answer", "text": "TDS deducted in a month must generally be deposited by the 7th of the next month (for March, by 30 April). Quarterly TDS returns are due by 31 July, 31 October, 31 January and 31 May. Late deposit attracts interest of 1.5% per month, and late filing attracts a fee of ₹200 per day under Section 234E." } }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -108,9 +125,10 @@
         <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
         <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
         <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
-        <a href="../index.html?cat=tools"   class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+        <a href="../index.html?cat=tools"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+        <a href="../index.html#articles-section" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Articles</a>
       </nav>
-      <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
+      <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
         <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
@@ -119,6 +137,8 @@
       <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/></svg> Tax</a>
       <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-rose-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> Health</a>
       <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg> Math</a>
+      <a href="../index.html?cat=tools"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> Tools</a>
+      <a href="../index.html#articles-section" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-leaf-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h10"/></svg> Articles</a>
     </div>
   </div>
 </header>
@@ -137,7 +157,7 @@
       <div>
         <div class="inline-flex items-center gap-2 bg-orange-600/15 text-orange-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-orange-600/20">
           <span class="w-1.5 h-1.5 bg-orange-400 rounded-full inline-block animate-pulse"></span>
-          FY 2025-26 TDS Rates
+          FY 2025-26 · Updated for Budget 2025
         </div>
         <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">TDS Calculator</h1>
         <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
@@ -151,6 +171,7 @@
     </div>
     <div class="flex flex-wrap gap-2 mt-5">
       <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">10 Major Sections</div>
+      <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Includes new Section 194T</div>
       <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">PAN / No-PAN rates</div>
       <div class="bg-white/8 border border-white/10 px-3 py-1.5 rounded-full text-xs font-medium text-ink-300">Senior Citizen support</div>
     </div>
@@ -211,7 +232,7 @@
 
         <!-- Payment Amount -->
         <div>
-          <label for="paymentAmount" class="text-sm font-semibold text-ink-700 block mb-2">Payment Amount <span class="text-xs text-ink-400 font-normal" id="annualNote">(annual amount for threshold check)</span></label>
+          <label for="paymentAmount" class="text-sm font-semibold text-ink-700 block mb-2"><span id="amountLabel">Payment Amount</span> <span class="text-xs text-ink-400 font-normal" id="annualNote">(annual amount for threshold check)</span></label>
           <div class="flex items-center gap-2 bg-ink-50 border border-ink-200 rounded-xl px-4 py-3 focus-within:border-orange-400 transition-colors">
             <span class="text-ink-400 font-semibold">₹</span>
             <input id="paymentAmount" type="number" class="val-input flex-1 text-xl font-bold text-ink-900 bg-transparent" min="0" step="1000" value="50000" oninput="calc()" placeholder="0" />
@@ -312,7 +333,7 @@
       <p class="text-sm text-ink-500 leading-relaxed mb-3">The recipient gets credit for the TDS when filing their Income Tax Return (ITR). If TDS deducted is more than the actual tax liability, the excess is refunded by the IT department.</p>
       <div class="bg-orange-50 border border-orange-100 rounded-xl p-3 mt-3">
         <p class="text-xs font-semibold text-orange-800 mb-1">Key Rule</p>
-        <p class="text-xs text-orange-700">TDS is only applicable when the payment crosses the threshold limit. For example, Section 194A TDS on FD interest applies only if annual interest exceeds ₹40,000 (₹50,000 for senior citizens).</p>
+        <p class="text-xs text-orange-700">TDS is only applicable when the payment crosses the threshold limit. For example, Section 194A TDS on bank FD interest applies only if annual interest exceeds ₹50,000 (₹1,00,000 for senior citizens) — both limits were raised in Budget 2025.</p>
       </div>
     </div>
 
@@ -349,7 +370,7 @@
       <div class="space-y-3">
         <div class="p-3 bg-leaf-50 border border-leaf-100 rounded-xl">
           <p class="text-xs font-semibold text-leaf-800 mb-1">Form 15G — For individuals below 60</p>
-          <p class="text-xs text-ink-500">If your total income is below the basic exemption limit (₹3 lakh under new regime) and your FD interest is below ₹2.5 lakh, submit Form 15G to the bank to request nil TDS on interest.</p>
+          <p class="text-xs text-ink-500">If your estimated total income is below the basic exemption limit (₹4 lakh under the new regime for FY 2025-26) and your tax liability is nil, submit Form 15G to the bank to request zero TDS on interest.</p>
         </div>
         <div class="p-3 bg-blue-50 border border-blue-100 rounded-xl">
           <p class="text-xs font-semibold text-blue-800 mb-1">Form 15H — For senior citizens (60+)</p>
@@ -374,7 +395,7 @@
           <span class="faq-icon text-orange-500 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
         </summary>
         <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
-          Under Section 194A, TDS on FD interest is <strong class="text-ink-700">10%</strong> if annual interest from a bank exceeds <strong class="text-ink-700">₹40,000</strong> (₹50,000 for senior citizens aged 60+). Without PAN, the rate becomes 20%. Submit Form 15G/15H if your income is below the taxable limit to get zero TDS.
+          Under Section 194A, TDS on FD interest is <strong class="text-ink-700">10%</strong> if annual interest from a bank exceeds <strong class="text-ink-700">₹50,000</strong> (₹1,00,000 for senior citizens aged 60+). Both limits were raised in Budget 2025 (earlier ₹40,000 / ₹50,000). Without PAN, the rate becomes 20%. Submit Form 15G/15H if your income is below the taxable limit to get zero TDS.
         </div>
       </details>
     </div>
@@ -386,7 +407,7 @@
           <span class="faq-icon text-orange-500 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
         </summary>
         <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
-          Under Section 194-IB, individuals/HUFs paying rent exceeding <strong class="text-ink-700">₹50,000 per month</strong> must deduct TDS at <strong class="text-ink-700">2%</strong> (reduced from 5% in Budget 2024). Under Section 194-I (applicable to companies), TDS on rent for land/building is 10% if annual rent exceeds ₹2,40,000; for plant/machinery it is 2%.
+          Under Section 194-IB, individuals/HUFs (not under tax audit) paying rent exceeding <strong class="text-ink-700">₹50,000 per month</strong> must deduct TDS at <strong class="text-ink-700">2%</strong> (reduced from 5% w.e.f. 1 Oct 2024), once a year using Form 26QC — no TAN needed. Under Section 194-I (companies, firms and those under audit), TDS on rent for land/building is 10% and for plant/machinery 2%; from Budget 2025 the threshold is <strong class="text-ink-700">₹50,000 per month</strong> (earlier ₹2,40,000 per year).
         </div>
       </details>
     </div>
@@ -398,7 +419,7 @@
           <span class="faq-icon text-orange-500 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
         </summary>
         <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
-          Under Section 194J, TDS is deducted on payments to professionals (doctors, lawyers, CAs, architects) at <strong class="text-ink-700">10%</strong> if the amount exceeds ₹30,000 per year. For technical services (call centre, software development), the rate is <strong class="text-ink-700">2%</strong>. Royalty payments also attract 10% TDS under 194J.
+          Under Section 194J, TDS is deducted on payments to professionals (doctors, lawyers, CAs, architects) at <strong class="text-ink-700">10%</strong> if the amount exceeds <strong class="text-ink-700">₹50,000</strong> per year (raised from ₹30,000 in Budget 2025). For technical services (call centre, software development), the rate is <strong class="text-ink-700">2%</strong>. Royalty payments also attract 10% TDS under 194J.
         </div>
       </details>
     </div>
@@ -422,7 +443,7 @@
           <span class="faq-icon text-orange-500 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
         </summary>
         <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
-          Under Section 192, TDS on salary applies when annual salary exceeds the basic exemption limit: <strong class="text-ink-700">₹3 lakh (new regime)</strong> or <strong class="text-ink-700">₹2.5 lakh (old regime)</strong>. The employer deducts TDS as per the applicable income tax slab rate. Employees declare their regime choice to the employer at the start of the year. Form 16 is issued by the employer showing salary and TDS details.
+          Under Section 192, TDS on salary applies when annual salary exceeds the basic exemption limit: <strong class="text-ink-700">₹4 lakh (new regime, FY 2025-26)</strong> or <strong class="text-ink-700">₹2.5 lakh (old regime)</strong>. The employer deducts TDS as per the applicable income tax slab rate. Note: under the new regime, income up to ₹12 lakh is effectively tax-free after the Section 87A rebate, so many employees see little or no salary TDS. Employees declare their regime choice to the employer at the start of the year, and Form 16 is issued showing salary and TDS details.
         </div>
       </details>
     </div>
@@ -439,6 +460,49 @@
       </details>
     </div>
 
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is Section 194T (TDS on partner's remuneration)?</span>
+          <span class="faq-icon text-orange-500 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Section 194T is a <strong class="text-ink-700">new TDS section introduced in Budget 2025</strong>, effective 1 April 2025. A partnership firm or LLP must now deduct <strong class="text-ink-700">10% TDS</strong> on salary, remuneration, bonus, commission or interest paid to its partners once the total to a partner exceeds <strong class="text-ink-700">₹20,000 in a year</strong>. Earlier, no TDS applied on such payments. The firm files it in Form 26Q and issues Form 16A to the partner.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">By when must deducted TDS be deposited?</span>
+          <span class="faq-icon text-orange-500 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          TDS deducted in a month must generally be deposited by the <strong class="text-ink-700">7th of the next month</strong> (for March, by 30 April). Quarterly TDS returns (Form 24Q for salary, 26Q for others) are due by 31 July, 31 October, 31 January and 31 May. Late deposit attracts interest of <strong class="text-ink-700">1.5% per month</strong>, and late filing of the return attracts a fee of ₹200 per day under Section 234E.
+        </div>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- TDS Guides -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">In-depth TDS Guides</h2>
+  <div class="grid sm:grid-cols-3 gap-3">
+    <a href="../articles/tds-on-fd-interest.html" class="bg-white border border-ink-100 hover:border-orange-200 hover:bg-orange-50 rounded-xl p-4 transition-all group">
+      <div class="text-[10px] font-bold uppercase tracking-wider text-orange-500 mb-1.5">Section 194A</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-orange-700 transition-colors leading-snug">TDS on FD Interest: New ₹50,000 / ₹1 Lakh Limits & How to Avoid It</div>
+    </a>
+    <a href="../articles/section-194t-tds-partners.html" class="bg-white border border-ink-100 hover:border-orange-200 hover:bg-orange-50 rounded-xl p-4 transition-all group">
+      <div class="text-[10px] font-bold uppercase tracking-wider text-orange-500 mb-1.5">Section 194T · New</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-orange-700 transition-colors leading-snug">TDS on Partner's Salary & Interest from FY 2025-26 Explained</div>
+    </a>
+    <a href="../articles/tds-on-rent.html" class="bg-white border border-ink-100 hover:border-orange-200 hover:bg-orange-50 rounded-xl p-4 transition-all group">
+      <div class="text-[10px] font-bold uppercase tracking-wider text-orange-500 mb-1.5">Section 194-I & 194-IB</div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-orange-700 transition-colors leading-snug">TDS on Rent: New ₹50,000/month Rule from April 2025</div>
+    </a>
   </div>
 </section>
 
@@ -481,45 +545,55 @@
           <div class="font-display font-semibold text-white">BharatCalc</div>
         </div>
         <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
-        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700"><svg class="w-3.5 h-3.5 inline-block mr-1 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> TDS rates are for guidance. Verify with a CA for your specific situation. Rates may be modified by budget notifications.</div>
+        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700"><svg class="w-3.5 h-3.5 inline-block mr-1 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> All results are estimates for informational purposes only. Consult a SEBI-registered advisor before making financial decisions.</div>
       </div>
       <div>
         <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
         <ul class="space-y-2.5 text-sm">
-          <li><a href="sip-calculator.html"  class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
-          <li><a href="emi-calculator.html"  class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
-          <li><a href="ppf-calculator.html"  class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
-          <li><a href="fd-calculator.html"   class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
-          <li><a href="nps-calculator.html"  class="hover:text-leaf-400 transition-colors">NPS Calculator</a></li>
+          <li><a href="../calculator/sip-calculator.html"      class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
+          <li><a href="../calculator/emi-calculator.html"      class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
+          <li><a href="../calculator/ppf-calculator.html"      class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
+          <li><a href="../calculator/fd-calculator.html"       class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
+          <li><a href="../calculator/epf-calculator.html"      class="hover:text-leaf-400 transition-colors">EPF Calculator</a></li>
+          <li><a href="../calculator/lumpsum-calculator.html"  class="hover:text-leaf-400 transition-colors">Lumpsum Calculator</a></li>
+          <li><a href="../calculator/rd-calculator.html"       class="hover:text-leaf-400 transition-colors">RD Calculator</a></li>
+          <li><a href="../calculator/cagr-calculator.html"     class="hover:text-leaf-400 transition-colors">CAGR Calculator</a></li>
         </ul>
       </div>
       <div>
-        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax & Legal</h3>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax</h3>
         <ul class="space-y-2.5 text-sm">
-          <li><a href="income-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
-          <li><a href="gst-calculator.html"        class="hover:text-leaf-400 transition-colors">GST Calculator</a></li>
-          <li><a href="hra-calculator.html"        class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li>
-          <li><a href="tds-calculator.html"        class="hover:text-leaf-400 transition-colors font-semibold text-leaf-400">TDS Calculator</a></li>
+          <li><a href="../calculator/income-tax-calculator.html"  class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
+          <li><a href="../calculator/gst-calculator.html"         class="hover:text-leaf-400 transition-colors">GST Calculator</a></li>
+          <li><a href="../calculator/hra-calculator.html"         class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li>
+          <li><a href="../calculator/tds-calculator.html"         class="hover:text-leaf-400 transition-colors">TDS Calculator</a></li>
+          <li><a href="../calculator/gratuity-calculator.html"    class="hover:text-leaf-400 transition-colors">Gratuity</a></li>
+          <li><a href="../calculator/advance-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Advance Tax</a></li>
         </ul>
       </div>
       <div>
         <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Health & Math</h3>
         <ul class="space-y-2.5 text-sm">
-          <li><a href="bmi-calculator.html"          class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li>
-          <li><a href="age-calculator.html"          class="hover:text-leaf-400 transition-colors">Age Calculator</a></li>
-          <li><a href="calorie-calculator.html"      class="hover:text-leaf-400 transition-colors">Calorie Calculator</a></li>
-          <li><a href="ideal-weight-calculator.html" class="hover:text-leaf-400 transition-colors">Ideal Weight</a></li>
+          <li><a href="../calculator/bmi-calculator.html"                  class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li>
+          <li><a href="../calculator/age-calculator.html"                  class="hover:text-leaf-400 transition-colors">Age Calculator</a></li>
+          <li><a href="../calculator/due-date-calculator.html"             class="hover:text-leaf-400 transition-colors">Due Date Calculator</a></li>
+          <li><a href="../calculator/percentage-calculator.html"           class="hover:text-leaf-400 transition-colors">Percentage Calculator</a></li>
+          <li><a href="../calculator/compound-interest-calculator.html"    class="hover:text-leaf-400 transition-colors">Compound Interest</a></li>
         </ul>
       </div>
     </div>
-    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-ink-500">
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-ink-500">
       <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
       <div class="flex items-center gap-5">
         <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
         <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
         <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
-        <a href="https://github.com/Skypherhunt" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
-        <a href="https://www.linkedin.com/in/abhinav-kumar70/" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://github.com/Skypherhunt" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/abhinav-kumar70/" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
       </div>
     </div>
   </div>
@@ -541,21 +615,21 @@ function fmtINR(n) {
   return '₹' + Math.round(n).toLocaleString('en-IN');
 }
 
-// TDS sections definition
+// TDS sections definition — FY 2025-26 (AY 2026-27), updated for Budget 2025
 const sections = [
   {
     id: 'interest',
     label: '194A', sublabel: 'FD / Interest',
     title: 'Section 194A — Interest (FD / RD / Savings)',
     desc: 'TDS on interest from banks, co-op societies, post offices',
-    threshold: 40000, thresholdSenior: 50000,
+    threshold: 50000, thresholdSenior: 100000,
     rate: 10, rateNoPan: 20,
     showSenior: true, showDeductee: false,
     details: [
       { k: 'Section', v: '194A' },
-      { k: 'Applicable on', v: 'Interest from bank FD/RD, savings A/C, post office' },
-      { k: 'Threshold (Normal)', v: '₹40,000 per year' },
-      { k: 'Threshold (Senior 60+)', v: '₹50,000 per year' },
+      { k: 'Applicable on', v: 'Interest from bank FD/RD, post office (not savings interest)' },
+      { k: 'Threshold (Normal)', v: '₹50,000 per year' },
+      { k: 'Threshold (Senior 60+)', v: '₹1,00,000 per year' },
       { k: 'Rate (with PAN)', v: '10%' },
       { k: 'Rate (no PAN)', v: '20%' },
       { k: 'Form', v: '26Q / 16A' },
@@ -566,13 +640,13 @@ const sections = [
     label: '192', sublabel: 'Salary',
     title: 'Section 192 — Salary',
     desc: 'TDS on salary income as per applicable income tax slab',
-    threshold: 300000, thresholdSenior: 300000,
+    threshold: 400000, thresholdSenior: 400000,
     rate: null, rateNoPan: 20,
     showSenior: false, showDeductee: false, isSalary: true,
     details: [
       { k: 'Section', v: '192' },
       { k: 'Applicable on', v: 'Salary, wages, bonus, pension' },
-      { k: 'Threshold (New regime)', v: '₹3,00,000 per year' },
+      { k: 'Threshold (New regime)', v: '₹4,00,000 per year (basic exemption)' },
       { k: 'Threshold (Old regime)', v: '₹2,50,000 per year' },
       { k: 'Rate', v: 'As per income tax slab' },
       { k: 'Form', v: 'Form 16' },
@@ -601,14 +675,14 @@ const sections = [
     label: '194J', sublabel: 'Prof. Fees',
     title: 'Section 194J — Professional / Technical Fees',
     desc: 'TDS on fees to doctors, lawyers, CAs, technical services',
-    threshold: 30000,
+    threshold: 50000,
     rate: 10, rateTech: 2, rateNoPan: 20,
     showSenior: false, showDeductee: false,
     isProfessional: true,
     details: [
       { k: 'Section', v: '194J' },
       { k: 'Applicable on', v: 'Professional services: legal, medical, engineering, accountancy' },
-      { k: 'Threshold', v: '₹30,000 per year' },
+      { k: 'Threshold', v: '₹50,000 per year (raised from ₹30,000 in Budget 2025)' },
       { k: 'Rate (Professional fees)', v: '10%' },
       { k: 'Rate (Technical services)', v: '2%' },
       { k: 'Rate (No PAN)', v: '20%' },
@@ -617,21 +691,40 @@ const sections = [
   },
   {
     id: 'rent',
-    label: '194-I', sublabel: 'Rent',
-    title: 'Section 194-I — Rent (by Companies/Firms)',
+    label: '194-I', sublabel: 'Rent (Co.)',
+    title: 'Section 194-I — Rent (by Companies / Firms)',
     desc: 'TDS on rent for land, building, plant and machinery',
-    threshold: 240000,
+    threshold: 50000, monthly: true,
     rate: 10, rateMachinery: 2, rateNoPan: 20,
     showSenior: false, showDeductee: false,
     isRent: true,
     details: [
       { k: 'Section', v: '194-I' },
-      { k: 'Applicable to', v: 'Companies, firms, LLPs paying rent' },
-      { k: 'Threshold', v: '₹2,40,000 per year' },
+      { k: 'Applicable to', v: 'Companies, firms, LLPs (anyone with a tax audit) paying rent' },
+      { k: 'Threshold', v: '₹50,000 per month (revised from ₹2,40,000/year in Budget 2025)' },
       { k: 'Rate (Land/Building/Furniture)', v: '10%' },
       { k: 'Rate (Plant/Machinery/Equipment)', v: '2%' },
       { k: 'Rate (No PAN)', v: '20%' },
-      { k: 'Note', v: 'Individuals paying rent >₹50K/month use Section 194-IB (2%)' },
+      { k: 'Note', v: 'Individuals/HUF without audit paying rent >₹50K/month use Section 194-IB' },
+    ]
+  },
+  {
+    id: 'rentib',
+    label: '194-IB', sublabel: 'Rent (Indiv.)',
+    title: 'Section 194-IB — Rent by Individuals / HUF',
+    desc: 'TDS on rent paid by individuals/HUF not liable to tax audit',
+    threshold: 50000, monthly: true,
+    rate: 2, rateNoPan: 20,
+    showSenior: false, showDeductee: false,
+    isRent: true,
+    details: [
+      { k: 'Section', v: '194-IB' },
+      { k: 'Applicable to', v: 'Individuals/HUF (no TAN needed) paying rent for a home/office' },
+      { k: 'Threshold', v: '₹50,000 per month' },
+      { k: 'Rate', v: '2% (reduced from 5% w.e.f. 1 Oct 2024)' },
+      { k: 'Rate (No PAN)', v: '20% (capped at last month rent)' },
+      { k: 'When', v: 'Deduct once a year — in March or the last month of tenancy' },
+      { k: 'Form', v: '26QC — online, no TAN required' },
     ]
   },
   {
@@ -639,14 +732,31 @@ const sections = [
     label: '194H', sublabel: 'Commission',
     title: 'Section 194H — Commission / Brokerage',
     desc: 'TDS on commission or brokerage payments',
-    threshold: 15000,
-    rate: 5, rateNoPan: 20,
+    threshold: 20000,
+    rate: 2, rateNoPan: 20,
     showSenior: false, showDeductee: false,
     details: [
       { k: 'Section', v: '194H' },
       { k: 'Applicable on', v: 'Commission or brokerage paid to agents, brokers' },
-      { k: 'Threshold', v: '₹15,000 per year' },
-      { k: 'Rate (with PAN)', v: '5%' },
+      { k: 'Threshold', v: '₹20,000 per year (raised from ₹15,000 in Budget 2025)' },
+      { k: 'Rate (with PAN)', v: '2% (reduced from 5% w.e.f. 1 Oct 2024)' },
+      { k: 'Rate (No PAN)', v: '20%' },
+      { k: 'Form', v: '26Q / 16A' },
+    ]
+  },
+  {
+    id: 'partner',
+    label: '194T', sublabel: 'Partner Pay',
+    title: 'Section 194T — Payment to Partners (NEW)',
+    desc: 'TDS on salary, interest, bonus or commission paid by a firm to its partners',
+    threshold: 20000,
+    rate: 10, rateNoPan: 20,
+    showSenior: false, showDeductee: false,
+    details: [
+      { k: 'Section', v: '194T (new from 1 Apr 2025)' },
+      { k: 'Applicable on', v: 'Remuneration, salary, bonus, commission or interest paid by a firm/LLP to partners' },
+      { k: 'Threshold', v: '₹20,000 per partner per year (aggregate)' },
+      { k: 'Rate (with PAN)', v: '10%' },
       { k: 'Rate (No PAN)', v: '20%' },
       { k: 'Form', v: '26Q / 16A' },
     ]
@@ -662,9 +772,9 @@ const sections = [
     details: [
       { k: 'Section', v: '194B' },
       { k: 'Applicable on', v: 'Lottery winnings, game shows, crossword puzzle prizes' },
-      { k: 'Threshold', v: '₹10,000 per payment' },
-      { k: 'Rate', v: '30% (flat, regardless of PAN)' },
-      { k: 'Note', v: 'TDS from the prize money before payout' },
+      { k: 'Threshold', v: '₹10,000 per single transaction' },
+      { k: 'Rate', v: '30% (flat, regardless of PAN) + surcharge & cess' },
+      { k: 'Note', v: 'TDS deducted from the prize money before payout' },
       { k: 'Form', v: '26Q' },
     ]
   },
@@ -679,10 +789,10 @@ const sections = [
     details: [
       { k: 'Section', v: '194-IA' },
       { k: 'Applicable on', v: 'Buyer deducts from seller when buying immovable property' },
-      { k: 'Threshold', v: '₹50,00,000 (₹50 lakh) — on sale value' },
+      { k: 'Threshold', v: '₹50,00,000 (₹50 lakh) — on sale value or stamp duty value' },
       { k: 'Rate', v: '1%' },
       { k: 'Rate (No PAN)', v: '20%' },
-      { k: 'Form', v: '26QB — online filing by buyer' },
+      { k: 'Form', v: '26QB — online filing by buyer, no TAN required' },
     ]
   },
 ];
@@ -717,6 +827,16 @@ function selectSection(s, clickedBtn) {
   document.getElementById('sectionDesc').textContent  = s.desc;
   document.getElementById('seniorRow').classList.toggle('hidden', !s.showSenior);
   document.getElementById('deducteeRow').classList.toggle('hidden', !s.showDeductee);
+
+  // Relabel the amount input for monthly (rent) vs annual sections
+  document.getElementById('amountLabel').textContent = s.monthly ? 'Monthly Rent' : (s.isSalary ? 'Annual Salary' : 'Payment Amount');
+  document.getElementById('annualNote').textContent  = s.monthly
+    ? '(per month — threshold is ₹50,000/month)'
+    : (s.id === 'property' ? '(total sale value of property)' : '(annual amount for threshold check)');
+
+  // Set a sensible starting amount for the section
+  const defaults = { interest: 80000, salary: 1200000, contractor: 200000, professional: 80000, rent: 60000, rentib: 60000, commission: 50000, partner: 100000, lottery: 100000, property: 6000000 };
+  document.getElementById('paymentAmount').value = defaults[s.id] || 50000;
   calc();
 }
 
@@ -757,16 +877,18 @@ function calc() {
   const amount = parseFloat(document.getElementById('paymentAmount').value) || 0;
   const s = currentSection;
 
-  const threshold = (s.showSenior && seniorCitizen) ? (s.thresholdSenior || s.threshold) : s.threshold;
-  const belowThreshold = amount <= threshold;
+  // For monthly sections (rent), the input is per-month: compare monthly vs threshold,
+  // but compute TDS on the full-year amount.
+  const threshold   = (s.showSenior && seniorCitizen) ? (s.thresholdSenior || s.threshold) : s.threshold;
+  const compareVal  = amount;                    // value tested against the threshold
+  const chargeable  = s.monthly ? amount * 12 : amount;  // base TDS is computed on
+  const aboveThresh = compareVal > threshold;
+  const belowThreshold = !aboveThresh;
 
   let tdsRate = 0;
-  let tdsLabel = '';
 
   if (s.isSalary) {
-    tdsLabel = 'As per slab';
-    const tds = 0;
-    document.getElementById('tdsAmount').textContent  = 'Per slab';
+    document.getElementById('tdsAmount').textContent    = 'Per slab';
     document.getElementById('tdsRateLabel').textContent = 'Rate: As per income tax slab';
     document.getElementById('grossPayment').textContent = fmtINR(amount);
     document.getElementById('netPayment').textContent   = 'Slab-based';
@@ -781,29 +903,34 @@ function calc() {
       tdsRate = s.rate || 0;
     }
 
-    const tdsAmt = belowThreshold ? 0 : amount * tdsRate / 100;
-    const netAmt = amount - tdsAmt;
+    const tdsAmt = belowThreshold ? 0 : chargeable * tdsRate / 100;
+    const netAmt = chargeable - tdsAmt;
 
     document.getElementById('tdsAmount').textContent    = fmtINR(tdsAmt);
-    document.getElementById('tdsRateLabel').textContent = belowThreshold ? 'Below threshold — no TDS' : `Rate: ${tdsRate}%`;
-    document.getElementById('grossPayment').textContent = fmtINR(amount);
+    document.getElementById('tdsRateLabel').textContent = belowThreshold
+      ? 'Below threshold — no TDS'
+      : `Rate: ${tdsRate}%${s.monthly ? ' on ₹' + chargeable.toLocaleString('en-IN') + ' annual rent' : ''}`;
+    document.getElementById('grossPayment').textContent = fmtINR(chargeable);
     document.getElementById('netPayment').textContent   = fmtINR(netAmt);
   }
 
   // Threshold check
   const tc = document.getElementById('thresholdCheck');
-  const threshLabel = (s.showSenior && seniorCitizen) ? `₹${(threshold/1000).toFixed(0)}K (Senior Citizen limit)` : `₹${threshold >= 100000 ? (threshold/100000).toFixed(0)+'L' : (threshold/1000).toFixed(0)+'K'}`;
-  const aboveThresh = amount > threshold;
+  const fmtThresh = v => v >= 100000 ? '₹' + (v/100000).toFixed(v % 100000 === 0 ? 0 : 1) + 'L' : '₹' + (v/1000).toFixed(0) + 'K';
+  let threshLabel = fmtThresh(threshold);
+  if (s.monthly) threshLabel += '/month';
+  if (s.showSenior && seniorCitizen) threshLabel += ' (Senior Citizen limit)';
   tc.innerHTML = `
     <div class="flex items-center justify-between p-2.5 rounded-xl ${aboveThresh ? 'bg-red-50 border border-red-100' : 'bg-leaf-50 border border-leaf-100'}">
       <div>
         <p class="text-xs font-semibold ${aboveThresh ? 'text-red-700' : 'text-leaf-700'}">Threshold: ${threshLabel}</p>
-        <p class="text-xs ${aboveThresh ? 'text-red-500' : 'text-leaf-500'} mt-0.5">Your amount: ${fmtINR(amount)}</p>
+        <p class="text-xs ${aboveThresh ? 'text-red-500' : 'text-leaf-500'} mt-0.5">Your ${s.monthly ? 'monthly rent' : 'amount'}: ${fmtINR(amount)}</p>
       </div>
       <span class="text-sm font-bold ${aboveThresh ? 'text-red-600' : 'text-leaf-600'}">${aboveThresh ? 'TDS applies' : 'No TDS'}</span>
     </div>
     ${s.isProfessional ? `<p class="text-xs text-ink-400 mt-2">Professional fees: 10% | Technical services: 2%</p>` : ''}
-    ${s.isRent ? `<p class="text-xs text-ink-400 mt-2">Land/Building: 10% | Plant & Machinery: 2%</p>` : ''}
+    ${s.id === 'rent' ? `<p class="text-xs text-ink-400 mt-2">Land/Building: 10% | Plant & Machinery: 2%</p>` : ''}
+    ${s.monthly ? `<p class="text-xs text-ink-400 mt-2">TDS is computed on annual rent (₹${(amount*12).toLocaleString('en-IN')}).</p>` : ''}
   `;
 
   // Section details
@@ -818,17 +945,20 @@ function calc() {
 function buildRateTable() {
   const tbody = document.getElementById('rateTable');
   const rows = [
-    ['192',    'Salary',                          'As per slab (New: ₹3L, Old: ₹2.5L)',  'Slab rate'],
-    ['194A',   'Interest — Bank FD/RD',           '₹40,000 (₹50,000 Senior)',             '10%'],
-    ['194B',   'Lottery / Game show winnings',    '₹10,000 per payment',                  '30%'],
+    ['192',    'Salary',                          'As per slab (New: ₹4L, Old: ₹2.5L)',  'Slab rate'],
+    ['194A',   'Interest — Bank FD/RD',           '₹50,000 (₹1,00,000 Senior)',           '10%'],
+    ['194',    'Dividend',                        '₹10,000',                              '10%'],
+    ['194K',   'Mutual fund income',              '₹10,000',                              '10%'],
+    ['194B',   'Lottery / Game show winnings',    '₹10,000 per transaction',              '30%'],
     ['194C',   'Contractor / Sub-contractor',     '₹30,000 single / ₹1L aggregate',       '1% (Indiv), 2% (Co.)'],
-    ['194H',   'Commission / Brokerage',          '₹15,000',                              '5%'],
-    ['194-I',  'Rent — Land/Building/Furniture',  '₹2,40,000',                            '10%'],
-    ['194-I',  'Rent — Plant/Machinery',          '₹2,40,000',                            '2%'],
-    ['194-IB', 'Rent (Individuals >₹50K/mo)',     '₹50,000 per month',                    '2%'],
+    ['194H',   'Commission / Brokerage',          '₹20,000',                              '2%'],
+    ['194-I',  'Rent — Land/Building/Furniture',  '₹50,000 per month',                    '10%'],
+    ['194-I',  'Rent — Plant/Machinery',          '₹50,000 per month',                    '2%'],
+    ['194-IB', 'Rent paid by individuals/HUF',    '₹50,000 per month',                    '2%'],
     ['194-IA', 'Purchase of property',            '₹50,00,000',                           '1%'],
-    ['194J',   'Professional fees',               '₹30,000',                              '10%'],
-    ['194J',   'Technical services',              '₹30,000',                              '2%'],
+    ['194J',   'Professional fees',               '₹50,000',                              '10%'],
+    ['194J',   'Technical services',              '₹50,000',                              '2%'],
+    ['194T',   'Payment to partners (NEW)',       '₹20,000',                              '10%'],
     ['194N',   'Cash withdrawal from bank',       '₹1 crore',                             '2%'],
   ];
   tbody.innerHTML = rows.map((r, i) => `

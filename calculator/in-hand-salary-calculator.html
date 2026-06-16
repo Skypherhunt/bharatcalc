@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>In-Hand Salary Calculator India – CTC to Take-Home | BharatCalc</title>
+  <meta name="description" content="Free In-Hand Salary Calculator India — convert your CTC to monthly take-home salary instantly. See basic, PF, gratuity, professional tax and income tax deductions. New & old regime. No login." />
+  <meta name="keywords" content="in hand salary calculator India, CTC to in hand salary calculator, take home salary calculator, salary calculator India, monthly salary calculator, CTC breakup calculator, net salary calculator, gross to net salary, salary after tax calculator India" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/in-hand-salary-calculator.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://bharatcalc.online/calculator/in-hand-salary-calculator.html" />
+  <meta property="og:title"       content="In-Hand Salary Calculator – CTC to Take-Home | BharatCalc" />
+  <meta property="og:description" content="Convert CTC to monthly in-hand salary. See full deduction breakup — PF, gratuity, professional tax and income tax. Free, instant, no login." />
+  <meta property="og:image"       content="https://bharatcalc.online/og/in-hand-salary-calculator.png" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="In-Hand Salary Calculator | BharatCalc" />
+  <meta name="twitter:description" content="Convert your CTC into monthly take-home pay. Free, instant, no login — by BharatCalc." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "In-Hand Salary Calculator",
+    "url": "https://bharatcalc.online/calculator/in-hand-salary-calculator.html",
+    "description": "Calculate monthly in-hand (take-home) salary from annual CTC with full deduction breakup.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",    "item": "https://bharatcalc.online/" },
+        { "@type": "ListItem", "position": 2, "name": "Finance", "item": "https://bharatcalc.online/?cat=finance" },
+        { "@type": "ListItem", "position": 3, "name": "In-Hand Salary Calculator", "item": "https://bharatcalc.online/calculator/in-hand-salary-calculator.html" }
+      ]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is the difference between CTC and in-hand salary?", "acceptedAnswer": { "@type": "Answer", "text": "CTC (Cost to Company) is the total annual amount your employer spends on you, including your gross salary plus employer contributions like PF and gratuity. In-hand salary is what actually lands in your bank account each month after deducting your own PF contribution, professional tax and income tax (TDS). In-hand is always lower than CTC — typically 70–85% of CTC depending on your tax bracket." } },
+      { "@type": "Question", "name": "How is in-hand salary calculated from CTC?", "acceptedAnswer": { "@type": "Answer", "text": "Start with CTC, subtract employer PF and gratuity to get gross salary. From gross salary, subtract your employee PF contribution (12% of basic), professional tax and income tax to get annual in-hand salary. Divide by 12 for monthly take-home." } },
+      { "@type": "Question", "name": "How much PF is deducted from salary?", "acceptedAnswer": { "@type": "Answer", "text": "Employee Provident Fund (EPF) deduction is 12% of your basic salary. Your employer also contributes a matching 12%. The employer contribution is part of CTC, while the employee contribution is deducted from your gross salary. This calculator applies 12% on your full basic; some employers instead cap it at the statutory minimum of 12% of ₹15,000/month basic (₹1,800/month)." } },
+      { "@type": "Question", "name": "Is professional tax deducted from salary?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, professional tax is a state-level tax deducted monthly from your salary. It varies by state with a maximum of ₹2,500 per year (commonly ₹200/month). States like Maharashtra, Karnataka, West Bengal and Tamil Nadu levy it, while states like Delhi, Haryana and UP do not." } },
+      { "@type": "Question", "name": "Which regime gives higher in-hand salary?", "acceptedAnswer": { "@type": "Answer", "text": "The new tax regime usually gives higher in-hand salary for those with few deductions, thanks to lower slab rates and zero tax up to ₹12 lakh taxable income. The old regime can give more in-hand only if you have large 80C, HRA, home loan and other deductions. Use our Income Tax Calculator to compare both." } },
+      { "@type": "Question", "name": "Does a higher basic salary mean lower in-hand?", "acceptedAnswer": { "@type": "Answer", "text": "A higher basic percentage increases your PF and gratuity contributions, which slightly reduces immediate take-home pay. However, this builds a larger retirement corpus and is tax-efficient. A lower basic gives more cash in hand now but smaller long-term savings." } }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Clash Display', 'sans-serif'],
+            sans:    ['Satoshi', 'sans-serif'],
+            mono:    ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
+            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Satoshi', system-ui, sans-serif; }
+    .font-display { font-family: 'Clash Display', system-ui, sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #16a34a; transform: scaleX(0); transition: transform 0.2s; border-radius: 1px; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 5px; border-radius: 99px; outline: none; cursor: pointer; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #16a34a; border: 3px solid #fff; box-shadow: 0 0 0 1px #16a34a, 0 2px 6px rgba(22,163,74,0.3); cursor: pointer; transition: box-shadow 0.15s; }
+    input[type=range]::-webkit-slider-thumb:hover { box-shadow: 0 0 0 1px #16a34a, 0 2px 12px rgba(22,163,74,0.45); }
+    input[type=range]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #16a34a; border: 3px solid #fff; box-shadow: 0 0 0 1px #16a34a; cursor: pointer; }
+    .val-input { font-family: 'JetBrains Mono', monospace; }
+    .val-input:focus { outline: none; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    .donut-ring { transition: stroke-dasharray 0.5s cubic-bezier(.4,0,.2,1); }
+    .preset-tab { transition: all 0.15s; }
+    .preset-tab.active { background: #0d1117; color: #fff; border-color: #0d1117; }
+    .breadcrumb a { transition: color 0.15s; }
+    .faq-item details summary { cursor: pointer; list-style: none; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9TD6B9GQ89');
+  </script>
+</head>
+
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+        <div class="leading-none">
+          <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
+          <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+        <a href="../index.html?cat=tools"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+        <a href="../index.html#articles-section" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Articles</a>
+      </nav>
+      <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-leaf-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/></svg> Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-rose-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg> Math</a>
+      <a href="../index.html?cat=tools"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> Tools</a>
+      <a href="../index.html#articles-section" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-leaf-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h10"/></svg> Articles</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a>
+      <span>/</span>
+      <a href="../index.html?cat=finance" class="hover:text-ink-200">Finance</a>
+      <span>/</span>
+      <span class="text-ink-300">In-Hand Salary Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-leaf-600/15 text-leaf-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-leaf-600/20">
+          <span class="w-1.5 h-1.5 bg-leaf-400 rounded-full inline-block animate-pulse"></span>
+          Updated for <span id="heroFY" class="ml-0.5"></span>
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">In-Hand Salary Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
+          Convert your annual CTC into monthly take-home salary. See exactly how PF, gratuity, professional tax and income tax reduce your pay — with a full salary breakup.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0">
+        <span class="w-1.5 h-1.5 bg-leaf-400 rounded-full inline-block"></span>
+        Results update live
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <!-- Regime tabs -->
+  <div class="flex gap-2 mb-6 flex-wrap" role="group" aria-label="Tax regime">
+    <button class="preset-tab active px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600" onclick="setRegime('new', this)">New Regime</button>
+    <button class="preset-tab px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:border-leaf-400 transition-all" onclick="setRegime('old', this)">Old Regime</button>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- LEFT: Inputs -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-7">Salary Details</h2>
+
+      <!-- CTC -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="ctc" class="text-sm font-semibold text-ink-700">Annual CTC</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="ctcInput" type="number" class="val-input w-28 text-sm font-semibold text-ink-900 bg-transparent text-right" min="100000" max="20000000" step="10000" oninput="syncFromInput('ctc', this.value)" />
+          </div>
+        </div>
+        <input type="range" id="ctc" min="100000" max="10000000" step="10000" value="1200000" oninput="syncFromSlider('ctc')" class="w-full" aria-label="Annual CTC slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹1L</span><span>₹1Cr</span></div>
+      </div>
+
+      <!-- Basic % -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="basicPct" class="text-sm font-semibold text-ink-700">Basic Salary (% of CTC)</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <input id="basicPctInput" type="number" class="val-input w-14 text-sm font-semibold text-ink-900 bg-transparent text-right" min="30" max="60" step="1" oninput="syncFromInput('basicPct', this.value)" />
+            <span class="text-sm text-ink-400 font-mono">%</span>
+          </div>
+        </div>
+        <input type="range" id="basicPct" min="30" max="60" step="1" value="50" oninput="syncFromSlider('basicPct')" class="w-full" aria-label="Basic salary percent slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>30%</span><span>60%</span></div>
+      </div>
+
+      <!-- Professional tax -->
+      <div class="mb-7">
+        <div class="flex items-center justify-between mb-3">
+          <label for="ptax" class="text-sm font-semibold text-ink-700">Professional Tax (monthly)</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="ptaxInput" type="number" class="val-input w-16 text-sm font-semibold text-ink-900 bg-transparent text-right" min="0" max="250" step="10" oninput="syncFromInput('ptax', this.value)" />
+          </div>
+        </div>
+        <input type="range" id="ptax" min="0" max="250" step="10" value="200" oninput="syncFromSlider('ptax')" class="w-full" aria-label="Professional tax slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹0</span><span>₹250</span></div>
+      </div>
+
+      <!-- Old regime deductions -->
+      <div id="dedRow" class="mb-7 hidden">
+        <div class="flex items-center justify-between mb-3">
+          <label for="deductions" class="text-sm font-semibold text-ink-700">Tax Deductions (80C, HRA, etc.)</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-1.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="deductionsInput" type="number" class="val-input w-24 text-sm font-semibold text-ink-900 bg-transparent text-right" min="0" max="500000" step="5000" oninput="syncFromInput('deductions', this.value)" />
+          </div>
+        </div>
+        <input type="range" id="deductions" min="0" max="500000" step="5000" value="150000" oninput="syncFromSlider('deductions')" class="w-full" aria-label="Deductions slider" />
+        <div class="flex justify-between text-xs text-ink-300 mt-1.5 font-mono"><span>₹0</span><span>₹5L</span></div>
+        <p class="text-[11px] text-ink-400 mt-2">Excludes standard deduction & your own EPF — those are added automatically.</p>
+      </div>
+
+      <p class="text-xs text-ink-400 leading-relaxed bg-ink-50 rounded-xl p-3">PF is taken as 12% of basic salary (employer + employee). Gratuity is estimated at 4.81% of basic and is part of CTC. Actual structures vary by employer.</p>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div class="flex flex-col gap-5">
+      <div class="bg-ink-900 rounded-2xl p-6 sm:p-8">
+        <p class="text-ink-400 text-xs font-semibold uppercase tracking-wider mb-2">Monthly In-Hand Salary</p>
+        <div class="font-display text-4xl sm:text-5xl font-bold text-white tracking-tight mb-1" id="monthlyResult">₹0</div>
+        <p class="text-ink-400 text-xs">Annual take-home: <span id="annualResult" class="text-ink-200 font-mono">₹0</span></p>
+        <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-ink-700">
+          <div><p class="text-ink-500 text-xs mb-1">Gross / yr</p><p class="font-mono font-semibold text-white text-sm" id="grossOut">₹0</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Deductions / yr</p><p class="font-mono font-semibold text-saffron-400 text-sm" id="dedOut">₹0</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Take-home %</p><p class="font-mono font-semibold text-leaf-400 text-sm" id="takePct">0%</p></div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-5">CTC → Take-Home Breakup</h2>
+        <div class="space-y-2.5" id="breakupList"></div>
+        <div class="mt-5 space-y-1.5">
+          <div class="h-2.5 w-full bg-ink-100 rounded-full overflow-hidden flex">
+            <div id="barTake" class="h-full bg-leaf-500" style="width:75%"></div>
+            <div id="barDed"  class="h-full bg-saffron-500" style="width:25%"></div>
+          </div>
+          <div class="flex justify-between text-xs text-ink-400 font-mono">
+            <span id="barLabelT">Take-home 75%</span>
+            <span id="barLabelD">Deductions 25%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Monthly salary slip -->
+  <div class="bg-white border border-ink-100 rounded-2xl overflow-hidden mt-6">
+    <div class="p-6 border-b border-ink-100">
+      <h2 class="font-display font-semibold text-ink-900 text-lg">Monthly Salary Slip (estimated)</h2>
+      <p class="text-xs text-ink-400 mt-0.5">Approximate monthly figures based on your CTC and structure</p>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm" aria-label="Monthly salary slip">
+        <tbody id="slipBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Ad placeholder -->
+  <div class="my-6">
+    <div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400" aria-hidden="true">Google AdSense — Responsive Ad Unit</div>
+  </div>
+
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">How In-Hand Salary Is Calculated</h2>
+      <div class="bg-ink-50 rounded-xl p-4 font-mono text-xs text-ink-700 mb-4 leading-relaxed">Gross = CTC − Employer PF − Gratuity<br>In-hand = Gross − Employee PF − Prof. Tax − Income Tax</div>
+      <p class="text-xs text-ink-400 leading-relaxed">Your CTC includes employer contributions you never receive as cash. Subtract those to get gross salary, then subtract your own statutory deductions and income tax to arrive at the amount credited to your bank each month.</p>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Typical CTC Components</h2>
+      <ul class="space-y-3 text-sm text-ink-500">
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Basic salary</strong> — usually 40–50% of CTC. Drives PF and gratuity.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">HRA & allowances</strong> — house rent, special and other allowances make up the rest of gross.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Employer PF & gratuity</strong> — part of CTC but not paid as monthly cash.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Deductions</strong> — employee PF, professional tax and TDS reduce your net pay.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about CTC and in-hand salary</p>
+  <div class="grid md:grid-cols-2 gap-3">
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is the difference between CTC and in-hand salary?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">CTC is the total annual cost to your employer — gross salary plus employer PF and gratuity. In-hand salary is what reaches your bank account after your own PF, professional tax and income tax. In-hand is typically <strong class="text-ink-700">70–85% of CTC</strong>.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How much PF is deducted from salary?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">EPF is <strong class="text-ink-700">12% of your basic salary</strong>, with a matching 12% from your employer. The employee share is deducted from gross; the employer share is part of CTC. This calculator applies 12% on your full basic; some employers instead cap it at the statutory minimum of ₹15,000 basic (₹1,800/month).</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Is professional tax deducted from salary?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes — it is a state-level tax, capped at <strong class="text-ink-700">₹2,500/year</strong> (commonly ₹200/month). States like Maharashtra, Karnataka and West Bengal levy it; Delhi, Haryana and UP do not. Set it to ₹0 if your state doesn't charge it.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Which regime gives higher in-hand salary?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">The <strong class="text-ink-700">new regime</strong> usually wins for those with few deductions — lower slabs and zero tax up to ₹12L taxable. The old regime only beats it if you have large 80C, HRA and home-loan deductions. Compare both in our <a href="income-tax-calculator.html" class="text-leaf-700 underline">Income Tax Calculator</a>.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Does a higher basic salary reduce in-hand pay?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">A higher basic raises your PF and gratuity, slightly lowering immediate cash but building a bigger, tax-efficient retirement corpus. A lower basic gives more cash now but less long-term savings.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How accurate is this calculator?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">It uses standard assumptions (12% PF, 4.81% gratuity, current-year tax slabs) and gives a close estimate. Your actual slip depends on your employer's exact structure, variable pay, NPS, insurance and reimbursements. Use it for planning, not as an official figure.</div></details></div>
+  </div>
+</section>
+
+<!-- Related calculators -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="income-tax-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-saffron-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">Income Tax Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">New vs old regime</div>
+    </a>
+    <a href="hra-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-teal-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 12L12 3l9 9"/><path d="M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">HRA Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">House rent exemption</div>
+    </a>
+    <a href="epf-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-blue-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">EPF Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Provident fund corpus</div>
+    </a>
+    <a href="gratuity-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-amber-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">Gratuity Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Gratuity on retirement</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+          <div class="font-display font-semibold text-white">BharatCalc</div>
+        </div>
+        <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
+        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700"><svg class="w-3.5 h-3.5 inline-block mr-1 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> All results are estimates for informational purposes only. Consult a SEBI-registered advisor before making financial decisions.</div>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../calculator/sip-calculator.html"      class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
+          <li><a href="../calculator/emi-calculator.html"      class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
+          <li><a href="../calculator/ppf-calculator.html"      class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
+          <li><a href="../calculator/fd-calculator.html"       class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
+          <li><a href="../calculator/epf-calculator.html"      class="hover:text-leaf-400 transition-colors">EPF Calculator</a></li>
+          <li><a href="../calculator/lumpsum-calculator.html"  class="hover:text-leaf-400 transition-colors">Lumpsum Calculator</a></li>
+          <li><a href="../calculator/rd-calculator.html"       class="hover:text-leaf-400 transition-colors">RD Calculator</a></li>
+          <li><a href="../calculator/cagr-calculator.html"     class="hover:text-leaf-400 transition-colors">CAGR Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../calculator/income-tax-calculator.html"  class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
+          <li><a href="../calculator/gst-calculator.html"         class="hover:text-leaf-400 transition-colors">GST Calculator</a></li>
+          <li><a href="../calculator/hra-calculator.html"         class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li>
+          <li><a href="../calculator/tds-calculator.html"         class="hover:text-leaf-400 transition-colors">TDS Calculator</a></li>
+          <li><a href="../calculator/gratuity-calculator.html"    class="hover:text-leaf-400 transition-colors">Gratuity</a></li>
+          <li><a href="../calculator/advance-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Advance Tax</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Health & Math</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../calculator/bmi-calculator.html"                  class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li>
+          <li><a href="../calculator/age-calculator.html"                  class="hover:text-leaf-400 transition-colors">Age Calculator</a></li>
+          <li><a href="../calculator/due-date-calculator.html"             class="hover:text-leaf-400 transition-colors">Due Date Calculator</a></li>
+          <li><a href="../calculator/percentage-calculator.html"           class="hover:text-leaf-400 transition-colors">Percentage Calculator</a></li>
+          <li><a href="../calculator/compound-interest-calculator.html"    class="hover:text-leaf-400 transition-colors">Compound Interest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-ink-500">
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
+      <div class="flex items-center gap-5">
+        <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
+        <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
+        <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
+        <a href="https://github.com/Skypherhunt" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/abhinav-kumar70/" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+let regime = 'new';
+
+function fmtINR(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+function fmtPct(n) { return n.toFixed(1) + '%'; }
+
+function updateTrack(id) {
+  const el = document.getElementById(id);
+  const pct = ((parseFloat(el.value) - parseFloat(el.min)) / (parseFloat(el.max) - parseFloat(el.min))) * 100;
+  el.style.background = `linear-gradient(to right, #16a34a ${pct}%, #e8ecf2 ${pct}%)`;
+}
+function syncFromSlider(id) { document.getElementById(id + 'Input').value = document.getElementById(id).value; updateTrack(id); calculate(); }
+function syncFromInput(id, val) {
+  const s = document.getElementById(id);
+  const clamped = Math.min(Math.max(parseFloat(val) || parseFloat(s.min), parseFloat(s.min)), parseFloat(s.max));
+  s.value = clamped; updateTrack(id); calculate();
+}
+
+// ── Tax engines (same slabs as Income Tax Calculator, FY 2025-26) ──
+function calcNewTax(taxable) {
+  const slabs = [[300000,0],[700000,0.05],[1000000,0.10],[1200000,0.15],[1500000,0.20],[Infinity,0.30]];
+  let tax = 0, prev = 0;
+  for (const [limit, rate] of slabs) { if (taxable <= prev) break; tax += Math.min(taxable - prev, limit - prev) * rate; prev = limit; }
+  if (taxable <= 1200000) tax = 0;
+  return tax;
+}
+function calcOldTax(taxable) {
+  const slabs = [[250000,0],[500000,0.05],[1000000,0.20],[Infinity,0.30]];
+  let tax = 0, prev = 0;
+  for (const [limit, rate] of slabs) { if (taxable <= prev) break; tax += Math.min(taxable - prev, limit - prev) * rate; prev = limit; }
+  if (taxable <= 500000) tax = Math.max(0, tax - 12500);
+  return tax;
+}
+function withCess(tax, income) {
+  let sc = 0;
+  if (income > 5000000 && income <= 10000000) sc = tax * 0.10;
+  else if (income > 10000000 && income <= 20000000) sc = tax * 0.15;
+  else if (income > 20000000) sc = tax * 0.25;
+  return Math.round(tax + sc + (tax + sc) * 0.04);
+}
+
+function calculate() {
+  const ctc      = parseFloat(document.getElementById('ctc').value);
+  const basicPct = parseFloat(document.getElementById('basicPct').value);
+  const ptaxM    = parseFloat(document.getElementById('ptax').value);
+  const userDed  = parseFloat(document.getElementById('deductions').value) || 0;
+
+  const basic       = ctc * basicPct / 100;
+  const employerPF   = basic * 0.12;                     // 12% of full basic
+  const employeePF   = basic * 0.12;
+  const gratuity     = basic * 0.0481;
+  const gross        = ctc - employerPF - gratuity;
+  const ptaxA        = ptaxM * 12;
+
+  let taxable, tax;
+  if (regime === 'new') {
+    taxable = Math.max(0, gross - 75000);
+    tax = withCess(calcNewTax(taxable), taxable);
+  } else {
+    taxable = Math.max(0, gross - 50000 - employeePF - userDed);
+    tax = withCess(calcOldTax(taxable), taxable);
+  }
+
+  const totalDed = employeePF + ptaxA + tax;
+  const inHandA  = gross - totalDed;
+  const inHandM  = inHandA / 12;
+  const takePct  = (inHandA / ctc) * 100;
+  const dedFromCTC = ctc - inHandA;
+
+  document.getElementById('monthlyResult').textContent = fmtINR(inHandM);
+  document.getElementById('annualResult').textContent  = fmtINR(inHandA);
+  document.getElementById('grossOut').textContent      = fmtINR(gross);
+  document.getElementById('dedOut').textContent        = fmtINR(dedFromCTC);
+  document.getElementById('takePct').textContent       = fmtPct(takePct);
+
+  const rows = [
+    ['Annual CTC', ctc, 'text-ink-900', true],
+    ['− Employer PF', -employerPF, 'text-saffron-600', false],
+    ['− Gratuity', -gratuity, 'text-saffron-600', false],
+    ['= Gross Salary', gross, 'text-ink-900', true],
+    ['− Employee PF', -employeePF, 'text-saffron-600', false],
+    ['− Professional Tax', -ptaxA, 'text-saffron-600', false],
+    ['− Income Tax (TDS)', -tax, 'text-saffron-600', false],
+    ['= Annual In-Hand', inHandA, 'text-leaf-700', true],
+  ];
+  document.getElementById('breakupList').innerHTML = rows.map(([label, val, cls, bold]) => `
+    <div class="flex items-center justify-between text-sm ${bold ? 'font-semibold pt-1' : ''}">
+      <span class="${bold ? 'text-ink-800' : 'text-ink-500'}">${label}</span>
+      <span class="font-mono ${cls}">${val < 0 ? '−' : ''}${fmtINR(Math.abs(val))}</span>
+    </div>`).join('');
+
+  const takeP = (inHandA / ctc) * 100, dedP = 100 - takeP;
+  document.getElementById('barTake').style.width = takeP + '%';
+  document.getElementById('barDed').style.width  = dedP + '%';
+  document.getElementById('barLabelT').textContent = 'Take-home ' + fmtPct(takeP);
+  document.getElementById('barLabelD').textContent = 'Deductions ' + fmtPct(dedP);
+
+  const slip = [
+    ['Gross Monthly Salary', gross / 12, 'text-ink-900', true],
+    ['Employee PF', -employeePF / 12, 'text-saffron-600', false],
+    ['Professional Tax', -ptaxM, 'text-saffron-600', false],
+    ['Income Tax (TDS)', -tax / 12, 'text-saffron-600', false],
+    ['Net Monthly In-Hand', inHandM, 'text-leaf-700', true],
+  ];
+  document.getElementById('slipBody').innerHTML = slip.map(([label, val, cls, bold], i) => `
+    <tr class="${i % 2 === 0 ? 'bg-white' : 'bg-ink-50/40'} ${bold ? 'border-t border-ink-100' : ''}">
+      <td class="px-4 sm:px-6 py-3 text-sm ${bold ? 'font-semibold text-ink-800' : 'text-ink-500'}">${label}</td>
+      <td class="px-4 sm:px-6 py-3 text-sm text-right font-mono ${cls} ${bold ? 'font-semibold' : ''}">${val < 0 ? '−' : ''}${fmtINR(Math.abs(val))}</td>
+    </tr>`).join('');
+}
+
+function setRegime(r, btn) {
+  regime = r;
+  document.querySelectorAll('.preset-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('dedRow').classList.toggle('hidden', r !== 'old');
+  calculate();
+}
+
+function setupDates() {
+  const now = new Date(), year = now.getFullYear(), month = now.getMonth() + 1;
+  const fyStart = month >= 4 ? year : year - 1;
+  document.getElementById('heroFY').textContent = `FY ${fyStart}–${String(fyStart + 1).slice(-2)}`;
+  document.getElementById('footerYear').textContent = year;
+}
+
+function init() {
+  setupDates();
+  ['ctc', 'basicPct', 'ptax', 'deductions'].forEach(id => {
+    const s = document.getElementById(id), i = document.getElementById(id + 'Input');
+    if (s && i) i.value = s.value;
+    updateTrack(id);
+  });
+  calculate();
+}
+init();
+</script>
+</body>
+</html>

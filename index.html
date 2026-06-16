@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BharatCalc — Free Online Calculators for India | SIP, EMI, Tax, GST & More</title>
   <link rel="icon" href="logo-round.png" type="image/png" />
-  <meta name="description" content="BharatCalc — India's most-used free calculator platform. SIP calculator, EMI calculator, income tax calculator (new vs old regime), GST calculator, PPF, FD, BMI and 50+ instant tools. No login. Mobile-first." />
+  <meta name="description" content="BharatCalc — free online calculators for India. SIP, EMI, income tax (new vs old regime), GST, PPF, FD, BMI and 30+ more tools. Instant results. No login required." />
   <meta name="keywords" content="free online calculators India, SIP calculator India, EMI calculator India, income tax calculator 2025-26, GST calculator, PPF calculator, FD calculator, BMI calculator, compound interest calculator, HRA calculator, salary calculator India, investment calculator India, loan EMI calculator, mutual fund calculator, NPS calculator" />
   <meta name="author" content="BharatCalc" />
   <meta name="robots" content="index, follow" />
@@ -26,6 +26,17 @@
   {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "Organization",
+        "name": "BharatCalc",
+        "url": "https://bharatcalc.online/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bharatcalc.online/logo-round.png",
+          "width": 256,
+          "height": 256
+        }
+      },
       {
         "@type": "WebSite",
         "name": "BharatCalc",
@@ -133,6 +144,7 @@
         <a href="#categories" onclick="navCat('tax')"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
         <a href="#categories" onclick="navCat('health')"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
         <a href="#categories" onclick="navCat('math')"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+        <a href="#categories" onclick="navCat('tools')"   class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
         <a href="#articles-section"                       class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Articles</a>
       </nav>
       <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" aria-expanded="false" id="menuBtn">
@@ -144,6 +156,7 @@
       <a href="#categories" onclick="navCat('tax')"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/></svg> Tax</a>
       <a href="#categories" onclick="navCat('health')"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-rose-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> Health</a>
       <a href="#categories" onclick="navCat('math')"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg> Math</a>
+      <a href="#categories" onclick="navCat('tools')"   class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> Tools</a>
       <a href="#articles-section"                       class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-leaf-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h10"/></svg> Articles</a>
     </div>
   </div>
@@ -226,7 +239,7 @@
     <button class="cat-tab px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:border-leaf-400 transition-all" onclick="filterCategory('tax', this)" role="tab" aria-selected="false"><span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/></svg> Tax</span></button>
     <button class="cat-tab px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:border-leaf-400 transition-all" onclick="filterCategory('health', this)" role="tab" aria-selected="false"><span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> Health</span></button>
     <button class="cat-tab px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:border-leaf-400 transition-all" onclick="filterCategory('math', this)" role="tab" aria-selected="false"><span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg> Math</span></button>
-    <button class="cat-tab px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:border-leaf-400 transition-all" onclick="filterCategory('tools', this)" role="tab" aria-selected="false"><span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> Tools</span></button>
+    <button class="cat-tab px-4 py-2 rounded-xl border border-ink-200 text-sm font-semibold bg-white text-ink-600 hover:border-purple-400 transition-all" onclick="filterCategory('tools', this)" role="tab" aria-selected="false"><span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> Tools</span></button>
   </div>
   <div id="calcGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4"></div>
   <div class="text-center mt-8">
@@ -456,6 +469,124 @@
       </div>
 
     </div>
+
+    <!-- TDS guide row -->
+    <div class="grid sm:grid-cols-3 gap-5 mt-5">
+      <a href="articles/tds-on-fd-interest.html" class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-saffron-500/40 rounded-2xl p-5 flex flex-col gap-3 transition-all hover:shadow-xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-saffron-600/20 text-saffron-300 rounded-xl flex items-center justify-center flex-shrink-0 border border-saffron-600/20">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          </div>
+          <div class="text-[10px] font-bold uppercase tracking-wider text-saffron-400">Tax · Section 194A</div>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold text-base text-white group-hover:text-saffron-300 transition-colors leading-snug">TDS on FD Interest: New ₹50,000 / ₹1 Lakh Limit</h3>
+          <p class="text-ink-400 text-xs mt-1.5 leading-relaxed">New limits, 10% rate, Form 15G/15H, and how to claim a refund.</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-semibold text-saffron-400 group-hover:text-saffron-300 transition-colors mt-auto">
+          Read article <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <a href="articles/section-194t-tds-partners.html" class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-saffron-500/40 rounded-2xl p-5 flex flex-col gap-3 transition-all hover:shadow-xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-saffron-600/20 text-saffron-300 rounded-xl flex items-center justify-center flex-shrink-0 border border-saffron-600/20">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div class="text-[10px] font-bold uppercase tracking-wider text-saffron-400">Tax · New 2025</div>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold text-base text-white group-hover:text-saffron-300 transition-colors leading-snug">Section 194T: TDS on Partner's Salary & Interest</h3>
+          <p class="text-ink-400 text-xs mt-1.5 leading-relaxed">Brand-new section from April 2025 — 10% on partner remuneration.</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-semibold text-saffron-400 group-hover:text-saffron-300 transition-colors mt-auto">
+          Read article <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <a href="articles/tds-on-rent.html" class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-saffron-500/40 rounded-2xl p-5 flex flex-col gap-3 transition-all hover:shadow-xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-saffron-600/20 text-saffron-300 rounded-xl flex items-center justify-center flex-shrink-0 border border-saffron-600/20">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 12L12 3l9 9"/><path d="M5 10v9h4v-5h4v5h4v-9"/></svg>
+          </div>
+          <div class="text-[10px] font-bold uppercase tracking-wider text-saffron-400">Tax · 194-I & 194-IB</div>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold text-base text-white group-hover:text-saffron-300 transition-colors leading-snug">TDS on Rent: The New ₹50,000/Month Rule</h3>
+          <p class="text-ink-400 text-xs mt-1.5 leading-relaxed">194-I vs 194-IB, 2% rate, and how a tenant files Form 26QC.</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-semibold text-saffron-400 group-hover:text-saffron-300 transition-colors mt-auto">
+          Read article <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+    </div>
+
+    <!-- New articles row -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-5">
+      <a href="articles/sip-wealth-creation.html" class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-leaf-500/40 rounded-2xl p-5 flex flex-col gap-3 transition-all hover:shadow-xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-leaf-600/20 text-leaf-300 rounded-xl flex items-center justify-center flex-shrink-0 border border-leaf-600/20">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="17 7 21 7 21 11"/></svg>
+          </div>
+          <div class="text-[10px] font-bold uppercase tracking-wider text-leaf-400">Finance · Wealth</div>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold text-sm text-white group-hover:text-leaf-300 transition-colors leading-snug">How SIP Creates Real Wealth in India</h3>
+          <p class="text-ink-400 text-xs mt-1.5 leading-relaxed">Compounding, rupee-cost averaging, fund selection — the complete guide to building serious wealth through SIP.</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-semibold text-leaf-400 group-hover:text-leaf-300 transition-colors mt-auto">
+          Read article <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <a href="articles/emi-guide.html" class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-leaf-500/40 rounded-2xl p-5 flex flex-col gap-3 transition-all hover:shadow-xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-leaf-600/20 text-leaf-300 rounded-xl flex items-center justify-center flex-shrink-0 border border-leaf-600/20">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          </div>
+          <div class="text-[10px] font-bold uppercase tracking-wider text-leaf-400">Finance · Loans</div>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold text-sm text-white group-hover:text-leaf-300 transition-colors leading-snug">How EMI Works & How to Pay Off Faster</h3>
+          <p class="text-ink-400 text-xs mt-1.5 leading-relaxed">The EMI formula decoded, why banks front-load interest, and prepayment strategies that cut years off your loan.</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-semibold text-leaf-400 group-hover:text-leaf-300 transition-colors mt-auto">
+          Read article <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <a href="articles/ppf-vs-epf.html" class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-leaf-500/40 rounded-2xl p-5 flex flex-col gap-3 transition-all hover:shadow-xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-leaf-600/20 text-leaf-300 rounded-xl flex items-center justify-center flex-shrink-0 border border-leaf-600/20">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <div class="text-[10px] font-bold uppercase tracking-wider text-leaf-400">Finance · Retirement</div>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold text-sm text-white group-hover:text-leaf-300 transition-colors leading-snug">PPF vs EPF: Which Is Better for You?</h3>
+          <p class="text-ink-400 text-xs mt-1.5 leading-relaxed">Interest rates, EEE tax status, withdrawal rules, and who should use which. Full comparison with real numbers.</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-semibold text-leaf-400 group-hover:text-leaf-300 transition-colors mt-auto">
+          Read article <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <a href="articles/hra-exemption-guide.html" class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-saffron-500/40 rounded-2xl p-5 flex flex-col gap-3 transition-all hover:shadow-xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-saffron-600/20 text-saffron-300 rounded-xl flex items-center justify-center flex-shrink-0 border border-saffron-600/20">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 12L12 3l9 9"/><path d="M5 10v9h4v-5h4v5h4v-9"/></svg>
+          </div>
+          <div class="text-[10px] font-bold uppercase tracking-wider text-saffron-400">Tax · Salary</div>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold text-sm text-white group-hover:text-saffron-300 transition-colors leading-snug">HRA Exemption: Maximize Your Tax Savings</h3>
+          <p class="text-ink-400 text-xs mt-1.5 leading-relaxed">The three-condition formula, metro vs non-metro rules, and how to claim every rupee of HRA you're entitled to.</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-semibold text-saffron-400 group-hover:text-saffron-300 transition-colors mt-auto">
+          Read article <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -644,6 +775,12 @@ const calcs = [
   { title:'RD Calculator',         desc:'Recurring deposit maturity',       icon:ic('<polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>'), cat:'finance', url:'calculator/rd-calculator.html',          badge:'',         color:'purple' },
   { title:'CAGR Calculator',       desc:'Compound annual growth rate',      icon:ic('<path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="9" rx="0.5"/><rect x="13" y="7" width="3" height="14" rx="0.5"/>'), cat:'finance', url:'calculator/cagr-calculator.html',        badge:'',         color:'leaf' },
   { title:'NPS Calculator',        desc:'National Pension Scheme',          icon:ic('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12h6M12 9v6"/>'), cat:'finance', url:'calculator/nps-calculator.html',         badge:'New',      color:'blue' },
+  { title:'In-Hand Salary',        desc:'CTC to monthly take-home',         icon:ic('<rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M2 10h2M20 10h2"/>'), cat:'finance', url:'calculator/in-hand-salary-calculator.html', badge:'New', color:'leaf' },
+  { title:'Step-Up SIP',           desc:'Top-up SIP with yearly increase',  icon:ic('<polyline points="3 17 9 11 13 15 21 7"/><polyline points="17 7 21 7 21 11"/><path d="M3 21h18"/>'), cat:'finance', url:'calculator/step-up-sip-calculator.html', badge:'New', color:'leaf' },
+  { title:'Home Loan Eligibility', desc:'How much loan you can get',         icon:ic('<path d="M3 12L12 3l9 9"/><path d="M5 10v9a1 1 0 001 1h12a1 1 0 001-1v-9"/><path d="M9 21v-6h6v6"/>'), cat:'finance', url:'calculator/home-loan-eligibility-calculator.html', badge:'New', color:'blue' },
+  { title:'SSY Calculator',        desc:'Sukanya Samriddhi Yojana',         icon:ic('<path d="M12 21s-6.5-4.35-9-8.5C1.5 9 3.5 5 7 5c2 0 3.5 1.5 5 3 1.5-1.5 3-3 5-3 3.5 0 5.5 4 4 7.5-2.5 4.15-9 8.5-9 8.5z"/>'), cat:'finance', url:'calculator/ssy-calculator.html', badge:'New', color:'purple' },
+  { title:'SCSS Calculator',       desc:'Senior Citizens Savings Scheme',   icon:ic('<circle cx="12" cy="7" r="4"/><path d="M5.5 21a6.5 6.5 0 0113 0"/><path d="M19 4l1.5 1.5L23 3"/>'), cat:'finance', url:'calculator/scss-calculator.html', badge:'New', color:'indigo' },
+  { title:'NSC Calculator',        desc:'National Savings Certificate',     icon:ic('<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M7 9v6M17 9v6"/>'), cat:'finance', url:'calculator/nsc-calculator.html', badge:'New', color:'indigo' },
 
   { title:'Income Tax Calculator', desc:'New vs old regime, current FY',    icon:ic('<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/>'), cat:'tax',     url:'calculator/income-tax-calculator.html',  badge:'Updated',  color:'saffron' },
   { title:'GST Calculator',        desc:'Add or remove GST instantly',      icon:ic('<path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/>'), cat:'tax',     url:'calculator/gst-calculator.html',         badge:'',         color:'orange' },
@@ -651,6 +788,8 @@ const calcs = [
   { title:'TDS Calculator',        desc:'Tax deducted at source',           icon:ic('<path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>'), cat:'tax',     url:'calculator/tds-calculator.html',         badge:'New',      color:'red' },
   { title:'Gratuity Calculator',   desc:'Gratuity amount on retirement',    icon:ic('<circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>'), cat:'tax',     url:'calculator/gratuity-calculator.html',    badge:'New',      color:'amber' },
   { title:'Advance Tax',           desc:'Quarterly advance tax dues',       icon:ic('<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="9 16 11 18 15 14"/>'), cat:'tax',     url:'calculator/advance-tax-calculator.html', badge:'New',      color:'orange' },
+  { title:'Capital Gains Tax',     desc:'STCG & LTCG on shares, property',   icon:ic('<path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-6"/><polyline points="18 8 18 8 14 8"/>'), cat:'tax',     url:'calculator/capital-gains-tax-calculator.html', badge:'New', color:'saffron' },
+  { title:'New vs Old Regime',     desc:'Compare tax & find the winner',    icon:ic('<path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/>'), cat:'tax',     url:'calculator/new-vs-old-tax-regime-calculator.html', badge:'New', color:'orange' },
   { title:'BMI Calculator',        desc:'Body mass index',                  icon:ic('<circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 12l3 2"/>'), cat:'health',  url:'calculator/bmi-calculator.html',         badge:'',         color:'rose' },
   { title:'Age Calculator',        desc:'Exact age in years/months/days',   icon:ic('<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="12" cy="16" r="2" fill="currentColor" stroke="none"/>'), cat:'health',  url:'calculator/age-calculator.html',         badge:'',         color:'purple' },
   { title:'Calorie Calculator',    desc:'Daily calorie requirement',        icon:ic('<path d="M12 2c0 0-5 4.5-5 9a5 5 0 0010 0c0-4.5-5-9-5-9z"/><path d="M12 12v5"/>'), cat:'health',  url:'calculator/calorie-calculator.html',     badge:'New',      color:'green' },
@@ -659,10 +798,8 @@ const calcs = [
   { title:'Percentage Calculator', desc:'% of a number, % change',         icon:ic('<path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/>'), cat:'math',    url:'calculator/percentage-calculator.html',  badge:'New',      color:'blue' },
   { title:'Compound Interest',     desc:'CI with principal + rate',         icon:ic('<path d="M3 20c3-8 6-4 9-10s6-5 9-5"/><path d="M3 20h18M3 3v17"/>'), cat:'math',    url:'calculator/compound-interest-calculator.html', badge:'New', color:'indigo' },
   { title:'Date Calculator',       desc:'Days between two dates',           icon:ic('<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h8M11 17l3-3-3-3"/>'), cat:'math',    url:'calculator/date-calculator.html',        badge:'New',      color:'blue' },
-  { title:'QR Code Generator',     desc:'Create QR code for any URL',      icon:ic('<rect x="3" y="3" width="7" height="7"/><rect x="5" y="5" width="3" height="3" fill="currentColor" stroke="none"/><rect x="14" y="3" width="7" height="7"/><rect x="16" y="5" width="3" height="3" fill="currentColor" stroke="none"/><rect x="3" y="14" width="7" height="7"/><rect x="5" y="16" width="3" height="3" fill="currentColor" stroke="none"/><path d="M14 14h3v3M14 17v4M17 14h4M21 17h-4"/>'), cat:'tools',   url:'calculator/qr-generator.html',           badge:'',         color:'ink',    coming:true },
-  { title:'Word Counter',          desc:'Count words, characters, lines',   icon:ic('<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="3" y1="14" x2="17" y2="14"/><line x1="3" y1="18" x2="13" y2="18"/>'), cat:'tools',   url:'calculator/word-counter.html',           badge:'',         color:'leaf',   coming:true },
-  { title:'Unit Converter',        desc:'Length, weight, temperature',      icon:ic('<path d="M7 16V4m0 0L3 8m4-4l4 4M17 8v12m0 0l4-4m-4 4l-4-4"/>'), cat:'tools',   url:'calculator/unit-converter.html',         badge:'',         color:'blue',   coming:true },
-  { title:'Time Zone Converter',   desc:'IST to global time zones',         icon:ic('<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/><path d="M2 12h2M20 12h2M12 2v2M12 20v2"/>'), cat:'tools',   url:'calculator/timezone-converter.html',     badge:'New',      color:'teal' },
+  { title:'Simple Interest',       desc:'SI = P × R × T ÷ 100',             icon:ic('<circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/>'), cat:'math',    url:'calculator/simple-interest-calculator.html', badge:'New', color:'indigo' },
+  { title:'Timezone Converter',    desc:'Convert time across world cities',  icon:ic('<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/><path d="M2 12h3M19 12h3M12 2v3M12 19v3"/>'), cat:'tools',   url:'calculator/timezone-converter.html',         badge:'',         color:'blue' },
 ];
 
 const INITIAL_SHOW = 10;

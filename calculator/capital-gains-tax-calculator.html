@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capital Gains Tax Calculator India – STCG & LTCG | BharatCalc</title>
+  <meta name="description" content="Free Capital Gains Tax Calculator India — compute STCG and LTCG tax on shares, mutual funds, property and gold. Updated for latest rules: 12.5% LTCG, 20% STCG, ₹1.25 lakh exemption. No login." />
+  <meta name="keywords" content="capital gains tax calculator India, LTCG calculator, STCG calculator, capital gains calculator shares, mutual fund capital gains tax, property capital gains tax calculator, 12.5 percent LTCG, equity LTCG exemption 1.25 lakh" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/capital-gains-tax-calculator.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://bharatcalc.online/calculator/capital-gains-tax-calculator.html" />
+  <meta property="og:title"       content="Capital Gains Tax Calculator – STCG & LTCG | BharatCalc" />
+  <meta property="og:description" content="Calculate short-term and long-term capital gains tax on shares, mutual funds, property and gold. Free, instant, no login." />
+  <meta property="og:image"       content="https://bharatcalc.online/og/capital-gains-tax-calculator.png" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Capital Gains Tax Calculator | BharatCalc" />
+  <meta name="twitter:description" content="STCG & LTCG tax on shares, MF, property and gold. Free, instant — by BharatCalc." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Capital Gains Tax Calculator",
+    "url": "https://bharatcalc.online/calculator/capital-gains-tax-calculator.html",
+    "description": "Calculate short-term (STCG) and long-term (LTCG) capital gains tax on equity, debt funds, property and gold in India.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bharatcalc.online/" },
+        { "@type": "ListItem", "position": 2, "name": "Tax",  "item": "https://bharatcalc.online/?cat=tax" },
+        { "@type": "ListItem", "position": 3, "name": "Capital Gains Tax Calculator", "item": "https://bharatcalc.online/calculator/capital-gains-tax-calculator.html" }
+      ]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is the LTCG tax rate on shares and mutual funds?", "acceptedAnswer": { "@type": "Answer", "text": "Long-term capital gains (held more than 12 months) on listed equity shares and equity mutual funds are taxed at 12.5%, but only on gains above ₹1.25 lakh per financial year. Gains up to ₹1.25 lakh are completely exempt." } },
+      { "@type": "Question", "name": "What is the STCG tax rate on equity?", "acceptedAnswer": { "@type": "Answer", "text": "Short-term capital gains (held 12 months or less) on listed equity shares and equity mutual funds are taxed at a flat 20% under Section 111A, regardless of your income tax slab." } },
+      { "@type": "Question", "name": "How are debt mutual funds taxed?", "acceptedAnswer": { "@type": "Answer", "text": "Debt mutual funds purchased on or after 1 April 2023 are taxed at your income tax slab rate on the entire gain, with no long-term benefit or indexation. This calculator applies your selected slab rate to debt fund gains." } },
+      { "@type": "Question", "name": "What is the capital gains tax on property?", "acceptedAnswer": { "@type": "Answer", "text": "Property held for more than 24 months is long-term and taxed at 12.5% without indexation. For property bought before 23 July 2024, you may alternatively choose 20% with indexation — whichever is lower. Property sold within 24 months is short-term and taxed at your slab rate." } },
+      { "@type": "Question", "name": "Is the ₹1.25 lakh LTCG exemption per year or per transaction?", "acceptedAnswer": { "@type": "Answer", "text": "The ₹1.25 lakh exemption on equity LTCG is per financial year and aggregate across all your equity shares and equity mutual fund sales — not per transaction. Only the total long-term equity gain above ₹1.25 lakh in a year is taxed at 12.5%." } },
+      { "@type": "Question", "name": "How is the holding period calculated?", "acceptedAnswer": { "@type": "Answer", "text": "The holding period runs from the purchase date to the sale date. For equity it is 12 months to qualify as long-term; for property, gold and other assets it is 24 months. This calculator works out the holding period automatically from the dates you enter." } }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Clash Display', 'sans-serif'],
+            sans:    ['Satoshi', 'sans-serif'],
+            mono:    ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
+            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Satoshi', system-ui, sans-serif; }
+    .font-display { font-family: 'Clash Display', system-ui, sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #16a34a; transform: scaleX(0); transition: transform 0.2s; border-radius: 1px; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .val-input { font-family: 'JetBrains Mono', monospace; }
+    .val-input:focus { outline: none; }
+    select:focus { outline: none; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    .preset-tab { transition: all 0.15s; }
+    .preset-tab.active { background: #0d1117; color: #fff; border-color: #0d1117; }
+    .breadcrumb a { transition: color 0.15s; }
+    .faq-item details summary { cursor: pointer; list-style: none; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9TD6B9GQ89');
+  </script>
+</head>
+
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+        <div class="leading-none">
+          <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
+          <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+        <a href="../index.html?cat=tools"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+        <a href="../index.html#articles-section" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Articles</a>
+      </nav>
+      <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-leaf-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/></svg> Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-rose-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg> Math</a>
+      <a href="../index.html?cat=tools"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> Tools</a>
+      <a href="../index.html#articles-section" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-leaf-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h10"/></svg> Articles</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a>
+      <span>/</span>
+      <a href="../index.html?cat=tax" class="hover:text-ink-200">Tax</a>
+      <span>/</span>
+      <span class="text-ink-300">Capital Gains Tax Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-saffron-600/15 text-saffron-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-saffron-600/20">
+          <span class="w-1.5 h-1.5 bg-saffron-400 rounded-full inline-block animate-pulse"></span>
+          Updated for <span id="heroFY" class="ml-0.5"></span>
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">Capital Gains Tax Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
+          Work out short-term and long-term capital gains tax on shares, mutual funds, property and gold — with the latest 12.5% LTCG, 20% STCG and ₹1.25 lakh equity exemption.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0">
+        <span class="w-1.5 h-1.5 bg-saffron-400 rounded-full inline-block"></span>
+        Results update live
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- LEFT: Inputs -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-7">Transaction Details</h2>
+
+      <div class="mb-6">
+        <label for="asset" class="text-sm font-semibold text-ink-700 block mb-2">Asset Type</label>
+        <select id="asset" onchange="calculate()" class="val-input w-full bg-ink-50 border border-ink-200 rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-900">
+          <option value="equity">Listed Shares / Equity Mutual Funds</option>
+          <option value="debt">Debt Mutual Funds</option>
+          <option value="property">Real Estate / Property</option>
+          <option value="gold">Gold / Other Assets</option>
+        </select>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        <div>
+          <label for="buyAmt" class="text-sm font-semibold text-ink-700 block mb-2">Purchase Value</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-2.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="buyAmt" type="number" value="100000" min="0" step="1000" oninput="calculate()" class="val-input w-full text-sm font-semibold text-ink-900 bg-transparent text-right" />
+          </div>
+        </div>
+        <div>
+          <label for="sellAmt" class="text-sm font-semibold text-ink-700 block mb-2">Sale Value</label>
+          <div class="flex items-center gap-1 bg-ink-50 border border-ink-200 rounded-lg px-3 py-2.5">
+            <span class="text-sm text-ink-400 font-mono">₹</span>
+            <input id="sellAmt" type="number" value="180000" min="0" step="1000" oninput="calculate()" class="val-input w-full text-sm font-semibold text-ink-900 bg-transparent text-right" />
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        <div>
+          <label for="buyDate" class="text-sm font-semibold text-ink-700 block mb-2">Purchase Date</label>
+          <input id="buyDate" type="date" onchange="calculate()" class="val-input w-full bg-ink-50 border border-ink-200 rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-900" />
+        </div>
+        <div>
+          <label for="sellDate" class="text-sm font-semibold text-ink-700 block mb-2">Sale Date</label>
+          <input id="sellDate" type="date" onchange="calculate()" class="val-input w-full bg-ink-50 border border-ink-200 rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-900" />
+        </div>
+      </div>
+
+      <div id="slabRow" class="mb-2 hidden">
+        <label for="slab" class="text-sm font-semibold text-ink-700 block mb-2">Your Income Tax Slab (for slab-rate gains)</label>
+        <select id="slab" onchange="calculate()" class="val-input w-full bg-ink-50 border border-ink-200 rounded-lg px-3 py-2.5 text-sm font-semibold text-ink-900">
+          <option value="0.05">5%</option>
+          <option value="0.10">10%</option>
+          <option value="0.15">15%</option>
+          <option value="0.20">20%</option>
+          <option value="0.30" selected>30%</option>
+        </select>
+      </div>
+      <p class="text-xs text-ink-400 leading-relaxed bg-ink-50 rounded-xl p-3 mt-4">Cess of 4% is added on the computed tax. The ₹1.25 lakh exemption applies only to long-term equity gains, per financial year, aggregated across all equity sales.</p>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div class="flex flex-col gap-5">
+      <div class="bg-ink-900 rounded-2xl p-6 sm:p-8">
+        <p class="text-ink-400 text-xs font-semibold uppercase tracking-wider mb-2">Capital Gains Tax</p>
+        <div class="font-display text-4xl sm:text-5xl font-bold text-white tracking-tight mb-1" id="taxResult">₹0</div>
+        <p class="text-ink-400 text-xs"><span id="gainTypeLabel" class="text-saffron-400 font-semibold">—</span> · holding <span id="holdLabel">—</span></p>
+        <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t border-ink-700">
+          <div><p class="text-ink-500 text-xs mb-1">Total Gain</p><p class="font-mono font-semibold text-white text-sm" id="gainOut">₹0</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Taxable Gain</p><p class="font-mono font-semibold text-saffron-400 text-sm" id="taxableOut">₹0</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Net Proceeds</p><p class="font-mono font-semibold text-leaf-400 text-sm" id="netOut">₹0</p></div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-5">Calculation Breakdown</h2>
+        <div class="space-y-2.5" id="breakupList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-6">
+    <div class="bg-ink-100/60 border border-dashed border-ink-200 rounded-xl h-24 flex items-center justify-center text-xs text-ink-400" aria-hidden="true">Google AdSense — Responsive Ad Unit</div>
+  </div>
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+  <div class="bg-white border border-ink-100 rounded-2xl overflow-hidden mb-6">
+    <div class="p-6 border-b border-ink-100">
+      <h2 class="font-display font-bold text-ink-900 text-xl mb-1">Capital Gains Tax Rates in India</h2>
+      <p class="text-sm text-ink-400">Holding periods and tax rates for each asset class (current rules)</p>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm" aria-label="Capital gains tax rates by asset">
+        <thead>
+          <tr class="bg-ink-50">
+            <th class="text-left font-semibold text-ink-600 px-4 py-3">Asset</th>
+            <th class="text-left font-semibold text-ink-600 px-4 py-3">Long-term if held</th>
+            <th class="text-right font-semibold text-ink-600 px-4 py-3">STCG</th>
+            <th class="text-right font-semibold text-ink-600 px-4 py-3">LTCG</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t border-ink-50"><td class="px-4 py-3 font-semibold text-ink-700">Listed equity / equity MF</td><td class="px-4 py-3 text-ink-500">&gt; 12 months</td><td class="px-4 py-3 text-right font-mono text-ink-700">20%</td><td class="px-4 py-3 text-right font-mono text-leaf-700">12.5%*</td></tr>
+          <tr class="border-t border-ink-50 bg-ink-50/40"><td class="px-4 py-3 font-semibold text-ink-700">Debt mutual funds</td><td class="px-4 py-3 text-ink-500">Slab (no LTCG)</td><td class="px-4 py-3 text-right font-mono text-ink-700">Slab</td><td class="px-4 py-3 text-right font-mono text-ink-700">Slab</td></tr>
+          <tr class="border-t border-ink-50"><td class="px-4 py-3 font-semibold text-ink-700">Property</td><td class="px-4 py-3 text-ink-500">&gt; 24 months</td><td class="px-4 py-3 text-right font-mono text-ink-700">Slab</td><td class="px-4 py-3 text-right font-mono text-leaf-700">12.5%</td></tr>
+          <tr class="border-t border-ink-50 bg-ink-50/40"><td class="px-4 py-3 font-semibold text-ink-700">Gold / others</td><td class="px-4 py-3 text-ink-500">&gt; 24 months</td><td class="px-4 py-3 text-right font-mono text-ink-700">Slab</td><td class="px-4 py-3 text-right font-mono text-leaf-700">12.5%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-ink-400 p-4">* Equity LTCG is taxed only on gains above ₹1.25 lakh per financial year. A 4% health & education cess applies on all the above. Property bought before 23 July 2024 can opt for 20% with indexation if lower.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about capital gains tax in India</p>
+  <div class="grid md:grid-cols-2 gap-3">
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is the LTCG tax rate on shares and mutual funds?</span><span class="faq-icon text-saffron-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">LTCG (held &gt; 12 months) on listed equity and equity mutual funds is taxed at <strong class="text-ink-700">12.5%</strong>, only on gains above <strong class="text-ink-700">₹1.25 lakh</strong> per financial year. Gains up to ₹1.25 lakh are exempt.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is the STCG tax rate on equity?</span><span class="faq-icon text-saffron-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">STCG (held ≤ 12 months) on listed equity and equity mutual funds is taxed at a flat <strong class="text-ink-700">20%</strong> under Section 111A, regardless of your slab.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How are debt mutual funds taxed?</span><span class="faq-icon text-saffron-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Debt funds bought on or after 1 April 2023 are taxed at your <strong class="text-ink-700">income tax slab rate</strong> on the whole gain, with no long-term benefit or indexation.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is capital gains tax on property?</span><span class="faq-icon text-saffron-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Property held &gt; 24 months is long-term, taxed at <strong class="text-ink-700">12.5% without indexation</strong>. Property bought before 23 July 2024 may opt for 20% with indexation if lower. Sold within 24 months it is short-term at your slab rate.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Is the ₹1.25 lakh exemption per year or per transaction?</span><span class="faq-icon text-saffron-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">It is <strong class="text-ink-700">per financial year</strong> and aggregate across all your equity share and equity MF sales — not per transaction. Only the total long-term equity gain above ₹1.25 lakh is taxed.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How is the holding period calculated?</span><span class="faq-icon text-saffron-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">From purchase date to sale date. Equity needs &gt; 12 months to be long-term; property, gold and other assets need &gt; 24 months. The calculator works this out automatically from your dates.</div></details></div>
+  </div>
+</section>
+
+<!-- Related calculators -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="income-tax-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-saffron-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">Income Tax Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">New vs old regime</div>
+    </a>
+    <a href="mutual-fund-return-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-leaf-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="9" rx="0.5"/><rect x="13" y="7" width="3" height="14" rx="0.5"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">Mutual Fund Return</div>
+      <div class="text-xs text-ink-400 mt-0.5">CAGR & XIRR</div>
+    </a>
+    <a href="sip-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-leaf-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="17 7 21 7 21 11"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">SIP Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Mutual fund SIP returns</div>
+    </a>
+    <a href="tds-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-red-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">TDS Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Tax deducted at source</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <img src="../logo-round.png" alt="BharatCalc" class="h-8 w-auto" />
+          <div class="font-display font-semibold text-white">BharatCalc</div>
+        </div>
+        <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
+        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700"><svg class="w-3.5 h-3.5 inline-block mr-1 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> All results are estimates for informational purposes only. Consult a SEBI-registered advisor before making financial decisions.</div>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../calculator/sip-calculator.html"      class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
+          <li><a href="../calculator/emi-calculator.html"      class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
+          <li><a href="../calculator/ppf-calculator.html"      class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
+          <li><a href="../calculator/fd-calculator.html"       class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
+          <li><a href="../calculator/epf-calculator.html"      class="hover:text-leaf-400 transition-colors">EPF Calculator</a></li>
+          <li><a href="../calculator/lumpsum-calculator.html"  class="hover:text-leaf-400 transition-colors">Lumpsum Calculator</a></li>
+          <li><a href="../calculator/rd-calculator.html"       class="hover:text-leaf-400 transition-colors">RD Calculator</a></li>
+          <li><a href="../calculator/cagr-calculator.html"     class="hover:text-leaf-400 transition-colors">CAGR Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../calculator/income-tax-calculator.html"  class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
+          <li><a href="../calculator/gst-calculator.html"         class="hover:text-leaf-400 transition-colors">GST Calculator</a></li>
+          <li><a href="../calculator/hra-calculator.html"         class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li>
+          <li><a href="../calculator/tds-calculator.html"         class="hover:text-leaf-400 transition-colors">TDS Calculator</a></li>
+          <li><a href="../calculator/gratuity-calculator.html"    class="hover:text-leaf-400 transition-colors">Gratuity</a></li>
+          <li><a href="../calculator/advance-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Advance Tax</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Health & Math</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../calculator/bmi-calculator.html"                  class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li>
+          <li><a href="../calculator/age-calculator.html"                  class="hover:text-leaf-400 transition-colors">Age Calculator</a></li>
+          <li><a href="../calculator/due-date-calculator.html"             class="hover:text-leaf-400 transition-colors">Due Date Calculator</a></li>
+          <li><a href="../calculator/percentage-calculator.html"           class="hover:text-leaf-400 transition-colors">Percentage Calculator</a></li>
+          <li><a href="../calculator/compound-interest-calculator.html"    class="hover:text-leaf-400 transition-colors">Compound Interest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-ink-500">
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
+      <div class="flex items-center gap-5">
+        <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
+        <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
+        <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
+        <a href="https://github.com/Skypherhunt" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/abhinav-kumar70/" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function fmtINR(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+
+function monthsBetween(d1, d2) {
+  return (d2.getFullYear() - d1.getFullYear()) * 12 + (d2.getMonth() - d1.getMonth()) - (d2.getDate() < d1.getDate() ? 1 : 0);
+}
+
+function calculate() {
+  const asset  = document.getElementById('asset').value;
+  const buy    = parseFloat(document.getElementById('buyAmt').value)  || 0;
+  const sell   = parseFloat(document.getElementById('sellAmt').value) || 0;
+  const slab   = parseFloat(document.getElementById('slab').value);
+  const bd     = new Date(document.getElementById('buyDate').value);
+  const sd     = new Date(document.getElementById('sellDate').value);
+
+  const gain   = sell - buy;
+  let months = 0, holdLabel = '—';
+  if (!isNaN(bd) && !isNaN(sd) && sd > bd) {
+    months = monthsBetween(bd, sd);
+    const yrs = Math.floor(months / 12), rem = months % 12;
+    holdLabel = (yrs ? yrs + 'y ' : '') + rem + 'm';
+  }
+
+  const ltThreshold = asset === 'equity' ? 12 : 24;
+  let isLong = months > ltThreshold;
+  if (asset === 'debt') isLong = false; // debt MF always slab
+
+  // Determine rate, exemption, taxable
+  let rate, exemption = 0, typeLabel, slabBased = false;
+  if (asset === 'equity') {
+    if (isLong) { rate = 0.125; exemption = 125000; typeLabel = 'LTCG (Equity)'; }
+    else { rate = 0.20; typeLabel = 'STCG (Equity)'; }
+  } else if (asset === 'debt') {
+    rate = slab; slabBased = true; typeLabel = 'Debt MF — Slab Rate';
+  } else { // property, gold
+    if (isLong) { rate = 0.125; typeLabel = (asset === 'property' ? 'LTCG (Property)' : 'LTCG (Gold/Other)'); }
+    else { rate = slab; slabBased = true; typeLabel = (asset === 'property' ? 'STCG (Property)' : 'STCG (Gold/Other)'); }
+  }
+
+  document.getElementById('slabRow').classList.toggle('hidden', !slabBased);
+
+  const taxableGain = Math.max(0, gain - exemption);
+  const baseTax = gain > 0 ? taxableGain * rate : 0;
+  const cess = baseTax * 0.04;
+  const totalTax = Math.round(baseTax + cess);
+  const net = sell - totalTax;
+
+  document.getElementById('taxResult').textContent    = fmtINR(Math.max(0, totalTax));
+  document.getElementById('gainTypeLabel').textContent = typeLabel;
+  document.getElementById('holdLabel').textContent     = holdLabel;
+  document.getElementById('gainOut').textContent       = fmtINR(gain);
+  document.getElementById('taxableOut').textContent    = fmtINR(Math.max(0, taxableGain));
+  document.getElementById('netOut').textContent        = fmtINR(net);
+
+  const rows = [
+    ['Sale value', sell],
+    ['Purchase value', -buy],
+    ['Capital gain', gain],
+  ];
+  if (exemption) rows.push(['Exemption (₹1.25L equity LTCG)', -Math.min(exemption, Math.max(0, gain))]);
+  rows.push(['Taxable gain', Math.max(0, taxableGain)]);
+  rows.push([`Tax @ ${(rate * 100).toFixed(1).replace('.0','')}%`, baseTax]);
+  rows.push(['+ Cess 4%', cess]);
+  rows.push(['Total tax payable', totalTax]);
+
+  document.getElementById('breakupList').innerHTML = rows.map(([label, val], i) => {
+    const bold = i === rows.length - 1 || label === 'Capital gain' || label === 'Taxable gain';
+    const neg = val < 0;
+    const cls = label === 'Total tax payable' ? 'text-saffron-600' : (neg ? 'text-saffron-600' : 'text-ink-900');
+    return `<div class="flex items-center justify-between text-sm ${bold ? 'font-semibold pt-1' : ''}">
+      <span class="${bold ? 'text-ink-800' : 'text-ink-500'}">${label}</span>
+      <span class="font-mono ${cls}">${neg ? '−' : ''}${fmtINR(Math.abs(val))}</span>
+    </div>`;
+  }).join('');
+}
+
+function setupDates() {
+  const now = new Date(), year = now.getFullYear(), month = now.getMonth() + 1;
+  const fyStart = month >= 4 ? year : year - 1;
+  document.getElementById('heroFY').textContent = `FY ${fyStart}–${String(fyStart + 1).slice(-2)}`;
+  document.getElementById('footerYear').textContent = year;
+  // default dates: bought ~2 years ago, sold today
+  const sell = new Date(now);
+  const buy  = new Date(now); buy.setFullYear(buy.getFullYear() - 2);
+  document.getElementById('sellDate').value = sell.toISOString().slice(0, 10);
+  document.getElementById('buyDate').value  = buy.toISOString().slice(0, 10);
+}
+function init() { setupDates(); calculate(); }
+init();
+</script>
+</body>
+</html>
