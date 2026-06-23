@@ -24,6 +24,7 @@
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="TDS Calculator | BharatCalc" />
   <meta name="twitter:description" content="Calculate TDS for all payment types instantly. Free — by BharatCalc." />
+  <meta name="twitter:image"       content="https://bharatcalc.online/og/default.png" />
 
   <script type="application/ld+json">
   {
@@ -35,6 +36,8 @@
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "publisher": { "@type": "Organization", "name": "BharatCalc", "url": "https://bharatcalc.online/", "logo": { "@type": "ImageObject", "url": "https://bharatcalc.online/logo-round.png" } },
+    "inLanguage": "en-IN",
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [
@@ -63,28 +66,48 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Calculate TDS",
+    "description": "Calculate the correct TDS amount for any payment type using BharatCalc.",
+    "totalTime": "PT2M",
+    "tool": [{ "@type": "HowToTool", "name": "BharatCalc" }],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Select the payment type",
+        "text": "Choose the nature of payment: salary, FD interest, rent, professional fees, commission, etc. Each has a different TDS section and rate under the Income Tax Act."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Enter the payment amount",
+        "text": "Input the total payment. TDS applies only above the threshold. Example: FD interest TDS threshold is Rs 50,000 p.a. (Rs 1 lakh for senior citizens after Budget 2025)."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Select PAN availability",
+        "text": "If the deductee has a valid PAN, the standard rate applies. Without PAN, TDS is deducted at 20% or twice the applicable rate, whichever is higher (Section 206AA)."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "View TDS and net payment",
+        "text": "See the TDS amount, net payable, and applicable section. TDS must be deposited with the government by the 7th of the following month via Challan 281."
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['Clash Display', 'sans-serif'],
-            sans:    ['Satoshi', 'sans-serif'],
-            mono:    ['JetBrains Mono', 'monospace'],
-          },
-          colors: {
-            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
-            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
-            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+  <link rel="stylesheet" href="../styles.css" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; }

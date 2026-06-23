@@ -24,6 +24,7 @@
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Step-Up SIP Calculator | BharatCalc" />
   <meta name="twitter:description" content="Estimate step-up (top-up) SIP returns. Free, instant, no login — by BharatCalc." />
+  <meta name="twitter:image"       content="https://bharatcalc.online/og/default.png" />
 
   <script type="application/ld+json">
   {
@@ -35,6 +36,8 @@
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "publisher": { "@type": "Organization", "name": "BharatCalc", "url": "https://bharatcalc.online/", "logo": { "@type": "ImageObject", "url": "https://bharatcalc.online/logo-round.png" } },
+    "inLanguage": "en-IN",
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [
@@ -60,28 +63,48 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Calculate Step-Up SIP Returns",
+    "description": "See how increasing your SIP annually accelerates your final corpus compared to a flat SIP.",
+    "totalTime": "PT2M",
+    "tool": [{ "@type": "HowToTool", "name": "BharatCalc" }],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Enter your starting monthly SIP",
+        "text": "Set the initial monthly SIP amount you will invest in the first year."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Set the annual step-up percentage",
+        "text": "Choose how much to increase your SIP each year (typically 10% to match salary hikes). A Rs 10,000 SIP with 10% step-up becomes Rs 11,000 in year 2, Rs 12,100 in year 3, and so on."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Set expected return and tenure",
+        "text": "Enter expected annual return rate and total investment period."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Compare step-up vs flat SIP",
+        "text": "The calculator shows your step-up SIP corpus vs a regular SIP at the same starting amount. The step-up approach typically produces 30-50% more corpus over 20 years."
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['Clash Display', 'sans-serif'],
-            sans:    ['Satoshi', 'sans-serif'],
-            mono:    ['JetBrains Mono', 'monospace'],
-          },
-          colors: {
-            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
-            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
-            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+  <link rel="stylesheet" href="../styles.css" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; }

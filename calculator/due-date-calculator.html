@@ -25,6 +25,7 @@
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Due Date Calculator | BharatCalc" />
   <meta name="twitter:description" content="Expected delivery date from LMP or conception. Free — by BharatCalc." />
+  <meta name="twitter:image"       content="https://bharatcalc.online/og/default.png" />
 
   <script type="application/ld+json">
   {
@@ -36,6 +37,8 @@
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "publisher": { "@type": "Organization", "name": "BharatCalc", "url": "https://bharatcalc.online/", "logo": { "@type": "ImageObject", "url": "https://bharatcalc.online/logo-round.png" } },
+    "inLanguage": "en-IN",
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [
@@ -58,28 +61,42 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Calculate Pregnancy Due Date",
+    "description": "Estimate your pregnancy due date and key milestone dates using Naegele's rule.",
+    "totalTime": "PT2M",
+    "tool": [{ "@type": "HowToTool", "name": "BharatCalc" }],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Enter the first day of your last menstrual period (LMP)",
+        "text": "Input the date of the first day of your most recent period. This is the standard method used by obstetricians in India."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Optionally enter your average cycle length",
+        "text": "If your cycle differs from the standard 28 days, enter your average length for a more accurate estimate."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "View estimated due date and milestones",
+        "text": "Due date = LMP + 280 days (40 weeks). The calculator shows current gestational week, first trimester end, 20-week anomaly scan window, and third trimester start. Confirm with an ultrasound."
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['Clash Display', 'sans-serif'],
-            sans:    ['Satoshi', 'sans-serif'],
-            mono:    ['JetBrains Mono', 'monospace'],
-          },
-          colors: {
-            ink:     { DEFAULT: '#0d1117', 50: '#f5f7fa', 100: '#e8ecf2', 200: '#c9d2de', 300: '#9aaabb', 400: '#637b93', 500: '#3d5a72', 600: '#284560', 700: '#1a3249', 800: '#112338', 900: '#0d1117' },
-            leaf:    { DEFAULT: '#16a34a', 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
-            saffron: { DEFAULT: '#ea580c', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+  <link rel="stylesheet" href="../styles.css" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; }

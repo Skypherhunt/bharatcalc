@@ -1,0 +1,3 @@
+/calculator/:name.html  /calculator/:name  301
+/articles/:name.html    /articles/:name   301
+/:name.html             /:name            301

@@ -19,8 +19,13 @@
   <meta property="og:url" content="https://bharatcalc.online/calculator/epf-calculator" />
   <meta property="og:title" content="EPF Calculator – Employee Provident Fund | BharatCalc" />
   <meta property="og:description" content="Calculate EPF maturity amount and retirement corpus at 8.25% interest rate. Free, no login." />
-  <meta property="og:locale" content="en_IN" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"EPF Calculator","url":"https://bharatcalc.online/calculator/epf-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bharatcalc.online/"},{"@type":"ListItem","position":2,"name":"Finance","item":"https://bharatcalc.online/?cat=finance"},{"@type":"ListItem","position":3,"name":"EPF Calculator","item":"https://bharatcalc.online/calculator/epf-calculator"}]}}</script>
+  <meta property="og:image"       content="https://bharatcalc.online/og/default.png" />
+  <meta property="og:locale"      content="en_IN" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="EPF Calculator | BharatCalc" />
+  <meta name="twitter:description" content="Calculate EPF maturity amount and retirement corpus. Free, no login — by BharatCalc." />
+  <meta name="twitter:image"       content="https://bharatcalc.online/og/default.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"EPF Calculator","url":"https://bharatcalc.online/calculator/epf-calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"publisher":{"@type":"Organization","name":"BharatCalc","url":"https://bharatcalc.online/","logo":{"@type":"ImageObject","url":"https://bharatcalc.online/logo-round.png"}},"inLanguage":"en-IN","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bharatcalc.online/"},{"@type":"ListItem","position":2,"name":"Finance","item":"https://bharatcalc.online/?cat=finance"},{"@type":"ListItem","position":3,"name":"EPF Calculator","item":"https://bharatcalc.online/calculator/epf-calculator"}]}}</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -55,11 +60,47 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Calculate EPF Retirement Corpus",
+    "description": "Estimate your Employee Provident Fund retirement corpus using BharatCalc.",
+    "totalTime": "PT2M",
+    "tool": [{ "@type": "HowToTool", "name": "BharatCalc" }],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Enter your monthly basic salary",
+        "text": "Input monthly basic salary + Dearness Allowance. EPF contributions are 12% of this from both you and your employer (employer's 8.33% goes to EPS)."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Set your current age and retirement age",
+        "text": "Enter your current age and target retirement age (default 58). This determines the remaining years of contribution."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Set the EPF interest rate",
+        "text": "Current EPF rate is 8.25% p.a. (FY 2024-25) as declared by EPFO. Adjust if the rate changes in future years."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "View your retirement corpus",
+        "text": "See total employee contribution, employer contribution, interest earned, and final corpus. EPF has EEE tax status: 80C deduction, tax-free interest, tax-free maturity after 5 years of service."
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{fontFamily:{display:['Clash Display','sans-serif'],sans:['Satoshi','sans-serif'],mono:['JetBrains Mono','monospace']},colors:{ink:{DEFAULT:'#0d1117',50:'#f5f7fa',100:'#e8ecf2',200:'#c9d2de',300:'#9aaabb',400:'#637b93',500:'#3d5a72',600:'#284560',700:'#1a3249',800:'#112338',900:'#0d1117'},leaf:{DEFAULT:'#16a34a',50:'#f0fdf4',100:'#dcfce7',200:'#bbf7d0',300:'#86efac',400:'#4ade80',500:'#22c55e',600:'#16a34a',700:'#15803d'},saffron:{DEFAULT:'#ea580c',50:'#fff7ed',100:'#ffedd5',400:'#fb923c',500:'#f97316',600:'#ea580c'}}}}}</script>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+  <link rel="stylesheet" href="../styles.css" />
   <style>
     *,*::before,*::after{box-sizing:border-box}body{font-family:'Satoshi',system-ui,sans-serif}.font-display{font-family:'Clash Display',system-ui,sans-serif}
     .nav-link{position:relative}.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:#16a34a;transform:scaleX(0);transition:transform .2s;border-radius:1px}.nav-link:hover::after{transform:scaleX(1)}

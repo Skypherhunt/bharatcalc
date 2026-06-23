@@ -4,7 +4,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Project Is
 
-BharatCalc is a static HTML calculator site targeting Indian users, optimized for SEO. No build system, no framework, no npm — every page is a standalone `.html` file using Tailwind CDN and vanilla JS. The goal is to publish many calculators fast while keeping design and SEO consistent.
+BharatCalc is a static HTML calculator site targeting Indian users, optimized for SEO. No framework — every page is a standalone `.html` file using compiled Tailwind CSS (`/styles.css`) and vanilla JS. The goal is to publish many calculators fast while keeping design and SEO consistent.
+
+**CSS build:** Tailwind is compiled once into `/styles.css` (not loaded at runtime — the old `cdn.tailwindcss.com` script was removed for Core Web Vitals). After adding/changing any Tailwind classes in HTML, regenerate the stylesheet:
+
+```
+npm install         # one-time
+npm run build:css   # rebuild /styles.css after editing markup
+```
+
+Theme (colors/fonts) lives in `tailwind.config.js`; content globs already cover `*.html`, `calculator/*.html`, `articles/*.html`. Every page links `<link rel="stylesheet" href="/styles.css" />` plus a small per-page `<style>` block for custom components.
 
 Live site: `https://bharatcalc.online/`  
 Analytics: Google Analytics (`G-9TD6B9GQ89`)
@@ -34,7 +43,7 @@ Every new calculator requires ALL of the following. Do not skip steps:
 
 1. `<head>` — SEO meta: unique `<title>`, `<meta name="description">`, `<link rel="canonical">`, OG tags, Twitter card
 2. Two JSON-LD blocks: `WebApplication` schema (with breadcrumb) + `FAQPage` schema
-3. Tailwind CDN + `tailwind.config` (copy exact config from any existing calculator — colors/fonts must match)
+3. `<link rel="stylesheet" href="/styles.css" />` (copy the head block from any existing calculator). Do NOT re-add the `cdn.tailwindcss.com` script. After adding markup with new Tailwind classes, run `npm run build:css`.
 4. Google Analytics script (copy from any existing calculator — same GA ID)
 5. Navbar (copy from any existing calculator — identical across all pages)
 6. H1 + calculator interface
