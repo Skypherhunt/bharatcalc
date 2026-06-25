@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();function toggleTheme(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}}</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
@@ -55,10 +56,13 @@
     "@type": "FAQPage",
     "mainEntity": [
       { "@type": "Question", "name": "Which tax regime is better, new or old?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on your deductions. The new regime has lower slab rates and zero tax up to ₹12 lakh taxable income but allows almost no deductions. The old regime has higher rates but lets you claim 80C, HRA, home loan interest and more. If your total deductions are large, the old regime may save more; otherwise the new regime usually wins." } },
-      { "@type": "Question", "name": "What is the break-even deduction between regimes?", "acceptedAnswer": { "@type": "Answer", "text": "The break-even depends on income, but as a rough guide, you typically need deductions of around ₹3.75 lakh to ₹4.25 lakh for the old regime to beat the new regime at higher incomes. Below that, the new regime is usually cheaper." } },
+      { "@type": "Question", "name": "What is the break-even deduction between regimes?", "acceptedAnswer": { "@type": "Answer", "text": "Under the FY 2025-26 slabs the break-even is high — you generally need total deductions of around ₹5 lakh to ₹8 lakh (rising with income) for the old regime to win. Below that the new regime is cheaper, which is why it now suits the large majority of salaried taxpayers." } },
       { "@type": "Question", "name": "Is the standard deduction available in the new regime?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Salaried individuals get a standard deduction of ₹75,000 in the new regime and ₹50,000 in the old regime. This calculator applies the standard deduction automatically for each regime." } },
       { "@type": "Question", "name": "Can I switch between the new and old regime every year?", "acceptedAnswer": { "@type": "Answer", "text": "Salaried individuals without business income can choose their regime afresh every financial year while filing returns. Those with business or professional income can switch back to the new regime only once after opting for the old regime." } },
-      { "@type": "Question", "name": "Is the new regime the default?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The new tax regime is the default. If you want to be taxed under the old regime, you must explicitly opt for it while filing your return or declaring to your employer." } }
+      { "@type": "Question", "name": "Is the new regime the default?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The new tax regime is the default. If you want to be taxed under the old regime, you must explicitly opt for it while filing your return or declaring to your employer." } },
+      { "@type": "Question", "name": "Does this match the official tax?", "acceptedAnswer": { "@type": "Answer", "text": "It uses the current slab rates, 87A rebate, surcharge and 4% cess and is accurate for standard salary scenarios. For capital gains, business income or complex cases, consult a CA or use incometax.gov.in." } },
+      { "@type": "Question", "name": "Is income up to ₹12 lakh really tax-free in the new regime?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. For FY 2025-26 the Section 87A rebate makes a taxable income up to ₹12 lakh pay zero tax under the new regime. With the ₹75,000 standard deduction, a salaried person earning up to ₹12.75 lakh gross pays no tax. Just above ₹12 lakh, marginal relief keeps the tax from jumping sharply." } },
+      { "@type": "Question", "name": "What deductions can I still claim in the new regime?", "acceptedAnswer": { "@type": "Answer", "text": "A few survive: the ₹75,000 standard deduction, the employer's NPS contribution under Section 80CCD(2), and exemptions like gratuity and leave encashment. But the big ones — 80C, 80D, HRA, and home-loan interest on a self-occupied house — are not allowed in the new regime." } }
     ]
   }
   </script>
@@ -155,6 +159,10 @@
         <a href="../index.html?cat=tools"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
         <a href="../index.html#articles-section" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Articles</a>
       </nav>
+      <button onclick="toggleTheme()" id="themeToggle" class="p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="theme-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="theme-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
         <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
@@ -270,7 +278,47 @@
 
 <!-- SEO CONTENT -->
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-  <div class="grid md:grid-cols-2 gap-6">
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">New Regime Slabs (FY 2025-26)</h2>
+      <table class="w-full text-sm">
+        <thead><tr class="border-b border-ink-100">
+          <th class="text-left text-xs font-semibold text-ink-500 py-2">Taxable income</th>
+          <th class="text-right text-xs font-semibold text-ink-500 py-2">Rate</th>
+        </tr></thead>
+        <tbody class="font-mono">
+          <tr class="border-b border-ink-50"><td class="py-1.5 text-ink-600">Up to ₹4 lakh</td><td class="py-1.5 text-right text-leaf-700">Nil</td></tr>
+          <tr class="border-b border-ink-50"><td class="py-1.5 text-ink-600">₹4 – 8 lakh</td><td class="py-1.5 text-right text-ink-700">5%</td></tr>
+          <tr class="border-b border-ink-50"><td class="py-1.5 text-ink-600">₹8 – 12 lakh</td><td class="py-1.5 text-right text-ink-700">10%</td></tr>
+          <tr class="border-b border-ink-50"><td class="py-1.5 text-ink-600">₹12 – 16 lakh</td><td class="py-1.5 text-right text-ink-700">15%</td></tr>
+          <tr class="border-b border-ink-50"><td class="py-1.5 text-ink-600">₹16 – 20 lakh</td><td class="py-1.5 text-right text-ink-700">20%</td></tr>
+          <tr class="border-b border-ink-50"><td class="py-1.5 text-ink-600">₹20 – 24 lakh</td><td class="py-1.5 text-right text-ink-700">25%</td></tr>
+          <tr><td class="py-1.5 text-ink-600">Above ₹24 lakh</td><td class="py-1.5 text-right text-ink-700">30%</td></tr>
+        </tbody>
+      </table>
+      <p class="text-[10px] text-ink-300 mt-3 font-mono">87A rebate makes income up to ₹12L tax-free. +4% cess on tax.</p>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Old Regime Slabs (FY 2025-26)</h2>
+      <table class="w-full text-sm">
+        <thead><tr class="border-b border-ink-100">
+          <th class="text-left text-xs font-semibold text-ink-500 py-2">Taxable income</th>
+          <th class="text-right text-xs font-semibold text-ink-500 py-2">Rate</th>
+        </tr></thead>
+        <tbody class="font-mono">
+          <tr class="border-b border-ink-50"><td class="py-1.5 text-ink-600">Up to ₹2.5 lakh</td><td class="py-1.5 text-right text-leaf-700">Nil</td></tr>
+          <tr class="border-b border-ink-50"><td class="py-1.5 text-ink-600">₹2.5 – 5 lakh</td><td class="py-1.5 text-right text-ink-700">5%</td></tr>
+          <tr class="border-b border-ink-50"><td class="py-1.5 text-ink-600">₹5 – 10 lakh</td><td class="py-1.5 text-right text-ink-700">20%</td></tr>
+          <tr><td class="py-1.5 text-ink-600">Above ₹10 lakh</td><td class="py-1.5 text-right text-ink-700">30%</td></tr>
+        </tbody>
+      </table>
+      <p class="text-[10px] text-ink-300 mt-3 font-mono">87A rebate makes income up to ₹5L tax-free. +4% cess. Deductions allowed.</p>
+      <p class="text-xs text-ink-400 leading-relaxed mt-2">Senior citizens (60+) get a higher ₹3L basic exemption, and super-seniors (80+) ₹5L, under the old regime.</p>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
     <div class="bg-white border border-ink-100 rounded-2xl p-6">
       <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">New Regime — at a glance</h2>
       <ul class="space-y-2.5 text-sm text-ink-500">
@@ -290,6 +338,46 @@
       </ul>
     </div>
   </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Worked Example — ₹15 Lakh Salary</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">Comparing a ₹15,00,000 salary for FY 2025-26 (figures include 4% cess):</p>
+      <div class="space-y-3">
+        <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1"><span class="text-xs font-semibold text-leaf-800">New regime</span><span class="font-mono text-sm font-bold text-leaf-700">₹97,500</span></div>
+          <div class="text-[10px] text-ink-500 font-mono">Taxable ₹14.25L (after ₹75k std deduction)</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1"><span class="text-xs font-semibold text-ink-800">Old regime (₹1.5L 80C only)</span><span class="font-mono text-sm font-bold text-ink-700">₹2,10,600</span></div>
+          <div class="text-[10px] text-ink-400 font-mono">Taxable ₹13L (after ₹50k std + ₹1.5L 80C)</div>
+        </div>
+        <div class="bg-saffron-50 border border-saffron-100 rounded-xl p-3">
+          <p class="text-xs text-ink-500">Here the new regime saves <strong class="text-ink-700">₹1,13,100</strong>. The old regime would need roughly <strong class="text-ink-700">₹5.4 lakh</strong> of total deductions just to match the new regime at this income.</p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Who Should Pick Which Regime?</h2>
+      <div class="space-y-3">
+        <div class="flex items-start gap-3 p-3 bg-leaf-50 border border-leaf-100 rounded-xl">
+          <span class="text-leaf-600 mt-0.5"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div>
+            <p class="text-xs font-semibold text-leaf-800 mb-1">Choose the New Regime if…</p>
+            <p class="text-xs text-ink-500">You rent-free or own your home outright, don't have a big home loan, and don't max out 80C/80D/NPS. It also means zero paperwork and no investment proofs.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 bg-ink-50 border border-ink-100 rounded-xl">
+          <span class="text-saffron-600 mt-0.5"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div>
+            <p class="text-xs font-semibold text-ink-800 mb-1">Choose the Old Regime if…</p>
+            <p class="text-xs text-ink-500">You pay high rent (HRA), have a large home-loan interest deduction, and fully use 80C, 80D and the ₹50k NPS benefit — together pushing deductions past the break-even.</p>
+          </div>
+        </div>
+        <p class="text-xs text-ink-400">Run your own numbers in the calculator above — it picks the cheaper regime for you automatically.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- FAQ -->
@@ -298,11 +386,13 @@
   <p class="text-sm text-ink-400 mb-6">Common questions about choosing a tax regime</p>
   <div class="grid md:grid-cols-2 gap-3">
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Which tax regime is better, new or old?</span><span class="faq-icon text-saffron-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">It depends on your deductions. The new regime has lower rates and zero tax up to ₹12L but almost no deductions; the old regime has higher rates but allows 80C, HRA, home loan interest and more. Large deductions favour the old regime; otherwise the new regime usually wins.</div></details></div>
-    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is the break-even deduction?</span><span class="faq-icon text-saffron-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">As a rough guide, you typically need deductions of around <strong class="text-ink-700">₹3.75–4.25 lakh</strong> for the old regime to beat the new regime at higher incomes. Below that, the new regime is usually cheaper.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is the break-even deduction?</span><span class="faq-icon text-saffron-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Under the FY 2025-26 slabs the break-even is high — you generally need total deductions of around <strong class="text-ink-700">₹5–8 lakh</strong> (the figure rises with income) for the old regime to win. Below that, the new regime is cheaper. This is why the new regime now suits the large majority of salaried taxpayers.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Is the standard deduction available in the new regime?</span><span class="faq-icon text-saffron-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes — ₹75,000 in the new regime and ₹50,000 in the old regime for salaried individuals. This calculator applies it automatically.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Can I switch regimes every year?</span><span class="faq-icon text-saffron-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Salaried individuals without business income can choose afresh each year. Those with business income can switch back to the new regime only once after opting for the old regime.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Is the new regime the default?</span><span class="faq-icon text-saffron-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes. The new regime is the default. To be taxed under the old regime you must explicitly opt for it while filing your return or declaring to your employer.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Does this match the official tax?</span><span class="faq-icon text-saffron-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">It uses the current slab rates, 87A rebate, surcharge and 4% cess and is accurate for standard salary scenarios. For capital gains, business income or complex cases, consult a CA or use incometax.gov.in.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Is income up to ₹12 lakh really tax-free in the new regime?</span><span class="faq-icon text-saffron-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes. For FY 2025-26 the Section 87A rebate makes a <strong class="text-ink-700">taxable income up to ₹12 lakh</strong> pay zero tax under the new regime. Add the ₹75,000 standard deduction and a salaried person earning up to <strong class="text-ink-700">₹12.75 lakh</strong> gross pays no tax. Just above ₹12 lakh, marginal relief keeps the tax from jumping sharply.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What deductions can I still claim in the new regime?</span><span class="faq-icon text-saffron-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">A few survive: the <strong class="text-ink-700">₹75,000 standard deduction</strong>, the employer's NPS contribution under Section 80CCD(2), and exemptions like gratuity and leave encashment. But the big ones — 80C, 80D, HRA, and home-loan interest on a self-occupied house — are <strong class="text-ink-700">not allowed</strong> in the new regime.</div></details></div>
   </div>
 </section>
 

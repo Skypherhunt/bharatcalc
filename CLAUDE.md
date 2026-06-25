@@ -85,29 +85,39 @@ Search works against `name` + `tags`. Always add relevant search tags.
 - FAQ schema must mirror the visible FAQ section exactly
 - Breadcrumb: Home → Category → Calculator Name
 
-## Current Calculator Inventory (22 calculators)
+## Current Calculator Inventory (41 calculators)
 
-**Finance:** SIP, EMI, Lumpsum, CAGR, FD, RD, PPF, EPF, NPS, Compound Interest  
-**Tax:** Income Tax, GST, HRA, TDS, Gratuity, Advance Tax  
-**Health:** BMI, Calorie, Ideal Weight, Due Date  
-**Math/Tools:** Percentage, Age
+**Finance (21):** SIP, Step-up SIP, EMI, EMI Prepayment, Lumpsum, CAGR, FD, RD, PPF, EPF, NPS, Compound Interest, Mutual Fund Return, Simple Interest, Home Loan Eligibility, Credit Card Interest, SSY, SCSS, NSC, Inflation, Retirement  
+**Tax (9):** Income Tax, GST, HRA, TDS, Gratuity, Advance Tax, Capital Gains, In-Hand Salary, New vs Old Tax Regime  
+**Health (4):** BMI, Calorie, Ideal Weight, Due Date  
+**Math/Tools (7):** Percentage, Discount, CGPA to Percentage, Unit Converter, Age, Date, Timezone Converter
 
-## Planned Next Batch (discussed 2026-06-09)
+## Planned Next Batch (re-prioritized 2026-06-25)
 
-High-priority (high Indian search volume, natural fit):
-- In-Hand Salary Calculator (CTC → take-home)
-- Step-up SIP Calculator
-- Capital Gains Tax Calculator (STCG/LTCG)
-- Home Loan Eligibility Calculator
+Strategy: finance/tax stack is already deep (28 of 35). The thin category is
+Math/Tools (4) — that's the whitespace. Go wide on utilities; avoid building
+finance variants that cannibalize existing SIP/EMI/Lumpsum/Home-Loan pages.
 
-Also in pipeline:
-- Simple Interest Calculator
-- SSY (Sukanya Samriddhi Yojana) Calculator
-- SCSS (Senior Citizens Savings Scheme) Calculator
-- NSC Calculator
-- New vs Old Tax Regime Comparator
-- Loan Prepayment / Foreclosure Calculator
-- Credit Card Interest Calculator
-- TDEE Calculator
-- Discount Calculator
-- Unit Converter
+Tier 1 — SHIPPED 2026-06-25 (all five live, fully linked):
+- ✅ EMI Prepayment / Foreclosure Calculator (Finance)
+- ✅ Unit Converter (Tools)
+- ✅ Discount / Sale Price Calculator (Math/Tools)
+- ✅ Credit Card Interest / Minimum Payment Calculator (Finance)
+- ✅ CGPA → Percentage Converter (Tools)
+
+Tier 2 — build next:
+- Loan Calculator with amortization schedule (Finance)
+- Budget Planner / 50-30-20 (Finance)
+- Percentage Change Calculator (Math)
+- Working Days / Business Days Calculator (Tools)
+- TDEE Calculator (Health)
+
+Tier 3 — nice to have:
+- Water Intake (Health), Sleep Calculator (Health/Tools), Age Difference (Tools),
+  Date Duration (Tools — verify not already covered by Date calc),
+  Goal-Based Investment (Finance — only if framed distinctly from SIP/Retirement)
+
+Excluded (poor fit / duplicates): Currency Converter (needs live FX feed, breaks
+static model), Scientific Calculator (commodity, unrankable), Tip Calculator
+(tipping not customary in India), Mortgage / Affordability / Generic Investment
+(duplicate Home Loan Eligibility / SIP / Lumpsum).

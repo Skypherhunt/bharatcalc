@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();function toggleTheme(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}}</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
@@ -58,7 +59,10 @@
       { "@type": "Question", "name": "How much home loan can I get on a ₹50,000 salary?", "acceptedAnswer": { "@type": "Answer", "text": "With a net salary of ₹50,000, no existing EMIs, a 50% FOIR, 8.5% interest and a 20-year tenure, your maximum EMI is about ₹25,000, which supports a home loan of roughly ₹29 lakh. The exact figure depends on the lender's FOIR, your credit score and the interest rate offered." } },
       { "@type": "Question", "name": "What is FOIR in home loan?", "acceptedAnswer": { "@type": "Answer", "text": "FOIR (Fixed Obligation to Income Ratio) is the share of your net monthly income that goes toward all loan EMIs. Lenders typically allow 40–55%. A lower FOIR means more borrowing capacity; existing EMIs reduce how much you can borrow." } },
       { "@type": "Question", "name": "Does a longer tenure increase loan eligibility?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A longer tenure lowers the EMI for the same loan, so the same maximum EMI can support a larger loan amount. However, a longer tenure also means you pay much more total interest over the life of the loan." } },
-      { "@type": "Question", "name": "How can I increase my home loan eligibility?", "acceptedAnswer": { "@type": "Answer", "text": "You can increase eligibility by adding a co-applicant's income, closing existing loans to reduce EMIs, choosing a longer tenure, improving your credit score, or declaring additional income such as rent or bonuses. A larger down payment also reduces the loan needed for a given property." } }
+      { "@type": "Question", "name": "How can I increase my home loan eligibility?", "acceptedAnswer": { "@type": "Answer", "text": "You can increase eligibility by adding a co-applicant's income, closing existing loans to reduce EMIs, choosing a longer tenure, improving your credit score, or declaring additional income such as rent or bonuses. A larger down payment also reduces the loan needed for a given property." } },
+      { "@type": "Question", "name": "Is this the exact amount the bank will sanction?", "acceptedAnswer": { "@type": "Answer", "text": "No — it is a close estimate. Final sanction depends on your credit score, employer profile, age, property valuation and the lender's own FOIR and LTV rules. Use it to plan your budget before applying." } },
+      { "@type": "Question", "name": "How much down payment do I need?", "acceptedAnswer": { "@type": "Answer", "text": "Banks fund only part of the property value (the LTV ratio): up to 90% for homes up to ₹30 lakh, 80% up to ₹75 lakh, and 75% above that. So your down payment is typically 10–25% of the price, plus stamp duty and registration costs which the loan does not cover." } },
+      { "@type": "Question", "name": "Does my age affect home loan eligibility?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Lenders cap the loan tenure so it ends by your retirement age (usually 60 for salaried). A younger borrower can take a 25–30 year tenure and qualify for more, while someone near retirement gets a shorter tenure and a lower eligible amount. Adding a younger co-applicant can help." } }
     ]
   }
   </script>
@@ -159,6 +163,10 @@
         <a href="../index.html?cat=tools"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
         <a href="../index.html#articles-section" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Articles</a>
       </nav>
+      <button onclick="toggleTheme()" id="themeToggle" class="p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="theme-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="theme-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
         <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
@@ -304,11 +312,87 @@
 
 <!-- SEO CONTENT -->
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-  <div class="grid md:grid-cols-2 gap-6">
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">What is Home Loan Eligibility?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        Home loan eligibility is the maximum amount a lender is willing to sanction you, based mainly on your <strong class="text-ink-700">repayment capacity</strong>. Banks won't let your total EMIs swallow your income, so they cap them at a fixed share of your net monthly salary — the FOIR.
+      </p>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        The final loan is the lower of two limits: what your income can support (FOIR-based) and what the property value allows (LTV-based). Your credit score, age, and existing EMIs all feed into the number.
+      </p>
+      <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+        <p class="text-xs font-semibold text-leaf-700 mb-1">Rule of thumb</p>
+        <p class="text-xs text-ink-500">Most salaried borrowers qualify for a home loan of roughly <strong class="text-ink-700">55–60×</strong> their net monthly income, before adjusting for existing EMIs.</p>
+      </div>
+    </div>
     <div class="bg-white border border-ink-100 rounded-2xl p-6">
       <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">How Eligibility Is Calculated</h2>
-      <div class="bg-ink-50 rounded-xl p-4 font-mono text-xs text-ink-700 mb-4 leading-relaxed">Max EMI = (FOIR% × income) − existing EMIs<br>Loan = Max EMI × [(1+r)ⁿ − 1] ÷ [r(1+r)ⁿ]</div>
-      <p class="text-xs text-ink-400 leading-relaxed">Lenders limit your total EMIs to a fixed share of net income (the FOIR). The loan you qualify for is the one whose EMI equals your spare repayment capacity at the given rate and tenure.</p>
+      <div class="bg-ink-50 rounded-xl p-4 font-mono text-xs text-ink-700 mb-3 leading-relaxed">Max EMI = (FOIR% × income) − existing EMIs<br>Loan = Max EMI × [(1+r)ⁿ − 1] ÷ [r(1+r)ⁿ]</div>
+      <p class="text-xs text-ink-400 leading-relaxed mb-3">Lenders limit your total EMIs to a fixed share of net income (the FOIR). The loan you qualify for is the one whose EMI equals your spare repayment capacity at the given rate and tenure.</p>
+      <div class="bg-ink-50 rounded-xl p-3 space-y-1.5">
+        <p class="text-xs font-semibold text-ink-700">Example: ₹80,000 income, no EMIs</p>
+        <p class="text-xs font-mono text-ink-600">Max EMI = 50% × 80,000 = ₹40,000</p>
+        <p class="text-xs font-mono text-ink-600">At 8.5% for 20 yrs → loan ≈ <strong>₹46 lakh</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Eligibility by Salary</h2>
+      <p class="text-xs text-ink-400 mb-3">Approximate loan at 50% FOIR, no existing EMIs, 8.5% interest, 20-year tenure.</p>
+      <table class="w-full text-sm">
+        <thead><tr class="border-b border-ink-100">
+          <th class="text-left text-xs font-semibold text-ink-500 py-2">Net monthly income</th>
+          <th class="text-right text-xs font-semibold text-ink-500 py-2">Eligible loan</th>
+        </tr></thead>
+        <tbody class="font-mono">
+          <tr class="border-b border-ink-50"><td class="py-2 text-ink-600">₹30,000</td><td class="py-2 text-right text-ink-700">≈ ₹17 lakh</td></tr>
+          <tr class="border-b border-ink-50"><td class="py-2 text-ink-600">₹50,000</td><td class="py-2 text-right text-ink-700">≈ ₹29 lakh</td></tr>
+          <tr class="border-b border-ink-50"><td class="py-2 text-ink-600">₹75,000</td><td class="py-2 text-right text-ink-700">≈ ₹43 lakh</td></tr>
+          <tr class="border-b border-ink-50"><td class="py-2 text-ink-600">₹1,00,000</td><td class="py-2 text-right text-leaf-700">≈ ₹58 lakh</td></tr>
+          <tr><td class="py-2 text-ink-600">₹1,50,000</td><td class="py-2 text-right text-leaf-700">≈ ₹86 lakh</td></tr>
+        </tbody>
+      </table>
+      <p class="text-[10px] text-ink-300 mt-3 font-mono">* Indicative. Existing EMIs and a higher rate will lower these figures.</p>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">What Lenders Check</h2>
+      <ul class="space-y-3 text-sm text-ink-500">
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Net income &amp; FOIR</strong> — your take-home pay and how much is free for EMIs.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Credit score</strong> — a CIBIL score of 750+ gets the best rates and limits.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Age</strong> — tenure is capped to your retirement age (usually 60), so younger applicants get longer tenures.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Existing EMIs</strong> — car loans, personal loans and card dues all eat into capacity.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Employment profile</strong> — salaried with a stable employer is viewed more favourably than irregular income.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Property value</strong> — caps the loan via the LTV ratio (see below).</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">LTV — How Much the Bank Funds</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">Even if your income qualifies for more, RBI's Loan-to-Value (LTV) caps limit the loan to a share of the property's value — you fund the rest as down payment:</p>
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">Property up to ₹30 lakh</span>
+          <span class="font-mono text-sm font-semibold text-leaf-700">up to 90%</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">₹30 lakh – ₹75 lakh</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">up to 80%</span>
+        </div>
+        <div class="flex items-center justify-between py-2">
+          <span class="text-sm text-ink-600 font-medium">Above ₹75 lakh</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">up to 75%</span>
+        </div>
+      </div>
+      <div class="bg-saffron-50 border border-saffron-100 rounded-xl p-3 mt-4">
+        <p class="text-xs text-ink-500">So for a ₹60 lakh flat, the bank funds up to ₹48 lakh (80%) and you arrange ₹12 lakh plus stamp duty and registration yourself.</p>
+      </div>
     </div>
     <div class="bg-white border border-ink-100 rounded-2xl p-6">
       <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Ways to Increase Eligibility</h2>
@@ -317,6 +401,8 @@
         <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Close existing loans</strong> — fewer EMIs free up FOIR capacity.</span></li>
         <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Choose a longer tenure</strong> — lowers EMI and lifts the eligible amount.</span></li>
         <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Improve your credit score</strong> — a 750+ score earns lower rates and higher limits.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Declare extra income</strong> — rent, bonuses or incentives strengthen your case.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Make a bigger down payment</strong> — reduces the loan you need for a given property.</span></li>
       </ul>
     </div>
   </div>
@@ -333,6 +419,8 @@
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Does a longer tenure increase eligibility?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes. A longer tenure lowers EMI for the same loan, so a larger loan fits the same max EMI. But you pay much more total interest over the life of the loan.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How can I increase my eligibility?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Add a co-applicant's income, close existing loans, choose a longer tenure, improve your credit score, or declare extra income like rent. A bigger down payment also reduces the loan needed.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Is this the exact amount the bank will sanction?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">No — it is a close estimate. Final sanction depends on your credit score, employer profile, age, property valuation and the lender's own FOIR and LTV rules. Use it to plan your budget before applying.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How much down payment do I need?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Banks fund only part of the property value (the LTV ratio): up to <strong class="text-ink-700">90%</strong> for homes up to ₹30 lakh, 80% up to ₹75 lakh, and 75% above that. So your down payment is typically <strong class="text-ink-700">10–25%</strong> of the price, plus stamp duty and registration costs which the loan does not cover.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Does my age affect home loan eligibility?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes. Lenders cap the loan tenure so it ends by your retirement age (usually 60 for salaried). A younger borrower can take a 25–30 year tenure and qualify for more, while someone near retirement gets a shorter tenure and a lower eligible amount. Adding a younger co-applicant can help.</div></details></div>
   </div>
 </section>
 
@@ -355,10 +443,10 @@
       <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">Income Tax Calculator</div>
       <div class="text-xs text-ink-400 mt-0.5">New vs old regime</div>
     </a>
-    <a href="ppf-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
-      <div class="mb-2 text-purple-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
-      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">PPF Calculator</div>
-      <div class="text-xs text-ink-400 mt-0.5">Public Provident Fund</div>
+    <a href="emi-prepayment-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-leaf-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">EMI Prepayment</div>
+      <div class="text-xs text-ink-400 mt-0.5">Interest saved &amp; tenure cut</div>
     </a>
   </div>
 </section>

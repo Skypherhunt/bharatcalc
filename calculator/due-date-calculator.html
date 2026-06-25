@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();function toggleTheme(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}}</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
@@ -54,9 +55,14 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "How is pregnancy due date calculated?", "acceptedAnswer": { "@type": "Answer", "text": "The most common method is Naegele's Rule: add 280 days (40 weeks) to the first day of your Last Menstrual Period (LMP). Alternatively: add 9 months and 7 days to the LMP date. This gives the Estimated Due Date (EDD). Only about 5% of babies are born exactly on the EDD; most births occur between weeks 38–42." } },
-      { "@type": "Question", "name": "How many weeks is a full-term pregnancy?", "acceptedAnswer": { "@type": "Answer", "text": "A full-term pregnancy lasts 40 weeks (280 days) from the first day of the last menstrual period. Delivery between 37 and 42 weeks is considered normal. Before 37 weeks is premature; after 42 weeks is post-term." } },
-      { "@type": "Question", "name": "What are the three trimesters of pregnancy?", "acceptedAnswer": { "@type": "Answer", "text": "First trimester: weeks 1–12 (conception to end of month 3). Second trimester: weeks 13–26 (months 4–6). Third trimester: weeks 27–40 (months 7–9). Each trimester has distinct development milestones and medical checkups recommended." } }
+      { "@type": "Question", "name": "How accurate is the due date calculator?", "acceptedAnswer": { "@type": "Answer", "text": "This calculator uses Naegele's Rule (LMP + 280 days), the standard used by doctors worldwide. It assumes a regular 28-day cycle. For irregular cycles, adjust the cycle length. Your doctor may revise the EDD based on your first-trimester ultrasound, which is the most accurate dating method." } },
+      { "@type": "Question", "name": "What is the difference between LMP and conception date?", "acceptedAnswer": { "@type": "Answer", "text": "LMP (Last Menstrual Period) is the standard start point for pregnancy dating. Conception happens approximately 14 days after LMP, at ovulation. Pregnancy is counted from LMP (40 weeks total), even though conception occurs about 2 weeks later, so the fetus is actually around 38 weeks old at birth." } },
+      { "@type": "Question", "name": "What week is full term pregnancy?", "acceptedAnswer": { "@type": "Answer", "text": "Full term is defined as 39 to 40 weeks 6 days. Early term is 37 to 38 weeks 6 days, late term is 41 to 41 weeks 6 days, and post term is 42 weeks or more. Preterm (premature) is before 37 weeks." } },
+      { "@type": "Question", "name": "When should I schedule my first doctor visit?", "acceptedAnswer": { "@type": "Answer", "text": "Schedule your first prenatal (antenatal care) appointment as soon as you confirm your pregnancy, ideally by 8 weeks. Your doctor will confirm the pregnancy, estimate your due date via ultrasound, and recommend blood tests and supplements like folic acid and iron." } },
+      { "@type": "Question", "name": "Can I calculate my due date from conception or IVF date?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. From a known conception (ovulation) date, add 266 days instead of 280. For IVF, the EDD is the transfer date plus 261 days for a Day-5 blastocyst, or plus 263 days for a Day-3 embryo. These methods are often more precise than LMP-based dating." } },
+      { "@type": "Question", "name": "What if my menstrual cycle isn't 28 days?", "acceptedAnswer": { "@type": "Answer", "text": "Naegele's Rule assumes a 28-day cycle with ovulation on day 14. If your cycle differs, ovulation shifts, so the calculator adds (cycle length − 28) days. A 32-day cycle adds 4 days; a 25-day cycle subtracts 3. Enter your usual cycle length for a closer estimate." } },
+      { "@type": "Question", "name": "How do pregnancy weeks convert to months?", "acceptedAnswer": { "@type": "Answer", "text": "Pregnancy is tracked in weeks because months vary in length. As a guide, month 1 is weeks 1–4, month 3 ends around week 13, month 6 around week 27, and month 9 runs to week 40. Doctors and apps almost always use the week count, which is more precise." } },
+      { "@type": "Question", "name": "Is it normal to deliver before or after the due date?", "acceptedAnswer": { "@type": "Answer", "text": "Completely normal. Only about 5% of babies arrive exactly on the due date; most are born between 38 and 42 weeks. The EDD is a midpoint estimate, not a deadline. If you go past 41 weeks, your doctor will monitor more closely and may discuss induction." } }
     ]
   }
   </script>
@@ -149,6 +155,10 @@
         <a href="../index.html?cat=tools"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
         <a href="../index.html#articles-section" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Articles</a>
       </nav>
+      <button onclick="toggleTheme()" id="themeToggle" class="p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="theme-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="theme-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
         <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
@@ -334,6 +344,28 @@
       </ul>
     </div>
   </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mt-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">How Your Due Date Is Calculated</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">The standard method is <strong class="text-ink-700">Naegele's Rule</strong>, used by doctors worldwide. It counts 280 days (40 weeks) from the first day of your Last Menstrual Period (LMP):</p>
+      <div class="bg-ink-50 rounded-xl p-4 font-mono text-xs text-ink-700 mb-3 leading-relaxed">EDD = LMP + 280 days<br>or: LMP − 3 months + 7 days + 1 year</div>
+      <div class="bg-pink-50 border border-pink-100 rounded-xl p-3 space-y-1">
+        <p class="text-xs font-semibold text-pink-800">Example</p>
+        <p class="text-xs text-ink-500">LMP = <strong>1 Jan 2026</strong> → EDD = <strong>8 Oct 2026</strong> (1 Jan + 280 days).</p>
+      </div>
+      <p class="text-xs text-ink-400 leading-relaxed mt-3">If your cycle isn't 28 days, the calculator adjusts by adding (cycle length − 28) days, since ovulation shifts with cycle length.</p>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Other Ways to Date a Pregnancy</h2>
+      <ul class="space-y-3 text-sm text-ink-500">
+        <li class="flex items-start gap-2.5"><span class="text-pink-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Ultrasound dating</strong> — a first-trimester scan (crown-rump length) is the most accurate method, usually within ±5 days, and your doctor may revise the EDD based on it.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-pink-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Conception date</strong> — if you know your ovulation/conception date, add 266 days instead of 280.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-pink-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">IVF transfer</strong> — for a Day-5 embryo, EDD = transfer date + 261 days; for a Day-3 embryo, + 263 days.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-pink-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Fundal height</strong> — in later pregnancy, doctors cross-check growth by measuring the uterus, though it is only a rough guide.</span></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <!-- FAQ -->
@@ -386,6 +418,54 @@
         </summary>
         <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
           Schedule your first prenatal (antenatal care / ANC) appointment as soon as you confirm your pregnancy, ideally by <strong class="text-ink-700">8 weeks</strong>. Your doctor will confirm the pregnancy, estimate your due date via ultrasound, and recommend blood tests and supplements like folic acid and iron.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Can I calculate my due date from conception or IVF date?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Yes. If you know the conception (ovulation) date, add <strong class="text-ink-700">266 days</strong> instead of 280. For IVF, the EDD is the transfer date plus 261 days for a Day-5 (blastocyst) embryo, or plus 263 days for a Day-3 embryo. These methods are often more precise than LMP-based dating.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What if my menstrual cycle isn't 28 days?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Naegele's Rule assumes a 28-day cycle with ovulation on day 14. If your cycle is longer or shorter, ovulation shifts, so the calculator adds <strong class="text-ink-700">(cycle length − 28) days</strong> to the estimate. For a 32-day cycle it adds 4 days; for a 25-day cycle it subtracts 3. Enter your usual cycle length for a closer estimate.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How do pregnancy weeks convert to months?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Pregnancy is tracked in weeks because months vary in length. As a guide: <strong class="text-ink-700">month 1</strong> = weeks 1–4, month 3 ends around week 13, month 6 around week 27, and <strong class="text-ink-700">month 9</strong> runs to week 40. Doctors and apps almost always use the week count, which is more precise.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Is it normal to deliver before or after the due date?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Completely normal. Only about <strong class="text-ink-700">5% of babies</strong> arrive exactly on the due date; most are born any time between 38 and 42 weeks. The EDD is a midpoint estimate, not a deadline. If you go past 41 weeks, your doctor will monitor more closely and may discuss induction.
         </div>
       </details>
     </div>

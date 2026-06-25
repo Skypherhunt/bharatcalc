@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();function toggleTheme(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}}</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
@@ -58,7 +59,10 @@
       { "@type": "Question", "name": "How much can I invest in SCSS?", "acceptedAnswer": { "@type": "Answer", "text": "The maximum investment in SCSS is ₹30 lakh per individual, with a minimum of ₹1,000. The deposit must be in multiples of ₹1,000 and can be made jointly with a spouse." } },
       { "@type": "Question", "name": "Is SCSS interest paid monthly or quarterly?", "acceptedAnswer": { "@type": "Answer", "text": "SCSS interest is paid quarterly — on the first working day of April, July, October and January. It is not reinvested; it is credited to your linked savings account as regular income." } },
       { "@type": "Question", "name": "What is the SCSS tenure?", "acceptedAnswer": { "@type": "Answer", "text": "SCSS has a tenure of 5 years, which can be extended once by an additional 3 years. After maturity the principal is returned in full, since interest is paid out periodically rather than compounded." } },
-      { "@type": "Question", "name": "Is SCSS interest taxable?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, SCSS interest is fully taxable as per your income tax slab. TDS is deducted if the annual interest exceeds ₹50,000 for senior citizens. The investment itself qualifies for deduction under Section 80C up to ₹1.5 lakh." } }
+      { "@type": "Question", "name": "Is SCSS interest taxable?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, SCSS interest is fully taxable as per your income tax slab. TDS is deducted if the annual interest exceeds ₹50,000 for senior citizens. The investment itself qualifies for deduction under Section 80C up to ₹1.5 lakh." } },
+      { "@type": "Question", "name": "Can I withdraw from SCSS early?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, premature withdrawal is allowed with a penalty: 1.5% of the deposit if closed within 1 year, and 1% if closed between 1 and 2 years. After 2 years no penalty applies on closure." } },
+      { "@type": "Question", "name": "Who is eligible to open an SCSS account?", "acceptedAnswer": { "@type": "Answer", "text": "Any resident individual aged 60 or above. Those who took voluntary retirement can open it from age 55, and defence personnel from age 50, provided they invest within one month of receiving retirement benefits. NRIs and HUFs are not eligible." } },
+      { "@type": "Question", "name": "Can the SCSS account be extended after 5 years?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. On maturity you can extend the account once for an additional 3 years by applying within one year of maturity. The extended deposit earns the SCSS rate prevailing on the maturity date, and can be closed after one year of extension without penalty." } }
     ]
   }
   </script>
@@ -155,6 +159,10 @@
         <a href="../index.html?cat=tools"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
         <a href="../index.html#articles-section" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Articles</a>
       </nav>
+      <button onclick="toggleTheme()" id="themeToggle" class="p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="theme-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="theme-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
         <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
@@ -266,19 +274,153 @@
 
 <!-- SEO CONTENT -->
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-  <div class="grid md:grid-cols-2 gap-6">
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">What is the Senior Citizens Savings Scheme?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        The Senior Citizens Savings Scheme (SCSS) is a government-backed savings product designed to give retirees a safe, regular income. You deposit a lump sum and receive interest <strong class="text-ink-700">every quarter</strong> at one of the highest guaranteed rates available — currently <strong class="text-ink-700">8.2% per annum</strong>.
+      </p>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        It is open to anyone aged <strong class="text-ink-700">60 or above</strong> (55+ for those who took voluntary retirement, 50+ for defence personnel). Accounts can be opened at post offices and most public/private sector banks.
+      </p>
+      <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+        <p class="text-xs font-semibold text-leaf-700 mb-1">Who is SCSS best for?</p>
+        <p class="text-xs text-ink-500">Retirees wanting predictable quarterly income with zero market risk — for example, parking a portion of your retirement corpus or PF lump sum.</p>
+      </div>
+    </div>
+
     <div class="bg-white border border-ink-100 rounded-2xl p-6">
       <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">How SCSS Returns Work</h2>
-      <div class="bg-ink-50 rounded-xl p-4 font-mono text-xs text-ink-700 mb-4 leading-relaxed">Quarterly interest = Principal × Rate ÷ 4<br>Principal is returned in full at maturity</div>
-      <p class="text-xs text-ink-400 leading-relaxed">SCSS interest is not compounded — it is paid out every quarter as income. So your maturity value equals the principal you invested, plus all the quarterly payouts you received during the tenure.</p>
+      <div class="bg-ink-50 rounded-xl p-4 font-mono text-xs text-ink-700 mb-3 leading-relaxed">Quarterly interest = Principal × Rate ÷ 4<br>Principal is returned in full at maturity</div>
+      <p class="text-xs text-ink-400 leading-relaxed mb-3">SCSS interest is <strong class="text-ink-600">not compounded</strong> — it is paid out every quarter as income. Your principal is returned untouched at maturity.</p>
+      <div class="bg-ink-50 rounded-xl p-3 space-y-1.5">
+        <p class="text-xs font-semibold text-ink-700">Example: ₹30,00,000 at 8.2%</p>
+        <p class="text-xs font-mono text-ink-600">Annual interest = 30,00,000 × 8.2% = ₹2,46,000</p>
+        <p class="text-xs font-mono text-ink-600">Quarterly payout = ₹61,500</p>
+        <p class="text-[10px] text-ink-400">Over 5 years you receive ₹12,30,000 of interest, plus ₹30L back at maturity.</p>
+      </div>
     </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
     <div class="bg-white border border-ink-100 rounded-2xl p-6">
-      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Key Features</h2>
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">SCSS Interest Rate History</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">Rates are reviewed quarterly. The rate at the time you open the account is fixed for your 5-year term.</p>
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">FY 2025-26 (current)</span>
+          <span class="font-mono text-sm font-semibold text-leaf-700">8.2%</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">Apr 2023 onwards</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">8.2%</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">Jan–Mar 2023</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">8.0%</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">FY 2020–2022</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">7.4%</span>
+        </div>
+        <div class="flex items-center justify-between py-2">
+          <span class="text-sm text-ink-600 font-medium">FY 2018-19</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">8.7%</span>
+        </div>
+      </div>
+      <p class="text-[10px] text-ink-300 mt-3 font-mono">* Indicative rates. Confirm the current rate before opening the account.</p>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">SCSS Income Examples (at 8.2%)</h2>
+      <div class="space-y-3">
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">Invest ₹5,00,000</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">₹10,250/qtr</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">₹41,000/yr · ₹2,05,000 over 5 yrs</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">Invest ₹10,00,000</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">₹20,500/qtr</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">₹82,000/yr · ₹4,10,000 over 5 yrs</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">Invest ₹15,00,000</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">₹30,750/qtr</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">₹1,23,000/yr · ₹6,15,000 over 5 yrs</div>
+        </div>
+        <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+          <div class="text-xs font-semibold text-leaf-700 mb-1">Invest ₹30,00,000 (maximum)</div>
+          <div class="text-xs text-ink-500"><strong class="text-ink-700">₹61,500 every quarter</strong> — ₹2,46,000 a year of guaranteed income.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">SCSS vs Other Senior Options</h2>
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">SCSS</span>
+            <p class="text-[10px] text-ink-400">Quarterly income · 80C · ₹30L cap</p>
+          </div>
+          <div class="text-right">
+            <div class="w-24 bg-ink-100 rounded-full h-1.5 mb-1"><div class="bg-leaf-600 h-1.5 rounded-full" style="width:90%"></div></div>
+            <span class="font-mono text-xs font-semibold text-leaf-700">8.2%</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">RBI Floating Rate Bond</span>
+            <p class="text-[10px] text-ink-400">7-yr · rate resets half-yearly</p>
+          </div>
+          <div class="text-right">
+            <div class="w-24 bg-ink-100 rounded-full h-1.5 mb-1"><div class="bg-leaf-500 h-1.5 rounded-full" style="width:88%"></div></div>
+            <span class="font-mono text-xs font-semibold text-ink-800">8.05%*</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">Senior Citizen Bank FD</span>
+            <p class="text-[10px] text-ink-400">Flexible tenure & amount</p>
+          </div>
+          <div class="text-right">
+            <div class="w-24 bg-ink-100 rounded-full h-1.5 mb-1"><div class="bg-ink-300 h-1.5 rounded-full" style="width:80%"></div></div>
+            <span class="font-mono text-xs font-semibold text-ink-800">7.5%*</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">Post Office MIS</span>
+            <p class="text-[10px] text-ink-400">Monthly income · ₹9L cap (single)</p>
+          </div>
+          <div class="text-right">
+            <div class="w-24 bg-ink-100 rounded-full h-1.5 mb-1"><div class="bg-ink-300 h-1.5 rounded-full" style="width:79%"></div></div>
+            <span class="font-mono text-xs font-semibold text-ink-800">7.4%</span>
+          </div>
+        </div>
+      </div>
+      <p class="text-[10px] text-ink-300 mt-3 font-mono">* Bank FD and RBI bond rates are indicative and change over time.</p>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Key Features &amp; Eligibility</h2>
       <ul class="space-y-3 text-sm text-ink-500">
         <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">For 60+</strong> (or 55+ for VRS retirees, 50+ for defence personnel).</span></li>
-        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Max ₹30 lakh</strong> per individual, in multiples of ₹1,000.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Max ₹30 lakh</strong> per individual, minimum ₹1,000, in multiples of ₹1,000.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">5-year tenure</strong>, extendable once by 3 years at maturity.</span></li>
         <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">80C deduction</strong> on the deposit up to ₹1.5 lakh.</span></li>
-        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Government-backed</strong> — capital is fully safe.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Government-backed</strong> — capital is fully safe with a sovereign guarantee.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Joint account</strong> allowed with spouse; nomination facility available.</span></li>
       </ul>
     </div>
   </div>
@@ -295,6 +437,8 @@
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is the SCSS tenure?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50"><strong class="text-ink-700">5 years</strong>, extendable once by 3 years. The principal is returned in full at maturity since interest is paid out periodically.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Is SCSS interest taxable?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes, it is taxed at your slab rate. TDS applies if annual interest exceeds <strong class="text-ink-700">₹50,000</strong> for senior citizens. The deposit qualifies for 80C deduction up to ₹1.5 lakh.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Can I withdraw from SCSS early?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes, premature withdrawal is allowed with a penalty: 1.5% of the deposit if closed within 1 year, and 1% if closed between 1 and 2 years. After 2 years no penalty applies on closure.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Who is eligible to open an SCSS account?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Any resident individual aged <strong class="text-ink-700">60 or above</strong>. Those who took voluntary retirement can open it from age 55, and defence personnel from age 50, provided they invest within one month of receiving retirement benefits. NRIs and HUFs are not eligible.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Can the SCSS account be extended after 5 years?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes. On maturity you can extend the account once for an additional <strong class="text-ink-700">3 years</strong> by applying within one year of maturity. The extended deposit earns the SCSS rate prevailing on the maturity date, and can be closed after one year of extension without penalty.</div></details></div>
   </div>
 </section>
 

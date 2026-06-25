@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();function toggleTheme(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}}</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
@@ -58,7 +59,10 @@
       { "@type": "Question", "name": "How long do I deposit in SSY and when does it mature?", "acceptedAnswer": { "@type": "Answer", "text": "You make deposits for 15 years from the date of opening the account. The account then continues to earn interest and matures 21 years after opening, or on the girl's marriage after she turns 18." } },
       { "@type": "Question", "name": "What is the minimum and maximum SSY deposit?", "acceptedAnswer": { "@type": "Answer", "text": "The minimum deposit is ₹250 per year and the maximum is ₹1.5 lakh per financial year. You can deposit in a lump sum or in instalments, but the yearly total cannot exceed ₹1.5 lakh." } },
       { "@type": "Question", "name": "Is SSY tax free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. SSY has EEE (Exempt-Exempt-Exempt) status. Deposits qualify for deduction under Section 80C up to ₹1.5 lakh, the interest earned is tax-free, and the maturity amount is also fully tax-free." } },
-      { "@type": "Question", "name": "Who can open a Sukanya Samriddhi account?", "acceptedAnswer": { "@type": "Answer", "text": "A parent or legal guardian can open an SSY account for a girl child below 10 years of age. A maximum of two accounts is allowed per family (one per girl child, with exceptions for twins or triplets)." } }
+      { "@type": "Question", "name": "Who can open a Sukanya Samriddhi account?", "acceptedAnswer": { "@type": "Answer", "text": "A parent or legal guardian can open an SSY account for a girl child below 10 years of age. A maximum of two accounts is allowed per family (one per girl child, with exceptions for twins or triplets)." } },
+      { "@type": "Question", "name": "Can I withdraw early?", "acceptedAnswer": { "@type": "Answer", "text": "Partial withdrawal of up to 50% is allowed after the girl turns 18, for higher education or marriage. Premature closure is permitted only in specific cases like the account holder's death or medical emergencies." } },
+      { "@type": "Question", "name": "How much will I get if I invest ₹1.5 lakh a year?", "acceptedAnswer": { "@type": "Answer", "text": "Depositing the maximum ₹1.5 lakh every year for 15 years (₹22.5 lakh total) grows to approximately ₹69.3 lakh at maturity in year 21, assuming the rate stays at 8.2%. The entire amount, including about ₹46.8 lakh of interest, is tax-free." } },
+      { "@type": "Question", "name": "What happens if I miss a yearly deposit?", "acceptedAnswer": { "@type": "Answer", "text": "If you don't deposit the minimum ₹250 in a financial year, the account becomes default. You can revive it by paying a ₹50 penalty for each defaulted year along with the ₹250 minimum for those years. The balance continues to earn interest in the meantime." } }
     ]
   }
   </script>
@@ -161,6 +165,10 @@
         <a href="../index.html?cat=tools"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
         <a href="../index.html#articles-section" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Articles</a>
       </nav>
+      <button onclick="toggleTheme()" id="themeToggle" class="p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="theme-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="theme-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
         <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
@@ -268,20 +276,152 @@
 
 <!-- SEO CONTENT -->
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-  <div class="grid md:grid-cols-2 gap-6">
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
     <div class="bg-white border border-ink-100 rounded-2xl p-6">
-      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">About Sukanya Samriddhi Yojana</h2>
-      <p class="text-sm text-ink-500 leading-relaxed mb-3">SSY is a government-backed small savings scheme for the girl child, offering one of the highest fixed returns (8.2%) with full tax exemption under EEE status.</p>
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">What is Sukanya Samriddhi Yojana?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        Sukanya Samriddhi Yojana (SSY) is a government-backed small-savings scheme launched under the <em>Beti Bachao, Beti Padhao</em> initiative to help parents build a corpus for their daughter's education and marriage. It offers one of the highest fixed returns of any small-savings scheme — currently <strong class="text-ink-700">8.2% per annum</strong> — with full <strong class="text-ink-700">EEE</strong> tax exemption.
+      </p>
       <ul class="space-y-2 text-sm text-ink-500">
-        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span>Open for a girl below 10 years; max two accounts per family.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span>Open for a girl below 10 years; maximum two accounts per family.</span></li>
         <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span>Deposit ₹250 to ₹1.5 lakh per year for 15 years.</span></li>
         <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span>Matures 21 years after opening, or on marriage after age 18.</span></li>
       </ul>
     </div>
     <div class="bg-white border border-ink-100 rounded-2xl p-6">
       <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">How Maturity Is Calculated</h2>
-      <div class="bg-ink-50 rounded-xl p-4 font-mono text-xs text-ink-700 mb-4 leading-relaxed">Each year: Balance = (Balance + Deposit) × (1 + r)<br>Deposits for years 1–15, interest till year 21</div>
-      <p class="text-xs text-ink-400 leading-relaxed">Interest is compounded annually at the prevailing rate. Even after deposits stop in year 15, the balance keeps compounding for 6 more years, which is why the maturity value is much larger than the amount invested.</p>
+      <div class="bg-ink-50 rounded-xl p-4 font-mono text-xs text-ink-700 mb-3 leading-relaxed">Each year: Balance = (Balance + Deposit) × (1 + r)<br>Deposits for years 1–15, interest till year 21</div>
+      <p class="text-xs text-ink-400 leading-relaxed mb-3">Interest is compounded annually. Even after deposits stop in year 15, the balance keeps compounding for 6 more years — which is why the maturity value far exceeds what you put in.</p>
+      <div class="bg-ink-50 rounded-xl p-3 space-y-1.5">
+        <p class="text-xs font-semibold text-ink-700">Example: ₹1,50,000/yr for 15 years at 8.2%</p>
+        <p class="text-xs font-mono text-ink-600">Total deposited = ₹22,50,000</p>
+        <p class="text-xs font-mono text-ink-600">Maturity (year 21) ≈ <strong>₹69,27,578</strong></p>
+        <p class="text-[10px] text-ink-400">Tax-free interest of about ₹46.8 lakh.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">SSY Interest Rate History</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">Unlike a fixed deposit, SSY does not lock in one rate — the whole balance earns the government's prevailing quarterly rate each year.</p>
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">FY 2025-26 (current)</span>
+          <span class="font-mono text-sm font-semibold text-leaf-700">8.2%</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">Jan 2024 onwards</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">8.2%</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">Apr–Dec 2023</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">8.0%</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">FY 2020–2023</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">7.6%</span>
+        </div>
+        <div class="flex items-center justify-between py-2">
+          <span class="text-sm text-ink-600 font-medium">FY 2018-19</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">8.5%</span>
+        </div>
+      </div>
+      <p class="text-[10px] text-ink-300 mt-3 font-mono">* Indicative rates. The actual maturity value depends on rates over the full term.</p>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">SSY Maturity Examples (at 8.2%)</h2>
+      <p class="text-xs text-ink-400 mb-3">Assuming a constant 8.2% for the full 21-year term.</p>
+      <div class="space-y-3">
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹25,000/yr (15 yrs)</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">≈ ₹11.5 L</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Deposited ₹3,75,000</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹50,000/yr (15 yrs)</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">≈ ₹23.1 L</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Deposited ₹7,50,000</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹1,00,000/yr (15 yrs)</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">≈ ₹46.2 L</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Deposited ₹15,00,000</div>
+        </div>
+        <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+          <div class="text-xs font-semibold text-leaf-700 mb-1">₹1,50,000/yr (maximum)</div>
+          <div class="text-xs text-ink-500">Deposited ₹22.5 L → matures to about <strong class="text-ink-700">₹69.3 lakh</strong>, entirely tax-free.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">SSY vs Other Long-Term Options</h2>
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">SSY</span>
+            <p class="text-[10px] text-ink-400">EEE tax-free · girl child only</p>
+          </div>
+          <div class="text-right">
+            <div class="w-24 bg-ink-100 rounded-full h-1.5 mb-1"><div class="bg-leaf-600 h-1.5 rounded-full" style="width:90%"></div></div>
+            <span class="font-mono text-xs font-semibold text-leaf-700">8.2%</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">PPF</span>
+            <p class="text-[10px] text-ink-400">EEE tax-free · anyone</p>
+          </div>
+          <div class="text-right">
+            <div class="w-24 bg-ink-100 rounded-full h-1.5 mb-1"><div class="bg-leaf-500 h-1.5 rounded-full" style="width:78%"></div></div>
+            <span class="font-mono text-xs font-semibold text-ink-800">7.1%</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">Bank FD</span>
+            <p class="text-[10px] text-ink-400">Interest taxable</p>
+          </div>
+          <div class="text-right">
+            <div class="w-24 bg-ink-100 rounded-full h-1.5 mb-1"><div class="bg-ink-300 h-1.5 rounded-full" style="width:75%"></div></div>
+            <span class="font-mono text-xs font-semibold text-ink-800">~7.0%*</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">ELSS / Equity SIP</span>
+            <p class="text-[10px] text-ink-400">Market-linked, higher risk</p>
+          </div>
+          <div class="text-right">
+            <div class="w-24 bg-ink-100 rounded-full h-1.5 mb-1"><div class="bg-saffron-400 h-1.5 rounded-full" style="width:100%"></div></div>
+            <span class="font-mono text-xs font-semibold text-saffron-700">10–12%*</span>
+          </div>
+        </div>
+      </div>
+      <p class="text-[10px] text-ink-300 mt-3 font-mono">* FD interest is taxable; equity returns are market-linked and not guaranteed.</p>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Key Rules &amp; Benefits</h2>
+      <ul class="space-y-3 text-sm text-ink-500">
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">EEE tax status</strong> — deposit, interest, and maturity are all tax-free.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">80C deduction</strong> on deposits up to ₹1.5 lakh per year.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Government-backed</strong> with the highest small-savings rate.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Partial withdrawal</strong> of up to 50% allowed after the girl turns 18.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Open at</strong> any post office or authorised bank with just ₹250.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Revive a lapsed account</strong> by paying ₹50 penalty per missed year, plus the minimum deposit.</span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -297,6 +437,8 @@
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Is SSY tax free?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes — SSY has <strong class="text-ink-700">EEE status</strong>. Deposits qualify for 80C deduction, interest is tax-free, and the maturity amount is fully tax-free.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Who can open a Sukanya Samriddhi account?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">A parent or legal guardian can open it for a girl child below <strong class="text-ink-700">10 years</strong>. A maximum of two accounts per family is allowed (with exceptions for twins/triplets).</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Can I withdraw early?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Partial withdrawal of up to 50% is allowed after the girl turns 18, for higher education or marriage. Premature closure is permitted only in specific cases like the account holder's death or medical emergencies.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How much will I get if I invest ₹1.5 lakh a year?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Depositing the maximum ₹1.5 lakh every year for 15 years (₹22.5 lakh total) grows to approximately <strong class="text-ink-700">₹69.3 lakh</strong> at maturity in year 21, assuming the rate stays at 8.2%. The entire amount, including about ₹46.8 lakh of interest, is tax-free.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What happens if I miss a yearly deposit?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">If you don't deposit the minimum ₹250 in a financial year, the account becomes "default". You can revive it by paying a <strong class="text-ink-700">₹50 penalty</strong> for each defaulted year along with the ₹250 minimum for those years. The balance continues to earn interest in the meantime.</div></details></div>
   </div>
 </section>
 

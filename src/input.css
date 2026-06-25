@@ -1,3 +1,113 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ==========================================================================
+   DARK MODE
+   Activated by `.dark` on <html> (toggled via the navbar button, persisted
+   in localStorage, honours prefers-color-scheme on first visit).
+
+   The site hard-codes Tailwind neutral utilities (ink scale + white) directly
+   in markup rather than using `dark:` variants, so dark mode is implemented as
+   an override layer keyed on `html.dark`. The two-class specificity (0,2,x)
+   beats Tailwind's single-class utilities, so order/minify is irrelevant.
+   Accent colours (leaf/saffron) are kept vivid; only their *light tint*
+   backgrounds and *dark* text shades are remapped so they read on dark.
+   Keep this block in sync when introducing new neutral utilities in markup.
+   ========================================================================== */
+
+/* smooth theme transition for surfaces & text */
+html.dark, html.dark body { color-scheme: dark; }
+html.dark body,
+html.dark .bg-white, html.dark .bg-ink-50, html.dark .bg-ink-100,
+html.dark .bg-ink-900, html.dark .bg-ink-800 {
+  transition: background-color .2s ease, border-color .2s ease;
+}
+
+/* ---- surfaces ---- */
+html.dark body,
+html.dark .bg-ink-50            { background-color:#0d1117; }   /* page / inset inputs */
+html.dark .bg-white            { background-color:#161b22; }   /* cards, navbar */
+html.dark .bg-white\/95        { background-color:rgba(22,27,34,.95); }
+html.dark .bg-ink-100          { background-color:#1c222b; }
+html.dark .bg-ink-900          { background-color:#1b212a; }   /* hero / result boxes */
+html.dark .bg-ink-800          { background-color:#222932; }
+html.dark .bg-ink-700          { background-color:#2a313b; }
+html.dark .bg-ink-400          { background-color:#48515d; }
+html.dark .bg-ink-300          { background-color:#3a414c; }
+html.dark .bg-ink-50\/40,
+html.dark .bg-ink-50\/50       { background-color:rgba(255,255,255,.025); }
+html.dark .bg-ink-100\/60      { background-color:rgba(255,255,255,.04); }
+
+/* ---- borders ---- */
+html.dark .border-ink-50       { border-color:#1c222b; }
+html.dark .border-ink-100      { border-color:#252c36; }
+html.dark .border-ink-200      { border-color:#2e3641; }
+html.dark .border-ink-300      { border-color:#3a414c; }
+html.dark .border-ink-700      { border-color:#2e3641; }
+html.dark .border-ink-900      { border-color:#0d1117; }
+html.dark .border-ink-100\/70  { border-color:rgba(255,255,255,.07); }
+html.dark .divide-ink-50  > :not([hidden]) ~ :not([hidden]) { border-color:#1c222b; }
+html.dark .divide-ink-100 > :not([hidden]) ~ :not([hidden]) { border-color:#252c36; }
+
+/* ---- neutral text (light on light cards -> light text; light grays stay) ---- */
+html.dark .text-ink-900        { color:#e6edf3; }
+html.dark .text-ink-800        { color:#d3dbe3; }
+html.dark .text-ink-700        { color:#c0cad5; }
+html.dark .text-ink-600        { color:#a6b2bf; }
+html.dark .text-ink-500        { color:#909cab; }
+html.dark .text-ink-400        { color:#76828f; }
+html.dark .text-ink-300        { color:#646f7d; }
+html.dark .text-ink-200        { color:#cdd6e0; }   /* only ever on dark surfaces */
+html.dark .placeholder-ink-300::placeholder { color:#646f7d; }
+
+/* ---- hover states ---- */
+html.dark .hover\:text-ink-900:hover { color:#e6edf3; }
+html.dark .hover\:text-ink-300:hover { color:#c0cad5; }
+html.dark .hover\:text-ink-200:hover { color:#d7dee6; }
+html.dark .hover\:bg-ink-50:hover    { background-color:#1c222b; }
+html.dark .hover\:bg-ink-100:hover   { background-color:#222932; }
+html.dark .hover\:bg-ink-700:hover   { background-color:#333b46; }
+html.dark .hover\:border-ink-300:hover { border-color:#3a414c; }
+
+/* ---- accent light-tint backgrounds (would glare on dark) ---- */
+html.dark .bg-leaf-50           { background-color:rgba(34,197,94,.12); }
+html.dark .bg-leaf-100          { background-color:rgba(34,197,94,.18); }
+html.dark .hover\:bg-leaf-50:hover { background-color:rgba(34,197,94,.14); }
+html.dark .bg-leaf-50\/40,
+html.dark .bg-leaf-50\/30       { background-color:rgba(34,197,94,.06); }
+html.dark .bg-saffron-50        { background-color:rgba(249,115,22,.12); }
+html.dark .bg-saffron-100       { background-color:rgba(249,115,22,.18); }
+html.dark .bg-saffron-50\/30    { background-color:rgba(249,115,22,.06); }
+
+/* ---- accent text that was dark-on-light -> lighten ---- */
+html.dark .text-leaf-600,
+html.dark .text-leaf-700,
+html.dark .text-leaf-800,
+html.dark .text-leaf-900        { color:#4ade80; }
+html.dark .text-saffron-600,
+html.dark .text-saffron-700,
+html.dark .text-saffron-800     { color:#fb923c; }
+
+/* ---- accent borders that were light -> translucent ---- */
+html.dark .border-leaf-100,
+html.dark .border-leaf-200      { border-color:rgba(34,197,94,.28); }
+html.dark .border-leaf-300      { border-color:rgba(34,197,94,.35); }
+html.dark .border-saffron-100,
+html.dark .border-saffron-200,
+html.dark .border-saffron-300   { border-color:rgba(249,115,22,.28); }
+
+/* ---- per-page custom components (inline <style> blocks share these) ---- */
+html.dark .growth-table th                     { background:#161b22 !important; }
+html.dark .growth-table tbody tr:hover td      { background:rgba(34,197,94,.08) !important; }
+html.dark ::-webkit-scrollbar-track            { background:#161b22; }
+html.dark ::-webkit-scrollbar-thumb            { background:#30363d; }
+html.dark input[type=range]                    { background:#2a313b; }
+html.dark input[type=range]::-webkit-slider-thumb { border-color:#161b22; }
+html.dark input[type=range]::-moz-range-thumb     { border-color:#161b22; }
+html.dark svg circle[stroke="#e8ecf2"]         { stroke:#262c36; }   /* donut track */
+
+/* ---- theme toggle icon swap ---- */
+#themeToggle .theme-sun  { display:none; }
+html.dark #themeToggle .theme-moon { display:none; }
+html.dark #themeToggle .theme-sun  { display:block; }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();function toggleTheme(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}}</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
@@ -33,28 +34,43 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How is lumpsum return calculated?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Lumpsum return uses the compound interest formula: A = P × (1 + r/100)^n, where A is the maturity amount, P is the principal invested, r is the annual return rate (%), and n is the number of years. For example, ₹1 lakh invested at 12% for 10 years grows to ₹3.10 lakh." }
+        "name": "What is the difference between lumpsum and SIP?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Lumpsum is one large investment made upfront (a bonus or inheritance), while a SIP is a fixed amount invested every month. Lumpsum benefits from market timing if you invest at lows; SIP provides rupee-cost averaging that reduces timing risk. Both compound over time, but a lumpsum starts compounding the full amount from day one." }
       },
       {
         "@type": "Question",
-        "name": "Lumpsum vs SIP — which is better?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Lumpsum is better when markets are at a low, you have a large surplus, and you have a long investment horizon. SIP is better for salaried investors who want to average out market volatility through rupee cost averaging. For most individuals, SIP is the preferred approach as it reduces timing risk and builds discipline." }
+        "name": "Is lumpsum investment safe?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It depends where you invest. A lumpsum in an FD is very safe with guaranteed returns. A lumpsum in equity mutual funds is market-linked and can fall short-term, but has historically rewarded 7+ year horizons. Risk decreases with a longer holding period; for money needed within 3 years, avoid equity lumpsum." }
       },
       {
         "@type": "Question",
-        "name": "How much will ₹1 lakh grow in 10 years?",
-        "acceptedAnswer": { "@type": "Answer", "text": "₹1 lakh invested as a lumpsum grows to: ₹2.59 lakh at 10% p.a., ₹3.10 lakh at 12% p.a., ₹4.04 lakh at 15% p.a., and ₹1.98 lakh at 7% p.a. (FD-like return) — all over 10 years. The power of compounding means higher-return investments grow dramatically over longer periods." }
+        "name": "What is the minimum lumpsum investment in mutual funds?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Most mutual funds require a minimum lumpsum of ₹500 to ₹5,000. Many large AMCs allow ₹1,000 for most schemes, and some liquid funds accept ₹500. There is no maximum limit." }
       },
       {
         "@type": "Question",
-        "name": "What is a realistic lumpsum return in India?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Historically, equity mutual funds in India have delivered 12–15% CAGR over 10+ year periods. Debt mutual funds return 6–8% p.a., bank FDs return 6.5–7.5% p.a., and PPF offers a guaranteed 7.1% p.a. Market-linked returns are not guaranteed and depend on economic conditions and fund performance." }
+        "name": "How is lumpsum return taxed in India?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For equity mutual funds held over 1 year: LTCG at 12.5% on gains above ₹1.25 lakh per year. Held under 1 year: STCG at 20%. Debt fund gains are added to income and taxed at slab rate (no indexation from FY 2023-24). FD returns are taxed at your income slab rate." }
       },
       {
         "@type": "Question",
-        "name": "How much should I invest as lumpsum to get ₹1 crore?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Lumpsum required to reach ₹1 crore at 12% p.a.: ₹32.2 lakh for 10 years, ₹18.3 lakh for 15 years, ₹10.4 lakh for 20 years. At 15% p.a.: ₹24.7 lakh for 10 years, ₹12.3 lakh for 15 years, ₹6.1 lakh for 20 years. The longer you stay invested, the less you need to invest upfront." }
+        "name": "What is STP (Systematic Transfer Plan)?",
+        "acceptedAnswer": { "@type": "Answer", "text": "STP lets you invest a lumpsum in a debt or liquid fund, then systematically transfer a fixed amount to an equity fund every month. This deploys the money gradually like a SIP while earning better-than-savings returns on the waiting corpus — ideal for large lumpsums at market peaks." }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate is this lumpsum calculator?",
+        "acceptedAnswer": { "@type": "Answer", "text": "BharatCalc uses the standard compound interest formula FV = P × (1+r)^n with annual compounding. Results are mathematically exact at the assumed constant return rate. Actual mutual fund returns vary year to year with market conditions, so use the figures for planning purposes only." }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I invest my whole lumpsum at once or split it?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For long horizons, investing the full amount immediately usually wins because the whole sum compounds for longer. But if a large lumpsum at market highs makes you anxious, park it in a liquid or debt fund and use an STP to move it into equity over 6–12 months. The right choice is the one you can stick with without panic-selling." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much can a lumpsum grow over the long term?",
+        "acceptedAnswer": { "@type": "Answer", "text": "At a 12% return, a one-time ₹5,00,000 grows to roughly ₹15.5 lakh in 10 years, ₹48 lakh in 20 years, and about ₹1.5 crore in 30 years — a 30× gain. Most of the growth arrives in the final years, which is why staying invested matters more than perfectly timing the entry." }
       }
     ]
   }
@@ -141,6 +157,10 @@
         <a href="../index.html?cat=tools"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
         <a href="../index.html#articles-section" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Articles</a>
       </nav>
+      <button onclick="toggleTheme()" id="themeToggle" class="p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="theme-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="theme-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
         <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
@@ -339,7 +359,7 @@
       <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Example Calculations</h2>
       <div class="space-y-3">
         <div class="bg-ink-50 rounded-xl p-3"><div class="flex justify-between mb-1"><span class="text-xs font-semibold text-ink-700">₹1L · 12% · 10 years</span><span class="font-mono text-xs font-bold text-leaf-700">₹3,10,585</span></div><div class="text-[10px] font-mono text-ink-400">Gain ₹2,10,585 · 3.1× return</div></div>
-        <div class="bg-ink-50 rounded-xl p-3"><div class="flex justify-between mb-1"><span class="text-xs font-semibold text-ink-700">₹5L · 15% · 15 years</span><span class="font-mono text-xs font-bold text-leaf-700">₹40.91L</span></div><div class="text-[10px] font-mono text-ink-400">Gain ₹35.91L · 8.18× return</div></div>
+        <div class="bg-ink-50 rounded-xl p-3"><div class="flex justify-between mb-1"><span class="text-xs font-semibold text-ink-700">₹5L · 15% · 15 years</span><span class="font-mono text-xs font-bold text-leaf-700">₹40.69L</span></div><div class="text-[10px] font-mono text-ink-400">Gain ₹35.69L · 8.14× return</div></div>
         <div class="bg-ink-50 rounded-xl p-3"><div class="flex justify-between mb-1"><span class="text-xs font-semibold text-ink-700">₹10L · 12% · 20 years</span><span class="font-mono text-xs font-bold text-leaf-700">₹96.46L</span></div><div class="text-[10px] font-mono text-ink-400">Almost 1 crore · 9.65× return</div></div>
         <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3"><p class="text-xs font-semibold text-leaf-700 mb-1">Rule of 72</p><p class="text-xs text-ink-500">At 12%, money doubles in 72÷12 = 6 years. ₹1L becomes ₹2L in 6yr, ₹4L in 12yr, ₹8L in 18yr.</p></div>
       </div>
@@ -356,6 +376,37 @@
       <p class="text-[10px] text-ink-300 mt-3 font-mono">* Historical averages. Past performance does not guarantee future returns.</p>
     </div>
   </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mt-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">The Power of Staying Invested</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">A one-time ₹5,00,000 at 12% shows why time matters more than timing — the growth accelerates the longer you stay invested:</p>
+      <table class="w-full text-sm">
+        <thead><tr class="border-b border-ink-100">
+          <th class="text-left text-xs font-semibold text-ink-500 py-2">After</th>
+          <th class="text-right text-xs font-semibold text-ink-500 py-2">Value</th>
+          <th class="text-right text-xs font-semibold text-ink-500 py-2">Multiple</th>
+        </tr></thead>
+        <tbody class="font-mono">
+          <tr class="border-b border-ink-50"><td class="py-2 text-ink-600">5 years</td><td class="py-2 text-right text-ink-700">₹8.81 L</td><td class="py-2 text-right text-ink-500">1.8×</td></tr>
+          <tr class="border-b border-ink-50"><td class="py-2 text-ink-600">10 years</td><td class="py-2 text-right text-ink-700">₹15.53 L</td><td class="py-2 text-right text-ink-500">3.1×</td></tr>
+          <tr class="border-b border-ink-50"><td class="py-2 text-ink-600">20 years</td><td class="py-2 text-right text-leaf-700">₹48.23 L</td><td class="py-2 text-right text-ink-500">9.6×</td></tr>
+          <tr><td class="py-2 text-ink-600">30 years</td><td class="py-2 text-right text-leaf-700">₹1.50 Cr</td><td class="py-2 text-right text-ink-500">30×</td></tr>
+        </tbody>
+      </table>
+      <p class="text-[10px] text-ink-300 mt-3">Most of the gain comes in the final years — compounding rewards patience.</p>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Tips to Invest a Lumpsum Wisely</h2>
+      <ul class="space-y-3 text-sm text-ink-500">
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Match the horizon</strong> — equity for 7+ years, debt/FD for goals under 3 years.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Don't try to time the peak</strong> — if markets feel high, deploy gradually via an STP.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Keep an emergency fund separate</strong> so you never have to redeem at a market low.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Diversify</strong> across 2–4 funds rather than betting the whole sum on one.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Stay the course</strong> — avoid panic withdrawals during temporary corrections.</span></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <!-- FAQ -->
@@ -369,6 +420,8 @@
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How is lumpsum return taxed in India?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">For equity mutual funds held <strong class="text-ink-700">&gt;1 year</strong>: LTCG at 12.5% above ₹1.25 lakh per year. Held <strong class="text-ink-700">&lt;1 year</strong>: STCG at 20%. For debt funds: gains are added to income and taxed at slab rate (no indexation from FY 2023-24). FD returns are taxed at your income slab rate.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is STP (Systematic Transfer Plan)?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">STP lets you invest a lumpsum in a debt/liquid fund, then <strong class="text-ink-700">systematically transfer</strong> a fixed amount to an equity fund every month. This gives you the safety of deploying gradually (like SIP) while earning better-than-savings returns on the waiting corpus. Ideal for large lumpsum amounts at market peaks.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How accurate is this lumpsum calculator?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">BharatCalc uses the standard compound interest formula FV = P × (1+r)^n with annual compounding. Results are <strong class="text-ink-700">mathematically exact</strong> at the assumed constant return rate. Actual mutual fund returns vary year-to-year based on market conditions. Use for planning purposes only.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Should I invest my whole lumpsum at once or split it?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">For long horizons, investing the full amount immediately usually wins, because the whole sum compounds for longer. But if a large lumpsum at current market highs makes you anxious, park it in a liquid/debt fund and use an <strong class="text-ink-700">STP</strong> to move it into equity over 6–12 months. The "right" choice is the one you can stick with without panic-selling.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How much can a lumpsum grow over the long term?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">At a 12% return, a one-time ₹5,00,000 grows to roughly ₹15.5 lakh in 10 years, ₹48 lakh in 20 years, and <strong class="text-ink-700">about ₹1.5 crore in 30 years</strong> — a 30× gain. Most of the growth arrives in the final years, which is why staying invested matters more than perfectly timing the entry.</div></details></div>
   </div>
 </section>
 
@@ -377,7 +430,7 @@
   <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
   <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
     <a href="sip-calculator.html"  class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="mb-2 text-leaf-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="17 7 21 7 21 11"/></svg></div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">SIP Calculator</div><div class="text-xs text-ink-400 mt-0.5">Monthly investment returns</div></a>
-    <a href="cagr-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="mb-2 text-leaf-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="9" rx="0.5"/><rect x="13" y="7" width="3" height="14" rx="0.5"/></svg></div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">CAGR Calculator</div><div class="text-xs text-ink-400 mt-0.5">Compound annual growth rate</div></a>
+    <a href="inflation-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="mb-2 text-saffron-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6M21 7h-6"/></svg></div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">Inflation Calculator</div><div class="text-xs text-ink-400 mt-0.5">Future value of money</div></a>
     <a href="fd-calculator.html"   class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="mb-2 text-indigo-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 22V12M21 22V12M12 22V12M2 12h20"/><path d="M12 2 2 7h20L12 2z"/></svg></div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">FD Calculator</div><div class="text-xs text-ink-400 mt-0.5">Fixed deposit maturity</div></a>
     <a href="ppf-calculator.html"  class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group"><div class="mb-2 text-purple-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700">PPF Calculator</div><div class="text-xs text-ink-400 mt-0.5">Tax-free long-term</div></a>
   </div>

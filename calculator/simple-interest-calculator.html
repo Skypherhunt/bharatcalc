@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();function toggleTheme(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}}</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
@@ -58,7 +59,10 @@
       { "@type": "Question", "name": "What is the difference between simple and compound interest?", "acceptedAnswer": { "@type": "Answer", "text": "Simple interest is calculated only on the original principal, so the interest amount stays the same every year. Compound interest is calculated on the principal plus accumulated interest, so it grows faster over time. For long durations, compound interest yields significantly more." } },
       { "@type": "Question", "name": "Where is simple interest used?", "acceptedAnswer": { "@type": "Answer", "text": "Simple interest is commonly used for short-term loans, car loans, some personal loans, and certain fixed deposits or bonds where interest is not reinvested. Many informal loans between individuals also use simple interest." } },
       { "@type": "Question", "name": "How do I calculate simple interest for months?", "acceptedAnswer": { "@type": "Answer", "text": "Convert the time period into years by dividing the number of months by 12. For example, 6 months is 0.5 years. Then apply the formula SI = (P × R × T) ÷ 100 using the fractional time value." } },
-      { "@type": "Question", "name": "Is simple interest better for borrowers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — for borrowers, simple interest is cheaper because you only pay interest on the original principal, not on accumulated interest. For investors and savers, compound interest is better as it grows your money faster." } }
+      { "@type": "Question", "name": "Is simple interest better for borrowers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — for borrowers, simple interest is cheaper because you only pay interest on the original principal, not on accumulated interest. For investors and savers, compound interest is better as it grows your money faster." } },
+      { "@type": "Question", "name": "Can the time period be in fractions of a year?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The formula works with any positive time value — enter 2.5 for two and a half years, or 0.75 for nine months." } },
+      { "@type": "Question", "name": "Is a flat rate loan the same as simple interest?", "acceptedAnswer": { "@type": "Answer", "text": "Largely yes — a flat-rate loan charges interest on the full original principal for the whole tenure, just like simple interest. A flat rate can be roughly 1.8 times costlier than the same quoted rate on a reducing-balance EMI loan, because you never get credit for the principal already repaid." } },
+      { "@type": "Question", "name": "How do I find the principal, rate, or time from the formula?", "acceptedAnswer": { "@type": "Answer", "text": "Rearrange SI = (P × R × T) ÷ 100: principal P = (SI × 100) ÷ (R × T); rate R = (SI × 100) ÷ (P × T); and time T = (SI × 100) ÷ (P × R). Plug in the three values you know to solve for the fourth." } }
     ]
   }
   </script>
@@ -155,6 +159,10 @@
         <a href="../index.html?cat=tools"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
         <a href="../index.html#articles-section" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Articles</a>
       </nav>
+      <button onclick="toggleTheme()" id="themeToggle" class="p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="theme-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="theme-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
         <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
@@ -269,21 +277,114 @@
 
 <!-- SEO CONTENT -->
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-  <div class="grid md:grid-cols-2 gap-6">
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">What is Simple Interest?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        Simple interest is interest calculated <strong class="text-ink-700">only on the original principal</strong> for the entire loan or deposit period. The interest amount stays the same every year because it never gets added back to the principal.
+      </p>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        This makes it predictable and easy to calculate — which is why it is used for many car loans, short-term personal loans, and informal lending between individuals. For borrowers it is cheaper than compound interest; for savers it grows money more slowly.
+      </p>
+      <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+        <p class="text-xs font-semibold text-leaf-700 mb-1">Quick rule</p>
+        <p class="text-xs text-ink-500">Total interest = yearly interest × number of years. The yearly interest never changes under simple interest.</p>
+      </div>
+    </div>
+
     <div class="bg-white border border-ink-100 rounded-2xl p-6">
       <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Simple Interest Formula</h2>
-      <div class="bg-ink-50 rounded-xl p-4 font-mono text-sm text-ink-700 mb-4">SI = (P × R × T) ÷ 100</div>
-      <p class="text-xs text-ink-400 leading-relaxed mb-2">Where <strong class="text-ink-600">P</strong> = principal, <strong class="text-ink-600">R</strong> = annual rate (%), and <strong class="text-ink-600">T</strong> = time in years. The maturity amount is <strong class="text-ink-600">A = P + SI</strong>.</p>
-      <p class="text-xs text-ink-400 leading-relaxed">Interest is charged only on the original principal, so the yearly interest never changes.</p>
+      <div class="bg-ink-50 rounded-xl p-4 font-mono text-sm text-ink-700 mb-3">SI = (P × R × T) ÷ 100</div>
+      <p class="text-xs text-ink-400 leading-relaxed mb-3">Where <strong class="text-ink-600">P</strong> = principal, <strong class="text-ink-600">R</strong> = annual rate (%), and <strong class="text-ink-600">T</strong> = time in years. The maturity amount is <strong class="text-ink-600">A = P + SI</strong>.</p>
+      <div class="bg-ink-50 rounded-xl p-3 space-y-1.5">
+        <p class="text-xs font-semibold text-ink-700">Example: ₹1,00,000 at 8% for 5 years</p>
+        <p class="text-xs font-mono text-ink-600">SI = (1,00,000 × 8 × 5) ÷ 100 = ₹40,000</p>
+        <p class="text-xs font-mono text-ink-600">Maturity = 1,00,000 + 40,000 = <strong>₹1,40,000</strong></p>
+        <p class="text-[10px] text-ink-400">That's a flat ₹8,000 of interest every year.</p>
+      </div>
     </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
     <div class="bg-white border border-ink-100 rounded-2xl p-6">
-      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Example</h2>
-      <p class="text-sm text-ink-500 leading-relaxed mb-3">For a principal of <strong class="text-ink-700">₹1,00,000</strong> at <strong class="text-ink-700">8%</strong> for <strong class="text-ink-700">5 years</strong>:</p>
-      <ul class="space-y-2 text-sm text-ink-500">
-        <li class="flex justify-between"><span>Simple Interest</span><span class="font-mono text-ink-700">₹40,000</span></li>
-        <li class="flex justify-between"><span>Maturity Amount</span><span class="font-mono font-semibold text-leaf-700">₹1,40,000</span></li>
-        <li class="flex justify-between"><span>Interest per year</span><span class="font-mono text-ink-700">₹8,000</span></li>
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">More Worked Examples</h2>
+      <div class="space-y-3">
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹50,000 · 10% · 2 yrs</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">₹60,000</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Interest ₹10,000 (₹5,000/yr)</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹2,00,000 · 12% · 3 yrs (car loan)</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">₹2,72,000</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Interest ₹72,000 (₹24,000/yr)</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">₹25,000 · 9% · 6 months</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">₹26,125</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">T = 0.5 yr · Interest ₹1,125</div>
+        </div>
+        <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+          <div class="text-xs font-semibold text-leaf-700 mb-1">₹5,00,000 · 7% · 4 yrs</div>
+          <div class="text-xs text-ink-500">Simple interest = ₹1,40,000; maturity = <strong class="text-ink-700">₹6,40,000</strong>.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Simple vs Compound — ₹1L at 10%</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">The gap widens dramatically over time as compound interest earns "interest on interest":</p>
+      <table class="w-full text-sm">
+        <thead><tr class="border-b border-ink-100">
+          <th class="text-left text-xs font-semibold text-ink-500 py-2">After</th>
+          <th class="text-right text-xs font-semibold text-ink-500 py-2">Simple</th>
+          <th class="text-right text-xs font-semibold text-ink-500 py-2">Compound</th>
+        </tr></thead>
+        <tbody class="font-mono">
+          <tr class="border-b border-ink-50"><td class="py-2 text-ink-600">1 year</td><td class="py-2 text-right text-ink-700">₹1,10,000</td><td class="py-2 text-right text-leaf-700">₹1,10,000</td></tr>
+          <tr class="border-b border-ink-50"><td class="py-2 text-ink-600">5 years</td><td class="py-2 text-right text-ink-700">₹1,50,000</td><td class="py-2 text-right text-leaf-700">₹1,61,051</td></tr>
+          <tr class="border-b border-ink-50"><td class="py-2 text-ink-600">10 years</td><td class="py-2 text-right text-ink-700">₹2,00,000</td><td class="py-2 text-right text-leaf-700">₹2,59,374</td></tr>
+          <tr><td class="py-2 text-ink-600">20 years</td><td class="py-2 text-right text-ink-700">₹3,00,000</td><td class="py-2 text-right text-leaf-700">₹6,72,750</td></tr>
+        </tbody>
+      </table>
+      <p class="text-[10px] text-ink-300 mt-3">Compare with our <a href="compound-interest-calculator.html" class="text-leaf-700 underline">Compound Interest Calculator</a>.</p>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Where Simple Interest is Used</h2>
+      <ul class="space-y-3 text-sm text-ink-500">
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Car &amp; vehicle loans</strong> — many are quoted on a flat/simple-interest basis.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Short-term personal loans</strong> and gold loans with a fixed tenure.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Some bonds &amp; deposits</strong> that pay out interest instead of reinvesting it.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Informal loans</strong> between family, friends, and small businesses.</span></li>
       </ul>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Things to Keep in Mind</h2>
+      <div class="space-y-3">
+        <div class="bg-saffron-50 border border-saffron-100 rounded-xl p-3">
+          <p class="text-xs font-semibold text-saffron-700 mb-1">Flat rate ≠ reducing rate</p>
+          <p class="text-xs text-ink-500">A "flat" simple-interest loan can have a much higher <em>effective</em> cost than a reducing-balance EMI loan at the same quoted rate, because you keep paying interest on the full principal. For EMIs use our <a href="emi-calculator.html" class="text-leaf-700 underline">EMI Calculator</a>.</p>
+        </div>
+        <div class="bg-ink-50 border border-ink-100 rounded-xl p-3">
+          <p class="text-xs font-semibold text-ink-700 mb-1">Months &amp; days</p>
+          <p class="text-xs text-ink-500">Convert the period into years before applying the formula — 9 months = 0.75 years, 18 months = 1.5 years, and so on.</p>
+        </div>
+        <div class="bg-ink-50 border border-ink-100 rounded-xl p-3">
+          <p class="text-xs font-semibold text-ink-700 mb-1">For saving, prefer compounding</p>
+          <p class="text-xs text-ink-500">If you are investing rather than borrowing, a compounding product (FD, PPF, SIP) will almost always beat simple interest over the long run.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -299,6 +400,8 @@
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How do I calculate simple interest for months?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Convert months to years by dividing by 12. For example, 6 months = 0.5 years. Then apply SI = (P × R × T) ÷ 100 with the fractional time.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Is simple interest better for borrowers?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes — borrowers pay less under simple interest since interest applies only to the original principal. Savers and investors prefer compound interest, which grows money faster.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Can the time period be in fractions of a year?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes. The formula works with any positive time value — enter 2.5 for two and a half years, or 0.75 for nine months.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Is a "flat rate" loan the same as simple interest?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Largely yes — a flat-rate loan charges interest on the full original principal for the whole tenure, just like simple interest. Be careful: a flat rate can be roughly 1.8× costlier than the same quoted rate on a reducing-balance EMI loan, because you never get "credit" for the principal you've already repaid.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How do I find the principal, rate, or time from the formula?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Rearrange SI = (P × R × T) ÷ 100: principal P = (SI × 100) ÷ (R × T); rate R = (SI × 100) ÷ (P × T); and time T = (SI × 100) ÷ (P × R). Plug in the three values you know to solve for the fourth.</div></details></div>
   </div>
 </section>
 
@@ -316,10 +419,10 @@
       <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">FD Calculator</div>
       <div class="text-xs text-ink-400 mt-0.5">Fixed deposit maturity</div>
     </a>
-    <a href="emi-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
-      <div class="mb-2 text-blue-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4M14 15h4"/></svg></div>
-      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">EMI Calculator</div>
-      <div class="text-xs text-ink-400 mt-0.5">Loan EMI</div>
+    <a href="discount-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-orange-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">Discount Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Sale price &amp; savings</div>
     </a>
     <a href="percentage-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
       <div class="mb-2 text-blue-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></svg></div>

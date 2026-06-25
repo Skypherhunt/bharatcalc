@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();function toggleTheme(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}}</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
@@ -33,28 +34,43 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How to calculate exact age from date of birth?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Exact age = Current date − Date of birth. First count complete years (last birthday to today). Then count remaining complete months. Finally count remaining days. Our calculator handles leap years and varying month lengths automatically to give you an exact age in years, months, and days." }
+        "name": "How is exact age calculated?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Age is the difference between the date of birth and a chosen date, counted as complete years first, then remaining months, then remaining days. The calculation accounts for the varying lengths of months and for leap years, so it is more accurate than simply subtracting years." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the legal age of majority in India?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In India the legal age of majority is 18 years under the Indian Majority Act. The voting age is 18, the driving licence age is 18, and the legal marriage age is 18 for women and 21 for men. Senior citizen benefits apply from age 60." }
+      },
+      {
+        "@type": "Question",
+        "name": "How are leap years handled in age calculation?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A leap year has 366 days, with February having 29 days. If you were born on 29 February, the birthday falls on 28 February or 1 March in non-leap years. A year is a leap year if divisible by 4, except century years which must be divisible by 400." }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the important age milestones in India?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Key milestones: 5 (school admission), 18 (voting, driving licence, legal majority), 21 (marriage for men), 55 (NPS annuity eligibility), 58 (EPF retirement) and 60 (senior citizen benefits and higher FD rates). Super-senior tax benefits begin at 80." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate my age for a government exam or form?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Exams calculate age as completed years as on a fixed cut-off date (for example 1 August of the exam year), not today's date. Use the As of date field to set that cut-off. Born 15 Jun 2000 with a cut-off of 1 Aug 2025 gives an age of 25 years and 1 month." }
       },
       {
         "@type": "Question",
         "name": "How many days old am I?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Your age in days = sum of days in each complete year (365 or 366 for leap years) + days in remaining months + remaining days. For example, a person born on January 1, 2000 turns approximately 9,300+ days old around June 2025. Use our age calculator above for the exact count based on your date of birth." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Your age in days is the total number of days between your date of birth and today, counting 366 days for each leap year. As a rough guide a 25-year-old is around 9,131 days old. The calculator shows your exact day, week and month totals." }
       },
       {
         "@type": "Question",
-        "name": "How do I calculate my age for a government form or passport?",
-        "acceptedAnswer": { "@type": "Answer", "text": "For government documents, age is calculated as the number of completed years as of the specified reference date (usually the application date). If you were born on June 15, 2000 and the reference date is June 10, 2025, your age is 24 years — the 25th birthday has not yet passed. Use the 'As of date' option in our calculator to compute age for any reference date." }
+        "name": "What is the difference between age and completed years?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Completed years is the age you reached at your last birthday — the figure almost every Indian form and law uses. Someone who is 24 years and 11 months is officially 24, not 25. This calculator reports completed years plus the leftover months and days." }
       },
       {
         "@type": "Question",
-        "name": "What is my zodiac sign by date of birth?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Zodiac signs by birth date: Aries (Mar 21–Apr 19), Taurus (Apr 20–May 20), Gemini (May 21–Jun 20), Cancer (Jun 21–Jul 22), Leo (Jul 23–Aug 22), Virgo (Aug 23–Sep 22), Libra (Sep 23–Oct 22), Scorpio (Oct 23–Nov 21), Sagittarius (Nov 22–Dec 21), Capricorn (Dec 22–Jan 19), Aquarius (Jan 20–Feb 18), Pisces (Feb 19–Mar 20). Our age calculator shows your zodiac sign automatically." }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the minimum age to open a bank account in India?",
-        "acceptedAnswer": { "@type": "Answer", "text": "In India, minors can have a savings account jointly held with a parent or guardian. Some banks allow minors aged 10+ to operate accounts independently with limited features. For a full-feature bank account, investment account, or credit card, you must be 18 years or older. For a PAN card, there is no minimum age requirement." }
+        "name": "Can I calculate age between two past dates?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Enter the earlier date as the date of birth and the later date in the As of date field. The tool shows the exact gap in years, months and days, which is useful for finding someone's age on a past event or the duration between any two dates." }
       }
     ]
   }
@@ -129,6 +145,10 @@
         <a href="../index.html?cat=tools"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
         <a href="../index.html#articles-section" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Articles</a>
       </nav>
+      <button onclick="toggleTheme()" id="themeToggle" class="p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="theme-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="theme-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
         <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
@@ -275,6 +295,30 @@
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
   <div class="grid md:grid-cols-2 gap-6 mb-6">
     <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">How Age Is Calculated</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">Your exact age is the gap between your date of birth and a chosen date, broken into <strong class="text-ink-700">years, then months, then days</strong>. The calculation respects the real length of each month (28–31 days) and leap years, so it is more accurate than simply subtracting years.</p>
+      <div class="bg-ink-50 rounded-xl p-3 space-y-1.5">
+        <p class="text-xs font-semibold text-ink-700">Example</p>
+        <p class="text-xs text-ink-500">Born <strong>15 Aug 1990</strong>, as of <strong>25 Jun 2026</strong>:</p>
+        <p class="text-xs font-mono text-ink-600">= 35 years, 10 months, 10 days</p>
+      </div>
+      <p class="text-xs text-ink-400 leading-relaxed mt-3">In India, official forms almost always use <strong class="text-ink-600">completed years</strong> — the age you turned at your last birthday, not your nearest birthday.</p>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Your Age in Different Units</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">The same age looks very different depending on the unit. Roughly, a <strong class="text-ink-700">25-year-old</strong> has lived:</p>
+      <div class="space-y-2">
+        <div class="flex items-center justify-between py-2 border-b border-ink-50"><span class="text-sm text-ink-600">Months</span><span class="font-mono text-sm font-semibold text-ink-800">≈ 300</span></div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50"><span class="text-sm text-ink-600">Weeks</span><span class="font-mono text-sm font-semibold text-ink-800">≈ 1,304</span></div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50"><span class="text-sm text-ink-600">Days</span><span class="font-mono text-sm font-semibold text-leaf-700">≈ 9,131</span></div>
+        <div class="flex items-center justify-between py-2"><span class="text-sm text-ink-600">Hours</span><span class="font-mono text-sm font-semibold text-ink-800">≈ 2,19,000</span></div>
+      </div>
+      <p class="text-[10px] text-ink-300 mt-3 font-mono">* Approximate; the calculator above shows your exact figures.</p>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
       <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Zodiac Signs — Quick Reference</h2>
       <div class="grid grid-cols-2 gap-1.5 text-xs">
         <div class="flex justify-between bg-ink-50 rounded-lg px-3 py-2"><span class="font-semibold">♈ Aries</span><span class="text-ink-500">Mar 21 – Apr 19</span></div>
@@ -304,6 +348,30 @@
       <p class="text-[10px] text-ink-300 mt-2 font-mono">* Ages as of 2024. Generation boundaries vary by source.</p>
     </div>
   </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Where You Need Your Exact Age</h2>
+      <ul class="space-y-3 text-sm text-ink-500">
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Government exams</strong> — UPSC, SSC, banking and state exams set age limits as on a fixed cut-off date.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">School admissions</strong> — most schools require the child to be a minimum age as on 31 March / 1 June.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Income tax</strong> — senior (60+) and super-senior (80+) slabs depend on your exact age in the financial year.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Retirement &amp; pension</strong> — EPF, NPS and annuity eligibility are age-linked.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Insurance</strong> — life and health premiums are priced on your age at entry.</span></li>
+      </ul>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Age Milestones in India</h2>
+      <div class="space-y-2">
+        <div class="flex items-center justify-between py-2 border-b border-ink-50"><span class="text-sm text-ink-600">School admission</span><span class="font-mono text-sm font-semibold text-ink-800">5 yrs</span></div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50"><span class="text-sm text-ink-600">Voting, driving licence, majority</span><span class="font-mono text-sm font-semibold text-leaf-700">18 yrs</span></div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50"><span class="text-sm text-ink-600">Legal marriage age</span><span class="font-mono text-sm font-semibold text-ink-800">18 (W) / 21 (M)</span></div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50"><span class="text-sm text-ink-600">EPF retirement</span><span class="font-mono text-sm font-semibold text-ink-800">58 yrs</span></div>
+        <div class="flex items-center justify-between py-2"><span class="text-sm text-ink-600">Senior citizen benefits</span><span class="font-mono text-sm font-semibold text-leaf-700">60 yrs</span></div>
+      </div>
+      <p class="text-[10px] text-ink-300 mt-3 font-mono">* Super-senior tax benefits apply from age 80.</p>
+    </div>
+  </div>
 </section>
 
 <!-- FAQ -->
@@ -315,6 +383,10 @@
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is the legal age of majority in India?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">In India, the legal age of majority is <strong class="text-ink-700">18 years</strong> as per the Indian Majority Act. The legal age for marriage is 18 for women and 21 for men (proposed to be raised to 21 for both). The voting age is 18. The age for criminal liability is 18. Senior citizen benefits apply from age 60.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How are leap years handled in age calculation?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">A leap year has 366 days (February has 29 days). If you were born on Feb 29, your birthday is celebrated on Feb 28 or Mar 1 in non-leap years (varies by country/person preference). Our calculator uses Feb 28 as the birthday in non-leap years for Feb 29 births. A year is a leap year if divisible by 4, except century years must be divisible by 400.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What are the important age milestones in India?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Key age milestones: <strong class="text-ink-700">5</strong> (school admission), <strong class="text-ink-700">15</strong> (minor driving permit in some states), <strong class="text-ink-700">18</strong> (voting, driving license, legal majority), <strong class="text-ink-700">21</strong> (marriage for men), <strong class="text-ink-700">25</strong> (car insurance benefits), <strong class="text-ink-700">40</strong> (regular health checks recommended), <strong class="text-ink-700">55</strong> (NPS annuity eligibility), <strong class="text-ink-700">58</strong> (EPF retirement), <strong class="text-ink-700">60</strong> (senior citizen benefits, higher FD rates).</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How do I calculate my age for a government exam or form?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Exams calculate age as the number of <strong class="text-ink-700">completed years as on a fixed cut-off date</strong> (e.g. 1 August of the exam year), not today's date. Set that cut-off in the "As of date" field above. If you were born on 15 Jun 2000 and the cut-off is 1 Aug 2025, your age is 25 years and 1 month.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How many days old am I?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Your age in days is the total days between your date of birth and today, counting 366 days for each leap year. As a rough guide, every year adds about 365 days — so a 25-year-old is around <strong class="text-ink-700">9,131 days</strong> old. The calculator above shows your exact day, week, and month totals.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is the difference between age and completed years?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">"Completed years" is the age you reached at your <strong class="text-ink-700">last birthday</strong> — the figure almost every Indian form and law uses. So someone who is 24 years and 11 months is officially "24", not 25. This calculator reports completed years plus the leftover months and days.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Can I calculate age between two past dates?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes. Enter the earlier date as the date of birth and the later date in the "As of date" field. The tool then shows the exact gap in years, months and days — handy for finding someone's age on a past event, or the duration between any two dates.</div></details></div>
   </div>
 </section>
 

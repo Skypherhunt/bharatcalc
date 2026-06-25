@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();function toggleTheme(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}}</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BharatCalc — Free Calculators India: SIP, EMI, Tax</title>
@@ -159,6 +160,10 @@
         <a href="#categories" onclick="navCat('tools')"   class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
         <a href="#articles-section"                       class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Articles</a>
       </nav>
+      <button onclick="toggleTheme()" id="themeToggle" class="p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="theme-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="theme-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" aria-expanded="false" id="menuBtn">
         <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
@@ -599,6 +604,41 @@
         </div>
       </a>
     </div>
+
+    <!-- Retirement & inflation row -->
+    <div class="grid sm:grid-cols-2 gap-5 mt-5">
+      <a href="articles/retirement-planning-india.html" class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-leaf-500/40 rounded-2xl p-5 flex flex-col gap-3 transition-all hover:shadow-xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-leaf-600/20 text-leaf-300 rounded-xl flex items-center justify-center flex-shrink-0 border border-leaf-600/20">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12h6M12 9v6"/></svg>
+          </div>
+          <div class="text-[10px] font-bold uppercase tracking-wider text-leaf-400">Finance · Retirement</div>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold text-sm text-white group-hover:text-leaf-300 transition-colors leading-snug">Retirement Planning in India: How Much You Need</h3>
+          <p class="text-ink-400 text-xs mt-1.5 leading-relaxed">Calculate your corpus, the monthly SIP to reach it, the 4% rule, and a step-by-step plan with real numbers.</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-semibold text-leaf-400 group-hover:text-leaf-300 transition-colors mt-auto">
+          Read article <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <a href="articles/inflation-impact-india.html" class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-leaf-500/40 rounded-2xl p-5 flex flex-col gap-3 transition-all hover:shadow-xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-leaf-600/20 text-leaf-300 rounded-xl flex items-center justify-center flex-shrink-0 border border-leaf-600/20">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6M21 7h-6"/></svg>
+          </div>
+          <div class="text-[10px] font-bold uppercase tracking-wider text-leaf-400">Finance · Money Basics</div>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold text-sm text-white group-hover:text-leaf-300 transition-colors leading-snug">How Inflation Quietly Erodes Your Wealth</h3>
+          <p class="text-ink-400 text-xs mt-1.5 leading-relaxed">Why "safe" money is risky, the real cost over decades, and how to make sure your wealth grows in real terms.</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-semibold text-leaf-400 group-hover:text-leaf-300 transition-colors mt-auto">
+          Read article <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -803,6 +843,8 @@ const calcs = [
   { title:'SSY Calculator',        desc:'Sukanya Samriddhi Yojana',         icon:ic('<path d="M12 21s-6.5-4.35-9-8.5C1.5 9 3.5 5 7 5c2 0 3.5 1.5 5 3 1.5-1.5 3-3 5-3 3.5 0 5.5 4 4 7.5-2.5 4.15-9 8.5-9 8.5z"/>'), cat:'finance', url:'calculator/ssy-calculator.html', badge:'New', color:'purple' },
   { title:'SCSS Calculator',       desc:'Senior Citizens Savings Scheme',   icon:ic('<circle cx="12" cy="7" r="4"/><path d="M5.5 21a6.5 6.5 0 0113 0"/><path d="M19 4l1.5 1.5L23 3"/>'), cat:'finance', url:'calculator/scss-calculator.html', badge:'New', color:'indigo' },
   { title:'NSC Calculator',        desc:'National Savings Certificate',     icon:ic('<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M7 9v6M17 9v6"/>'), cat:'finance', url:'calculator/nsc-calculator.html', badge:'New', color:'indigo' },
+  { title:'Retirement Calculator', desc:'Corpus & monthly SIP to retire',    icon:ic('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12h6M12 9v6"/>'), cat:'finance', url:'calculator/retirement-calculator.html', badge:'New', color:'leaf' },
+  { title:'Inflation Calculator',  desc:'Future value & purchasing power',   icon:ic('<path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6M21 7h-6"/>'), cat:'finance', url:'calculator/inflation-calculator.html', badge:'New', color:'leaf' },
 
   { title:'Income Tax Calculator', desc:'New vs old regime, current FY',    icon:ic('<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/>'), cat:'tax',     url:'calculator/income-tax-calculator.html',  badge:'Updated',  color:'saffron' },
   { title:'GST Calculator',        desc:'Add or remove GST instantly',      icon:ic('<path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/>'), cat:'tax',     url:'calculator/gst-calculator.html',         badge:'',         color:'orange' },
@@ -818,10 +860,15 @@ const calcs = [
   { title:'Ideal Weight',          desc:'Ideal body weight calculator',     icon:ic('<circle cx="12" cy="5" r="3"/><path d="M5 22v-4a7 7 0 0114 0v4"/>'), cat:'health',  url:'calculator/ideal-weight-calculator.html', badge:'New',      color:'leaf' },
   { title:'Due Date Calculator',   desc:'Pregnancy due date',               icon:ic('<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M12 18l-2.5-2.5a2 2 0 012.5-3.1 2 2 0 012.5 3.1z"/>'), cat:'health',  url:'calculator/due-date-calculator.html',    badge:'New',      color:'pink' },
   { title:'Percentage Calculator', desc:'% of a number, % change',         icon:ic('<path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/>'), cat:'math',    url:'calculator/percentage-calculator.html',  badge:'New',      color:'blue' },
+  { title:'Discount Calculator',   desc:'Sale price, % off & savings',      icon:ic('<path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/>'), cat:'math',    url:'calculator/discount-calculator.html',    badge:'New',      color:'orange' },
   { title:'Compound Interest',     desc:'CI with principal + rate',         icon:ic('<path d="M3 20c3-8 6-4 9-10s6-5 9-5"/><path d="M3 20h18M3 3v17"/>'), cat:'math',    url:'calculator/compound-interest-calculator.html', badge:'New', color:'indigo' },
   { title:'Date Calculator',       desc:'Days between two dates',           icon:ic('<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h8M11 17l3-3-3-3"/>'), cat:'math',    url:'calculator/date-calculator.html',        badge:'New',      color:'blue' },
   { title:'Simple Interest',       desc:'SI = P × R × T ÷ 100',             icon:ic('<circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/>'), cat:'math',    url:'calculator/simple-interest-calculator.html', badge:'New', color:'indigo' },
   { title:'Timezone Converter',    desc:'Convert time across world cities',  icon:ic('<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/><path d="M2 12h3M19 12h3M12 2v3M12 19v3"/>'), cat:'tools',   url:'calculator/timezone-converter.html',         badge:'',         color:'blue' },
+  { title:'Unit Converter',        desc:'Length, weight, temperature & more', icon:ic('<path d="M3 7h18M7 3L3 7l4 4M21 17H3M17 13l4 4-4 4"/>'), cat:'tools',   url:'calculator/unit-converter.html',             badge:'New',      color:'blue' },
+  { title:'CGPA to Percentage',    desc:'CBSE 9.5 & university formula',     icon:ic('<path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 3 2 6 2s6-1 6-2v-5"/>'), cat:'tools',   url:'calculator/cgpa-to-percentage-calculator.html', badge:'New',   color:'purple' },
+  { title:'Credit Card Interest',  desc:'Payoff time & min-due trap',       icon:ic('<rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>'), cat:'finance', url:'calculator/credit-card-interest-calculator.html', badge:'New', color:'red' },
+  { title:'EMI Prepayment',        desc:'Interest saved & tenure cut',      icon:ic('<path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>'), cat:'finance', url:'calculator/emi-prepayment-calculator.html',  badge:'New',      color:'leaf' },
 ];
 
 const INITIAL_SHOW = 10;

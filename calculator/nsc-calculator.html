@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();function toggleTheme(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}}</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
@@ -54,11 +55,14 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "What is the current NSC interest rate?", "acceptedAnswer": { "@type": "Answer", "text": "The National Savings Certificate (NSC) currently offers 7.7% per annum, compounded annually but payable at maturity. The rate is reviewed every quarter by the government and is locked in for your certificate at the rate prevailing when you invest." } },
-      { "@type": "Question", "name": "What is the NSC tenure?", "acceptedAnswer": { "@type": "Answer", "text": "NSC has a fixed maturity period of 5 years. The interest is reinvested every year and the entire principal plus accumulated interest is paid out as a lump sum on maturity." } },
-      { "@type": "Question", "name": "Is NSC eligible for 80C deduction?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The amount invested in NSC qualifies for deduction under Section 80C up to ₹1.5 lakh. Additionally, the interest accrued each year (except the final year) is reinvested and also qualifies for 80C in that year." } },
-      { "@type": "Question", "name": "How is NSC interest calculated?", "acceptedAnswer": { "@type": "Answer", "text": "NSC interest is compounded annually. The maturity amount is Principal × (1 + rate)^5. For example, ₹1,00,000 at 7.7% for 5 years matures to about ₹1,44,903." } },
-      { "@type": "Question", "name": "Is there a maximum investment limit in NSC?", "acceptedAnswer": { "@type": "Answer", "text": "There is no maximum limit on NSC investment. The minimum is ₹1,000 and investments must be in multiples of ₹100. However, the 80C tax benefit is capped at ₹1.5 lakh per year." } }
+      { "@type": "Question", "name": "What is the current NSC interest rate?", "acceptedAnswer": { "@type": "Answer", "text": "NSC offers 7.7% per annum, compounded annually and paid at maturity. The rate is locked in for your certificate at the time of investment." } },
+      { "@type": "Question", "name": "What is the NSC tenure?", "acceptedAnswer": { "@type": "Answer", "text": "A fixed 5 years. Interest is reinvested yearly and principal plus interest is paid as a lump sum at maturity." } },
+      { "@type": "Question", "name": "Is NSC eligible for 80C deduction?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — investment qualifies for 80C up to ₹1.5 lakh. Interest reinvested each year (except the last) also qualifies for 80C in that year." } },
+      { "@type": "Question", "name": "How is NSC interest calculated?", "acceptedAnswer": { "@type": "Answer", "text": "It compounds annually: maturity = Principal × (1 + rate)^5. For example, ₹1,00,000 at 7.7% for 5 years matures to about ₹1,44,903." } },
+      { "@type": "Question", "name": "Is there a maximum investment limit?", "acceptedAnswer": { "@type": "Answer", "text": "No maximum limit. Minimum is ₹1,000, in multiples of ₹100. Only the 80C tax benefit is capped at ₹1.5 lakh per year." } },
+      { "@type": "Question", "name": "Is NSC interest taxable?", "acceptedAnswer": { "@type": "Answer", "text": "Interest is taxable as income, but since it is reinvested it also qualifies for 80C (except the final year). The full maturity amount is paid without TDS, but you must declare the interest in your return." } },
+      { "@type": "Question", "name": "Can I withdraw NSC before 5 years?", "acceptedAnswer": { "@type": "Answer", "text": "Premature withdrawal is generally not allowed. It is permitted only in special cases — the death of the holder, forfeiture by a pledgee such as a bank, or on a court order. Otherwise the money stays locked for the full 5 years." } },
+      { "@type": "Question", "name": "Where can I buy NSC and can it be pledged for a loan?", "acceptedAnswer": { "@type": "Answer", "text": "NSC is available at any post office and some authorised banks — you can buy it in your own name, jointly, or on behalf of a minor with valid KYC. It can also be pledged as collateral with banks and NBFCs to secure a loan." } }
     ]
   }
   </script>
@@ -157,6 +161,10 @@
         <a href="../index.html?cat=tools"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
         <a href="../index.html#articles-section" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Articles</a>
       </nav>
+      <button onclick="toggleTheme()" id="themeToggle" class="p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="theme-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="theme-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
         <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
@@ -261,19 +269,156 @@
 
 <!-- SEO CONTENT -->
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-  <div class="grid md:grid-cols-2 gap-6">
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">What is the National Savings Certificate (NSC)?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        The National Savings Certificate (NSC) is a fixed-income, small-savings scheme backed by the Government of India and sold through post offices (and a few authorised banks). You invest a lump sum once, and after a fixed <strong class="text-ink-700">5-year</strong> tenure you receive your principal plus interest compounded annually.
+      </p>
+      <p class="text-sm text-ink-500 leading-relaxed mb-4">
+        Because it carries a <strong class="text-ink-700">sovereign guarantee</strong>, there is effectively zero risk of default — making NSC a popular choice for conservative savers who also want a Section 80C tax deduction. The current NSC (VIII Issue) rate is <strong class="text-ink-700">7.7% per annum</strong>.
+      </p>
+      <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+        <p class="text-xs font-semibold text-leaf-700 mb-1">Who is NSC best for?</p>
+        <p class="text-xs text-ink-500">Risk-averse investors, salaried taxpayers wanting an 80C option safer than ELSS, and anyone parking money they won't need for 5 years.</p>
+      </div>
+    </div>
+
     <div class="bg-white border border-ink-100 rounded-2xl p-6">
       <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">NSC Maturity Formula</h2>
-      <div class="bg-ink-50 rounded-xl p-4 font-mono text-sm text-ink-700 mb-4">A = P × (1 + r)⁵</div>
-      <p class="text-xs text-ink-400 leading-relaxed">Where P is the amount invested, r is the annual interest rate, and the power 5 is the fixed tenure in years. Interest compounds yearly and is paid at maturity.</p>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">NSC uses annual compounding, so the maturity value is:</p>
+      <div class="bg-ink-50 rounded-xl p-4 font-mono text-sm text-ink-700 mb-3">A = P × (1 + r)⁵</div>
+      <p class="text-xs text-ink-400 leading-relaxed mb-3">
+        Where <strong class="text-ink-600">A</strong> = maturity amount, <strong class="text-ink-600">P</strong> = amount invested, <strong class="text-ink-600">r</strong> = annual interest rate (decimal), and the power <strong class="text-ink-600">5</strong> is the fixed tenure in years. Interest is added to the balance each year and paid out, with the principal, at maturity.
+      </p>
+      <div class="bg-ink-50 rounded-xl p-3 space-y-1.5">
+        <p class="text-xs font-semibold text-ink-700">Example: ₹1,00,000 at 7.7% for 5 years</p>
+        <p class="text-xs font-mono text-ink-600">A = 1,00,000 × (1.077)⁵</p>
+        <p class="text-xs font-mono text-ink-600">A = 1,00,000 × 1.44903 = <strong>₹1,44,903</strong></p>
+        <p class="text-[10px] text-ink-400">Interest earned = ₹44,903 over 5 years.</p>
+      </div>
     </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
     <div class="bg-white border border-ink-100 rounded-2xl p-6">
-      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Why Choose NSC?</h2>
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">NSC Interest Rate History</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">The government reviews small-savings rates every quarter. Your certificate locks in the rate prevailing on the date of purchase for the full 5 years.</p>
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">FY 2025-26 (current)</span>
+          <span class="font-mono text-sm font-semibold text-leaf-700">7.7%</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">FY 2023-24 (Apr–Jun '23 on)</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">7.7%</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">FY 2023-24 (Jan–Mar '23)</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">7.0%</span>
+        </div>
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <span class="text-sm text-ink-600 font-medium">FY 2020–2022</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">6.8%</span>
+        </div>
+        <div class="flex items-center justify-between py-2">
+          <span class="text-sm text-ink-600 font-medium">FY 2018-19</span>
+          <span class="font-mono text-sm font-semibold text-ink-800">8.0%</span>
+        </div>
+      </div>
+      <p class="text-[10px] text-ink-300 mt-3 font-mono">* Indicative rates. Verify the current rate at your post office before investing.</p>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">NSC Example Calculations (5 yrs @ 7.7%)</h2>
+      <div class="space-y-3">
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">Invest ₹50,000</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">₹72,452</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Interest ₹22,452 · Gain 44.9%</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">Invest ₹1,00,000</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">₹1,44,903</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Interest ₹44,903 · Gain 44.9%</div>
+        </div>
+        <div class="bg-ink-50 rounded-xl p-3">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-ink-700">Invest ₹5,00,000</span>
+            <span class="font-mono text-xs font-bold text-leaf-700">₹7,24,517</span>
+          </div>
+          <div class="text-[10px] text-ink-400 font-mono">Interest ₹2,24,517 · Gain 44.9%</div>
+        </div>
+        <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3">
+          <div class="text-xs font-semibold text-leaf-700 mb-1">Invest ₹10,00,000</div>
+          <div class="text-xs text-ink-500">Matures to <strong class="text-ink-700">₹14,49,034</strong> — interest of ₹4,49,034. Only the first ₹1.5 lakh of the investment qualifies for 80C in the year you invest.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">NSC vs Other 80C Options</h2>
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">NSC</span>
+            <p class="text-[10px] text-ink-400">5yr lock-in · interest taxable</p>
+          </div>
+          <div class="text-right">
+            <div class="w-24 bg-ink-100 rounded-full h-1.5 mb-1"><div class="bg-leaf-600 h-1.5 rounded-full" style="width:68%"></div></div>
+            <span class="font-mono text-xs font-semibold text-leaf-700">7.7%</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">PPF</span>
+            <p class="text-[10px] text-ink-400">15yr · EEE tax-free</p>
+          </div>
+          <div class="text-right">
+            <div class="w-24 bg-ink-100 rounded-full h-1.5 mb-1"><div class="bg-leaf-500 h-1.5 rounded-full" style="width:63%"></div></div>
+            <span class="font-mono text-xs font-semibold text-ink-800">7.1%*</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5 border-b border-ink-50">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">5-yr Tax-Saver FD</span>
+            <p class="text-[10px] text-ink-400">5yr · interest taxable</p>
+          </div>
+          <div class="text-right">
+            <div class="w-24 bg-ink-100 rounded-full h-1.5 mb-1"><div class="bg-ink-300 h-1.5 rounded-full" style="width:58%"></div></div>
+            <span class="font-mono text-xs font-semibold text-ink-800">6.5–7.0%</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between py-2.5">
+          <div>
+            <span class="text-sm text-ink-700 font-medium">ELSS Mutual Fund</span>
+            <p class="text-[10px] text-ink-400">3yr · market-linked, LTCG</p>
+          </div>
+          <div class="text-right">
+            <div class="w-24 bg-ink-100 rounded-full h-1.5 mb-1"><div class="bg-saffron-400 h-1.5 rounded-full" style="width:90%"></div></div>
+            <span class="font-mono text-xs font-semibold text-saffron-700">10–12%*</span>
+          </div>
+        </div>
+      </div>
+      <p class="text-[10px] text-ink-300 mt-3 font-mono">* PPF is tax-free; ELSS returns are market-linked and not guaranteed.</p>
+    </div>
+
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Key Features &amp; Rules</h2>
       <ul class="space-y-3 text-sm text-ink-500">
-        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Government-backed</strong> — capital is completely safe.</span></li>
-        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">80C deduction</strong> on investment up to ₹1.5 lakh.</span></li>
-        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Reinvested interest</strong> also qualifies for 80C (except final year).</span></li>
-        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">No maximum limit</strong> — invest as much as you want.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Government-backed</strong> — capital is completely safe with a sovereign guarantee.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">80C deduction</strong> on investment up to ₹1.5 lakh per year.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Reinvested interest</strong> for years 1–4 also qualifies for 80C in that year.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">No maximum limit</strong> — minimum ₹1,000, in multiples of ₹100.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">No TDS</strong> on NSC, unlike bank fixed deposits.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Loan collateral</strong> — can be pledged with banks for a secured loan.</span></li>
       </ul>
     </div>
   </div>
@@ -290,6 +435,8 @@
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">How is NSC interest calculated?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">It compounds annually: maturity = Principal × (1 + rate)⁵. For example, ₹1,00,000 at 7.7% for 5 years matures to about <strong class="text-ink-700">₹1,44,903</strong>.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Is there a maximum investment limit?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">No maximum limit. Minimum is ₹1,000, in multiples of ₹100. Only the 80C tax benefit is capped at ₹1.5 lakh per year.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Is NSC interest taxable?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Interest is taxable as income, but since it is reinvested it also qualifies for 80C (except the final year). The full maturity amount is paid without TDS, but you must declare the interest in your return.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Can I withdraw NSC before 5 years?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Premature withdrawal is generally <strong class="text-ink-700">not allowed</strong>. It is permitted only in special cases — the death of the holder, forfeiture by a pledgee (such as a bank), or on a court order. Otherwise your money stays locked for the full 5 years.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Where can I buy NSC and can it be pledged for a loan?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">NSC is available at any post office (and some authorised banks) — you can buy it in your own name, jointly, or on behalf of a minor with valid KYC. It can also be <strong class="text-ink-700">pledged as collateral</strong> with banks and NBFCs to secure a loan.</div></details></div>
   </div>
 </section>
 

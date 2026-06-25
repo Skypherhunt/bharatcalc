@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();function toggleTheme(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}}</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
@@ -34,27 +35,42 @@
       {
         "@type": "Question",
         "name": "How is RD interest calculated?",
-        "acceptedAnswer": { "@type": "Answer", "text": "RD uses quarterly compounding. Each monthly deposit is treated as a separate deposit and earns compound interest from its deposit date. The formula is: A = P × (1 + r/400)^(4n), where P is the monthly deposit amount, r is the annual interest rate, and n is the tenure in years." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Indian banks use quarterly compounding for RDs. Each monthly installment is treated as a separate deposit earning compound interest from its month of deposit. The formula: M = R × [(1+i)^n − 1] / (1−(1+i)^(−1/3)), where i = rate/400 and n = quarters. BharatCalc uses the installment-by-installment future value method for accuracy." }
       },
       {
         "@type": "Question",
-        "name": "What is the RD interest rate in India in 2025?",
-        "acceptedAnswer": { "@type": "Answer", "text": "RD interest rates in 2025: SBI offers 6.5–7.0% p.a., HDFC Bank 7.0–7.25% p.a., ICICI Bank 7.0–7.25% p.a., and Post Office RD offers 6.7% p.a. Senior citizens typically get an additional 0.25–0.50% over regular rates. Rates vary by tenure and are subject to change." }
-      },
-      {
-        "@type": "Question",
-        "name": "Is RD better than FD?",
-        "acceptedAnswer": { "@type": "Answer", "text": "RD is better if you want to invest a fixed amount monthly from your salary — it builds savings discipline. FD is better if you have a lump sum to invest, as it typically offers slightly higher rates and more tenure flexibility. Both are equally safe as deposits with scheduled commercial banks are insured up to ₹5 lakh under DICGC." }
+        "name": "What happens if I miss an RD installment?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Banks charge a penalty of about ₹1 to ₹2 per ₹100 per month on the missed amount. If you miss more than a few installments (usually 3–4, varies by bank), the account may be marked irregular and closed prematurely. Set up an auto-debit to avoid missing payments." }
       },
       {
         "@type": "Question",
         "name": "Is RD interest taxable?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes, RD interest is fully taxable as per your income tax slab rate. Banks deduct TDS at 10% if the total interest in a financial year exceeds ₹40,000 (₹50,000 for senior citizens). You can submit Form 15G (or 15H for senior citizens) to avoid TDS if your total income is below the taxable limit." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. RD interest is fully taxable at your income slab rate as Income from Other Sources. TDS at 10% is deducted if annual interest exceeds ₹40,000 (₹50,000 for senior citizens). RD interest is taxable in the year it accrues, not just at maturity." }
       },
       {
         "@type": "Question",
-        "name": "Can I withdraw RD before maturity?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes, premature closure of RD is allowed, but most banks apply a penalty of 0.5–1% reduction on the applicable interest rate. Some banks also have a lock-in of 1–3 months. If you need urgent liquidity, consider taking a loan against your RD (most banks offer up to 90% of RD balance) instead of premature withdrawal." }
+        "name": "Can I break an RD prematurely?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, premature closure is allowed at most banks with a penalty of 0.5–1% on the applicable interest rate. You receive interest for the period actually completed, minus the penalty. Post Office RDs can be closed after 3 years out of 5. Avoid premature closure to earn full interest." }
+      },
+      {
+        "@type": "Question",
+        "name": "RD vs SIP — which is better?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For short-term goals (under 3 years) and capital safety, RD wins with guaranteed returns. For long-term wealth (7+ years), equity SIP wins with historical returns of 12–15% versus RD's 6.5–7%, though SIP carries market risk. Use RD for your emergency fund and near-term goals, and SIP for long-term wealth." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the minimum RD amount in India?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Most banks allow RDs starting from ₹100 per month. Post Office RD minimum is ₹100/month with no upper limit, and SBI's minimum is also ₹100/month. Accounts can be opened instantly via net banking or mobile apps. There is no maximum limit on RD deposits." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I take a loan against my RD?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Most banks let you borrow up to 80–90% of your RD balance as a loan or overdraft, usually at 1–2% above your RD rate. This handles emergencies without breaking the RD, and the RD continues to earn interest while the loan is outstanding." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does an RD give compound interest?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — RDs use quarterly compounding. However, each monthly installment earns interest only from the month you deposit it, so early installments compound for the full tenure while the last few earn for just a month or two. That is why the effective return is slightly lower than an FD at the same rate." }
       }
     ]
   }
@@ -141,6 +157,10 @@
         <a href="../index.html?cat=tools"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
         <a href="../index.html#articles-section" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Articles</a>
       </nav>
+      <button onclick="toggleTheme()" id="themeToggle" class="p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="theme-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="theme-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
         <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
@@ -356,6 +376,7 @@
       <div class="space-y-2.5">
         <div class="flex items-start gap-3 p-3 bg-leaf-50 border border-leaf-100 rounded-xl"><span class="text-purple-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg></span><div><p class="text-xs font-semibold text-leaf-800 mb-1">RD — Safe monthly savings</p><p class="text-xs text-ink-500">Fixed, guaranteed returns. No market risk. Good for short-term goals (1–5 years) like emergency fund, vacation, gadget purchase.</p></div></div>
         <div class="flex items-start gap-3 p-3 bg-ink-50 border border-ink-100 rounded-xl"><span class="text-leaf-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="17 7 21 7 21 11"/></svg></span><div><p class="text-xs font-semibold text-ink-800 mb-1">SIP — Market-linked monthly investing</p><p class="text-xs text-ink-500">Higher potential returns over 7+ years but with market volatility. Equity SIPs historically outperform RD significantly over long periods.</p></div></div>
+        <div class="flex items-start gap-3 p-3 bg-ink-50 border border-ink-100 rounded-xl"><span class="text-indigo-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 22V12M21 22V12M12 22V12M2 12h20"/><path d="M12 2 2 7h20L12 2z"/></svg></span><div><p class="text-xs font-semibold text-ink-800 mb-1">FD — One-time lump sum</p><p class="text-xs text-ink-500">Same safety as RD, but you invest a single lump sum upfront instead of monthly. An FD earns more than an RD on the same total money, because the whole amount earns interest from day one.</p></div></div>
       </div>
     </div>
   </div>
@@ -380,6 +401,36 @@
       <p class="text-[10px] text-ink-300 mt-3 font-mono">* Indicative rates. Verify with your bank before opening.</p>
     </div>
   </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mt-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">RD vs FD — Same Money, Which Earns More?</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">Saving ₹10,000 a month for a year (₹1,20,000 total) at 7% works out differently depending on how you put the money in:</p>
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between py-2 border-b border-ink-50">
+          <div><span class="text-sm text-ink-700 font-medium">RD (₹10k × 12)</span><p class="text-[10px] text-ink-400">Money goes in gradually</p></div>
+          <span class="font-mono text-sm font-semibold text-ink-800">≈ ₹1,24,500</span>
+        </div>
+        <div class="flex items-center justify-between py-2">
+          <div><span class="text-sm text-ink-700 font-medium">FD (₹1.2L upfront)</span><p class="text-[10px] text-ink-400">Whole sum earns from day 1</p></div>
+          <span class="font-mono text-sm font-semibold text-leaf-700">≈ ₹1,28,650</span>
+        </div>
+      </div>
+      <div class="bg-leaf-50 border border-leaf-100 rounded-xl p-3 mt-4">
+        <p class="text-xs text-ink-500">If you already have the lump sum, an <a href="fd-calculator.html" class="text-leaf-700 underline">FD</a> earns more. Choose an RD when you want to <strong class="text-ink-700">build</strong> the corpus from your monthly salary.</p>
+      </div>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Key Features &amp; Tips</h2>
+      <ul class="space-y-3 text-sm text-ink-500">
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Low entry</strong> — start from just ₹100/month; tenures run 6 months to 10 years.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Set an auto-debit</strong> from your savings account so you never miss an installment.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Loan against RD</strong> — borrow up to 80–90% of the balance without breaking it.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Senior citizens</strong> earn an extra 0.25–0.50% on the same RD.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-leaf-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">No 80C benefit</strong> — RD interest is taxable; for tax saving use a 5-yr tax-saver FD or PPF.</span></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <!-- FAQ -->
@@ -393,6 +444,8 @@
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Can I break an RD prematurely?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes, premature closure is allowed at most banks with a <strong class="text-ink-700">penalty of 0.5–1%</strong> on the applicable interest rate. You receive interest for the period actually completed, minus the penalty. Post Office RDs can be closed after 3 years (out of 5). Avoid premature closure to earn full interest.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">RD vs SIP — which is better?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">For short-term goals (&lt;3 years) and capital safety: <strong class="text-ink-700">RD wins</strong> with guaranteed returns. For long-term wealth (7+ years): <strong class="text-ink-700">equity SIP wins</strong> with historical returns of 12–15% vs RD's 6.5–7%. Both involve monthly discipline, but SIP has market risk. Use RD for your emergency fund and near-term goals; SIP for long-term wealth.</div></details></div>
     <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">What is the minimum RD amount in India?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Most banks allow RDs starting from <strong class="text-ink-700">₹100/month</strong>. Post Office RD minimum is ₹100/month with no upper limit. SBI minimum is ₹100/month. Online RD accounts can be opened instantly through net banking or mobile apps of most banks. There is no maximum limit on RD deposits.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Can I take a loan against my RD?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes. Most banks let you borrow <strong class="text-ink-700">up to 80–90%</strong> of your RD balance as a loan or overdraft, usually at 1–2% above your RD rate. This lets you handle an emergency without breaking the RD and losing interest. The RD continues to earn interest while the loan is outstanding.</div></details></div>
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden"><details><summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors"><span class="text-sm font-semibold text-ink-800 pr-4">Does an RD give compound interest?</span><span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">Yes — RDs use <strong class="text-ink-700">quarterly compounding</strong>. However, each monthly installment earns interest only from the month you deposit it, so the early installments compound for the full tenure while the last few earn for just a month or two. That is why the effective return is a little lower than an FD at the same rate.</div></details></div>
   </div>
 </section>
 
