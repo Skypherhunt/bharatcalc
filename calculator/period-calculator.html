@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();function toggleTheme(){var d=document.documentElement.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}}</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Bharatcalc" />
+  <link rel="manifest" href="../site.webmanifest" />
+  <title>Period Calculator India – Predict Your Next Period &amp; Cycle Dates | BharatCalc</title>
+  <meta name="description" content="Free period calculator for India — predict your next period dates, track your menstrual cycle, and see your ovulation and fertile window. Get your next 6 period dates and PMS days from your last period and cycle length." />
+  <meta name="keywords" content="period calculator India, menstrual cycle calculator, next period calculator, period tracker, period date calculator, menstrual calendar, period predictor, cycle tracker, periods calculator" />
+  <meta name="author" content="BharatCalc" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bharatcalc.online/calculator/period-calculator" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://bharatcalc.online/calculator/period-calculator" />
+  <meta property="og:title"       content="Period Calculator – Predict Your Next Period | BharatCalc" />
+  <meta property="og:description" content="Predict your next 6 period dates and track your menstrual cycle, ovulation and fertile window. Free — by BharatCalc." />
+  <meta property="og:image"       content="https://bharatcalc.online/og/default.png" />
+  <meta property="og:locale"      content="en_IN" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Period Calculator | BharatCalc" />
+  <meta name="twitter:description" content="Predict your next period dates and track your cycle. Free — by BharatCalc." />
+  <meta name="twitter:image"       content="https://bharatcalc.online/og/default.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Period Calculator",
+    "url": "https://bharatcalc.online/calculator/period-calculator",
+    "description": "Predict your next period dates and track your menstrual cycle, ovulation and fertile window.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "publisher": { "@type": "Organization", "name": "BharatCalc", "url": "https://bharatcalc.online/", "logo": { "@type": "ImageObject", "url": "https://bharatcalc.online/logo-round.png" } },
+    "inLanguage": "en-IN",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",               "item": "https://bharatcalc.online/" },
+        { "@type": "ListItem", "position": 2, "name": "Health",             "item": "https://bharatcalc.online/?cat=health" },
+        { "@type": "ListItem", "position": 3, "name": "Period Calculator",  "item": "https://bharatcalc.online/calculator/period-calculator" }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How does a period calculator predict my next period?", "acceptedAnswer": { "@type": "Answer", "text": "It adds your average cycle length to the first day of your last period. For a 28-day cycle, your next period is expected 28 days after the last one started. The calculator repeats this to project the next several periods, and also marks your ovulation day and fertile window in each cycle." } },
+      { "@type": "Question", "name": "What is a normal menstrual cycle length?", "acceptedAnswer": { "@type": "Answer", "text": "A typical cycle is 21 to 35 days, measured from the first day of one period to the first day of the next. The popular '28-day cycle' is just an average. Cycle length can vary by a few days each month and still be perfectly normal, especially in teenagers and women approaching menopause." } },
+      { "@type": "Question", "name": "Why is my period late or irregular?", "acceptedAnswer": { "@type": "Answer", "text": "Common causes include stress, sudden weight change, intense exercise, travel, thyroid problems, PCOS, certain medications, breastfeeding, and approaching menopause. Pregnancy is also a common reason for a missed period. If your cycles are consistently irregular, consult a gynaecologist." } },
+      { "@type": "Question", "name": "How accurate is period prediction?", "acceptedAnswer": { "@type": "Answer", "text": "It is most accurate for women with regular cycles. If your cycle length varies a lot from month to month, predictions are only rough estimates. Logging your actual start date every month and updating your average cycle length keeps the forecasts as accurate as possible." } },
+      { "@type": "Question", "name": "When in my cycle am I most likely to get pregnant?", "acceptedAnswer": { "@type": "Answer", "text": "Your fertile window is the 5 days before ovulation plus ovulation day — about 6 days in total. Ovulation usually happens around 14 days before your next period. The calculator highlights these days so you can plan or avoid pregnancy, though calendar timing alone is not reliable contraception." } },
+      { "@type": "Question", "name": "What is PMS and when does it happen?", "acceptedAnswer": { "@type": "Answer", "text": "Premenstrual syndrome (PMS) refers to physical and emotional symptoms — bloating, mood changes, cramps, breast tenderness — that appear in the week or so before your period. They are caused by hormonal shifts after ovulation and usually ease once your period begins." } },
+      { "@type": "Question", "name": "Can I use this calculator to track periods every month?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each month, enter the first day of your most recent period and your usual cycle length to see your upcoming period dates, ovulation, and fertile window. For continuous tracking with reminders, a dedicated period-tracking app may be more convenient." } }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Predict Your Next Period",
+    "description": "Predict your next period dates from your last period start date and average cycle length.",
+    "totalTime": "PT1M",
+    "tool": [{ "@type": "HowToTool", "name": "BharatCalc" }],
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Enter the first day of your last period", "text": "Input the date your most recent period started." },
+      { "@type": "HowToStep", "position": 2, "name": "Enter your cycle and period length", "text": "Set your average cycle length and how many days your bleeding usually lasts." },
+      { "@type": "HowToStep", "position": 3, "name": "View your upcoming period dates", "text": "The calculator shows your next period date, the next 6 expected periods, and your ovulation and fertile window for the current cycle." }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
+  <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Satoshi', system-ui, sans-serif; }
+    .font-display { font-family: 'Clash Display', system-ui, sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #16a34a; transform: scaleX(0); transition: transform 0.2s; border-radius: 1px; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    input[type=date] { font-family: 'JetBrains Mono', monospace; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    .breadcrumb a { transition: color 0.15s; }
+    .faq-item details summary { cursor: pointer; list-style: none; }
+    .faq-item details summary::-webkit-details-marker { display: none; }
+    .faq-item details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s; }
+  </style>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3907395579509024"
+     crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9TD6B9GQ89"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9TD6B9GQ89');
+  </script>
+</head>
+
+<body class="bg-ink-50 text-ink-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-ink-100" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14">
+      <a href="../index.html" class="flex items-center gap-2.5" aria-label="BharatCalc – Home">
+        <img src="../favicon.svg" alt="BharatCalc" class="h-8 w-auto" />
+        <div class="leading-none">
+          <div class="font-display font-semibold text-ink-900 text-base tracking-tight">BharatCalc</div>
+          <div class="text-[10px] text-ink-400 font-medium tracking-widest uppercase">India</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-7" aria-label="Site navigation">
+        <a href="../index.html?cat=finance" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Finance</a>
+        <a href="../index.html?cat=tax"     class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tax</a>
+        <a href="../index.html?cat=health"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Health</a>
+        <a href="../index.html?cat=math"    class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Math</a>
+        <a href="../index.html?cat=tools"  class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Tools</a>
+        <a href="../index.html#articles-section" class="nav-link text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors py-1">Articles</a>
+      </nav>
+      <div class="flex items-center gap-0.5"><button onclick="toggleTheme()" id="themeToggle" class="p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="theme-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="theme-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-lg hover:bg-ink-100 text-ink-500 transition-colors" aria-label="Open menu" id="menuBtn">
+        <svg id="menuIcon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button></div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-ink-100 pt-3 grid grid-cols-2 gap-2">
+      <a href="../index.html?cat=finance" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-leaf-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> Finance</a>
+      <a href="../index.html?cat=tax"     class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="11" y2="17"/></svg> Tax</a>
+      <a href="../index.html?cat=health"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-rose-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> Health</a>
+      <a href="../index.html?cat=math"    class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg> Math</a>
+      <a href="../index.html?cat=tools"  class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> Tools</a>
+      <a href="../index.html#articles-section" class="flex items-center gap-2 px-3 py-2.5 rounded-xl hover:bg-leaf-50 text-sm font-medium text-ink-700 transition-colors"><svg class="w-4 h-4 text-leaf-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h10"/></svg> Articles</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="bg-ink-900 pt-20 pb-10" aria-labelledby="page-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="breadcrumb flex items-center gap-2 text-xs text-ink-400 mb-5" aria-label="Breadcrumb">
+      <a href="../index.html" class="hover:text-ink-200">Home</a>
+      <span>/</span>
+      <a href="../index.html?cat=health" class="hover:text-ink-200">Health</a>
+      <span>/</span>
+      <span class="text-ink-300">Period Calculator</span>
+    </nav>
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-rose-500/15 text-rose-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3 border border-rose-500/20">
+          <span class="w-1.5 h-1.5 bg-rose-400 rounded-full inline-block animate-pulse"></span>
+          Cycle Tracker
+        </div>
+        <h1 id="page-heading" class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight mb-2">Period Calculator</h1>
+        <p class="text-ink-300 text-sm sm:text-base max-w-lg leading-relaxed">
+          Predict your next period dates and track your menstrual cycle. See your upcoming periods, ovulation day and fertile window from your last period.
+        </p>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-ink-400 flex-shrink-0">
+        <span class="w-1.5 h-1.5 bg-leaf-400 rounded-full inline-block"></span>
+        Results update live
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- LEFT: Inputs -->
+    <div class="bg-white border border-ink-100 rounded-2xl p-6 sm:p-8">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-7">Your Cycle Details</h2>
+
+      <div class="mb-7">
+        <label for="lmpDate" class="block text-sm font-semibold text-ink-700 mb-2">First Day of Your Last Period</label>
+        <input type="date" id="lmpDate" class="w-full border border-ink-200 rounded-xl px-4 py-3 text-sm text-ink-900 bg-ink-50 focus:outline-none focus:ring-2 focus:ring-leaf-300 transition-all" oninput="calculate()" />
+        <p class="text-xs text-ink-400 mt-1.5">The day your most recent period started (cycle day 1)</p>
+      </div>
+
+      <div class="mb-7">
+        <label for="cycleSlider" class="block text-sm font-semibold text-ink-700 mb-2">Average Cycle Length</label>
+        <div class="flex items-center gap-3">
+          <input type="range" id="cycleSlider" min="21" max="40" value="28" class="flex-1 accent-rose-500" oninput="setCycle(parseInt(this.value))" />
+          <span class="font-mono text-sm font-semibold text-ink-800 w-16 text-right"><span id="cycleVal">28</span> days</span>
+        </div>
+        <p class="text-xs text-ink-400 mt-2">From the first day of one period to the first day of the next. Normal range is 21–35 days.</p>
+      </div>
+
+      <div class="mb-7">
+        <label for="periodLength" class="block text-sm font-semibold text-ink-700 mb-2">Period Length</label>
+        <div class="flex items-center gap-3">
+          <input type="range" id="periodLength" min="2" max="10" value="5" class="flex-1 accent-rose-500" oninput="setPeriodLen(parseInt(this.value))" />
+          <span class="font-mono text-sm font-semibold text-ink-800 w-16 text-right"><span id="periodVal">5</span> days</span>
+        </div>
+        <p class="text-xs text-ink-400 mt-2">How many days your bleeding usually lasts.</p>
+      </div>
+
+      <div class="bg-rose-50 border border-rose-100 rounded-xl p-4 text-xs text-ink-500 leading-relaxed">
+        <p class="font-semibold text-rose-700 mb-1">How prediction works</p>
+        <p>Your next period is your last period plus your cycle length. We repeat this to project upcoming periods, and mark ovulation about 14 days before each one.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div class="flex flex-col gap-5">
+      <div id="resultsCard" class="bg-ink-900 rounded-2xl p-6 sm:p-8 hidden">
+        <p class="text-ink-400 text-xs font-semibold uppercase tracking-wider mb-2">Your Next Period</p>
+        <div class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight mb-1" id="nextPeriodResult">—</div>
+        <p class="text-rose-400 text-xs font-semibold" id="nextPeriodCountdown"></p>
+        <div class="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-ink-700">
+          <div><p class="text-ink-500 text-xs mb-1">Period Lasts Until</p><p class="font-mono font-semibold text-white text-sm" id="periodEnd">—</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Ovulation Day</p><p class="font-mono font-semibold text-white text-sm" id="ovulationDay">—</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">Fertile Window</p><p class="font-mono font-semibold text-rose-300 text-sm" id="fertileWindow">—</p></div>
+          <div><p class="text-ink-500 text-xs mb-1">PMS Likely From</p><p class="font-mono font-semibold text-white text-sm" id="pmsFrom">—</p></div>
+        </div>
+      </div>
+
+      <div id="placeholderCard" class="bg-ink-900 rounded-2xl p-6 sm:p-8 flex items-center justify-center">
+        <div class="text-center">
+          <div class="text-4xl mb-3">🩸</div>
+          <p class="text-ink-400 text-sm">Enter your last period date above to see your upcoming periods</p>
+        </div>
+      </div>
+
+      <!-- Upcoming periods -->
+      <div id="upcomingCard" class="bg-white border border-ink-100 rounded-2xl p-6 hidden">
+        <h2 class="font-display font-semibold text-ink-900 text-base mb-4">Your Next 6 Periods</h2>
+        <div class="space-y-2.5" id="upcomingGrid"></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- SEO CONTENT -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Understanding Your Menstrual Cycle</h2>
+      <p class="text-sm text-ink-500 leading-relaxed mb-3">A menstrual cycle is counted from the first day of one period to the day before the next period starts. The four phases are:</p>
+      <div class="space-y-3">
+        <div class="bg-rose-50 rounded-xl p-4">
+          <p class="text-sm font-semibold text-rose-800 mb-1">Menstruation (Days 1–5)</p>
+          <p class="text-xs text-ink-500">The uterine lining sheds — this is your period. It usually lasts 2–7 days.</p>
+        </div>
+        <div class="bg-pink-50 rounded-xl p-4">
+          <p class="text-sm font-semibold text-pink-800 mb-1">Follicular Phase (Days 1–13)</p>
+          <p class="text-xs text-ink-500">Oestrogen rises and an egg matures. The fertile window opens towards the end of this phase.</p>
+        </div>
+        <div class="bg-purple-50 rounded-xl p-4">
+          <p class="text-sm font-semibold text-purple-800 mb-1">Ovulation (≈ Day 14)</p>
+          <p class="text-xs text-ink-500">An egg is released and is available for fertilisation for 12–24 hours.</p>
+        </div>
+        <div class="bg-blue-50 rounded-xl p-4">
+          <p class="text-sm font-semibold text-blue-800 mb-1">Luteal Phase (Days 15–28)</p>
+          <p class="text-xs text-ink-500">Progesterone rises. If there is no pregnancy, hormones fall and the next period begins. PMS symptoms appear here.</p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white border border-ink-100 rounded-2xl p-6">
+      <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">When to See a Doctor</h2>
+      <ul class="space-y-3 text-sm text-ink-500">
+        <li class="flex items-start gap-2.5"><span class="text-rose-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Very irregular cycles</strong> — shorter than 21 days or longer than 35 days regularly.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-rose-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Missed periods</strong> — three or more in a row without pregnancy.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-rose-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Very heavy bleeding</strong> — soaking through a pad or tampon every hour, or passing large clots.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-rose-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Severe pain</strong> — cramps that disrupt daily life or don't respond to usual pain relief.</span></li>
+        <li class="flex items-start gap-2.5"><span class="text-rose-600 font-bold mt-0.5">→</span><span><strong class="text-ink-700">Bleeding between periods</strong> — or after intercourse, which should always be checked.</span></li>
+      </ul>
+      <div class="bg-rose-50 border border-rose-100 rounded-xl p-3 mt-4">
+        <p class="text-xs text-ink-500"><strong class="text-rose-700">Note:</strong> This calculator is a general guide for tracking, not a medical diagnosis. Always consult a gynaecologist for persistent concerns.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white border border-ink-100 rounded-2xl p-6 mt-6">
+    <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">How Your Period Dates Are Calculated</h2>
+    <p class="text-sm text-ink-500 leading-relaxed mb-3">The calculator uses your average cycle length to project each upcoming period from your last start date:</p>
+    <div class="bg-ink-50 rounded-xl p-4 font-mono text-xs text-ink-700 mb-3 leading-relaxed">Next period = Last period + cycle length<br>Period after that = Last period + (2 × cycle length)<br>Ovulation = Next period − 14 days</div>
+    <div class="bg-rose-50 border border-rose-100 rounded-xl p-3 space-y-1">
+      <p class="text-xs font-semibold text-rose-800">Example</p>
+      <p class="text-xs text-ink-500">Last period <strong>1 Jan</strong>, 28-day cycle → next periods on <strong>29 Jan, 26 Feb, 26 Mar…</strong> Ovulation for the current cycle is around <strong>15 Jan</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="font-display font-semibold text-ink-900 text-xl mb-2">Frequently Asked Questions</h2>
+  <p class="text-sm text-ink-400 mb-6">Common questions about period tracking and cycles</p>
+  <div class="grid md:grid-cols-2 gap-3">
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How does a period calculator predict my next period?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          It adds your average cycle length to the first day of your last period. For a 28-day cycle, your next period is expected 28 days after the last one started. The calculator repeats this to project the next several periods, and also marks your ovulation day and fertile window in each cycle.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is a normal menstrual cycle length?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          A typical cycle is 21 to 35 days, measured from the first day of one period to the first day of the next. The popular '28-day cycle' is just an average. Cycle length can vary by a few days each month and still be perfectly normal, especially in teenagers and women approaching menopause.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Why is my period late or irregular?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Common causes include stress, sudden weight change, intense exercise, travel, thyroid problems, PCOS, certain medications, breastfeeding, and approaching menopause. Pregnancy is also a common reason for a missed period. If your cycles are consistently irregular, consult a gynaecologist.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">How accurate is period prediction?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          It is most accurate for women with regular cycles. If your cycle length varies a lot from month to month, predictions are only rough estimates. Logging your actual start date every month and updating your average cycle length keeps the forecasts as accurate as possible.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">When in my cycle am I most likely to get pregnant?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Your fertile window is the 5 days before ovulation plus ovulation day — about 6 days in total. Ovulation usually happens around 14 days before your next period. The calculator highlights these days so you can plan or avoid pregnancy, though calendar timing alone is not reliable contraception.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">What is PMS and when does it happen?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Premenstrual syndrome (PMS) refers to physical and emotional symptoms — bloating, mood changes, cramps, breast tenderness — that appear in the week or so before your period. They are caused by hormonal shifts after ovulation and usually ease once your period begins.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Can I use this calculator to track periods every month?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Yes. Each month, enter the first day of your most recent period and your usual cycle length to see your upcoming period dates, ovulation, and fertile window. For continuous tracking with reminders, a dedicated period-tracking app may be more convenient.
+        </div>
+      </details>
+    </div>
+
+    <div class="faq-item bg-white border border-ink-100 rounded-2xl overflow-hidden">
+      <details>
+        <summary class="flex items-center justify-between px-5 py-4 hover:bg-ink-50 transition-colors">
+          <span class="text-sm font-semibold text-ink-800 pr-4">Does cycle length change with age?</span>
+          <span class="faq-icon text-leaf-600 flex-shrink-0"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-ink-500 leading-relaxed border-t border-ink-50">
+          Yes. Cycles are often longer and more irregular in the first few years after periods begin, tend to settle into a regular pattern in your 20s and 30s, and may become shorter or more erratic in the years leading up to menopause (perimenopause). Update your average length as it changes.
+        </div>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- Related calculators -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+  <h2 class="font-display font-semibold text-ink-900 text-lg mb-4">Related Calculators</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <a href="ovulation-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-pink-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">Ovulation Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Fertile days &amp; ovulation</div>
+    </a>
+    <a href="due-date-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-pink-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">Due Date Calculator</div>
+      <div class="text-xs text-ink-400 mt-0.5">Pregnancy due date</div>
+    </a>
+    <a href="pregnancy-week-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-blue-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">Pregnancy Week</div>
+      <div class="text-xs text-ink-400 mt-0.5">How many weeks am I</div>
+    </a>
+    <a href="conception-date-calculator.html" class="bg-white border border-ink-100 hover:border-leaf-200 hover:bg-leaf-50 rounded-xl p-4 transition-all group">
+      <div class="mb-2 text-purple-600"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 21s-6.5-4.35-9-8.5C1.5 9 3.5 5 7 5c2 0 3.5 1.5 5 3 1.5-1.5 3-3 5-3 3.5 0 5.5 4 4 7.5-2.5 4.15-9 8.5-9 8.5z"/></svg></div>
+      <div class="text-sm font-semibold text-ink-800 group-hover:text-leaf-700 transition-colors">Conception Date</div>
+      <div class="text-xs text-ink-400 mt-0.5">When you conceived</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-ink-900 text-ink-300" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-700">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <img src="../favicon.svg" alt="BharatCalc" class="h-8 w-auto" />
+          <div class="font-display font-semibold text-white">BharatCalc</div>
+        </div>
+        <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-xs">Free, fast, and accurate calculators for every Indian. Finance, tax, health, math — no login, no fees, ever.</p>
+        <div class="text-xs text-ink-500 bg-ink-800 rounded-xl p-3 border border-ink-700"><svg class="w-3.5 h-3.5 inline-block mr-1 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> All results are estimates for informational purposes only. Consult a SEBI-registered advisor before making financial decisions.</div>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Finance</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../calculator/sip-calculator.html"      class="hover:text-leaf-400 transition-colors">SIP Calculator</a></li>
+          <li><a href="../calculator/emi-calculator.html"      class="hover:text-leaf-400 transition-colors">EMI Calculator</a></li>
+          <li><a href="../calculator/ppf-calculator.html"      class="hover:text-leaf-400 transition-colors">PPF Calculator</a></li>
+          <li><a href="../calculator/fd-calculator.html"       class="hover:text-leaf-400 transition-colors">FD Calculator</a></li>
+          <li><a href="../calculator/epf-calculator.html"      class="hover:text-leaf-400 transition-colors">EPF Calculator</a></li>
+          <li><a href="../calculator/lumpsum-calculator.html"  class="hover:text-leaf-400 transition-colors">Lumpsum Calculator</a></li>
+          <li><a href="../calculator/rd-calculator.html"       class="hover:text-leaf-400 transition-colors">RD Calculator</a></li>
+          <li><a href="../calculator/cagr-calculator.html"     class="hover:text-leaf-400 transition-colors">CAGR Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Tax</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../calculator/income-tax-calculator.html"  class="hover:text-leaf-400 transition-colors">Income Tax</a></li>
+          <li><a href="../calculator/gst-calculator.html"         class="hover:text-leaf-400 transition-colors">GST Calculator</a></li>
+          <li><a href="../calculator/hra-calculator.html"         class="hover:text-leaf-400 transition-colors">HRA Exemption</a></li>
+          <li><a href="../calculator/tds-calculator.html"         class="hover:text-leaf-400 transition-colors">TDS Calculator</a></li>
+          <li><a href="../calculator/gratuity-calculator.html"    class="hover:text-leaf-400 transition-colors">Gratuity</a></li>
+          <li><a href="../calculator/advance-tax-calculator.html" class="hover:text-leaf-400 transition-colors">Advance Tax</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Health &amp; Math</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../calculator/bmi-calculator.html"                  class="hover:text-leaf-400 transition-colors">BMI Calculator</a></li>
+          <li><a href="../calculator/age-calculator.html"                  class="hover:text-leaf-400 transition-colors">Age Calculator</a></li>
+          <li><a href="../calculator/due-date-calculator.html"             class="hover:text-leaf-400 transition-colors">Due Date Calculator</a></li>
+          <li><a href="../calculator/percentage-calculator.html"           class="hover:text-leaf-400 transition-colors">Percentage Calculator</a></li>
+          <li><a href="../calculator/compound-interest-calculator.html"    class="hover:text-leaf-400 transition-colors">Compound Interest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-ink-500">
+      <p>© <span id="footerYear"></span> BharatCalc. Made with ♥ in India.</p>
+      <div class="flex items-center gap-5">
+        <a href="../about.html"   class="hover:text-ink-300 transition-colors">About</a>
+        <a href="../contact.html" class="hover:text-ink-300 transition-colors">Contact</a>
+        <a href="../privacy.html" class="hover:text-ink-300 transition-colors">Privacy</a>
+        <a href="../terms.html"   class="hover:text-ink-300 transition-colors">Terms</a>
+        <a href="https://github.com/Skypherhunt" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/abhinav-kumar70/" target="_blank" rel="noopener noreferrer" class="hover:text-ink-300 transition-colors" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+let cycleLen = 28;
+let periodLen = 5;
+
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const WEEKDAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+function fmtDate(d) { return `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`; }
+function fmtShort(d) { return `${d.getDate()} ${MONTHS_SHORT[d.getMonth()]}`; }
+function addDays(d, n) { const r = new Date(d); r.setDate(r.getDate() + n); return r; }
+
+function setCycle(n) {
+  cycleLen = n;
+  document.getElementById('cycleVal').textContent = n;
+  calculate();
+}
+function setPeriodLen(n) {
+  periodLen = n;
+  document.getElementById('periodVal').textContent = n;
+  calculate();
+}
+
+function calculate() {
+  const val = document.getElementById('lmpDate').value;
+  if (!val) { showPlaceholder(); return; }
+  const lmp = new Date(val + 'T00:00:00');
+  const today = new Date(); today.setHours(0,0,0,0);
+
+  const nextPeriod   = addDays(lmp, cycleLen);
+  const periodEnd    = addDays(nextPeriod, periodLen - 1);
+  const ovulation    = addDays(nextPeriod, -14);
+  const fertileStart = addDays(ovulation, -5);
+  const fertileEnd   = addDays(ovulation, 1);
+  const pmsFrom      = addDays(nextPeriod, -5);
+
+  document.getElementById('resultsCard').classList.remove('hidden');
+  document.getElementById('placeholderCard').classList.add('hidden');
+  document.getElementById('upcomingCard').classList.remove('hidden');
+
+  document.getElementById('nextPeriodResult').textContent = fmtDate(nextPeriod);
+  const daysTo = Math.round((nextPeriod - today) / 86400000);
+  document.getElementById('nextPeriodCountdown').textContent =
+    daysTo > 0 ? `In ${daysTo} day${daysTo === 1 ? '' : 's'}` :
+    daysTo === 0 ? 'Expected today' :
+    `${Math.abs(daysTo)} day${daysTo === -1 ? '' : 's'} ago — log a newer date`;
+
+  document.getElementById('periodEnd').textContent     = fmtDate(periodEnd);
+  document.getElementById('ovulationDay').textContent  = fmtDate(ovulation);
+  document.getElementById('fertileWindow').textContent = `${fmtShort(fertileStart)} – ${fmtShort(fertileEnd)}`;
+  document.getElementById('pmsFrom').textContent       = fmtDate(pmsFrom);
+
+  // Next 6 periods
+  const rows = [];
+  for (let i = 1; i <= 6; i++) {
+    const start = addDays(lmp, cycleLen * i);
+    const end   = addDays(start, periodLen - 1);
+    rows.push(`
+      <div class="flex items-center justify-between py-2.5 px-3 rounded-xl ${i === 1 ? 'bg-rose-50 border border-rose-100' : 'bg-ink-50'}">
+        <div>
+          <p class="text-xs font-semibold ${i === 1 ? 'text-rose-700' : 'text-ink-700'}">Period ${i}${i === 1 ? ' · next' : ''}</p>
+          <p class="text-[11px] text-ink-400">${WEEKDAYS[start.getDay()]}</p>
+        </div>
+        <p class="font-mono text-xs font-semibold text-ink-800">${fmtShort(start)} – ${fmtShort(end)}</p>
+      </div>`);
+  }
+  document.getElementById('upcomingGrid').innerHTML = rows.join('');
+}
+
+function showPlaceholder() {
+  document.getElementById('resultsCard').classList.add('hidden');
+  document.getElementById('placeholderCard').classList.remove('hidden');
+  document.getElementById('upcomingCard').classList.add('hidden');
+}
+
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+// Default LMP to ~20 days ago so a fresh visitor sees a populated example
+const defaultLMP = new Date();
+defaultLMP.setDate(defaultLMP.getDate() - 20);
+document.getElementById('lmpDate').value = defaultLMP.toISOString().split('T')[0];
+calculate();
+</script>
+</body>
+</html>
